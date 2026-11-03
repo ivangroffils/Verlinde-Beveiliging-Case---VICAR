@@ -6,7 +6,7 @@ export const WINDOW_END = 18 * 60;
 export const SLOT_STEP = 30;
 export const DEFAULT_DURATION = 120;
 export const statusLabels: Record<MaintenanceStatus, string> = {
-  overdue: "Achterstallig", upcoming: "Binnenkort", ok: "OK", missing: "Ontbrekende gegevens",
+  overdue: "Achterstallig", upcoming: "Binnenkort", ok: "Op schema", missing: "Ontbrekende gegevens",
 };
 export function parseDate(value: string): string | null {
   const trimmed = value.trim();
@@ -20,7 +20,7 @@ export function validIsoDate(value: string): boolean {
   return isValid(date) && format(date, "yyyy-MM-dd") === value;
 }
 export function calendarDate(value: string): Date { return parse(value, "yyyy-MM-dd", new Date(2000, 0, 1)); }
-export function formatDate(value: string | null): string { return value ? format(calendarDate(value), "dd/MM/yyyy") : "Ontbrekende gegevens"; }
+export function formatDate(value: string | null): string { return value ? format(calendarDate(value), "dd/MM/yyyy") : "\u2014"; }
 export function parseTime(value: string): number | null {
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value.trim())) return null;
   const [hours, minutes] = value.trim().split(":").map(Number);
@@ -30,7 +30,7 @@ export function formatTime(value: number): string { return `${Math.floor(value /
 export function normalizeInterval(value: string): { label: string; months: number | null } {
   const normalized = value.trim().toLowerCase();
   const months = ({ "1j": 12, "jaarlijks": 12, "12m": 12, "1 x per jaar": 12, "2j": 24, "6m": 6 } as Record<string, number>)[normalized] ?? null;
-  return { label: months === 12 ? "Jaarlijks" : months === 24 ? "Elke 2 jaar" : months === 6 ? "Halfjaarlijks" : value.trim() || "Ontbrekende gegevens", months };
+  return { label: months === 12 ? "Jaarlijks" : months === 24 ? "Elke 2 jaar" : months === 6 ? "Halfjaarlijks" : value.trim() || "\u2014", months };
 }
 export function maintenanceStatus(sheet: MaintenanceSheet, today: string): MaintenanceStatus {
   if (!sheet.nextDate || !validIsoDate(sheet.nextDate)) return "missing";
@@ -44,7 +44,7 @@ export function openMaintenanceOrders(data: Pick<AppData, "workOrders">, sheetId
   return data.workOrders.filter(order => order.status !== "completed" && order.kind.toLowerCase() === "onderhoud" && order.sheetIds.includes(sheetId));
 }
 export function customerName(data: Pick<AppData, "customers">, id: string): string {
-  return data.customers.find(customer => customer.id === id)?.name ?? `Onbekende klant (${id || "geen code"})`;
+  return data.customers.find(customer => customer.id === id)?.name ?? "Onbekende klant";
 }
 export function activeSlots(data: Pick<AppData, "slots" | "workOrders">): PlanningSlot[] {
   const active = new Set(data.workOrders.filter(order => order.status !== "completed").map(order => order.id));
@@ -58,7 +58,9 @@ export function validatePlanning(data: Pick<AppData, "resources" | "slots" | "wo
   if (!order || order.status === "completed") return "Deze werkorder is niet beschikbaar voor planning.";
   if (!data.resources.some(resource => resource.id === candidate.resourceId)) return "De gekozen resource bestaat niet.";
   if (!validIsoDate(candidate.date)) return "Kies een geldige planningsdatum.";
-  if (!Number.isInteger(candidate.start) || !Number.isInteger(candidate.end) || candidate.end <= candidate.start || candidate.start % SLOT_STEP !== 0 || candidate.end % SLOT_STEP !== 0) return "Kies geldige tijden in stappen van 30 minuten; de eindtijd moet na de starttijd liggen.";
+  const original = data.slots.find(slot => slot.id === candidate.id);
+  const preservesDuration = original && original.end - original.start === candidate.end - candidate.start;
+  if (!Number.isInteger(candidate.start) || !Number.isInteger(candidate.end) || candidate.end <= candidate.start || candidate.start % SLOT_STEP !== 0 || (candidate.end % SLOT_STEP !== 0 && !preservesDuration)) return "Kies geldige tijden in stappen van 30 minuten; de eindtijd moet na de starttijd liggen.";
   if (candidate.start < WINDOW_START || candidate.end > WINDOW_END) return "Plan de volledige afspraak tussen 08:00 en 18:00.";
   const conflict = activeSlots(data).find(slot => overlaps(candidate, slot));
   return conflict ? `Dit tijdstip overlapt met ${conflict.workOrderId} (${formatTime(conflict.start)}–${formatTime(conflict.end)}).` : null;

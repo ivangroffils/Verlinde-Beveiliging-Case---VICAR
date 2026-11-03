@@ -4,7 +4,7 @@ import { loadAppData } from "@/lib/data/normalize";
 import { AppProvider } from "@/components/app-provider";
 import { AppShell } from "@/components/app-shell";
 import "./globals.css";
-export const metadata: Metadata = { title: "Verlinde Maintenance Planner", description: "Onderhoud opvolgen en werkorders eenvoudig inplannen op basis van de lokale BuildDesk-export." };
+export const metadata: Metadata = { title: "Verlinde Maintenance Planner", icons: { icon: { url: "/VERLINDE.svg", type: "image/svg+xml", sizes: "any" } }, description: "Onderhoud opvolgen en werkorders eenvoudig inplannen op basis van de lokale BuildDesk-export." };
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   await connection();
   const data = await loadAppData();

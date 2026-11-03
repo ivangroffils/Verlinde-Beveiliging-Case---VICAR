@@ -5,7 +5,7 @@ import { addDays, addWeeks, format, startOfWeek } from "date-fns";
 import { nl } from "date-fns/locale";
 import { AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, Clock3, GripVertical, Inbox, Keyboard, MapPin, Search } from "lucide-react";
 import { useApp } from "./app-provider";
-import { Button, inputClass, OrderBadge, StatusBadge } from "./ui";
+import { Button, inputClass, StatusBadge } from "./ui";
 import { activeSlots, calendarDate, customerName, DEFAULT_DURATION, formatDate, formatTime, maintenanceStatus, overlaps, parseTime, WINDOW_START, WINDOW_END, SLOT_STEP } from "@/lib/domain/rules";
 import type { PlanningSlot, Resource, WorkOrder } from "@/types/domain";
 
@@ -18,16 +18,23 @@ function subscribeMobile(callback: () => void) {
   return () => query.removeEventListener("change", callback);
 }
 function useIsMobile() { return useSyncExternalStore(subscribeMobile, () => window.matchMedia(mobileQuery).matches, () => false); }
+const LANE_HEIGHT = 284;
+const TIMELINE_HEIGHT = 260;
+const LANE_PADDING = 12;
 const times = Array.from({ length: (WINDOW_END - WINDOW_START) / SLOT_STEP }, (_, index) => WINDOW_START + index * SLOT_STEP);
 const keyboardCoordinates: KeyboardCoordinateGetter = (event, { currentCoordinates, context }) => {
   if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.code)) return undefined;
   event.preventDefault();
   const targets = context.droppableContainers.getEnabled().flatMap(container => {
     const rect = context.droppableRects.get(container.id);
-    return rect ? [{ id: container.id, x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }] : [];
+    return rect ? [{ id: container.id, x: rect.left + rect.width / 2, y: rect.top + rect.height / 2, width: rect.width, height: rect.height }] : [];
   });
   const origin = targets.find(target => target.id === context.over?.id);
-  if (!origin) { const first = targets[0]; return first ? { x: first.x - (context.collisionRect?.width ?? 0) / 2, y: first.y - (context.collisionRect?.height ?? 0) / 2 } : currentCoordinates; }
+  const width = context.collisionRect?.width ?? 0;
+  const height = context.collisionRect?.height ?? 0;
+  const center = { x: currentCoordinates.x + width / 2, y: currentCoordinates.y + height / 2 };
+  const inside = targets.some(target => Math.abs(center.x - target.x) <= target.width / 2 && Math.abs(center.y - target.y) <= target.height / 2);
+  if (!origin || !inside) { const first = targets[0]; return first ? { x: first.x - (context.collisionRect?.width ?? 0) / 2, y: first.y - (context.collisionRect?.height ?? 0) / 2 } : currentCoordinates; }
   const horizontal = event.code === "ArrowLeft" || event.code === "ArrowRight";
   const direction = event.code === "ArrowLeft" || event.code === "ArrowUp" ? -1 : 1;
   const candidates = targets.filter(target => target.id !== origin.id && (horizontal ? (target.x - origin.x) * direction > 2 : (target.y - origin.y) * direction > 2));
@@ -36,18 +43,21 @@ const keyboardCoordinates: KeyboardCoordinateGetter = (event, { currentCoordinat
     return score(a) - score(b);
   });
   const target = candidates[0];
-  return target ? { x: currentCoordinates.x + target.x - origin.x, y: currentCoordinates.y + target.y - origin.y } : currentCoordinates;
+  return target ? { x: target.x - width / 2, y: target.y - height / 2 } : currentCoordinates;
 };
 function WorkOrderCard({ order }: { order: WorkOrder }) {
   const { state, openOrder } = useApp();
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({ id: `backlog-${order.id}`, data: { workOrderId: order.id } satisfies DragData });
   const sheet = state.sheets.find(item => order.sheetIds.includes(item.id));
-  return <article ref={setNodeRef} className={`rounded-xl border bg-white p-3 shadow-xs ${isDragging ? "opacity-35" : ""} border-slate-200 hover:border-teal-400`}>
-    <div className="flex items-center justify-between gap-2"><button className="min-h-8 text-xs font-bold text-teal-700 hover:underline" onClick={() => openOrder(order.id)}>{order.id}</button><OrderBadge order={order} /><button {...attributes} {...listeners} aria-label={`Sleep ${order.id} naar de planner`} className="flex size-8 touch-none items-center justify-center rounded-md text-slate-400 hover:bg-slate-100 hover:text-teal-700"><GripVertical size={17} /></button></div>
-    <button onClick={() => openOrder(order.id)} className="mt-1 w-full text-left"><p className="text-sm font-semibold text-slate-800">{customerName(state, order.customerId)}</p><p className="mt-1 line-clamp-2 text-xs leading-5 text-slate-500">{order.installation}</p></button>
-    <p className="mt-2 flex items-start gap-1 text-[10px] leading-4 text-slate-400"><MapPin size={12} className="mt-0.5 shrink-0" />{order.site}</p>
-    <div className="mt-3 flex flex-wrap items-center gap-2">{sheet ? <StatusBadge status={maintenanceStatus(sheet, state.today)} /> : <span className="rounded bg-slate-100 px-2 py-1 text-[10px] text-slate-600">{order.kind}</span>}<span className="ml-auto flex items-center gap-1 text-[10px] text-slate-400"><Clock3 size={11} />2 uur</span></div>
-    {order.hasInvalidPlanning && <p className="mt-2 flex items-start gap-1 rounded bg-amber-50 p-2 text-[10px] leading-4 text-amber-800"><AlertTriangle size={12} className="mt-0.5 shrink-0" />Ongeldige bronplanning · opnieuw inplannen</p>}
+  const urgency = sheet ? maintenanceStatus(sheet, state.today) : null;
+  return <article ref={setNodeRef} className={`group rounded-lg border border-slate-200 bg-white p-3 transition-[border-color,box-shadow,opacity] hover:border-teal-300 hover:shadow-sm ${isDragging ? "opacity-30 ring-1 ring-teal-400" : ""}`}>
+    <div className="flex items-start gap-1">
+      <button onClick={() => openOrder(order.id)} className="min-w-0 flex-1 text-left"><p className="text-[13px] font-semibold leading-5 text-slate-800">{customerName(state, order.customerId)}</p><p className="mt-0.5 text-[10px] tabular-nums text-slate-400">{order.id}</p></button>
+      <button {...attributes} {...listeners} aria-label={`Sleep ${order.id} naar de planner`} className="-mr-1 flex size-8 shrink-0 touch-none cursor-grab items-center justify-center rounded-md text-slate-300 hover:bg-slate-50 hover:text-teal-700 active:cursor-grabbing"><GripVertical size={16} /></button>
+    </div>
+    <p className="mt-1 truncate text-[11px] text-slate-500" title={order.installation}>{order.installation === "Installatie ontbreekt" ? order.description : order.installation}</p>
+    <p className="mt-1 flex items-center gap-1 text-[10px] text-slate-400"><MapPin size={11} className="shrink-0" /><span className="truncate" title={order.site}>{order.site === "Locatie ontbreekt" ? "—" : order.site}</span></p>
+    <div className="mt-2 flex items-center gap-2">{urgency === "overdue" || urgency === "upcoming" ? <StatusBadge status={urgency} /> : <span className="text-[10px] text-slate-400">{order.kind}</span>}{order.hasInvalidPlanning && <AlertTriangle size={12} className="text-amber-500" aria-label="Planning controleren" />}<span className="ml-auto flex items-center gap-1 whitespace-nowrap text-[10px] text-slate-400"><Clock3 size={10} />2 u</span></div>
   </article>;
 }
 function ManualPlanning() {
@@ -59,7 +69,8 @@ function ManualPlanning() {
   const [start, setStart] = useState("08:00");
   const [slotId, setSlotId] = useState("");
   const prefix = useId();
-  const orderSlots = state.slots.filter(slot => slot.workOrderId === orderId);
+  const effectiveOrderId = active.some(order => order.id === orderId) ? orderId : active[0]?.id ?? "";
+  const orderSlots = state.slots.filter(slot => slot.workOrderId === effectiveOrderId);
   function selectSlot(id: string) {
     const slot = state.slots.find(item => item.id === id);
     setSlotId(id);
@@ -72,41 +83,64 @@ function ManualPlanning() {
   }
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    dispatch({ type: "schedule", workOrderId: orderId, resourceId, date, start: parseTime(start) ?? -1, slotId: slotId || orderSlots[0]?.id });
+    dispatch({ type: "schedule", workOrderId: effectiveOrderId, resourceId, date, start: parseTime(start) ?? -1, slotId: slotId || orderSlots[0]?.id });
   }
   const selectedSlot = orderSlots.find(item => item.id === slotId) ?? orderSlots[0];
   const duration = selectedSlot ? selectedSlot.end - selectedSlot.start : DEFAULT_DURATION;
-  return <details className="border-t border-slate-200 bg-slate-50 p-4"><summary className="cursor-pointer text-xs font-semibold text-slate-600"><Keyboard size={15} className="mr-2 inline" />Plannen zonder slepen</summary><form onSubmit={submit} className="mt-4 space-y-3 text-xs"><label htmlFor={`${prefix}-order`} className="block font-medium">Werkorder</label><select id={`${prefix}-order`} value={orderId} onChange={event => selectOrder(event.target.value)} className={`${inputClass} w-full`}>{!active.length && <option value="">Geen actieve werkorders</option>}{active.map(order => <option key={order.id} value={order.id}>{order.id} · {order.status === "planned" ? "verplaatsen" : "inplannen"}</option>)}</select>
+  return <details className="border-t border-slate-200 bg-white p-3"><summary className="cursor-pointer text-xs font-medium text-slate-500"><Keyboard size={15} className="mr-2 inline" />Afspraak plannen</summary><form onSubmit={submit} className="mt-4 space-y-3 text-xs"><label htmlFor={`${prefix}-order`} className="block font-medium">Werkorder</label><select id={`${prefix}-order`} value={effectiveOrderId} onChange={event => selectOrder(event.target.value)} className={`${inputClass} w-full`}>{!active.length && <option value="">Geen actieve werkorders</option>}{active.map(order => <option key={order.id} value={order.id}>{order.id} · {customerName(state, order.customerId)}</option>)}</select>
     {orderSlots.length > 1 && <label className="block">Afspraak<select className={`${inputClass} mt-1 w-full`} value={slotId || orderSlots[0]?.id} onChange={event => selectSlot(event.target.value)}>{orderSlots.map(slot => <option key={slot.id} value={slot.id}>{formatDate(slot.date)} · {formatTime(slot.start)}</option>)}</select></label>}
-    <label className="block font-medium">Resource<select value={resourceId} onChange={event => setResourceId(event.target.value)} className={`${inputClass} mt-1 w-full`} required>{state.resources.map(resource => <option key={resource.id} value={resource.id}>{resource.name}</option>)}</select></label><div className="grid grid-cols-2 gap-2"><label className="font-medium">Datum<input type="date" required value={date} onChange={event => setDate(event.target.value)} className={`${inputClass} mt-1 w-full min-w-0`} /></label><label className="font-medium">Starttijd<select value={start} onChange={event => setStart(event.target.value)} className={`${inputClass} mt-1 w-full`}>{times.map(time => <option key={time} value={formatTime(time)}>{formatTime(time)}</option>)}</select></label></div><p className="text-slate-500">Duur: {duration / 60} uur · {orderSlots.length ? "bestaande duur behouden" : "standaardduur"}</p><Button className="w-full" type="submit" disabled={!orderId || !resourceId}>{orderSlots.length ? "Afspraak verplaatsen" : "Werkorder inplannen"}</Button></form></details>;
+    <label className="block font-medium">Resource<select value={resourceId} onChange={event => setResourceId(event.target.value)} className={`${inputClass} mt-1 w-full`} required>{state.resources.map(resource => <option key={resource.id} value={resource.id}>{resource.name}</option>)}</select></label><div className="grid grid-cols-2 gap-2"><label className="font-medium">Datum<input type="date" required value={date} onChange={event => setDate(event.target.value)} className={`${inputClass} mt-1 w-full min-w-0`} /></label><label className="font-medium">Starttijd<select value={start} onChange={event => setStart(event.target.value)} className={`${inputClass} mt-1 w-full`}>{times.map(time => <option key={time} value={formatTime(time)}>{formatTime(time)}</option>)}</select></label></div><p className="text-slate-500">Duur: {duration / 60} uur</p><Button className="w-full" type="submit" disabled={!effectiveOrderId || !resourceId}>{orderSlots.length ? "Verplaatsen" : "Inplannen"}</Button></form></details>;
 }
 function PlanningBacklog() {
   const { state } = useApp();
   const [query, setQuery] = useState("");
   const backlog = state.workOrders.filter(order => order.status === "unplanned");
   const matching = backlog.filter(order => `${order.id} ${customerName(state, order.customerId)} ${order.installation} ${order.site}`.toLowerCase().includes(query.toLowerCase()));
-  return <aside aria-label="Ongeplande werkorders" className="flex w-full shrink-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs lg:w-72"><div className="p-4"><div className="flex items-center justify-between"><h2 className="flex items-center gap-2 text-sm font-bold"><Inbox size={17} className="text-teal-700" />Nog in te plannen</h2><span className="rounded-md bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-800">{backlog.length}</span></div><p className="mt-2 text-xs leading-5 text-slate-400">Sleep een werkorder naar een vrij tijdstip.<br />Een nieuwe afspraak duurt 2 uur.</p><label className="relative mt-4 block"><span className="sr-only">Zoek in backlog</span><Search size={15} className="absolute left-3 top-3 text-slate-400" /><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Zoek werkorder…" className={`${inputClass} w-full pl-9`} /></label></div><div className="max-h-[430px] flex-1 space-y-3 overflow-y-auto bg-slate-50/60 p-3 lg:max-h-[630px]">{matching.map(order => <WorkOrderCard key={order.id} order={order} />)}{!matching.length && <p className="py-8 text-center text-xs text-slate-500">{backlog.length ? "Geen werkorders gevonden." : "Alles is ingepland."}</p>}</div><ManualPlanning /></aside>;
+  return <aside aria-label="Ongeplande werkorders" className="flex w-full shrink-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs md:w-56 xl:w-60">
+    <div className="border-b border-slate-100 p-3"><div className="flex items-center justify-between"><h2 className="flex items-center gap-2 text-sm font-semibold"><Inbox size={16} className="text-slate-400" />Te plannen</h2><span className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-medium tabular-nums text-slate-600">{backlog.length}</span></div><label className="relative mt-3 block"><span className="sr-only">Zoek in backlog</span><Search size={14} className="absolute left-3 top-3 text-slate-400" /><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Zoek werkorder…" className={`${inputClass} w-full pl-9`} /></label></div>
+    <div className="max-h-64 flex-1 space-y-2 overflow-y-auto bg-slate-50/50 p-2 md:max-h-[calc(100dvh-20rem)]">{matching.map(order => <WorkOrderCard key={order.id} order={order} />)}{!matching.length && <p className="py-8 text-center text-xs text-slate-400">{backlog.length ? "Geen werkorders gevonden." : "Alles ingepland."}</p>}</div>
+    {backlog.length > matching.length && <p className="px-3 py-2 text-[10px] text-slate-400">{matching.length} van {backlog.length}</p>}<ManualPlanning />
+  </aside>;
 }
 function TimeTarget({ resource, date, time }: { resource: Resource; date: string; time: number }) {
   const { setNodeRef, isOver } = useDroppable({ id: `target-${resource.id}-${date}-${time}`, data: { resourceId: resource.id, date, start: time } satisfies DropData });
-  return <div ref={setNodeRef} title={`${resource.name} · ${formatDate(date)} · ${formatTime(time)}`} className={`h-full border-r border-slate-100 last:border-r-0 ${isOver ? "bg-teal-200 ring-2 ring-inset ring-teal-500" : time % 60 === 0 ? "bg-white" : "bg-slate-50/50"}`} />;
+  return <div ref={setNodeRef} title={`${resource.name} · ${formatDate(date)} · ${formatTime(time)}`} className={`border-t ${time % 60 === 0 ? "border-slate-200/65" : "border-dashed border-slate-100"} ${isOver ? "bg-teal-200/70 ring-1 ring-inset ring-teal-500" : ""}`} />;
 }
-function PlannedBlock({ slot, top, conflict }: { slot: PlanningSlot; top: number; conflict: boolean }) {
+function PlannedBlock({ slot, column, columns, conflict }: { slot: PlanningSlot; column: number; columns: number; conflict: boolean }) {
   const { state, openOrder } = useApp();
   const order = state.workOrders.find(item => item.id === slot.workOrderId)!;
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({ id: slot.id, data: { workOrderId: slot.workOrderId, slotId: slot.id } satisfies DragData });
-  return <div ref={setNodeRef} style={{ left: `${(slot.start - WINDOW_START) / (WINDOW_END - WINDOW_START) * 100}%`, width: `${(slot.end - slot.start) / (WINDOW_END - WINDOW_START) * 100}%`, top }} className={`absolute z-10 flex h-[52px] min-w-3 items-stretch overflow-hidden rounded-md border shadow-xs ${isDragging ? "opacity-30" : ""} ${conflict ? "border-amber-400 bg-amber-50 text-amber-950" : "border-teal-300 bg-teal-50 text-teal-950"}`}>
-    <button {...attributes} {...listeners} aria-label={`Verplaats ${order.id}, ${formatDate(slot.date)}, ${formatTime(slot.start)}`} className="flex w-5 shrink-0 touch-none items-center justify-center bg-black/3 hover:bg-black/10"><GripVertical size={13} /></button><button onClick={() => openOrder(order.id)} className="min-w-0 flex-1 px-1.5 text-left" title={`${order.id} · ${customerName(state, order.customerId)} · ${formatTime(slot.start)}–${formatTime(slot.end)}${conflict ? " · Bestaand planningsconflict" : ""}`}><p className="truncate text-[10px] font-bold">{conflict && <AlertTriangle size={10} className="mr-1 inline" />}{order.id}</p><p className="truncate text-[9px]">{customerName(state, order.customerId)}</p><p className="truncate text-[9px] opacity-65">{formatTime(slot.start)}–{formatTime(slot.end)}</p></button>
+  const visibleStart = Math.max(WINDOW_START, Math.min(slot.start, WINDOW_END - SLOT_STEP));
+  const top = LANE_PADDING + (visibleStart - WINDOW_START) / (WINDOW_END - WINDOW_START) * TIMELINE_HEIGHT;
+  const height = Math.max(20, (Math.min(slot.end, WINDOW_END) - visibleStart) / (WINDOW_END - WINDOW_START) * TIMELINE_HEIGHT);
+  const outside = slot.start < WINDOW_START || slot.end > WINDOW_END;
+  return <div ref={setNodeRef} style={{ top, height, left: `calc(${column / columns * 100}% + 3px)`, width: `calc(${100 / columns}% - 6px)` }} className={`group absolute z-10 flex overflow-hidden rounded-md border shadow-xs transition-[box-shadow,opacity] hover:z-20 hover:shadow-md ${isDragging ? "opacity-25" : ""} ${conflict || outside ? "border-amber-300 bg-amber-50 text-amber-950" : "border-teal-200 bg-teal-50 text-teal-950"}`}>
+    <button {...attributes} {...listeners} aria-label={`Verplaats ${order.id}, ${formatDate(slot.date)}, ${formatTime(slot.start)}`} className="flex w-3.5 shrink-0 touch-none cursor-grab items-center justify-center border-r border-current/5 text-current/35 hover:bg-black/5 hover:text-current/70 active:cursor-grabbing"><GripVertical size={10} /></button>
+    <button onClick={() => openOrder(order.id)} className="min-w-0 flex-1 px-1 py-0.5 text-left" title={`${customerName(state, order.customerId)} · ${order.id} · ${formatTime(slot.start)}–${formatTime(slot.end)}${conflict ? " · Overlap" : outside ? " · Buiten werktijd" : ""}`}>
+      <p className="truncate text-[11px] font-semibold leading-3">{(conflict || outside) && <AlertTriangle size={9} className="mr-0.5 inline" />}{customerName(state, order.customerId)}</p>
+      {height >= 26 && <p className="mt-0.5 truncate text-[9px] leading-[10px] opacity-65">{order.id}</p>}
+      {height >= 48 && <p className="mt-1 truncate text-[9px] leading-[10px] tabular-nums opacity-50">{formatTime(slot.start)}–{formatTime(slot.end)}</p>}
+    </button>
   </div>;
 }
-function PlannerLane({ resource, date, slots, height }: { resource: Resource; date: string; slots: PlanningSlot[]; height: number }) {
+function PlannerLane({ resource, date, slots }: { resource: Resource; date: string; slots: PlanningSlot[] }) {
   const levels: PlanningSlot[][] = [];
   const placed = [...slots].sort((a, b) => a.start - b.start).map(slot => {
-    let level = levels.findIndex(items => items.every(other => !overlaps(slot, other)));
-    if (level < 0) { level = levels.length; levels.push([]); }
-    levels[level].push(slot); return { slot, level };
+    let column = levels.findIndex(items => items.every(other => !overlaps(slot, other)));
+    if (column < 0) { column = levels.length; levels.push([]); }
+    levels[column].push(slot);
+    return { slot, column };
   });
-  return <div className="relative border-r border-b border-slate-200" style={{ height: Math.max(height, levels.length * 58 + 20) }}><div className="absolute inset-0 grid grid-cols-20">{times.map(time => <TimeTarget key={time} resource={resource} date={date} time={time} />)}</div>{placed.map(({ slot, level }) => <PlannedBlock key={slot.id} slot={slot} top={10 + level * 58} conflict={slots.some(other => overlaps(slot, other))} />)}</div>;
+  return <div className="relative border-r border-b border-slate-200 bg-white" style={{ height: LANE_HEIGHT }}>
+    <div className="absolute inset-x-0 grid grid-rows-20" style={{ top: LANE_PADDING, height: TIMELINE_HEIGHT }}>{times.map(time => <TimeTarget key={time} resource={resource} date={date} time={time} />)}</div>
+    {placed.map(({ slot, column }) => <PlannedBlock key={slot.id} slot={slot} column={column} columns={levels.length} conflict={slots.some(other => overlaps(slot, other))} />)}
+  </div>;
+}
+function ResourceLabel({ resource }: { resource: Resource }) {
+  return <div className="sticky left-0 z-20 flex items-center border-r border-b border-slate-200 bg-white pl-3 pr-10" style={{ height: LANE_HEIGHT }}>
+    <p className="text-xs font-semibold leading-5 text-slate-600">{resource.name}</p>
+    {[480, 600, 720, 840, 960, 1080].map(time => <span key={time} className="absolute right-1.5 font-mono text-[9px] tabular-nums text-slate-400" style={{ top: LANE_PADDING + (time - WINDOW_START) / (WINDOW_END - WINDOW_START) * TIMELINE_HEIGHT - 5 }}>{formatTime(time)}</span>)}
+  </div>;
 }
 function WeekPlanner() {
   const isMobile = useIsMobile();
@@ -116,13 +150,15 @@ function WeekPlanner() {
   const weekStart = addWeeks(startOfWeek(calendarDate(state.today), { weekStartsOn: 1 }), offset);
   const days = Array.from({ length: 7 }, (_, index) => format(addDays(weekStart, index), "yyyy-MM-dd"));
   const slots = activeSlots(state).filter(slot => days.includes(slot.date));
-  const rowHeight = (resourceId: string) => Math.max(100, ...days.map(date => slots.filter(slot => slot.resourceId === resourceId && slot.date === date).length * 58 + 20));
-  return <section aria-label="Weekplanner" className="min-w-0 flex-1 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs"><div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 p-4"><div><h2 className="flex items-center gap-2 text-sm font-bold"><CalendarDays size={17} className="text-teal-700" />Week {format(weekStart, "II")}<span className="font-normal text-slate-400">· {format(weekStart, "yyyy")}</span></h2><p className="mt-1 text-xs text-slate-500">{format(weekStart, "d MMM", { locale: nl })} – {format(addDays(weekStart, 6), "d MMM", { locale: nl })}</p></div><div className="flex items-center gap-1"><Button variant="secondary" className="min-h-9" onClick={() => setOffset(0)}>Vandaag</Button><Button variant="quiet" aria-label="Vorige week" onClick={() => setOffset(value => value - 1)}><ChevronLeft size={18} /></Button><Button variant="quiet" aria-label="Volgende week" onClick={() => setOffset(value => value + 1)}><ChevronRight size={18} /></Button></div></div>
-    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 bg-slate-50/50 px-4 py-3 text-[10px] text-slate-500"><span>{state.resources.length} resources · {slots.length} afspraken deze week</span><span>08:00–18:00 · stappen van 30 min</span></div>
-    {!isMobile && <div className="max-h-[790px] overflow-auto"><div className="min-w-[2100px]"><div className="sticky top-0 z-20 grid grid-cols-[170px_repeat(7,minmax(0,1fr))] bg-white"><div className="sticky left-0 z-30 flex items-center border-r border-b border-slate-200 bg-slate-50 px-4 text-xs font-medium text-slate-500">Resource</div>{days.map(date => <div key={date} className={`border-r border-b border-slate-200 px-3 pt-3 ${date === state.today ? "bg-teal-50" : "bg-slate-50"}`}><p className={`text-xs font-semibold capitalize ${date === state.today ? "text-teal-800" : "text-slate-600"}`}>{format(calendarDate(date), "EEEE d MMM", { locale: nl })}{date === state.today && <span className="ml-2 rounded bg-teal-600 px-1 py-0.5 text-[9px] text-white">Vandaag</span>}</p><div className="mt-3 flex justify-between pb-1 font-mono text-[9px] text-slate-400"><span>08:00</span><span>12:00</span><span>18:00</span></div></div>)}</div>{state.resources.map(resource => <div key={resource.id} className="grid grid-cols-[170px_repeat(7,minmax(0,1fr))]"><div className="sticky left-0 z-20 flex items-center gap-2 border-r border-b border-slate-200 bg-white px-3"><span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-[10px] font-bold text-slate-500">{resource.name.split(" ").slice(0, 2).map(word => word[0]).join("")}</span><div><p className="text-xs font-semibold leading-5">{resource.name}</p><p className="text-[9px] text-slate-400">{resource.role}</p></div></div>{days.map(date => <PlannerLane key={date} resource={resource} date={date} slots={slots.filter(slot => slot.resourceId === resource.id && slot.date === date)} height={rowHeight(resource.id)} />)}</div>)}</div></div>}
-    {isMobile && <div><div className="grid grid-cols-7 border-b border-slate-200">{days.map((date, index) => <button key={date} aria-pressed={selectedDay === index} onClick={() => setSelectedDay(index)} className={`py-3 text-center text-xs ${selectedDay === index ? "bg-teal-700 font-semibold text-white" : "text-slate-500"}`}><span className="block capitalize">{format(calendarDate(date), "EEEEEE", { locale: nl })}</span><span className="mt-1 block">{format(calendarDate(date), "d")}</span></button>)}</div>{state.resources.map(resource => <div key={resource.id}><h3 className="px-4 pt-4 text-sm font-semibold">{resource.name}</h3><div className="flex justify-between px-4 pb-1 pt-2 font-mono text-[9px] text-slate-400"><span>08:00</span><span>12:00</span><span>18:00</span></div><PlannerLane resource={resource} date={days[selectedDay]} slots={slots.filter(slot => slot.resourceId === resource.id && slot.date === days[selectedDay])} height={100} /></div>)}</div>}
-    {!state.resources.length && <p className="p-8 text-center text-sm text-slate-500">Geen resources beschikbaar. Controleer de CSV-export.</p>}
-    <div className="flex flex-wrap items-center justify-between gap-3 p-4 text-[10px] text-slate-400"><div className="flex items-center gap-4"><span className="flex items-center gap-1.5"><span className="size-2 rounded-sm bg-teal-400" />Ingepland</span><span className="flex items-center gap-1.5"><span className="size-2 rounded-sm bg-amber-400" />Bestaand conflict</span></div><span className="hidden md:block">Schuif horizontaal voor de volledige week →</span></div>
+  const gridClass = "grid grid-cols-[140px_repeat(7,minmax(0,1fr))]";
+  return <section aria-label="Weekplanner" className="w-full min-w-0 flex-1 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3"><div><h2 className="flex items-center gap-2 text-sm font-semibold"><CalendarDays size={16} className="text-slate-400" />Week {format(weekStart, "II")}<span className="text-xs font-normal text-slate-400">{format(weekStart, "d MMM", { locale: nl })} – {format(addDays(weekStart, 6), "d MMM yyyy", { locale: nl })}</span></h2></div><div className="flex items-center gap-1"><Button variant="quiet" className="min-h-8 px-2" aria-label="Vorige week" onClick={() => setOffset(value => value - 1)}><ChevronLeft size={17} /></Button><Button variant="secondary" className="min-h-8 text-xs" onClick={() => setOffset(0)}>Vandaag</Button><Button variant="quiet" className="min-h-8 px-2" aria-label="Volgende week" onClick={() => setOffset(value => value + 1)}><ChevronRight size={17} /></Button></div></div>
+    {!isMobile ? <div className="max-h-[calc(100dvh-16rem)] min-h-80 overflow-auto"><div className="min-w-[900px]">
+      <div className={`${gridClass} sticky top-0 z-30 bg-slate-50`}><div className="sticky left-0 z-40 flex items-center border-r border-b border-slate-200 bg-slate-50 px-3 text-[11px] text-slate-400">Resource</div>{days.map(date => <div key={date} className={`border-r border-b border-slate-200 px-2 py-3 ${date === state.today ? "bg-teal-50" : "bg-slate-50"}`}><p className={`text-xs font-medium capitalize ${date === state.today ? "text-teal-800" : "text-slate-500"}`}>{format(calendarDate(date), "EEE", { locale: nl })}<span className={`ml-1.5 inline-flex size-6 items-center justify-center rounded-md ${date === state.today ? "bg-teal-700 text-white" : "text-slate-700"}`}>{format(calendarDate(date), "d")}</span></p></div>)}</div>
+      {state.resources.map(resource => <div key={resource.id} className={gridClass}><ResourceLabel resource={resource} />{days.map(date => <PlannerLane key={date} resource={resource} date={date} slots={slots.filter(slot => slot.resourceId === resource.id && slot.date === date)} />)}</div>)}
+    </div></div> : <div><div className="grid grid-cols-7 border-b border-slate-200">{days.map((date, index) => <button key={date} aria-pressed={selectedDay === index} onClick={() => setSelectedDay(index)} className={`py-2.5 text-center text-xs ${selectedDay === index ? "bg-teal-700 font-medium text-white" : "text-slate-400 hover:bg-slate-50"}`}><span className="block capitalize">{format(calendarDate(date), "EEEEEE", { locale: nl })}</span><span className="mt-1 block">{format(calendarDate(date), "d")}</span></button>)}</div>{state.resources.map(resource => <div key={resource.id}><h3 className="border-b border-slate-100 bg-slate-50 px-3 py-2.5 text-xs font-semibold text-slate-600">{resource.name}</h3><div className="grid grid-cols-[44px_minmax(0,1fr)]"><div className="relative border-b border-r border-slate-200" style={{ height: LANE_HEIGHT }}>{[480, 600, 720, 840, 960, 1080].map(time => <span key={time} className="absolute right-1 font-mono text-[9px] text-slate-400" style={{ top: LANE_PADDING + (time - WINDOW_START) / (WINDOW_END - WINDOW_START) * TIMELINE_HEIGHT - 5 }}>{formatTime(time)}</span>)}</div><PlannerLane resource={resource} date={days[selectedDay]} slots={slots.filter(slot => slot.resourceId === resource.id && slot.date === days[selectedDay])} /></div></div>)}</div>}
+    {!state.resources.length && <p className="p-8 text-center text-sm text-slate-400">Geen resources beschikbaar.</p>}
+    <div className="flex items-center justify-between gap-3 border-t border-slate-100 px-4 py-2.5 text-[10px] text-slate-400"><span>{slots.length} afspraken</span><span className="flex items-center gap-3"><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-teal-400" />Ingepland</span><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-amber-400" />Overlap</span></span></div>
   </section>;
 }
 export function PlanningOverview() {
@@ -137,9 +173,11 @@ export function PlanningOverview() {
     setDragging(null);
     if (source && target) dispatch({ type: "schedule", ...source, ...target });
   }
-  return <><div className="mb-7"><p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-teal-700">Werkvoorbereiding</p><h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Planning</h1><p className="mt-2 text-sm text-slate-500">Van werkorder naar afspraak. Sleep, plan en verplaats in één overzicht.</p></div>
-    <DndContext id="maintenance-planning" sensors={sensors} collisionDetection={args => args.pointerCoordinates ? pointerWithin(args) : closestCenter(args)} onDragStart={dragStart} onDragEnd={dragEnd} onDragCancel={() => setDragging(null)} accessibility={{ screenReaderInstructions: { draggable: "Druk op spatie om een werkorder op te pakken. Gebruik de pijltjestoetsen om een tijdstip te kiezen. Druk op spatie om te plaatsen of Escape om te annuleren. Je kunt ook het formulier Plannen zonder slepen gebruiken." }, announcements: { onDragStart: () => "Werkorder opgepakt. Kies een resource, datum en tijdstip.", onDragOver: ({ over }) => { const target = over?.data.current as DropData | undefined; return target ? `${state.resources.find(resource => resource.id === target.resourceId)?.name}, ${formatDate(target.date)}, ${formatTime(target.start)}` : "Buiten de planner."; }, onDragEnd: () => "Sleepactie beëindigd. Controleer de planningsmelding.", onDragCancel: () => "Slepen geannuleerd." } }}>
-      <div className="flex flex-col items-start gap-5 lg:flex-row"><PlanningBacklog /><WeekPlanner /></div><DragOverlay dropAnimation={null}>{draggedOrder && <div className="pointer-events-none"><div className="w-64 rounded-xl border border-teal-400 bg-white p-4 shadow-xl"><p className="text-xs font-bold text-teal-700">{draggedOrder.id}</p><p className="mt-2 text-sm font-semibold">{customerName(state, draggedOrder.customerId)}</p><p className="mt-1 truncate text-xs text-slate-500">{draggedOrder.installation}</p></div></div>}</DragOverlay>
-    </DndContext><div className="mt-5 flex items-start gap-2 rounded-lg border border-slate-200 bg-white/70 p-3 text-xs leading-5 text-slate-500"><AlertTriangle size={15} className="mt-0.5 shrink-0 text-amber-600" /><p>De bron bevat ongeldige en overlappende planning. Ongeldige afspraken zijn niet hersteld: de actieve werkorders staan in de backlog. Nieuwe planning wordt altijd op conflicten gecontroleerd.</p></div>
+  return <>
+    <h1 className="mb-5 text-2xl font-semibold tracking-tight">Planning</h1>
+    <DndContext id="maintenance-planning" sensors={sensors} collisionDetection={args => args.pointerCoordinates ? pointerWithin(args) : closestCenter(args)} onDragStart={dragStart} onDragEnd={dragEnd} onDragCancel={() => setDragging(null)} accessibility={{ screenReaderInstructions: { draggable: "Druk op spatie om een werkorder op te pakken. Gebruik de pijltjestoetsen om een tijdstip te kiezen. Druk op spatie om te plaatsen of Escape om te annuleren. Je kunt ook het formulier Afspraak plannen gebruiken." }, announcements: { onDragStart: () => "Werkorder opgepakt.", onDragOver: ({ over }) => { const target = over?.data.current as DropData | undefined; return target ? `${state.resources.find(resource => resource.id === target.resourceId)?.name}, ${formatDate(target.date)}, ${formatTime(target.start)}` : "Buiten de planner."; }, onDragEnd: () => "Sleepactie beëindigd.", onDragCancel: () => "Slepen geannuleerd." } }}>
+      <div className="flex flex-col items-start gap-4 md:flex-row"><PlanningBacklog /><WeekPlanner /></div>
+      <DragOverlay dropAnimation={null}>{draggedOrder && <div className="pointer-events-none w-56 rounded-xl border border-teal-400 bg-white p-3 shadow-xl ring-4 ring-teal-500/10"><p className="text-sm font-semibold text-slate-800">{customerName(state, draggedOrder.customerId)}</p><p className="mt-1 text-[11px] text-slate-400">{draggedOrder.id}</p><p className="mt-1 truncate text-xs text-slate-500">{draggedOrder.installation}</p></div>}</DragOverlay>
+    </DndContext>
   </>;
 }

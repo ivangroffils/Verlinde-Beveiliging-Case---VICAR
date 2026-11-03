@@ -43,7 +43,11 @@ try {
   await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht' && document.querySelector('table tbody tr')", "maintenance ready");
   await new Promise(resolve => setTimeout(resolve, 500));
   assert.equal(await evaluate("document.documentElement.lang"), "nl");
-  assert.ok(await evaluate("document.body.textContent.includes('Prototype mode \u2014 changes reset on reload.')"));
+  assert.equal(await evaluate("document.body.textContent.includes('Prototype mode') || document.body.textContent.includes('CSV-snapshot')"), false);
+  await waitFor("[...document.querySelectorAll('img[alt=Verlinde]')].every(image => image.complete && image.naturalWidth > 0)", "logos loaded");
+  const logoStyles = await evaluate("[...document.querySelectorAll('img[alt=Verlinde]')].map(image => { const rect = image.getBoundingClientRect(); const parent = image.parentElement.getBoundingClientRect(); return { fit: getComputedStyle(image).objectFit, fits: rect.width <= parent.width && rect.height <= parent.height }; })");
+  assert.equal(logoStyles.length, 2);
+  assert.ok(logoStyles.every(logo => logo.fit === "contain" && logo.fits));
   assert.equal(await evaluate("document.querySelectorAll('table tbody tr').length"), 193);
   assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
   await screenshot("maintenance-desktop");
@@ -54,6 +58,9 @@ try {
   await waitFor("document.querySelector('h1')?.textContent === 'Planning'", "planning route");
   await waitFor("document.querySelector('[aria-label=Weekplanner]')", "planner mounted");
   for (const name of ["Tom De Coninck", "Wout Vanhoutte", "Jens Maes", "Dirk Verlinde", "Brandtec (onderaannemer)"]) assert.ok(await evaluate(`document.querySelector('[aria-label=Weekplanner]').textContent.includes(${JSON.stringify(name)})`));
+  const bookingLabels = await evaluate("(() => { const handle = document.querySelector('[aria-label^=\"Verplaats \"]'); const lines = [...handle.nextElementSibling.querySelectorAll('p')].map(line => line.textContent); return { order: handle.getAttribute('aria-label').split(',')[0].replace('Verplaats ', ''), lines }; })()");
+  assert.notEqual(bookingLabels.lines[0], bookingLabels.order);
+  assert.equal(bookingLabels.lines[1], bookingLabels.order);
   await screenshot("planning-desktop");
   await clickText('a[href="/"]', "Onderhoud");
   await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht'", "return to maintenance");
@@ -65,16 +72,16 @@ try {
   await waitFor("document.body.textContent.includes('TEMP-001 aangemaakt')", "create order");
   await clickText('a[href="/planning"]', "Planning");
   await waitFor("document.querySelector('h1')?.textContent === 'Planning' && document.querySelector('[aria-label=\"Ongeplande werkorders\"]').textContent.includes('TEMP-001')", "created order in backlog");
-  await clickText("summary", "Plannen zonder slepen");
+  await clickText("summary", "Afspraak plannen");
   await fill('form select[id$="-order"]', "TEMP-001");
   await fill("form select:not([id])", "TDC");
   await fill('form input[type="date"]', "2030-01-07");
-  await clickText('form button[type="submit"]', "Werkorder inplannen");
+  await clickText('form button[type="submit"]', "Inplannen");
   await waitFor("document.body.textContent.includes('TEMP-001 ingepland.')", "schedule order");
   
   await fill('form input[type="date"]', "2030-01-08");
   await fill("form div.grid select", "10:00");
-  await clickText('form button[type="submit"]', "Afspraak verplaatsen");
+  await clickText('form button[type="submit"]', "Verplaatsen");
   await waitFor("document.body.textContent.includes('TEMP-001 verplaatst.')", "reschedule order");
   // Select the first 2030 week by navigating directly through the retained form's order drawer.
   await clickText('a[href="/"]', "Onderhoud");
@@ -122,6 +129,10 @@ try {
   await key("ArrowRight", "ArrowRight", 39);
   await key("Space", " ", 32);
   await waitFor("document.body.textContent.includes('TEMP-003 ingepland.')", "keyboard drag schedules order");
+  const expectedKeyboardDate = await evaluate("document.querySelector('[title^=\"Tom De Coninck\"]').title.split(' · ')[1]");
+  const keyboardLabel = await evaluate("document.querySelector('[aria-label^=\"Verplaats TEMP-003,\"]').getAttribute('aria-label')");
+  assert.ok(keyboardLabel.includes(expectedKeyboardDate));
+  assert.ok(keyboardLabel.endsWith("08:00"));
   results.push("Actual pointer drag schedules and moves orders, rejects overlaps without losing backlog cards; keyboard drag schedules successfully.");
   await send("Page.reload");
   await waitFor("document.querySelector('h1')?.textContent === 'Planning' && !document.body.textContent.includes('TEMP-001') && !document.body.textContent.includes('TEMP-002') && !document.body.textContent.includes('TEMP-003')", "reload restores source");
@@ -144,12 +155,15 @@ try {
   await screenshot("planning-mobile");
   results.push("Desktop, tablet and mobile layouts fit the viewport; mobile uses a selected-day resource planner.");
   await evaluate("document.querySelector('header button[aria-label=\"Menu openen\"]')?.blur()");
-  await clickText("header button", "Gegevensproblemen");
+  await evaluate("document.querySelector('[aria-label=\"Gegevensproblemen tonen\"]').click()");
   await waitFor("document.querySelector('dialog[open]')?.textContent.includes('Gegevensproblemen')", "issues dialog");
-  assert.ok(await evaluate("document.querySelector('dialog').textContent.includes('89 ongeldige planningsrijen')"));
+  await clickText("dialog button", "Informatie");
+  await fill('dialog input', "Tijdvolgorde");
+  await waitFor("document.querySelectorAll('dialog article').length === 69", "reversed times are informational");
+  assert.ok(await evaluate("[...document.querySelectorAll('dialog article')].every(article => article.textContent.includes('Informatie'))"));
   await screenshot("data-issues-mobile");
   assert.deepEqual(errors, []);
-  results.push("No uncaught browser exceptions; all 89 invalid source planning rows remain reported.");
+  results.push("No browser exceptions; all 69 reversed imported time ranges are informational. Full logos use object-contain without cropping.");
   console.log(JSON.stringify({ passed: results, screenshots: "artifacts/*.png" }, null, 2));
 } finally {
   ws?.close(); browser.kill();

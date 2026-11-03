@@ -15,7 +15,7 @@ export interface PlanningSlot {
 }
 export interface Execution extends PlanningSlot { source: "csv" | "session" }
 export interface DataIssue {
-  id: string; file: string; row: number; field: string; message: string;
+  id: string; file: string; row: number; field: string; message: string; severity: "info" | "warning" | "error";
   workOrderId?: string; sheetId?: string;
 }
 export interface InvalidPlanningRow {

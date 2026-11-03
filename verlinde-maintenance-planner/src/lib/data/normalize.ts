@@ -6,7 +6,7 @@ import { loadTable } from "./repository.ts";
 export type Tables = Record<TableName, CsvTable>;
 export function normalizeData(tables: Tables, today = brusselsToday()): AppData {
   const issues: DataIssue[] = Object.values(tables).flatMap(table => table.issues);
-  const issue = (table: CsvTable, row: number, field: string, message: string, refs: { workOrderId?: string; sheetId?: string } = {}) => issues.push({ id: `issue-${issues.length}`, file: table.file, row, field, message, ...refs });
+  const issue = (table: CsvTable, row: number, field: string, message: string, refs: { workOrderId?: string; sheetId?: string } = {}, severity: DataIssue["severity"] = "warning") => issues.push({ id: `issue-${issues.length}`, file: table.file, row, field, message, severity, ...refs });
   const get = (raw: Record<string, string>, key: string) => (raw[key] ?? "").trim();
   const unique = (table: CsvTable, key: string) => {
     const seen = new Set<string>();
@@ -71,20 +71,28 @@ export function normalizeData(tables: Tables, today = brusselsToday()): AppData 
       if (!orderIds.has(id)) reasons.push(["werkbon", `Werkorder ${id || "zonder nummer"} ontbreekt.`]);
       if (!resourceIds.has(resourceId)) reasons.push(["tech", `Resource ${resourceId || "zonder code"} ontbreekt.`]);
       if (!date) reasons.push(["datum", "Datum ontbreekt of is ongeldig."]);
-      if (start === null || end === null || end <= start) reasons.push(["van/tot", "Ongeldig tijdsbereik; bronwaarden zijn ongewijzigd behouden."]);
+      if (start === null || end === null || end === start) reasons.push(["van/tot", "Ongeldig tijdsbereik; bronwaarden zijn ongewijzigd behouden."]);
       reasons.forEach(([field, message]) => issue(table, row, field, message, { workOrderId: id }));
       if (reasons.length) {
         if (planned) { invalidOrderIds.add(id); invalidPlanning.push({ file: table.file, row, workOrderId: id, raw: { ...raw } }); }
         return;
       }
-      result.push({ id: `${planned ? "pl" : "ex"}-${row}`, workOrderId: id, resourceId, date: date!, start: start!, end: end! });
+      if (start! > end!) {
+        issue(table, row, "van/tot", `Tijdvolgorde genormaliseerd: ${get(raw, "van")}-${get(raw, "tot")} naar ${get(raw, "tot")}-${get(raw, "van")}.`, { workOrderId: id }, "info");
+      }
+      const normalizedStart = Math.min(start!, end!);
+      const normalizedEnd = Math.max(start!, end!);
+      if (planned && (normalizedStart < 480 || normalizedEnd > 1080)) {
+        issue(table, row, "van/tot", "Afspraak valt buiten 08:00-18:00.", { workOrderId: id });
+      }
+      result.push({ id: `${planned ? "pl" : "ex"}-${row}`, workOrderId: id, resourceId, date: date!, start: normalizedStart, end: normalizedEnd });
     });
     return result;
   }
   const importedSlots = hours(tables.WO_HRS_PL, true);
   const executions: Execution[] = hours(tables.WO_HRS_EX, false).map(slot => ({ ...slot, source: "csv" }));
-  // Any invalid source planning makes that active order unplanned. No source row is repaired.
-  const slots = importedSlots.filter(slot => !invalidOrderIds.has(slot.workOrderId));
+  // Reject unusable rows, preserving every usable booking for the same order.
+  const slots = importedSlots;
   workOrders.forEach(order => { order.hasInvalidPlanning = invalidOrderIds.has(order.id); if (order.status !== "completed") order.status = slots.some(slot => slot.workOrderId === order.id) ? "planned" : "unplanned"; });
   slots.forEach((slot, index) => {
     const order = workOrders.find(item => item.id === slot.workOrderId);

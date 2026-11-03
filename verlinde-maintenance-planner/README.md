@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Verlinde Maintenance Planner
 
-## Getting Started
+Operationele onderhoudsopvolging en werkorderplanning met twee pagina's: **Onderhoud** en **Planning**.
 
-First, run the development server:
+## Lokaal starten
 
-```bash
+Gebruik Node.js 24 en installeer de afhankelijkheden met `npm ci`.
+
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Voor een productieversie: `npm run build` gevolgd door `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Gegevens en sessiegedrag
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+De acht BuildDesk-exports onder `data/` zijn de enige bron. Bestanden worden uitsluitend server-side gelezen met Papa Parse (UTF-8, puntkomma), getypeerd genormaliseerd en via de gedeelde layout aan de client doorgegeven. De app schrijft niets terug naar CSV en gebruikt geen database, authenticatie, externe API of browseropslag.
 
-## Learn More
+Aanmaken, plannen, verplaatsen en afronden bestaan alleen in React-applicatiestatus. Navigatie tussen de twee pagina's behoudt de sessie; herladen herstelt de CSV-toestand. De interface heeft daarom geen prototypebanner.
 
-To learn more about Next.js, take a look at the following resources:
+## Importregels
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Datums: strikt `dd/MM/yyyy`; tijden: strikt `HH:mm`.
+- Omgekeerde begin- en eindtijden zijn een legacy-exporteigenschap. `10:00 -> 08:00` wordt `08:00-10:00`, met een informatieve melding. Dit geldt voor geimporteerde planning en uitvoeringsuren. Bronbestanden blijven ongewijzigd.
+- Ontbrekende of ongeldige datums/tijden, nulduur, onbekende resources en ontbrekende werkorders maken een urenrij onbruikbaar. Oorspronkelijke onbruikbare planningsrijen blijven beschikbaar bij Gegevensproblemen. Gekoppelde actieve werkorders zonder andere bruikbare planning worden ongepland; handmatig inplannen maakt nieuwe sessieplanning.
+- Bestaande overlappende afspraken blijven zichtbaar en gemarkeerd. Geldige importafspraken buiten het werkvenster blijven behouden en krijgen een waarschuwing. Nieuwe afspraken mogen niet overlappen en moeten volledig binnen 08:00-18:00 vallen.
+- Gegevensproblemen hebben een ernst: informatie voor genormaliseerde tijdvolgorde, waarschuwingen voor ontbrekende/tegenstrijdige domeingegevens, fouten voor onleesbare bestanden of ongeldige CSV-schema's.
+- Expliciete installatiekoppelingen worden behouden, ook bij afwijkende klanten. Er worden geen koppelingen of onderhoudsdatums geraden.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Onderhoudsurgentie gebruikt uitsluitend `volgende`, vergeleken met de actuele datum in Europe/Brussels: verstreken, vandaag t/m 30 dagen vooruit, later, of ontbrekend. Bekende intervallen worden genormaliseerd; ambigue waarden blijven zichtbaar.
 
-## Deploy on Vercel
+`Completed` en `Invoiced` zijn gesloten. `Planned`, `Implemented`, `Verified` en onbekende statussen blijven actief. Een actieve werkorder is alleen ingepland als deze bruikbare planning heeft.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Planning en afronding
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Maandag t/m zondag, 08:00-18:00, stappen van 30 minuten, met volledige resourcenamen. Nieuwe afspraken duren twee uur; verplaatsen behoudt de duur, ook als een importduur geen veelvoud van 30 minuten is. De nieuwe starttijd volgt het 30-minutenraster. Slepen en het invoerformulier gebruiken dezelfde validatie. Functietitels bepalen geen beschikbaarheid.
+
+Afronden vereist geldige planning, registreert de geplande uren als uitvoering en verwijdert de werkorder uit actieve planning. Onderhoudsdatums worden hierdoor niet automatisch gewijzigd.
+
+## Controles
+
+```sh
+npm run lint -- --max-warnings=0
+npm run typecheck
+npm test
+npm run build
+```
+
+`tests/domain.test.ts` test parsing, normalisatie, de echte exports, planning en sessiemutaties. De bron bevat 193 onderhoudsfiches, 561 werkorders en vijf resources. Van de 521 planningsrijen hebben er 65 omgekeerde tijden en 24 nulduur.
+
+Voor de echte browserflow, start de productieversie op poort 3100 en voer `node tests/browser-smoke.mjs` uit. De controle gebruikt lokaal Edge via CDP, test slepen, conflicten, toetsenbord, afronden, herladen en responsive weergaven. `SMOKE_BROWSER` en `SMOKE_URL` zijn instelbaar. Schermafbeeldingen verschijnen in de genegeerde map `artifacts/`.

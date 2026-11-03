@@ -61,7 +61,9 @@ test("missing CSV files produce inspectable issues without throwing", async () =
 });
 test("real CSV normalization preserves expected source counts and issues", () => {
   assert.equal(real.customers.length, 138); assert.equal(real.sheets.length, 193); assert.equal(real.workOrders.length, 561); assert.equal(real.resources.length, 5);
-  assert.equal(real.invalidPlanning.length, 89);
+  assert.equal(real.invalidPlanning.length, 24);
+  assert.equal(real.issues.filter(issue => issue.severity === "info" && issue.file.includes("WO_HRS_PL")).length, 65);
+  assert.equal(real.issues.filter(issue => issue.severity === "info" && issue.file.includes("WO_HRS_EX")).length, 4);
   assert.equal(real.issues.filter(issue => issue.message.startsWith("Klant van werkorder verschilt")).length, 37);
   assert.equal(real.sheets.filter(item => !item.nextDate).length, 185);
   assert.ok(real.issues.some(issue => issue.message.includes("overlapt")));
@@ -78,17 +80,19 @@ test("every invalid imported planning row remains unchanged and its active order
   }
 });
 test("unknown resources, orphan orders and bad dates invalidate planning without correction", () => {
-  for (const changes of [{ tech: "unknown" }, { werkbon: "orphan" }, { datum: "31/02/2026" }, { van: "13:00", tot: "10:00" }, { van: "10:00", tot: "10:00" }]) {
+  for (const changes of [{ tech: "unknown" }, { werkbon: "orphan" }, { datum: "31/02/2026" }, { van: "", tot: "10:00" }, { van: "10:00", tot: "10:00" }]) {
     const raw = { werkbon: "w", datum: "03/11/2026", tech: "r", van: "08:00", tot: "10:00", taak: "", ...changes };
     const result = normalizeData(tablesWithPlanning(raw), "2026-11-03");
     assert.equal(result.slots.length, 0); assert.deepEqual(result.invalidPlanning[0].raw, raw); assert.ok(result.issues.length);
   }
 });
-test("a valid second planning row does not hide an invalid row for the same active order", () => {
-  const tables = tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "13:00", tot: "10:00" });
+test("a usable second planning row survives alongside an invalid row for the same active order", () => {
+  const tables = tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" });
   tables.WO_HRS_PL.rows.push({ row: 3, raw: { werkbon: "w", datum: "03/11/2026", tech: "r", van: "08:00", tot: "10:00" } });
   const data = normalizeData(tables, "2026-11-03");
-  assert.equal(data.workOrders[0].status, "unplanned"); assert.equal(data.slots.length, 0);
+  assert.equal(data.workOrders[0].status, "planned"); assert.equal(data.slots.length, 1);
+  assert.equal(data.invalidPlanning.length, 1);
+  assert.equal(data.workOrders[0].hasInvalidPlanning, true);
 });
 test("customer mismatches remain explicit rather than overwriting either customer", () => {
   const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "08:00", tot: "10:00" }), "2026-11-03");
@@ -129,7 +133,7 @@ test("failed moves leave schedules unchanged and successful moves preserve durat
   assert.equal(moved.slots[0].end, 810); assert.equal(moved.slots[0].date, "2026-11-04"); assert.equal(moved.slots.length, 1);
 });
 test("manual scheduling of an invalid import preserves all original rows and issues", () => {
-  const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "13:00", tot: "10:00" }), "2026-11-03");
+  const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" }), "2026-11-03");
   const snapshot = structuredClone(data.invalidPlanning);
   const scheduled = reducer(initialState(data), { type: "schedule", workOrderId: "w", resourceId: "r", date: "2026-11-04", start: 480 });
   assert.equal(scheduled.workOrders[0].status, "planned"); assert.equal(scheduled.slots[0].end, 600); assert.deepEqual(scheduled.invalidPlanning, snapshot); assert.deepEqual(scheduled.issues, data.issues);
@@ -151,4 +155,87 @@ test("fresh initialization restores CSV state without session mutations", async 
   reducer(state, { type: "schedule", workOrderId: id, resourceId: "TDC", date: "2030-01-01", start: 480 });
   assert.equal(JSON.stringify(real), before);
   assert.deepEqual(await loadAppData(undefined, "2026-11-03"), real);
+});
+
+
+test("reversed imported times become usable ascending slots with information severity", () => {
+  const raw = { werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "08:00" };
+  const tables = tablesWithPlanning(raw);
+  const data = normalizeData(tables, "2026-11-03");
+  assert.equal(data.workOrders[0].status, "planned");
+  assert.equal(data.workOrders[0].hasInvalidPlanning, false);
+  assert.equal(data.invalidPlanning.length, 0);
+  assert.equal(data.slots[0].start, 480);
+  assert.equal(data.slots[0].end, 600);
+  assert.equal(data.issues.find(issue => issue.field === "van/tot")?.severity, "info");
+  assert.deepEqual(tables.WO_HRS_PL.rows[0].raw, raw);
+  const moved = reducer(initialState(data), { type: "schedule", workOrderId: "w", slotId: data.slots[0].id, resourceId: "r", date: "2026-11-04", start: 600 });
+  assert.equal(moved.slots[0].end, 720);
+  assert.equal(moved.slots[0].date, "2026-11-04");
+});
+
+test("real reversed planning stays scheduled and original CSV values are not mutated", async () => {
+  const source = await loadTable("WO_HRS_PL");
+  const reversed = source.rows.filter(({ raw }) => parseTime(raw.van)! > parseTime(raw.tot)!);
+  assert.equal(reversed.length, 65);
+  for (const { raw, row } of reversed) {
+    const slot = real.slots.find(item => item.id === `pl-${row}`)!;
+    assert.ok(slot);
+    assert.equal(slot.start, parseTime(raw.tot));
+    assert.equal(slot.end, parseTime(raw.van));
+    const order = real.workOrders.find(item => item.id === raw.werkbon)!;
+    assert.equal(order.hasInvalidPlanning, false);
+    if (order.status !== "completed") assert.equal(order.status, "planned");
+  }
+});
+
+test("zero duration remains unusable; reversed times with another invalid reference remain rejected", () => {
+  for (const raw of [
+    { werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" },
+    { werkbon: "w", datum: "03/11/2026", tech: "missing", van: "10:00", tot: "08:00" },
+  ]) {
+    const data = normalizeData(tablesWithPlanning(raw), "2026-11-03");
+    assert.equal(data.slots.length, 0);
+    assert.equal(data.workOrders[0].status, "unplanned");
+    assert.equal(data.invalidPlanning.length, 1);
+    assert.deepEqual(data.invalidPlanning[0].raw, raw);
+    assert.ok(data.issues.some(issue => issue.severity === "warning"));
+    assert.ok(!data.issues.some(issue => issue.severity === "info"));
+  }
+});
+
+test("imported overlaps remain visible, flagged and block conflicting new moves", () => {
+  const tables = tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "08:00" });
+  tables.WO_HDR.rows.push({ row: 3, raw: { nr: "w2", klant: "c", fiche: "s", soort: "Onderhoud", status: "Planned" } });
+  tables.WO_HRS_PL.rows.push({ row: 3, raw: { werkbon: "w2", datum: "03/11/2026", tech: "r", van: "09:00", tot: "11:00" } });
+  const data = normalizeData(tables, "2026-11-03");
+  assert.equal(data.slots.length, 2);
+  assert.ok(data.issues.some(issue => issue.severity === "warning" && issue.message.includes("overlapt")));
+  assert.match(validatePlanning(data, { ...data.slots[0], start: 540, end: 660 })!, /overlapt/);
+});
+
+test("usable imported bookings outside the work window remain visible as warnings", () => {
+  const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "07:00", tot: "09:00" }), "2026-11-03");
+  assert.equal(data.slots[0].start, 420);
+  assert.equal(data.workOrders[0].status, "planned");
+  assert.ok(data.issues.some(issue => issue.severity === "warning" && issue.message.includes("buiten")));
+});
+
+test("file/schema errors are errors; missing values use compact display fallbacks", async () => {
+  const { formatDate } = await import("../src/lib/domain/rules.ts");
+  assert.equal(formatDate(null), "—");
+  assert.equal(normalizeInterval("").label, "—");
+  assert.ok(parseCsv("wrong;headers\na;b", "test.csv", ["code"]).issues.every(issue => issue.severity === "error"));
+  assert.ok((await loadTable("REL", "does-not-exist")).issues.every(issue => issue.severity === "error"));
+});
+
+
+test("moving an imported booking preserves a valid duration that is not a half-hour multiple", () => {
+  const data = fixture();
+  data.slots = [{ ...candidate, id: "odd-duration", start: 485, end: 560 }];
+  data.workOrders[0].status = "planned";
+  const moved = reducer(initialState(data), { type: "schedule", workOrderId: "w", slotId: "odd-duration", resourceId: "r", date: "2026-11-04", start: 600 });
+  assert.equal(moved.error, null);
+  assert.equal(moved.slots[0].start, 600);
+  assert.equal(moved.slots[0].end, 675);
 });

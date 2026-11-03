@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({ reset }: { reset: () => void }) { return <div className="rounded-xl border border-rose-200 bg-white p-8"><h1 className="text-xl font-bold">Dit scherm kan niet geladen worden</h1><p className="mt-2 text-sm text-slate-600">Probeer opnieuw. Bij herladen worden prototypewijzigingen gereset.</p><button onClick={reset} className="mt-4 rounded-lg bg-teal-700 px-4 py-2 text-sm font-semibold text-white">Opnieuw proberen</button></div>; }

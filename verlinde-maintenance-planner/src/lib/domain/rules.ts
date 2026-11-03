@@ -1,0 +1,70 @@
+import { addDays, format, isValid, parse } from "date-fns";
+import type { AppData, MaintenanceSheet, MaintenanceStatus, PlanningSlot, WorkOrder } from "../../types/domain.ts";
+
+export const WINDOW_START = 8 * 60;
+export const WINDOW_END = 18 * 60;
+export const SLOT_STEP = 30;
+export const DEFAULT_DURATION = 120;
+export const statusLabels: Record<MaintenanceStatus, string> = {
+  overdue: "Achterstallig", upcoming: "Binnenkort", ok: "OK", missing: "Ontbrekende gegevens",
+};
+export function parseDate(value: string): string | null {
+  const trimmed = value.trim();
+  if (!/^\d{2}\/\d{2}\/\d{4}$/.test(trimmed)) return null;
+  const date = parse(trimmed, "dd/MM/yyyy", new Date(2000, 0, 1));
+  return isValid(date) && format(date, "dd/MM/yyyy") === trimmed ? format(date, "yyyy-MM-dd") : null;
+}
+export function validIsoDate(value: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = parse(value, "yyyy-MM-dd", new Date(2000, 0, 1));
+  return isValid(date) && format(date, "yyyy-MM-dd") === value;
+}
+export function calendarDate(value: string): Date { return parse(value, "yyyy-MM-dd", new Date(2000, 0, 1)); }
+export function formatDate(value: string | null): string { return value ? format(calendarDate(value), "dd/MM/yyyy") : "Ontbrekende gegevens"; }
+export function parseTime(value: string): number | null {
+  if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value.trim())) return null;
+  const [hours, minutes] = value.trim().split(":").map(Number);
+  return hours * 60 + minutes;
+}
+export function formatTime(value: number): string { return `${Math.floor(value / 60).toString().padStart(2, "0")}:${(value % 60).toString().padStart(2, "0")}`; }
+export function normalizeInterval(value: string): { label: string; months: number | null } {
+  const normalized = value.trim().toLowerCase();
+  const months = ({ "1j": 12, "jaarlijks": 12, "12m": 12, "1 x per jaar": 12, "2j": 24, "6m": 6 } as Record<string, number>)[normalized] ?? null;
+  return { label: months === 12 ? "Jaarlijks" : months === 24 ? "Elke 2 jaar" : months === 6 ? "Halfjaarlijks" : value.trim() || "Ontbrekende gegevens", months };
+}
+export function maintenanceStatus(sheet: MaintenanceSheet, today: string): MaintenanceStatus {
+  if (!sheet.nextDate || !validIsoDate(sheet.nextDate)) return "missing";
+  if (sheet.nextDate < today) return "overdue";
+  return sheet.nextDate <= format(addDays(calendarDate(today), 30), "yyyy-MM-dd") ? "upcoming" : "ok";
+}
+export function sourceOrderStatus(value: string): WorkOrder["status"] {
+  return ["completed", "invoiced"].includes(value.trim().toLowerCase()) ? "completed" : "unplanned";
+}
+export function openMaintenanceOrders(data: Pick<AppData, "workOrders">, sheetId: string): WorkOrder[] {
+  return data.workOrders.filter(order => order.status !== "completed" && order.kind.toLowerCase() === "onderhoud" && order.sheetIds.includes(sheetId));
+}
+export function customerName(data: Pick<AppData, "customers">, id: string): string {
+  return data.customers.find(customer => customer.id === id)?.name ?? `Onbekende klant (${id || "geen code"})`;
+}
+export function activeSlots(data: Pick<AppData, "slots" | "workOrders">): PlanningSlot[] {
+  const active = new Set(data.workOrders.filter(order => order.status !== "completed").map(order => order.id));
+  return data.slots.filter(slot => active.has(slot.workOrderId));
+}
+export function overlaps(a: PlanningSlot, b: PlanningSlot): boolean {
+  return a.id !== b.id && a.resourceId === b.resourceId && a.date === b.date && a.start < b.end && a.end > b.start;
+}
+export function validatePlanning(data: Pick<AppData, "resources" | "slots" | "workOrders">, candidate: PlanningSlot): string | null {
+  const order = data.workOrders.find(item => item.id === candidate.workOrderId);
+  if (!order || order.status === "completed") return "Deze werkorder is niet beschikbaar voor planning.";
+  if (!data.resources.some(resource => resource.id === candidate.resourceId)) return "De gekozen resource bestaat niet.";
+  if (!validIsoDate(candidate.date)) return "Kies een geldige planningsdatum.";
+  if (!Number.isInteger(candidate.start) || !Number.isInteger(candidate.end) || candidate.end <= candidate.start || candidate.start % SLOT_STEP !== 0 || candidate.end % SLOT_STEP !== 0) return "Kies geldige tijden in stappen van 30 minuten; de eindtijd moet na de starttijd liggen.";
+  if (candidate.start < WINDOW_START || candidate.end > WINDOW_END) return "Plan de volledige afspraak tussen 08:00 en 18:00.";
+  const conflict = activeSlots(data).find(slot => overlaps(candidate, slot));
+  return conflict ? `Dit tijdstip overlapt met ${conflict.workOrderId} (${formatTime(conflict.start)}–${formatTime(conflict.end)}).` : null;
+}
+export function brusselsToday(now = new Date()): string {
+  const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Brussels", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
+  const part = (name: string) => parts.find(item => item.type === name)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}

@@ -1,0 +1,139 @@
+﻿code;naam;type;straat;nr;postcode;gemeente;tel;gsm;email;btw;taal;betaalterm;prijscat;vertegenw;aangemaakt;notities;actief
+K00126;Kapsalon Mieke;Bedrijf;Industrielaan;91;8560;Wevelgem;056 00 45 26;;admin@kapsalonmieke.test;BE0414.894495;NL;30D;B2;TDC;12/07/2009;Alarmcode: 7603# (NIET doorgeven aan derden);J
+K00134;Devos Dirk;Particulier;Zandstraat;10A;8530;Harelbeke;;;devos.dirk@voorbeeld.test;;NL;30DEM;STD;;01/09/2011;Factuur naar boekhouder sturen;J
+K00141;Tandartspraktijk Lambrecht;Bedrijf;Zandstraat;154;8540;Deerlijk;;0400/00.44.83;admin@tandartspraktijkla.test;BE 0579.226537;NL;30D;STD;DV;11/09/2024;Wachtwoord NVR: admin / lambrecht11;J
+K00148;Hilde Demeyere;Particulier;Heirweg;90;8550;Zwevegem;056 00 10 64;0400/00.35.58;;;NL;30D;STD;;12/04/2022;;J
+K00155;VZW De Klaproos;Bedrijf;Bellegemstraat;121;8580;Avelgem;0400 00 82 89;+32400001988;info@vzwdeklaproos.test;0493781.664;NL;30D;B2;DV;09/03/2011;;J
+K00164;Demeyere Lieve;Particulier;Blokellestraat;152;8550;Zwevegem;056/00.80.17;+32400002415;;;NL;14D;STD;TDC;25/12/2016;;J
+K00166;Jan Vandaele;Particulier;Lindenlaan;83;8500;Kortrijk;;0400 00 61 44;;;NL;30DEM;STD;;26/12/2019;;J
+K00169;Fietsen Desmet;Bedrijf;Lindenlaan;2A;8501;Heule;0400 00 24 93;0400/00.26.77;desmet@fietsendesmet.test;BE 0559137.919;NL;30DEM;STD;DV;23/02/2022;;J
+K00177;Dewaele Els;Particulier;Hoogstraat;153;8570;Anzegem;0400 00 41 79;;dewaele.kris@post.test;;FR;CONTANT;STD;TDC;17/02/2012;;J
+K00182;Ghekiere Hilde;Particulier;Kortrijkseweg;129;8530;Harelbeke;+32 56 003983;;ghekiere.marc@voorbeeld.test;;NL;14D;STD;TDC;14/08/2017;;J
+K00189;Ghekiere Filip;Particulier;Spinnerijstraat;106;8870;Izegem;056 00 53 41;0400/00.82.51;ghekiere.luc@voorbeeld.test;;NL;14D;STD;DV;27/04/2016;;J
+K00192;Metaalbouw Verschuere;Bedrijf;Oudenaardsesteenweg;60;8520;Kuurne;+32 56 006692;+32400008977;;BE 0834962.435;NL;30D;B1;DV;07/07/2022;Alarmcode: 8868# (NIET doorgeven aan derden);J
+K00200;Ann Callens;Particulier;Rijksweg;169;8501;Heule;056/00.12.55;0400/00.80.70;callens.pieter@post.test;;NL;30D;STD;DV;13/06/2008;Wachtwoord NVR: admin / callens68;J
+K00208;Interieur Devos;Bedrijf;Industrielaan;145;8551;Heestert;056/00.88.48;;;BE 0538.568.438;NL;30DEM;B1;;26/09/2010;;J
+K00215;Vanneste Filip;Particulier;Ellestraat;75;8870;Izegem;;+32400001990;vanneste.jan@mail.test;;NL;CONTANT;STD;TDC;10/09/2024;"Code klavier 2270, sleutel bij buren nr 11";J
+K00220;Jan Hollevoet;Particulier;Kortrijkseweg;167;9700;Oudenaarde;;0400 00 41 26;hollevoet.peter@mail.test;;NL;30DEM;STD;DV;10/01/2022;;J
+K00222;Ann Vandaele;Particulier;Oudenaardsesteenweg;1B;8930;MENEN;056 00 52 51;0400 00 87 24;vandaele.tine@post.test;;NL;CONTANT;STD;DV;16/05/2009;;J
+K00228;Kris Delbaere;Particulier;Zandstraat;92;8580;Avelgem;056 00 69 15;+32400004557;delbaere.pieter@post.test;;NL;30D;STD;DV;04/12/2009;;J
+K00236;Fietsen Callens;Bedrijf;Bosstraat;34;8501;Heule;;;info@fietsencallens.test;BE0549631465;NL;30DEM;B1;DV;16/10/2008;Alarmcode: 3990# (NIET doorgeven aan derden);J
+K00237;Verzekeringen Dewaele;Bedrijf;Ellestraat;124;8790;Waregem;+32 56 009130;+32400003572;info@verzekeringendewae.test;BE0634.457262;NL;CONTANT;B2;DV;12/11/2022;;J
+K00244;Hoeve Desmet;Bedrijf;Heirweg;114;8580;Avelgem;0400 00 75 75;+32400005999;;BE 0729753.381;NL;30DEM;STD;DV;23/06/2013;;J
+K00249;Jan Goethals;Particulier;Ommegangstraat;69;8580;Avelgem;056/00.95.44;0400 00 60 26;goethals.dirk@post.test;;NL;CONTANT;STD;;26/06/2009;;N
+K00257;Inge Lambrecht;Particulier;Bellegemstraat;124;8540;Deerlijk;;;lambrecht.kris@post.test;;NL;CONTANT;STD;DV;12/04/2016;;J
+K00263;Lieve Deprez;Particulier;Bergstraat;15;8580;Avelgem;0400 00 93 38;;deprez.koen@mail.test;;NL;CONTANT;STD;TDC;02/08/2011;;J
+K00272;Luc Vandaele;Particulier;Meersstraat;61;8930;Menen;056 00 35 49;+32400002942;vandaele.els@mail.test;;NL;CONTANT;STD;DV;20/07/2008;;J
+K00273;Pieter Dewaele;Particulier;Spinnerijstraat;24;8800;Roeselare;0400 00 17 83;0400/00.14.52;dewaele.wim@post.test;;NL;30D;STD;;10/01/2025;;J
+K00276;Els Benoit;Particulier;Zandstraat;163B;8870;Izegem;+32 56 006167;0400 00 19 30;benoit.bart@post.test;;NL;30D;STD;DV;20/09/2024;;J
+K00278;Veerle Coucke;Particulier;Kapelstraat;166;8530;Harelbeke;056/00.46.56;+32400008656;coucke.jan@mail.test;;NL;30D;STD;;03/12/2020;;J
+K00286;Kris Callens;Particulier;Industrielaan;76;8870;Izegem;056 00 54 35;+32400008981;callens.nathalie@voorbeeld.test;;NL;14D;STD;TDC;08/10/2020;;J
+K00293;Dewaele Veerle;Particulier;Molenstraat;47;8501;Heule;0400 00 27 36;0400/00.50.85;dewaele.bart@post.test;;NL;30D;STD;DV;24/08/2017;;J
+K00296;Interieur Vercruysse;Bedrijf;Otegemstraat;1;8500;Kortrijk;;0400 00 59 58;vercruysse@interieurvercruyss.test;0722715165;NL;30D;B1;TDC;21/05/2025;"Bellen voor komst, hond!";J
+K00297;Sofie Hollevoet;Particulier;Bellegemstraat;117;8800;Roeselare;056 00 35 57;;;;NL;30DEM;STD;DV;15/11/2022;;J
+K00300;Peter Vanhoutte;Particulier;Ellestraat;111;8560;Wevelgem;056 00 89 55;0400 00 86 61;vanhoutte.tine@voorbeeld.test;;NL;CONTANT;STD;DV;11/04/2017;;J
+K00305;Wim Tack;Particulier;Pontstraat;12;8530;Harelbeke;056 00 70 90;0400/00.35.12;;;NL;30DEM;STD;DV;07/01/2019;;J
+K00313;Lieve Moerman;Particulier;Zandstraat;164A;8870;Izegem;056 00 89 66;0400/00.42.63;moerman.nathalie@post.test;;NL;30D;STD;TDC;21/05/2013;Alarmcode: 9073# (NIET doorgeven aan derden);J
+K00317;Peter Callens;Particulier;Spinnerijstraat;41;8930;Menen;056/00.56.44;0400/00.54.68;callens.filip@mail.test;;NL;30D;STD;DV;13/10/2021;;N
+K00320;Lieve Verschuere;Particulier;Stationsstraat;2 bus 2;8790;Waregem;;;verschuere.inge@post.test;;NL;30DEM;STD;TDC;07/10/2018;;J
+K00326;Dejonghe Marc;Particulier;Molenstraat;90;8570;Anzegem;056 00 81 83;0400/00.75.64;dejonghe.jan@mail.test;;NL;30DEM;STD;;20/11/2015;;J
+K00329;Pieter Delbaere;Particulier;Vlaanderenstraat;128;8570;Anzegem;+32 56 009244;;delbaere.tine@post.test;;NL;30DEM;STD;;08/07/2018;;J
+K00336;Marc Devos;Particulier;Rijksweg;130;8500;Kortrijk;;0400/00.56.38;devos.kris@voorbeeld.test;;NL;30D;STD;DV;22/05/2010;;J
+K00345;Jan Deprez;Particulier;Vichtesteenweg;173;8550;ZWEVEGEM;056 00 43 91;+32400009831;;;NL;30D;STD;DV;13/03/2010;;J
+K00352;Johan Declercq;Particulier;Stationsstraat;33;8501;Heule;056/00.63.30;0400/00.25.36;;;NL;30D;STD;DV;01/02/2019;;J
+K00361;Notariskantoor Dejonghe & Vercruysse;Bedrijf;Bergstraat;4;8570;Anzegem;056/00.42.72;0400/00.83.66;;BE0465.421.388;NL;30D;STD;DV;04/07/2023;Sleutel ligt bij buurman;J
+K00364;Wasserij Dewaele;Bedrijf;Ommegangstraat;164;8520;Kuurne;0400 00 32 25;;admin@wasserijdewaele.test;BE 0621.613693;NL;30D;B1;;24/04/2023;;J
+K00366;Bandencentrale Vanlerberghe;Bedrijf;Vichtesteenweg;73;8800;Roeselare;;0400/00.85.67;;BE0457256738;NL;30DEM;B1;TDC;26/05/2021;;J
+K00371;Coucke Koen;Particulier;Hoogstraat;164;8570;Anzegem;+32 56 008290;+32400007797;;;FR;14D;STD;TDC;25/03/2023;Contactpersoon: zoon (gsm);N
+K00379;Inge Vandenberghe;Particulier;Otegemstraat;41;8870;Izegem;0400 00 65 15;;;;NL;CONTANT;STD;;09/12/2009;;J
+K00383;Kapsalon Mieke;Bedrijf;Lindenlaan;120;8550;Zwevegem;0400 00 21 96;+32400003695;;BE 0656.106.796;NL;CONTANT;STD;;09/05/2008;;J
+K00389;Garage Deprez;Bedrijf;Stationsstraat;98;8870;Izegem;056 00 85 78;0400/00.45.40;deprez@garagedeprez.test;BE0718272650;NL;30D;B1;DV;13/01/2020;;J
+K00393;Benoit Veerle;Particulier;Kerkstraat;24;8530;Harelbeke;+32 56 005665;0400/00.26.99;;;NL;14D;STD;DV;24/11/2019;Contactpersoon: zoon (gsm);J
+K00397;Bandencentrale Deprez;Bedrijf;Ellestraat;8;8530;Harelbeke;+32 56 004398;;;BE0758.789.676;NL;CONTANT;STD;;22/11/2014;;J
+K00404;Verzekeringen Moerman;Bedrijf;Vichtesteenweg;78;8580;Avelgem;;0400/00.40.48;info@verzekeringenmoerm.test;0471312845;NL;30DEM;STD;TDC;18/07/2009;;J
+K00407;Schrijnwerkerij Delbaere;Bedrijf;Driesstraat;90;8520;Kuurne;056 00 33 67;+32400007430;;BE 0612.831898;FR;CONTANT;B1;;13/02/2010;;J
+K00415;Tandartspraktijk Vanlerberghe;Bedrijf;Bergstraat;145;8501;Heule;0400 00 20 99;0400 00 54 27;vanlerberghe@tandartspraktijkva.test;BE 0705.309837;NL;30D;STD;DV;01/08/2011;Enkel voormiddag;J
+K00420;Restaurant La Ferme;Bedrijf;Lindenlaan;85;8560;Wevelgem;+32 56 001053;0400/00.85.57;info@restaurantlaferme.test;BE 0787279.199;NL;30DEM;STD;DV;09/10/2020;;J
+K00421;Fietsen Lambrecht;Bedrijf;Ommegangstraat;144A;8500;Kortrijk;;0400/00.10.74;boekhouding@fietsenlambrecht.test;BE0650.233.710;NL;30DEM;STD;TDC;16/02/2015;;J
+K00429;Dirk Vanlerberghe;Particulier;Vichtesteenweg;170;8790;Waregem;056 00 69 66;;vanlerberghe.sofie@post.test;;NL;CONTANT;STD;TDC;11/12/2011;;J
+K00432;Moerman Peter;Particulier;Hoogstraat;52;8550;Zwevegem;+32 56 001062;0400 00 69 33;moerman.sofie@mail.test;;NL;CONTANT;STD;DV;14/04/2023;Enkel voormiddag;J
+K00437;Luc Dejonghe;Particulier;Kortrijkseweg;107 bus 2;8501;Heule;0400 00 17 99;;dejonghe.ann@post.test;;NL;30D;STD;TDC;03/02/2023;;J
+K00443;Desmet Wim;Particulier;Meersstraat;174;8580;Avelgem;056 00 17 68;0400/00.34.87;;;NL;CONTANT;STD;DV;19/08/2023;;J
+K00451;Dierenartsenpraktijk De Leie;Bedrijf;Zandstraat;178;8540;Deerlijk;0400 00 99 53;0400/00.48.71;admin@dierenartsenprakti.test;BE 0788.858744;NL;30D;B1;DV;17/05/2017;;J
+K00455;Kapsalon Mieke;Bedrijf;Driesstraat;99;8501;Heule;+32 56 004333;;boekhouding@kapsalonmieke.test;BE0771365.450;NL;14D;B1;;02/11/2017;;J
+K00464;Bandencentrale Verhaeghe;Bedrijf;Kerkstraat;75;8500;KORTRIJK;0400 00 58 17;;;0845779968;FR;CONTANT;B2;;01/06/2011;Contactpersoon: zoon (gsm);J
+K00467;Hoeve Ghekiere;Bedrijf;Blokellestraat;116;8550;Zwevegem;+32 56 008220;0400/00.55.40;;BE0551.161265;NL;30DEM;STD;;03/05/2013;;J
+K00469;Moerman Luc;Particulier;Industrielaan;67;8930;Menen;056/00.30.42;0400 00 35 41;;;NL;30D;STD;;22/03/2010;;J
+K00475;Dewaele Jan;Particulier;Vlaanderenstraat;128;8530;Harelbeke;0400 00 59 69;;dewaele.luc@mail.test;;NL;30D;STD;DV;03/07/2024;;J
+K00484;Koen Deprez;Particulier;Kortrijkseweg;49;8790;Waregem;056 00 97 87;0400 00 25 95;deprez.inge@mail.test;;NL;30DEM;STD;TDC;19/09/2008;;J
+K00489;Schrijnwerkerij Demeyere;Bedrijf;Otegemstraat;67;8520;Kuurne;+32 56 006687;;;BE0722.857273;NL;30DEM;B1;TDC;26/12/2011;;J
+K00490;Demeyere Hilde;Particulier;Meersstraat;120;8570;Anzegem;056 00 20 55;0400 00 80 74;demeyere.rita@voorbeeld.test;;NL;14D;STD;TDC;11/09/2025;Klant verhuisd 2024?;J
+K00492;Sofie Vanwynsberghe;Particulier;Stationsstraat;69;8570;Anzegem;+32 56 001893;;vanwynsberghe.wim@post.test;;NL;14D;STD;;05/04/2018;;J
+K00500;Schrijnwerkerij Vandaele;Bedrijf;Heirweg;55;8551;Heestert;0400 00 98 34;0400/00.69.14;info@schrijnwerkerijvan.test;BE0837.626.819;NL;30D;STD;;18/03/2017;;J
+K00507;Johan Delbaere;Particulier;Oudenaardsesteenweg;123;8560;Wevelgem;;;;;NL;14D;STD;;18/09/2009;;J
+K00509;Metaalbouw Vanlerberghe;Bedrijf;Oudenaardsesteenweg;53;8501;Heule;+32 56 001932;0400/00.70.13;boekhouding@metaalbouwvanlerbe.test;BE0465.692911;NL;30D;B2;DV;15/09/2013;;J
+K00513;Callens Katrien;Particulier;Bergstraat;61;8560;Wevelgem;0400 00 31 61;;;;NL;30D;STD;DV;10/08/2009;;J
+K00516;Els Devos;Particulier;Driesstraat;91;8500;Kortrijk;056/00.38.82;0400 00 35 34;devos.luc@mail.test;;NL;30DEM;STD;TDC;18/04/2012;;J
+K00524;Tack Dirk;Particulier;Ellestraat;156;8540;Deerlijk;0400 00 90 86;0400/00.37.79;tack.bart@mail.test;;NL;30D;STD;;12/11/2008;;J
+K00525;Restaurant La Ferme;Bedrijf;Spinnerijstraat;79;8870;Izegem;056 00 74 35;0400/00.28.35;;BE0486.172722;NL;14D;STD;TDC;26/03/2021;;J
+K00530;Brasserie 't Hoekske;Bedrijf;Heirweg;176;8930;Menen;+32 56 003687;;;BE 0620.320.143;NL;30DEM;STD;TDC;02/09/2016;;J
+K00535;Benoit Dirk;Particulier;Vichtesteenweg;72;8501;Heule;056/00.19.36;0400 00 23 13;benoit.ann@post.test;;NL;14D;STD;DV;01/10/2008;;N
+K00538;Bart Verhaeghe;Particulier;Rijksweg;20;8530;Harelbeke;;0400 00 49 50;;;NL;CONTANT;STD;DV;08/09/2010;;J
+K00542;Vandenberghe Bart;Particulier;Otegemstraat;106;8790;Waregem;+32 56 007280;0400 00 36 95;;;NL;14D;STD;DV;03/01/2023;;J
+K00551;Dierenartsenpraktijk De Leie;Bedrijf;Heirweg;11;8800;ROESELARE;056 00 58 27;;info@dierenartsenprakti.test;BE 0772587863;NL;14D;B1;TDC;16/10/2016;;J
+K00560;Veerle Callens;Particulier;Blokellestraat;8;9700;Oudenaarde;056 00 61 10;0400/00.84.59;callens.sofie@voorbeeld.test;;NL;30DEM;STD;;17/06/2025;;J
+K00566;Fietsen Benoit;Bedrijf;Blokellestraat;71;8501;Heule;+32 56 004484;0400/00.91.44;benoit@fietsenbenoit.test;BE0748.879505;NL;30D;STD;DV;21/07/2024;;N
+K00567;Dejonghe Marc;Particulier;Bellegemstraat;156;8570;Anzegem;0400 00 97 45;0400 00 53 35;;;NL;CONTANT;STD;DV;05/08/2018;Contactpersoon: zoon (gsm);J
+K00575;Pieter Debruyne;Particulier;Driesstraat;104;8870;Izegem;056 00 97 89;0400/00.91.22;debruyne.dirk@post.test;;NL;30D;STD;;27/12/2011;;J
+K00579;Juwelier Seynaeve;Bedrijf;Hoogstraat;28;8570;Anzegem;056/00.23.89;0400/00.11.58;;BE 0856.973.339;NL;30D;STD;TDC;01/11/2019;;J
+K00581;Bandencentrale Dewaele;Bedrijf;Bosstraat;117;8530;Harelbeke;056 00 23 81;0400/00.50.24;;BE0448.926.223;NL;14D;STD;DV;06/05/2024;;J
+K00584;Coucke Tine;Particulier;Pontstraat;97;8790;Waregem;+32 56 007096;0400/00.26.66;coucke.katrien@post.test;;NL;14D;STD;;04/12/2014;;J
+K00591;Vanlerberghe Dirk;Particulier;Lindenlaan;148;8560;Wevelgem;+32 56 005790;0400 00 99 15;vanlerberghe.hilde@post.test;;NL;14D;STD;DV;06/12/2020;"Code klavier 3651, sleutel bij buren nr 11";J
+K00593;Johan Demeyere;Particulier;Hoogstraat;163B;8530;Harelbeke;056 00 58 42;0400 00 65 34;demeyere.veerle@voorbeeld.test;;NL;CONTANT;STD;TDC;28/11/2025;;J
+K00599;Sabbe Pieter;Particulier;Meersstraat;41;8580;Avelgem;056 00 45 42;;;;FR;30D;STD;DV;01/10/2018;;J
+K00601;Devos Peter;Particulier;Driesstraat;45;8800;Roeselare;;0400/00.24.17;devos.kris@voorbeeld.test;;NL;14D;STD;TDC;09/11/2019;;J
+K00609;Deprez Rita;Particulier;Ellestraat;27;8580;Avelgem;056 00 33 56;0400 00 43 23;;;NL;30D;STD;;06/12/2021;"Bellen voor komst, hond!";J
+K00610;Hoeve Sabbe;Bedrijf;Lindenlaan;149;8930;Menen;056 00 16 15;0400/00.56.49;info@hoevesabbe.test;BE0828.443460;NL;30D;STD;DV;01/10/2016;Wachtwoord NVR: admin / sabbe35;J
+K00619;Callens Geert;Particulier;Ellestraat;115;8551;Heestert;+32 56 005243;0400/00.59.24;;;NL;CONTANT;STD;TDC;22/09/2011;;J
+K00626;Veerle Declercq;Particulier;Kapelstraat;43;9700;Oudenaarde;+32 56 009458;0400/00.29.45;;;NL;30D;STD;DV;28/07/2014;;J
+K00632;Vanlerberghe Veerle;Particulier;Ellestraat;97;8790;Waregem;056 00 20 16;;vanlerberghe.luc@post.test;;NL;30D;STD;DV;28/02/2023;;J
+K00633;Verzekeringen Verhaeghe;Bedrijf;Blokellestraat;12;8540;Deerlijk;+32 56 005784;;;BE0844.756.202;NL;30D;STD;TDC;03/08/2015;;J
+K00642;Interieur Deprez;Bedrijf;Zandstraat;79;8570;Anzegem;056 00 20 50;0400/00.54.61;admin@interieurdeprez.test;BE 0892302.265;NL;30D;B2;DV;25/07/2012;;J
+K00650;Wasserij Benoit;Bedrijf;Rijksweg;81;8870;Izegem;+32 56 007716;0400 00 22 59;;BE0404.520.762;NL;30D;STD;TDC;15/05/2013;Wachtwoord NVR: admin / benoit59;J
+K00655;VZW De Klaproos;Bedrijf;Lindenlaan;73;8520;Kuurne;0400 00 71 38;0400/00.79.91;info@vzwdeklaproos.test;BE 0417630119;NL;30D;B2;DV;23/06/2025;;J
+K00663;Callens Peter;Particulier;Kortrijkseweg;66;8530;HARELBEKE;+32 56 003499;0400 00 41 45;;;NL;30DEM;STD;DV;18/04/2020;;J
+K00667;Feestzaal De Gouden Leeuw;Bedrijf;Stationsstraat;20;8540;Deerlijk;056/00.52.12;0400/00.92.85;demeyere@feestzaaldegoudenl.test;BE0624.187.668;NL;30D;STD;DV;21/07/2013;;J
+K00672;Benoit Wim;Particulier;Rijksweg;48A;8560;Wevelgem;056/00.61.50;0400 00 94 52;benoit.katrien@mail.test;;NL;30D;STD;DV;15/07/2008;;J
+K00681;Vandaele Geert;Particulier;Bergstraat;44;8790;Waregem;0400 00 27 97;;;;NL;14D;STD;TDC;07/06/2019;;J
+K00685;VZW De Klaproos;Bedrijf;Industrielaan;88;8800;Roeselare;056 00 35 41;+32400009733;boekhouding@vzwdeklaproos.test;BE 0798.484296;NL;30D;B1;TDC;26/10/2021;Enkel voormiddag;J
+K00689;Benoit Filip;Particulier;Bosstraat;105;8501;HEULE;0400 00 77 50;+32400003952;benoit.koen@voorbeeld.test;;NL;30DEM;STD;TDC;04/03/2020;;J
+K00693;Opticien Desmet;Bedrijf;Vichtesteenweg;26;8540;DEERLIJK;0400 00 59 89;;desmet@opticiendesmet.test;BE 0587.601.190;NL;30D;B1;;04/05/2008;;J
+K00694;Vandaele Els;Particulier;Rijksweg;25;8930;Menen;056/00.63.98;;vandaele.kris@post.test;;NL;30D;STD;TDC;12/09/2024;;J
+K00698;Tandartspraktijk Declercq;Bedrijf;Molenstraat;157;8550;Zwevegem;056 00 95 40;0400/00.68.12;;0519.113527;NL;14D;STD;DV;17/04/2016;Wachtwoord NVR: admin / declercq68;N
+K00705;Bart Debruyne;Particulier;Heirweg;137;8530;Harelbeke;;;debruyne.lieve@voorbeeld.test;;NL;30DEM;STD;TDC;17/12/2020;;J
+K00706;Basisschool De Vlinder;Bedrijf;Ommegangstraat;8;8790;Waregem;056 00 13 58;0400/00.10.79;;BE0678.674.658;NL;30D;B2;DV;21/02/2019;;J
+K00715;Transport Moerman nv;Bedrijf;Bosstraat;168;8580;Avelgem;0400 00 53 24;0400/00.73.99;boekhouding@transportmoermannv.test;0485.601.451;NL;30D;STD;TDC;23/07/2009;;J
+K00720;Debruyne Hilde;Particulier;Driesstraat;4;8550;Zwevegem;+32 56 005954;0400 00 85 37;debruyne.sofie@mail.test;;NL;30D;STD;;18/03/2016;;J
+K00724;Vanneste Jan;Particulier;Ellestraat;169;8870;Izegem;0400 00 35 83;;vanneste.nathalie@mail.test;;NL;30DEM;STD;DV;28/06/2020;Opletten: betaalt laat;J
+K00726;Filip Lambrecht;Particulier;Spinnerijstraat;48;8800;Roeselare;056/00.86.41;0400/00.77.38;;;NL;30DEM;STD;;26/05/2008;;J
+K00735;Jan Dewaele;Particulier;Hoogstraat;115;8570;Anzegem;056 00 50 51;;dewaele.bart@voorbeeld.test;;NL;30DEM;STD;;19/12/2011;;J
+K00743;Ghekiere Jan;Particulier;Stationsstraat;57/1;8501;Heule;056 00 11 34;;ghekiere.johan@mail.test;;NL;30D;STD;TDC;17/08/2011;Factuur naar boekhouder sturen;J
+K00744;Sporthal Gemeentelijk (Zwevegem);Bedrijf;Driesstraat;70;8550;Zwevegem;056 00 41 10;0400/00.97.57;boekhouding@sporthalgemeenteli.test;BE 0766166778;NL;30DEM;STD;TDC;26/04/2022;;J
+K00750;Feestzaal De Gouden Leeuw;Bedrijf;Bergstraat;92;9700;Oudenaarde;+32 56 001829;0400 00 77 81;;BE 0850.909.254;NL;30DEM;B2;DV;02/02/2008;;J
+K00758;Brasserie 't Hoekske;Bedrijf;Bosstraat;115;8570;Anzegem;0400 00 61 84;0400 00 67 65;;BE0629363157;NL;14D;B1;TDC;21/10/2025;;N
+K00759;Bakkerij Verhaeghe;Bedrijf;Pontstraat;126;8870;Izegem;0400 00 10 78;0400/00.98.87;admin@bakkerijverhaeghe.test;BE0565.670581;NL;30DEM;B2;TDC;08/03/2009;Wachtwoord NVR: admin / verhaeghe26;J
+K00768;Verschuere Katrien;Particulier;Kapelstraat;159;8790;Waregem;0400 00 13 69;;;;NL;30D;STD;;03/11/2014;;J
+K00776;Bart Vanhoutte;Particulier;Kerkstraat;7;8530;Harelbeke;056 00 36 76;;;;NL;30DEM;STD;;19/07/2020;;J
+K00779;Brasserie 't Hoekske;Bedrijf;Spinnerijstraat;97;9700;OUDENAARDE;056/00.56.65;;admin@brasseriethoekske.test;BE 0613.539.364;NL;CONTANT;B1;;26/03/2009;;J
+K00787;Koen Deprez;Particulier;Otegemstraat;154;8570;Anzegem;+32 56 007385;;deprez.luc@mail.test;;FR;14D;STD;DV;12/02/2021;;J
+K00791;Hoeve Desmet;Bedrijf;Hoogstraat;163;8580;Avelgem;0400 00 68 59;0400/00.28.67;info@hoevedesmet.test;0502261172;NL;30D;B2;DV;16/11/2024;;J
+K00799;KAPSALON MIEKE;Bedrijf;Industrielaan;91;8560;Wevelgem;0400 00 55 24;;;BE0414.894495;NL;30D;B2;TDC;20/02/2021;;J
+K00800;Tandartspraktijk Lambrecht bv;Bedrijf;Zandstraat;154;8540;Deerlijk;056/00.26.38;0400/00.44.83;;BE 0579.226537;NL;30D;STD;DV;22/02/2024;;J
+K00803;VZW De Klaproos;Bedrijf;Bellegemstraat;121;8580;Avelgem;0400 00 24 81;+32400001988;;0493781.664;NL;30D;B2;DV;08/08/2019;;J
+K00809;Fietsen Desmet (nieuw);Bedrijf;Lindenlaan;2A;8501;Heule;056 00 82 35;0400/00.26.77;;BE 0559137.919;NL;30DEM;STD;DV;28/12/2022;Dubbel? zie K00169;J
+K00814;Metaalbouw  Verschuere;Bedrijf;Oudenaardsesteenweg;60;8520;Kuurne;0400 00 67 10;+32400008977;;BE 0834962.435;NL;30D;B1;DV;06/01/2025;;J
+K00823;Interieur Devos BVBA;Bedrijf;Industrielaan;145;8551;Heestert;+32 56 004158;;;BE 0538.568.438;NL;30DEM;B1;;13/12/2024;;J
+L00010;Alarmgroothandel Vanmarcke;Leverancier;Kortrijkseweg;63;8500;Kortrijk;+32 56 001655;;info@alarmgroothandel.test;BE0728.109.615;NL;60D;;;12/11/2008;;J
+L00011;SecuDistri Belgium;Leverancier;Driesstraat;89;8500;Kortrijk;056 00 63 41;;info@secudistri.test;BE0400.243.437;NL;60D;;;24/09/2011;;J
+L00014;Brandtec bv (onderaannemer);Leverancier;Meersstraat;2;8500;Kortrijk;056 00 79 68;;info@brandtec.test;BE0490.491.345;NL;60D;;;28/03/2014;;J
+L00020;Batterijen Online;Leverancier;Kerkstraat;31;8500;Kortrijk;056 00 71 98;;info@batterijen.test;BE0535.351.548;NL;60D;;;12/08/2013;;J

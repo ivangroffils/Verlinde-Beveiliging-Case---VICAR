@@ -1,0 +1,1955 @@
+﻿werkbon;artikel;omschrijving;aantal;prijs
+WB2023-0003;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0003;KLAV-LCD;Klavier LCD;1;0
+WB2023-0003;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0003;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0003;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0006;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0006;KLAV-LCD;Klavier LCD;1;0
+WB2023-0006;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0006;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0006;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0007;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0007;KLAV-LCD;Klavier LCD;1;0
+WB2023-0007;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0007;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0007;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0014;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0014;KLAV-LCD;Klavier LCD;1;0
+WB2023-0014;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0014;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0014;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0014;ATTEST-INB;Attest;1;45
+WB2023-0016;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0016;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0016;HITTEM;Hittemelder;1;0
+WB2023-0016;HANDM;Handmelder rood;1;0
+WB2023-0016;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0017;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0017;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0017;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0017;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0017;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0018;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0018;KLAV-LCD;Klavier LCD;1;0
+WB2023-0018;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0018;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0018;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0018;ATTEST-INB;Attest;1;45
+WB2023-0019;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0019;KLAV-LCD;Klavier LCD;1;0
+WB2023-0019;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0019;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0019;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0019;ATTEST-INB;Attest;1;45
+WB2023-0022;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0022;KLAV-LCD;Klavier LCD;1;0
+WB2023-0022;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0022;SIR-BUI;Buitensirene met flits;1;0
+WB2023-0022;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0022;ATTEST-INB;Attest;1;45
+WB2023-0023;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0023;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0023;HITTEM;Hittemelder;1;0
+WB2023-0023;HANDM;Handmelder rood;1;0
+WB2023-0023;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0024;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0024;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0024;HANDM;Handmelder rood;1;0
+WB2023-0024;SIR-BR;Brandsirene binnen;1;0
+WB2023-0024;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0027;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0027;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0027;HITTEM;Hittemelder;1;0
+WB2023-0027;HANDM;Handmelder rood;1;0
+WB2023-0027;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0027;ATTEST-BR;Attest;1;45
+WB2023-0028;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0028;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0028;HITTEM;Hittemelder;1;0
+WB2023-0028;HANDM;Handmelder rood;1;0
+WB2023-0028;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0031;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0031;KLAV-LCD;Klavier LCD;1;0
+WB2023-0031;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0031;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0031;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0033;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0033;KLAV-LCD;Klavier LCD;1;0
+WB2023-0033;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0033;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0033;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0033;ATTEST-INB;Attest;1;45
+WB2023-0036;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0036;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0036;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0036;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0036;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0038;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0038;BADGE-LZ;Badgelezer;1;0
+WB2023-0038;ELSLOT;Elektrisch slot;1;0
+WB2023-0038;BADGE-10;Badges (10 st);1;0
+WB2023-0038;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0038;ATTEST-INB;Attest;1;45
+WB2023-0047;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0047;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0047;HANDM;Handmelder rood;1;0
+WB2023-0047;SIR-BR;Brandsirene binnen;1;0
+WB2023-0047;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0052;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0052;KLAV-LCD;Klavier LCD;1;0
+WB2023-0052;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0052;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0052;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0053;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0053;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0053;HITTEM;Hittemelder;1;0
+WB2023-0053;HANDM;Handmelder rood;1;0
+WB2023-0053;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0057;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0057;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0057;HITTEM;Hittemelder;1;0
+WB2023-0057;HANDM;Handmelder rood;1;0
+WB2023-0057;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0059;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0059;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0059;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0059;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0059;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0059;ATTEST-INB;Attest;1;45
+WB2023-0062;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0062;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0062;HANDM;Handmelder rood;1;0
+WB2023-0062;SIR-BR;Brandsirene binnen;1;0
+WB2023-0062;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0063;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0063;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0063;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0063;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0063;ATTEST-INB;Attest;1;45
+WB2023-0066;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0066;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0066;HITTEM;Hittemelder;1;0
+WB2023-0066;HANDM;Handmelder rood;1;0
+WB2023-0066;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0070;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0070;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0070;HITTEM;Hittemelder;1;0
+WB2023-0070;HANDM;Handmelder rood;1;0
+WB2023-0070;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0073;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0073;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0073;HITTEM;Hittemelder;1;0
+WB2023-0073;HANDM;Handmelder rood;1;0
+WB2023-0073;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0074;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0074;KLAV-LCD;Klavier LCD;1;0
+WB2023-0074;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0074;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0074;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0074;ATTEST-INB;Attest;1;45
+WB2023-0081;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0081;KLAV-LCD;Klavier LCD;1;0
+WB2023-0081;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0081;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0081;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0081;ATTEST-INB;Attest;1;45
+WB2023-0085;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0085;BADGE-LZ;Badgelezer;1;0
+WB2023-0085;ELSLOT;Elektrisch slot;1;0
+WB2023-0085;BADGE-10;Badges (10 st);1;0
+WB2023-0085;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0086;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0086;KLAV-LCD;Klavier LCD;1;0
+WB2023-0086;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0086;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0086;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0090;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0090;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0090;HITTEM;Hittemelder;1;0
+WB2023-0090;HANDM;Handmelder rood;1;0
+WB2023-0090;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0090;ATTEST-BR;Attest;1;45
+WB2023-0091;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0091;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0091;HANDM;Handmelder rood;1;0
+WB2023-0091;SIR-BR;Brandsirene binnen;1;0
+WB2023-0091;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0094;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0094;KLAV-LCD;Klavier LCD;1;0
+WB2023-0094;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0094;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0094;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0096;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0096;KLAV-LCD;Klavier LCD;1;0
+WB2023-0096;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0096;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0096;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0096;ATTEST-INB;Attest;1;45
+WB2023-0097;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0097;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0097;HITTEM;Hittemelder;1;0
+WB2023-0097;HANDM;Handmelder rood;1;0
+WB2023-0097;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0097;ATTEST-BR;Attest;1;45
+WB2023-0102;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0102;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0102;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0102;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0102;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0104;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0104;KLAV-LCD;Klavier LCD;1;0
+WB2023-0104;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0104;SIR-BUI;Buitensirene met flits;1;0
+WB2023-0104;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0105;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0105;KLAV-LCD;Klavier LCD;1;0
+WB2023-0105;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0105;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0105;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0107;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0107;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0107;HITTEM;Hittemelder;1;0
+WB2023-0107;HANDM;Handmelder rood;1;0
+WB2023-0107;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0115;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0115;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0115;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0115;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0115;ATTEST-INB;Attest;1;45
+WB2023-0118;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0118;KLAV-LCD;Klavier LCD;1;0
+WB2023-0118;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0118;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0118;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0118;ATTEST-INB;Attest;1;45
+WB2023-0120;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0120;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0120;HITTEM;Hittemelder;1;0
+WB2023-0120;HANDM;Handmelder rood;1;0
+WB2023-0120;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0123;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0123;KLAV-LCD;Klavier LCD;1;0
+WB2023-0123;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0123;SIR-BUI;Buitensirene met flits;1;0
+WB2023-0123;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0123;ATTEST-INB;Attest;1;45
+WB2023-0126;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0126;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0126;HITTEM;Hittemelder;1;0
+WB2023-0126;HANDM;Handmelder rood;1;0
+WB2023-0126;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0126;ATTEST-BR;Attest;1;45
+WB2023-0128;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0128;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0128;HANDM;Handmelder rood;1;0
+WB2023-0128;SIR-BR;Brandsirene binnen;1;0
+WB2023-0128;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0134;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0134;BADGE-LZ;Badgelezer;1;0
+WB2023-0134;ELSLOT;Elektrisch slot;1;0
+WB2023-0134;BADGE-10;Badges (10 st);1;0
+WB2023-0134;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0136;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0136;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0136;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0136;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0136;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0136;ATTEST-INB;Attest;1;45
+WB2023-0145;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0145;KLAV-LCD;Klavier LCD;1;0
+WB2023-0145;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0145;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0145;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0149;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0149;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0149;HITTEM;Hittemelder;1;0
+WB2023-0149;HANDM;Handmelder rood;1;0
+WB2023-0149;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0150;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0150;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0150;HITTEM;Hittemelder;1;0
+WB2023-0150;HANDM;Handmelder rood;1;0
+WB2023-0150;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0153;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0153;KLAV-LCD;Klavier LCD;1;0
+WB2023-0153;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0153;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0153;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0157;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0157;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0157;HITTEM;Hittemelder;1;0
+WB2023-0157;HANDM;Handmelder rood;1;0
+WB2023-0157;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0157;ATTEST-BR;Attest;1;45
+WB2023-0159;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0159;BADGE-LZ;Badgelezer;1;0
+WB2023-0159;ELSLOT;Elektrisch slot;1;0
+WB2023-0159;BADGE-10;Badges (10 st);1;0
+WB2023-0159;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0159;ATTEST-INB;Attest;1;45
+WB2023-0160;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0160;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0160;HITTEM;Hittemelder;1;0
+WB2023-0160;HANDM;Handmelder rood;1;0
+WB2023-0160;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0160;ATTEST-BR;Attest;1;45
+WB2023-0161;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0161;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0161;HITTEM;Hittemelder;1;0
+WB2023-0161;HANDM;Handmelder rood;1;0
+WB2023-0161;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0162;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0162;KLAV-LCD;Klavier LCD;1;0
+WB2023-0162;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0162;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0162;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0163;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0163;KLAV-LCD;Klavier LCD;1;0
+WB2023-0163;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0163;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0163;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0167;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0167;BADGE-LZ;Badgelezer;1;0
+WB2023-0167;ELSLOT;Elektrisch slot;1;0
+WB2023-0167;BADGE-10;Badges (10 st);1;0
+WB2023-0167;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0170;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0170;BADGE-LZ;Badgelezer;1;0
+WB2023-0170;ELSLOT;Elektrisch slot;1;0
+WB2023-0170;BADGE-10;Badges (10 st);1;0
+WB2023-0170;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0174;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0174;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0174;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0174;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0174;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0174;ATTEST-INB;Attest;1;45
+WB2023-0175;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0175;KLAV-LCD;Klavier LCD;1;0
+WB2023-0175;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0175;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0175;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0178;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0178;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0178;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0178;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0178;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0180;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0180;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0180;HITTEM;Hittemelder;1;0
+WB2023-0180;HANDM;Handmelder rood;1;0
+WB2023-0180;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0180;ATTEST-BR;Attest;1;45
+WB2023-0181;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0181;KLAV-LCD;Klavier LCD;1;0
+WB2023-0181;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0181;SIR-BUI;Buitensirene met flits;1;0
+WB2023-0181;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0185;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0185;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0185;HITTEM;Hittemelder;1;0
+WB2023-0185;HANDM;Handmelder rood;1;0
+WB2023-0185;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0190;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0190;KLAV-LCD;Klavier LCD;1;0
+WB2023-0190;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0190;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0190;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0191;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0191;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0191;HANDM;Handmelder rood;1;0
+WB2023-0191;SIR-BR;Brandsirene binnen;1;0
+WB2023-0191;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0194;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0194;KLAV-LCD;Klavier LCD;1;0
+WB2023-0194;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0194;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0194;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0194;ATTEST-INB;Attest;1;45
+WB2023-0196;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0196;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0196;HITTEM;Hittemelder;1;0
+WB2023-0196;HANDM;Handmelder rood;1;0
+WB2023-0196;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0197;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0197;KLAV-LCD;Klavier LCD;1;0
+WB2023-0197;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0197;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0197;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0198;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0198;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0198;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0198;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0198;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0201;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0201;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0201;HITTEM;Hittemelder;1;0
+WB2023-0201;HANDM;Handmelder rood;1;0
+WB2023-0201;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0203;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0203;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0203;HITTEM;Hittemelder;1;0
+WB2023-0203;HANDM;Handmelder rood;1;0
+WB2023-0203;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0203;ATTEST-BR;Attest;1;45
+WB2023-0204;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0204;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0204;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0204;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0207;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0207;KLAV-LCD;Klavier LCD;1;0
+WB2023-0207;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0207;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0207;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0210;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0210;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0210;HANDM;Handmelder rood;1;0
+WB2023-0210;SIR-BR;Brandsirene binnen;1;0
+WB2023-0210;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0212;NVR-8CH;NVR 8 kanalen;1;0
+WB2023-0212;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2023-0212;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2023-0212;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2023-0212;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0212;ATTEST-INB;Attest;1;45
+WB2023-0214;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0214;KLAV-LCD;Klavier LCD;1;0
+WB2023-0214;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0214;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0214;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0214;ATTEST-INB;Attest;1;45
+WB2023-0222;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2023-0222;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2023-0222;HANDM;Handmelder rood;1;0
+WB2023-0222;SIR-BR;Brandsirene binnen;1;0
+WB2023-0222;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0222;ATTEST-BR;Attest;1;45
+WB2023-0224;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2023-0224;KLAV-LCD;Klavier LCD;1;0
+WB2023-0224;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2023-0224;MC-OPB;Magneetcontact opbouw;1;0
+WB2023-0224;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0227;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2023-0227;BADGE-LZ;Badgelezer;1;0
+WB2023-0227;ELSLOT;Elektrisch slot;1;0
+WB2023-0227;BADGE-10;Badges (10 st);1;0
+WB2023-0227;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2023-0227;ATTEST-INB;Attest;1;45
+WB2024-0002;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0002;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0002;HANDM;Handmelder rood;1;0
+WB2024-0002;SIR-BR;Brandsirene binnen;1;0
+WB2024-0002;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0002;ATTEST-BR;Attest;1;45
+WB2024-0005;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0005;KLAV-LCD;Klavier LCD;1;0
+WB2024-0005;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0005;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0005;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0006;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0006;KLAV-LCD;Klavier LCD;1;0
+WB2024-0006;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0006;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0006;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0008;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0008;KLAV-LCD;Klavier LCD;1;0
+WB2024-0008;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0008;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0008;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0008;ATTEST-INB;Attest;1;45
+WB2024-0013;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0013;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0013;HANDM;Handmelder rood;1;0
+WB2024-0013;SIR-BR;Brandsirene binnen;1;0
+WB2024-0013;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0018;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0018;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0018;HITTEM;Hittemelder;1;0
+WB2024-0018;HANDM;Handmelder rood;1;0
+WB2024-0018;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0025;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0025;KLAV-LCD;Klavier LCD;1;0
+WB2024-0025;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0025;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0025;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0027;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0027;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0027;HITTEM;Hittemelder;1;0
+WB2024-0027;HANDM;Handmelder rood;1;0
+WB2024-0027;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0028;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0028;KLAV-LCD;Klavier LCD;1;0
+WB2024-0028;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0028;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0028;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0028;ATTEST-INB;Attest;1;45
+WB2024-0029;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0029;BADGE-LZ;Badgelezer;1;0
+WB2024-0029;ELSLOT;Elektrisch slot;1;0
+WB2024-0029;BADGE-10;Badges (10 st);1;0
+WB2024-0029;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0029;ATTEST-INB;Attest;1;45
+WB2024-0031;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0031;KLAV-LCD;Klavier LCD;1;0
+WB2024-0031;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0031;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0031;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0031;ATTEST-INB;Attest;1;45
+WB2024-0032;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0032;BADGE-LZ;Badgelezer;1;0
+WB2024-0032;ELSLOT;Elektrisch slot;1;0
+WB2024-0032;BADGE-10;Badges (10 st);1;0
+WB2024-0032;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0036;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0036;KLAV-LCD;Klavier LCD;1;0
+WB2024-0036;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0036;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0036;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0036;ATTEST-INB;Attest;1;45
+WB2024-0037;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0037;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0037;HANDM;Handmelder rood;1;0
+WB2024-0037;SIR-BR;Brandsirene binnen;1;0
+WB2024-0037;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0042;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0042;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0042;HITTEM;Hittemelder;1;0
+WB2024-0042;HANDM;Handmelder rood;1;0
+WB2024-0042;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0045;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0045;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0045;HANDM;Handmelder rood;1;0
+WB2024-0045;SIR-BR;Brandsirene binnen;1;0
+WB2024-0045;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0046;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0046;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0046;HITTEM;Hittemelder;1;0
+WB2024-0046;HANDM;Handmelder rood;1;0
+WB2024-0046;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0046;ATTEST-BR;Attest;1;45
+WB2024-0048;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0048;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0048;HITTEM;Hittemelder;1;0
+WB2024-0048;HANDM;Handmelder rood;1;0
+WB2024-0048;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0050;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0050;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0050;HITTEM;Hittemelder;1;0
+WB2024-0050;HANDM;Handmelder rood;1;0
+WB2024-0050;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0056;NVR-8CH;NVR 8 kanalen;1;0
+WB2024-0056;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2024-0056;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2024-0056;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2024-0056;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0058;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0058;KLAV-LCD;Klavier LCD;1;0
+WB2024-0058;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0058;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0058;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0059;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0059;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0059;HITTEM;Hittemelder;1;0
+WB2024-0059;HANDM;Handmelder rood;1;0
+WB2024-0059;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0060;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0060;KLAV-LCD;Klavier LCD;1;0
+WB2024-0060;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0060;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0060;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0066;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0066;KLAV-LCD;Klavier LCD;1;0
+WB2024-0066;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0066;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0066;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0067;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0067;KLAV-LCD;Klavier LCD;1;0
+WB2024-0067;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0067;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0067;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0069;NVR-8CH;NVR 8 kanalen;1;0
+WB2024-0069;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2024-0069;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2024-0069;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2024-0069;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0069;ATTEST-INB;Attest;1;45
+WB2024-0072;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0072;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0072;HANDM;Handmelder rood;1;0
+WB2024-0072;SIR-BR;Brandsirene binnen;1;0
+WB2024-0072;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0075;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0075;KLAV-LCD;Klavier LCD;1;0
+WB2024-0075;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0075;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0075;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0075;ATTEST-INB;Attest;1;45
+WB2024-0077;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0077;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0077;HITTEM;Hittemelder;1;0
+WB2024-0077;HANDM;Handmelder rood;1;0
+WB2024-0077;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0080;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0080;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0080;HITTEM;Hittemelder;1;0
+WB2024-0080;HANDM;Handmelder rood;1;0
+WB2024-0080;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0080;ATTEST-BR;Attest;1;45
+WB2024-0084;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0084;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0084;HITTEM;Hittemelder;1;0
+WB2024-0084;HANDM;Handmelder rood;1;0
+WB2024-0084;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0084;ATTEST-BR;Attest;1;45
+WB2024-0087;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0087;KLAV-LCD;Klavier LCD;1;0
+WB2024-0087;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0087;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0087;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0090;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0090;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0090;HITTEM;Hittemelder;1;0
+WB2024-0090;HANDM;Handmelder rood;1;0
+WB2024-0090;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0090;ATTEST-BR;Attest;1;45
+WB2024-0091;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0091;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0091;HANDM;Handmelder rood;1;0
+WB2024-0091;SIR-BR;Brandsirene binnen;1;0
+WB2024-0091;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0091;ATTEST-BR;Attest;1;45
+WB2024-0092;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0092;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0092;HITTEM;Hittemelder;1;0
+WB2024-0092;HANDM;Handmelder rood;1;0
+WB2024-0092;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0092;ATTEST-BR;Attest;1;45
+WB2024-0099;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0099;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0099;HITTEM;Hittemelder;1;0
+WB2024-0099;HANDM;Handmelder rood;1;0
+WB2024-0099;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0100;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0100;KLAV-LCD;Klavier LCD;1;0
+WB2024-0100;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0100;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0100;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0102;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0102;KLAV-LCD;Klavier LCD;1;0
+WB2024-0102;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0102;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0102;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0105;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0105;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0105;HANDM;Handmelder rood;1;0
+WB2024-0105;SIR-BR;Brandsirene binnen;1;0
+WB2024-0105;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0105;ATTEST-BR;Attest;1;45
+WB2024-0110;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0110;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0110;HITTEM;Hittemelder;1;0
+WB2024-0110;HANDM;Handmelder rood;1;0
+WB2024-0110;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0111;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0111;BADGE-LZ;Badgelezer;1;0
+WB2024-0111;ELSLOT;Elektrisch slot;1;0
+WB2024-0111;BADGE-10;Badges (10 st);1;0
+WB2024-0111;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0111;ATTEST-INB;Attest;1;45
+WB2024-0113;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0113;KLAV-LCD;Klavier LCD;1;0
+WB2024-0113;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0113;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0113;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0116;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0116;KLAV-LCD;Klavier LCD;1;0
+WB2024-0116;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0116;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0116;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0119;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0119;KLAV-LCD;Klavier LCD;1;0
+WB2024-0119;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0119;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0119;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0119;ATTEST-INB;Attest;1;45
+WB2024-0123;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0123;KLAV-LCD;Klavier LCD;1;0
+WB2024-0123;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0123;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0123;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0125;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0125;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0125;HANDM;Handmelder rood;1;0
+WB2024-0125;SIR-BR;Brandsirene binnen;1;0
+WB2024-0125;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0128;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0128;KLAV-LCD;Klavier LCD;1;0
+WB2024-0128;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0128;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0128;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0128;ATTEST-INB;Attest;1;45
+WB2024-0133;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0133;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0133;HANDM;Handmelder rood;1;0
+WB2024-0133;SIR-BR;Brandsirene binnen;1;0
+WB2024-0133;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0136;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0136;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0136;HITTEM;Hittemelder;1;0
+WB2024-0136;HANDM;Handmelder rood;1;0
+WB2024-0136;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0136;ATTEST-BR;Attest;1;45
+WB2024-0138;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0138;KLAV-LCD;Klavier LCD;1;0
+WB2024-0138;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0138;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0138;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0140;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0140;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0140;HITTEM;Hittemelder;1;0
+WB2024-0140;HANDM;Handmelder rood;1;0
+WB2024-0140;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0144;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0144;KLAV-LCD;Klavier LCD;1;0
+WB2024-0144;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0144;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0144;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0146;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0146;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0146;HITTEM;Hittemelder;1;0
+WB2024-0146;HANDM;Handmelder rood;1;0
+WB2024-0146;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0156;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0156;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0156;HANDM;Handmelder rood;1;0
+WB2024-0156;SIR-BR;Brandsirene binnen;1;0
+WB2024-0156;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0157;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0157;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0157;HITTEM;Hittemelder;1;0
+WB2024-0157;HANDM;Handmelder rood;1;0
+WB2024-0157;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0159;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0159;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0159;HITTEM;Hittemelder;1;0
+WB2024-0159;HANDM;Handmelder rood;1;0
+WB2024-0159;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0159;ATTEST-BR;Attest;1;45
+WB2024-0162;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0162;BADGE-LZ;Badgelezer;1;0
+WB2024-0162;ELSLOT;Elektrisch slot;1;0
+WB2024-0162;BADGE-10;Badges (10 st);1;0
+WB2024-0162;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0164;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0164;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0164;HITTEM;Hittemelder;1;0
+WB2024-0164;HANDM;Handmelder rood;1;0
+WB2024-0164;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0166;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0166;KLAV-LCD;Klavier LCD;1;0
+WB2024-0166;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0166;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0166;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0168;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0168;BADGE-LZ;Badgelezer;1;0
+WB2024-0168;ELSLOT;Elektrisch slot;1;0
+WB2024-0168;BADGE-10;Badges (10 st);1;0
+WB2024-0168;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0170;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0170;BADGE-LZ;Badgelezer;1;0
+WB2024-0170;ELSLOT;Elektrisch slot;1;0
+WB2024-0170;BADGE-10;Badges (10 st);1;0
+WB2024-0170;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0175;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0175;KLAV-LCD;Klavier LCD;1;0
+WB2024-0175;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0175;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0175;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0177;NVR-8CH;NVR 8 kanalen;1;0
+WB2024-0177;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2024-0177;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2024-0177;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2024-0177;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0177;ATTEST-INB;Attest;1;45
+WB2024-0178;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0178;KLAV-LCD;Klavier LCD;1;0
+WB2024-0178;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0178;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0178;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0181;NVR-8CH;NVR 8 kanalen;1;0
+WB2024-0181;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2024-0181;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2024-0181;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2024-0181;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0181;ATTEST-INB;Attest;1;45
+WB2024-0187;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0187;KLAV-LCD;Klavier LCD;1;0
+WB2024-0187;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0187;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0187;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0187;ATTEST-INB;Attest;1;45
+WB2024-0189;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0189;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0189;HITTEM;Hittemelder;1;0
+WB2024-0189;HANDM;Handmelder rood;1;0
+WB2024-0189;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0190;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0190;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0190;HITTEM;Hittemelder;1;0
+WB2024-0190;HANDM;Handmelder rood;1;0
+WB2024-0190;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0190;ATTEST-BR;Attest;1;45
+WB2024-0191;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0191;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0191;HANDM;Handmelder rood;1;0
+WB2024-0191;SIR-BR;Brandsirene binnen;1;0
+WB2024-0191;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0194;NVR-8CH;NVR 8 kanalen;1;0
+WB2024-0194;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2024-0194;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2024-0194;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2024-0194;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0195;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0195;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0195;HITTEM;Hittemelder;1;0
+WB2024-0195;HANDM;Handmelder rood;1;0
+WB2024-0195;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0195;ATTEST-BR;Attest;1;45
+WB2024-0196;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2024-0196;BADGE-LZ;Badgelezer;1;0
+WB2024-0196;ELSLOT;Elektrisch slot;1;0
+WB2024-0196;BADGE-10;Badges (10 st);1;0
+WB2024-0196;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0196;ATTEST-INB;Attest;1;45
+WB2024-0201;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0201;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0201;HITTEM;Hittemelder;1;0
+WB2024-0201;HANDM;Handmelder rood;1;0
+WB2024-0201;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0201;ATTEST-BR;Attest;1;45
+WB2024-0204;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0204;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0204;HANDM;Handmelder rood;1;0
+WB2024-0204;SIR-BR;Brandsirene binnen;1;0
+WB2024-0204;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0204;ATTEST-BR;Attest;1;45
+WB2024-0207;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0207;KLAV-LCD;Klavier LCD;1;0
+WB2024-0207;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0207;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0207;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0208;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0208;KLAV-LCD;Klavier LCD;1;0
+WB2024-0208;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0208;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0208;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0213;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0213;KLAV-LCD;Klavier LCD;1;0
+WB2024-0213;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0213;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0213;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0213;ATTEST-INB;Attest;1;45
+WB2024-0215;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0215;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0215;HANDM;Handmelder rood;1;0
+WB2024-0215;SIR-BR;Brandsirene binnen;1;0
+WB2024-0215;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0217;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0217;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0217;HANDM;Handmelder rood;1;0
+WB2024-0217;SIR-BR;Brandsirene binnen;1;0
+WB2024-0217;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0219;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0219;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0219;HANDM;Handmelder rood;1;0
+WB2024-0219;SIR-BR;Brandsirene binnen;1;0
+WB2024-0219;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0220;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0220;KLAV-LCD;Klavier LCD;1;0
+WB2024-0220;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0220;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0220;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0220;ATTEST-INB;Attest;1;45
+WB2024-0223;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0223;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0223;HITTEM;Hittemelder;1;0
+WB2024-0223;HANDM;Handmelder rood;1;0
+WB2024-0223;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0226;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0226;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0226;HANDM;Handmelder rood;1;0
+WB2024-0226;SIR-BR;Brandsirene binnen;1;0
+WB2024-0226;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0229;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0229;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0229;HITTEM;Hittemelder;1;0
+WB2024-0229;HANDM;Handmelder rood;1;0
+WB2024-0229;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0229;ATTEST-BR;Attest;1;45
+WB2024-0231;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0231;KLAV-LCD;Klavier LCD;1;0
+WB2024-0231;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0231;SIR-BUI;Buitensirene met flits;1;0
+WB2024-0231;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0231;ATTEST-INB;Attest;1;45
+WB2024-0234;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2024-0234;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2024-0234;HANDM;Handmelder rood;1;0
+WB2024-0234;SIR-BR;Brandsirene binnen;1;0
+WB2024-0234;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0234;ATTEST-BR;Attest;1;45
+WB2024-0238;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2024-0238;KLAV-LCD;Klavier LCD;1;0
+WB2024-0238;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2024-0238;MC-OPB;Magneetcontact opbouw;1;0
+WB2024-0238;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2024-0238;ATTEST-INB;Attest;1;45
+WB2025-0002;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0002;KLAV-LCD;Klavier LCD;1;0
+WB2025-0002;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0002;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0002;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0002;ATTEST-INB;Attest;1;45
+WB2025-0005;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0005;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0005;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0005;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0005;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0005;ATTEST-INB;Attest;1;45
+WB2025-0008;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0008;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0008;HITTEM;Hittemelder;1;0
+WB2025-0008;HANDM;Handmelder rood;1;0
+WB2025-0008;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0010;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0010;KLAV-LCD;Klavier LCD;1;0
+WB2025-0010;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0010;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0010;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0012;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0012;KLAV-LCD;Klavier LCD;1;0
+WB2025-0012;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0012;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0012;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0013;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0013;KLAV-LCD;Klavier LCD;1;0
+WB2025-0013;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0013;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0013;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0013;ATTEST-INB;Attest;1;45
+WB2025-0018;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0018;KLAV-LCD;Klavier LCD;1;0
+WB2025-0018;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0018;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0018;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0019;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0019;KLAV-LCD;Klavier LCD;1;0
+WB2025-0019;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0019;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0019;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0019;ATTEST-INB;Attest;1;45
+WB2025-0020;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0020;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0020;HITTEM;Hittemelder;1;0
+WB2025-0020;HANDM;Handmelder rood;1;0
+WB2025-0020;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0021;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0021;KLAV-LCD;Klavier LCD;1;0
+WB2025-0021;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0021;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0021;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0024;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0024;KLAV-LCD;Klavier LCD;1;0
+WB2025-0024;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0024;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0024;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0028;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0028;KLAV-LCD;Klavier LCD;1;0
+WB2025-0028;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0028;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0028;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0028;ATTEST-INB;Attest;1;45
+WB2025-0029;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0029;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0029;HANDM;Handmelder rood;1;0
+WB2025-0029;SIR-BR;Brandsirene binnen;1;0
+WB2025-0029;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0032;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0032;KLAV-LCD;Klavier LCD;1;0
+WB2025-0032;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0032;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0032;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0034;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0034;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0034;HITTEM;Hittemelder;1;0
+WB2025-0034;HANDM;Handmelder rood;1;0
+WB2025-0034;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0039;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0039;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0039;HITTEM;Hittemelder;1;0
+WB2025-0039;HANDM;Handmelder rood;1;0
+WB2025-0039;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0041;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0041;KLAV-LCD;Klavier LCD;1;0
+WB2025-0041;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0041;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0041;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0041;ATTEST-INB;Attest;1;45
+WB2025-0045;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0045;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0045;HANDM;Handmelder rood;1;0
+WB2025-0045;SIR-BR;Brandsirene binnen;1;0
+WB2025-0045;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0047;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0047;KLAV-LCD;Klavier LCD;1;0
+WB2025-0047;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0047;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0047;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0048;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0048;KLAV-LCD;Klavier LCD;1;0
+WB2025-0048;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0048;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0048;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0048;ATTEST-INB;Attest;1;45
+WB2025-0049;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0049;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0049;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0049;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0049;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0049;ATTEST-INB;Attest;1;45
+WB2025-0051;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0051;KLAV-LCD;Klavier LCD;1;0
+WB2025-0051;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0051;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0051;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0052;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0052;KLAV-LCD;Klavier LCD;1;0
+WB2025-0052;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0052;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0052;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0052;ATTEST-INB;Attest;1;45
+WB2025-0056;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0056;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0056;HITTEM;Hittemelder;1;0
+WB2025-0056;HANDM;Handmelder rood;1;0
+WB2025-0056;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0056;ATTEST-BR;Attest;1;45
+WB2025-0059;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0059;KLAV-LCD;Klavier LCD;1;0
+WB2025-0059;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0059;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0059;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0059;ATTEST-INB;Attest;1;45
+WB2025-0060;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0060;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0060;HANDM;Handmelder rood;1;0
+WB2025-0060;SIR-BR;Brandsirene binnen;1;0
+WB2025-0060;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0064;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0064;KLAV-LCD;Klavier LCD;1;0
+WB2025-0064;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0064;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0064;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0064;ATTEST-INB;Attest;1;45
+WB2025-0065;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0065;KLAV-LCD;Klavier LCD;1;0
+WB2025-0065;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0065;SIR-BUI;Buitensirene met flits;1;0
+WB2025-0065;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0065;ATTEST-INB;Attest;1;45
+WB2025-0068;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0068;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0068;HITTEM;Hittemelder;1;0
+WB2025-0068;HANDM;Handmelder rood;1;0
+WB2025-0068;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0073;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0073;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0073;HANDM;Handmelder rood;1;0
+WB2025-0073;SIR-BR;Brandsirene binnen;1;0
+WB2025-0073;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0073;ATTEST-BR;Attest;1;45
+WB2025-0075;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0075;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0075;HITTEM;Hittemelder;1;0
+WB2025-0075;HANDM;Handmelder rood;1;0
+WB2025-0075;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0075;ATTEST-BR;Attest;1;45
+WB2025-0078;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0078;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0078;HANDM;Handmelder rood;1;0
+WB2025-0078;SIR-BR;Brandsirene binnen;1;0
+WB2025-0078;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0080;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0080;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0080;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0080;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0080;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0082;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0082;KLAV-LCD;Klavier LCD;1;0
+WB2025-0082;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0082;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0082;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0082;ATTEST-INB;Attest;1;45
+WB2025-0088;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0088;KLAV-LCD;Klavier LCD;1;0
+WB2025-0088;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0088;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0088;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0091;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0091;KLAV-LCD;Klavier LCD;1;0
+WB2025-0091;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0091;SIR-BUI;Buitensirene met flits;1;0
+WB2025-0091;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0091;ATTEST-INB;Attest;1;45
+WB2025-0094;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0094;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0094;HITTEM;Hittemelder;1;0
+WB2025-0094;HANDM;Handmelder rood;1;0
+WB2025-0094;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0095;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0095;KLAV-LCD;Klavier LCD;1;0
+WB2025-0095;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0095;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0095;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0095;ATTEST-INB;Attest;1;45
+WB2025-0098;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0098;KLAV-LCD;Klavier LCD;1;0
+WB2025-0098;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0098;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0098;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0100;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0100;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0100;HITTEM;Hittemelder;1;0
+WB2025-0100;HANDM;Handmelder rood;1;0
+WB2025-0100;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0102;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0102;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0102;HITTEM;Hittemelder;1;0
+WB2025-0102;HANDM;Handmelder rood;1;0
+WB2025-0102;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0103;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0103;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0103;HITTEM;Hittemelder;1;0
+WB2025-0103;HANDM;Handmelder rood;1;0
+WB2025-0103;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0106;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0106;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0106;HITTEM;Hittemelder;1;0
+WB2025-0106;HANDM;Handmelder rood;1;0
+WB2025-0106;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0109;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0109;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0109;HITTEM;Hittemelder;1;0
+WB2025-0109;HANDM;Handmelder rood;1;0
+WB2025-0109;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0109;ATTEST-BR;Attest;1;45
+WB2025-0112;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0112;KLAV-LCD;Klavier LCD;1;0
+WB2025-0112;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0112;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0112;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0112;ATTEST-INB;Attest;1;45
+WB2025-0113;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0113;KLAV-LCD;Klavier LCD;1;0
+WB2025-0113;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0113;SIR-BUI;Buitensirene met flits;1;0
+WB2025-0113;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0114;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0114;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0114;HITTEM;Hittemelder;1;0
+WB2025-0114;HANDM;Handmelder rood;1;0
+WB2025-0114;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0114;ATTEST-BR;Attest;1;45
+WB2025-0116;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0116;KLAV-LCD;Klavier LCD;1;0
+WB2025-0116;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0116;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0116;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0120;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0120;KLAV-LCD;Klavier LCD;1;0
+WB2025-0120;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0120;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0120;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0120;ATTEST-INB;Attest;1;45
+WB2025-0129;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0129;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0129;HITTEM;Hittemelder;1;0
+WB2025-0129;HANDM;Handmelder rood;1;0
+WB2025-0129;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0132;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0132;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0132;HANDM;Handmelder rood;1;0
+WB2025-0132;SIR-BR;Brandsirene binnen;1;0
+WB2025-0132;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0134;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0134;KLAV-LCD;Klavier LCD;1;0
+WB2025-0134;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0134;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0134;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0138;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0138;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0138;HITTEM;Hittemelder;1;0
+WB2025-0138;HANDM;Handmelder rood;1;0
+WB2025-0138;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0138;ATTEST-BR;Attest;1;45
+WB2025-0141;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0141;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0141;HITTEM;Hittemelder;1;0
+WB2025-0141;HANDM;Handmelder rood;1;0
+WB2025-0141;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0141;ATTEST-BR;Attest;1;45
+WB2025-0144;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0144;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0144;HITTEM;Hittemelder;1;0
+WB2025-0144;HANDM;Handmelder rood;1;0
+WB2025-0144;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0145;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0145;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0145;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0145;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0145;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0147;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0147;KLAV-LCD;Klavier LCD;1;0
+WB2025-0147;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0147;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0147;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0147;ATTEST-INB;Attest;1;45
+WB2025-0150;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0150;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0150;HITTEM;Hittemelder;1;0
+WB2025-0150;HANDM;Handmelder rood;1;0
+WB2025-0150;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0153;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0153;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0153;HITTEM;Hittemelder;1;0
+WB2025-0153;HANDM;Handmelder rood;1;0
+WB2025-0153;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0153;ATTEST-BR;Attest;1;45
+WB2025-0156;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0156;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0156;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0156;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0156;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0157;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0157;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0157;HANDM;Handmelder rood;1;0
+WB2025-0157;SIR-BR;Brandsirene binnen;1;0
+WB2025-0157;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0160;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0160;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0160;HANDM;Handmelder rood;1;0
+WB2025-0160;SIR-BR;Brandsirene binnen;1;0
+WB2025-0160;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0160;ATTEST-BR;Attest;1;45
+WB2025-0163;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0163;KLAV-LCD;Klavier LCD;1;0
+WB2025-0163;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0163;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0163;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0165;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0165;KLAV-LCD;Klavier LCD;1;0
+WB2025-0165;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0165;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0165;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0167;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0167;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0167;HITTEM;Hittemelder;1;0
+WB2025-0167;HANDM;Handmelder rood;1;0
+WB2025-0167;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0167;ATTEST-BR;Attest;1;45
+WB2025-0168;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0168;KLAV-LCD;Klavier LCD;1;0
+WB2025-0168;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0168;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0168;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0171;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0171;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0171;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0171;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0171;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0174;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0174;KLAV-LCD;Klavier LCD;1;0
+WB2025-0174;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0174;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0174;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0174;ATTEST-INB;Attest;1;45
+WB2025-0175;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0175;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0175;HITTEM;Hittemelder;1;0
+WB2025-0175;HANDM;Handmelder rood;1;0
+WB2025-0175;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0176;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0176;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0176;HITTEM;Hittemelder;1;0
+WB2025-0176;HANDM;Handmelder rood;1;0
+WB2025-0176;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0176;ATTEST-BR;Attest;1;45
+WB2025-0182;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0182;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0182;HANDM;Handmelder rood;1;0
+WB2025-0182;SIR-BR;Brandsirene binnen;1;0
+WB2025-0182;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0184;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0184;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0184;HANDM;Handmelder rood;1;0
+WB2025-0184;SIR-BR;Brandsirene binnen;1;0
+WB2025-0184;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0185;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0185;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0185;HANDM;Handmelder rood;1;0
+WB2025-0185;SIR-BR;Brandsirene binnen;1;0
+WB2025-0185;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0190;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2025-0190;BADGE-LZ;Badgelezer;1;0
+WB2025-0190;ELSLOT;Elektrisch slot;1;0
+WB2025-0190;BADGE-10;Badges (10 st);1;0
+WB2025-0190;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0190;ATTEST-INB;Attest;1;45
+WB2025-0193;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0193;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0193;HITTEM;Hittemelder;1;0
+WB2025-0193;HANDM;Handmelder rood;1;0
+WB2025-0193;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0197;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0197;KLAV-LCD;Klavier LCD;1;0
+WB2025-0197;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0197;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0197;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0197;ATTEST-INB;Attest;1;45
+WB2025-0199;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0199;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0199;HANDM;Handmelder rood;1;0
+WB2025-0199;SIR-BR;Brandsirene binnen;1;0
+WB2025-0199;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0202;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0202;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0202;HANDM;Handmelder rood;1;0
+WB2025-0202;SIR-BR;Brandsirene binnen;1;0
+WB2025-0202;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0203;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0203;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0203;HITTEM;Hittemelder;1;0
+WB2025-0203;HANDM;Handmelder rood;1;0
+WB2025-0203;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0203;ATTEST-BR;Attest;1;45
+WB2025-0204;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0204;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0204;HITTEM;Hittemelder;1;0
+WB2025-0204;HANDM;Handmelder rood;1;0
+WB2025-0204;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0204;ATTEST-BR;Attest;1;45
+WB2025-0205;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0205;KLAV-LCD;Klavier LCD;1;0
+WB2025-0205;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0205;SIR-BUI;Buitensirene met flits;1;0
+WB2025-0205;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0211;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2025-0211;BADGE-LZ;Badgelezer;1;0
+WB2025-0211;ELSLOT;Elektrisch slot;1;0
+WB2025-0211;BADGE-10;Badges (10 st);1;0
+WB2025-0211;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0214;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0214;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0214;HANDM;Handmelder rood;1;0
+WB2025-0214;SIR-BR;Brandsirene binnen;1;0
+WB2025-0214;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0216;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0216;KLAV-LCD;Klavier LCD;1;0
+WB2025-0216;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0216;SIR-BUI;Buitensirene met flits;1;0
+WB2025-0216;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0218;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0218;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0218;HITTEM;Hittemelder;1;0
+WB2025-0218;HANDM;Handmelder rood;1;0
+WB2025-0218;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0218;ATTEST-BR;Attest;1;45
+WB2025-0221;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2025-0221;BADGE-LZ;Badgelezer;1;0
+WB2025-0221;ELSLOT;Elektrisch slot;1;0
+WB2025-0221;BADGE-10;Badges (10 st);1;0
+WB2025-0221;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0221;ATTEST-INB;Attest;1;45
+WB2025-0224;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2025-0224;BADGE-LZ;Badgelezer;1;0
+WB2025-0224;ELSLOT;Elektrisch slot;1;0
+WB2025-0224;BADGE-10;Badges (10 st);1;0
+WB2025-0224;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0224;ATTEST-INB;Attest;1;45
+WB2025-0230;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0230;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0230;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0230;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0230;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0233;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0233;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0233;HANDM;Handmelder rood;1;0
+WB2025-0233;SIR-BR;Brandsirene binnen;1;0
+WB2025-0233;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0235;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0235;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0235;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0235;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0235;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0244;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2025-0244;BADGE-LZ;Badgelezer;1;0
+WB2025-0244;ELSLOT;Elektrisch slot;1;0
+WB2025-0244;BADGE-10;Badges (10 st);1;0
+WB2025-0244;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0244;ATTEST-INB;Attest;1;45
+WB2025-0247;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0247;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0247;HITTEM;Hittemelder;1;0
+WB2025-0247;HANDM;Handmelder rood;1;0
+WB2025-0247;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0250;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0250;KLAV-LCD;Klavier LCD;1;0
+WB2025-0250;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0250;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0250;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0251;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0251;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0251;HITTEM;Hittemelder;1;0
+WB2025-0251;HANDM;Handmelder rood;1;0
+WB2025-0251;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0253;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2025-0253;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2025-0253;HITTEM;Hittemelder;1;0
+WB2025-0253;HANDM;Handmelder rood;1;0
+WB2025-0253;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0253;ATTEST-BR;Attest;1;45
+WB2025-0255;NVR-8CH;NVR 8 kanalen;1;0
+WB2025-0255;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2025-0255;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2025-0255;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2025-0255;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2025-0260;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2025-0260;KLAV-LCD;Klavier LCD;1;0
+WB2025-0260;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2025-0260;MC-OPB;Magneetcontact opbouw;1;0
+WB2025-0260;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0004;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0004;KLAV-LCD;Klavier LCD;1;0
+WB2026-0004;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0004;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0004;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0007;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0007;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0007;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2026-0007;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0007;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0010;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0010;KLAV-LCD;Klavier LCD;1;0
+WB2026-0010;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0010;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0010;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0012;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0012;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0012;HITTEM;Hittemelder;1;0
+WB2026-0012;HANDM;Handmelder rood;1;0
+WB2026-0012;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0012;ATTEST-BR;Attest;1;45
+WB2026-0014;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0014;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0014;HANDM;Handmelder rood;1;0
+WB2026-0014;SIR-BR;Brandsirene binnen;1;0
+WB2026-0014;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0014;ATTEST-BR;Attest;1;45
+WB2026-0017;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0017;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0017;HANDM;Handmelder rood;1;0
+WB2026-0017;SIR-BR;Brandsirene binnen;1;0
+WB2026-0017;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0022;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0022;KLAV-LCD;Klavier LCD;1;0
+WB2026-0022;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0022;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0022;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0027;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0027;KLAV-LCD;Klavier LCD;1;0
+WB2026-0027;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0027;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0027;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0028;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0028;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0028;HITTEM;Hittemelder;1;0
+WB2026-0028;HANDM;Handmelder rood;1;0
+WB2026-0028;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0031;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0031;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0031;HITTEM;Hittemelder;1;0
+WB2026-0031;HANDM;Handmelder rood;1;0
+WB2026-0031;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0034;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0034;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0034;HANDM;Handmelder rood;1;0
+WB2026-0034;SIR-BR;Brandsirene binnen;1;0
+WB2026-0034;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0037;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0037;KLAV-LCD;Klavier LCD;1;0
+WB2026-0037;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0037;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0037;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0037;ATTEST-INB;Attest;1;45
+WB2026-0039;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0039;KLAV-LCD;Klavier LCD;1;0
+WB2026-0039;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0039;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0039;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0039;ATTEST-INB;Attest;1;45
+WB2026-0041;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0041;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0041;HANDM;Handmelder rood;1;0
+WB2026-0041;SIR-BR;Brandsirene binnen;1;0
+WB2026-0041;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0041;ATTEST-BR;Attest;1;45
+WB2026-0044;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0044;KLAV-LCD;Klavier LCD;1;0
+WB2026-0044;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0044;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0044;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0047;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0047;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0047;HITTEM;Hittemelder;1;0
+WB2026-0047;HANDM;Handmelder rood;1;0
+WB2026-0047;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0047;ATTEST-BR;Attest;1;45
+WB2026-0049;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0049;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0049;HITTEM;Hittemelder;1;0
+WB2026-0049;HANDM;Handmelder rood;1;0
+WB2026-0049;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0049;ATTEST-BR;Attest;1;45
+WB2026-0052;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0052;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0052;HITTEM;Hittemelder;1;0
+WB2026-0052;HANDM;Handmelder rood;1;0
+WB2026-0052;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0053;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0053;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0053;HITTEM;Hittemelder;1;0
+WB2026-0053;HANDM;Handmelder rood;1;0
+WB2026-0053;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0053;ATTEST-BR;Attest;1;45
+WB2026-0057;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0057;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0057;HITTEM;Hittemelder;1;0
+WB2026-0057;HANDM;Handmelder rood;1;0
+WB2026-0057;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0057;ATTEST-BR;Attest;1;45
+WB2026-0060;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0060;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0060;HANDM;Handmelder rood;1;0
+WB2026-0060;SIR-BR;Brandsirene binnen;1;0
+WB2026-0060;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0064;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0064;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0064;HITTEM;Hittemelder;1;0
+WB2026-0064;HANDM;Handmelder rood;1;0
+WB2026-0064;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0064;ATTEST-BR;Attest;1;45
+WB2026-0065;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0065;KLAV-LCD;Klavier LCD;1;0
+WB2026-0065;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0065;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0065;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0065;ATTEST-INB;Attest;1;45
+WB2026-0071;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0071;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0071;HITTEM;Hittemelder;1;0
+WB2026-0071;HANDM;Handmelder rood;1;0
+WB2026-0071;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0071;ATTEST-BR;Attest;1;45
+WB2026-0079;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0079;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0079;HITTEM;Hittemelder;1;0
+WB2026-0079;HANDM;Handmelder rood;1;0
+WB2026-0079;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0079;ATTEST-BR;Attest;1;45
+WB2026-0082;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0082;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0082;HANDM;Handmelder rood;1;0
+WB2026-0082;SIR-BR;Brandsirene binnen;1;0
+WB2026-0082;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0084;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0084;KLAV-LCD;Klavier LCD;1;0
+WB2026-0084;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0084;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0084;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0087;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0087;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0087;HITTEM;Hittemelder;1;0
+WB2026-0087;HANDM;Handmelder rood;1;0
+WB2026-0087;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0088;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0088;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0088;HITTEM;Hittemelder;1;0
+WB2026-0088;HANDM;Handmelder rood;1;0
+WB2026-0088;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0089;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0089;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0089;HITTEM;Hittemelder;1;0
+WB2026-0089;HANDM;Handmelder rood;1;0
+WB2026-0089;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0092;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0092;KLAV-LCD;Klavier LCD;1;0
+WB2026-0092;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0092;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0092;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0092;ATTEST-INB;Attest;1;45
+WB2026-0094;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0094;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0094;HITTEM;Hittemelder;1;0
+WB2026-0094;HANDM;Handmelder rood;1;0
+WB2026-0094;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0096;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0096;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0096;HANDM;Handmelder rood;1;0
+WB2026-0096;SIR-BR;Brandsirene binnen;1;0
+WB2026-0096;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0097;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0097;KLAV-LCD;Klavier LCD;1;0
+WB2026-0097;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0097;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0097;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0097;ATTEST-INB;Attest;1;45
+WB2026-0099;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0099;KLAV-LCD;Klavier LCD;1;0
+WB2026-0099;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0099;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0099;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0100;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0100;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0100;HITTEM;Hittemelder;1;0
+WB2026-0100;HANDM;Handmelder rood;1;0
+WB2026-0100;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0104;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0104;BADGE-LZ;Badgelezer;1;0
+WB2026-0104;ELSLOT;Elektrisch slot;1;0
+WB2026-0104;BADGE-10;Badges (10 st);1;0
+WB2026-0104;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0104;ATTEST-INB;Attest;1;45
+WB2026-0107;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0107;BADGE-LZ;Badgelezer;1;0
+WB2026-0107;ELSLOT;Elektrisch slot;1;0
+WB2026-0107;BADGE-10;Badges (10 st);1;0
+WB2026-0107;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0107;ATTEST-INB;Attest;1;45
+WB2026-0108;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0108;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0108;HANDM;Handmelder rood;1;0
+WB2026-0108;SIR-BR;Brandsirene binnen;1;0
+WB2026-0108;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0117;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0117;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0117;HITTEM;Hittemelder;1;0
+WB2026-0117;HANDM;Handmelder rood;1;0
+WB2026-0117;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0117;ATTEST-BR;Attest;1;45
+WB2026-0121;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0121;KLAV-LCD;Klavier LCD;1;0
+WB2026-0121;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0121;SIR-BUI;Buitensirene met flits;1;0
+WB2026-0121;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0121;ATTEST-INB;Attest;1;45
+WB2026-0122;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0122;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0122;HITTEM;Hittemelder;1;0
+WB2026-0122;HANDM;Handmelder rood;1;0
+WB2026-0122;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0122;ATTEST-BR;Attest;1;45
+WB2026-0124;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0124;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0124;HITTEM;Hittemelder;1;0
+WB2026-0124;HANDM;Handmelder rood;1;0
+WB2026-0124;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0124;ATTEST-BR;Attest;1;45
+WB2026-0127;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0127;KLAV-LCD;Klavier LCD;1;0
+WB2026-0127;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0127;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0127;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0130;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0130;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0130;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2026-0130;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0130;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0133;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0133;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0133;HITTEM;Hittemelder;1;0
+WB2026-0133;HANDM;Handmelder rood;1;0
+WB2026-0133;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0133;ATTEST-BR;Attest;1;45
+WB2026-0134;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0134;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0134;HANDM;Handmelder rood;1;0
+WB2026-0134;SIR-BR;Brandsirene binnen;1;0
+WB2026-0134;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0135;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0135;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0135;HITTEM;Hittemelder;1;0
+WB2026-0135;HANDM;Handmelder rood;1;0
+WB2026-0135;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0138;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0138;KLAV-LCD;Klavier LCD;1;0
+WB2026-0138;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0138;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0138;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0138;ATTEST-INB;Attest;1;45
+WB2026-0142;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0142;KLAV-LCD;Klavier LCD;1;0
+WB2026-0142;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0142;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0142;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0142;ATTEST-INB;Attest;1;45
+WB2026-0145;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0145;KLAV-LCD;Klavier LCD;1;0
+WB2026-0145;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0145;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0145;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0149;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0149;BADGE-LZ;Badgelezer;1;0
+WB2026-0149;ELSLOT;Elektrisch slot;1;0
+WB2026-0149;BADGE-10;Badges (10 st);1;0
+WB2026-0149;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0151;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0151;KLAV-LCD;Klavier LCD;1;0
+WB2026-0151;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0151;SIR-BUI;Buitensirene met flits;1;0
+WB2026-0151;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0151;ATTEST-INB;Attest;1;45
+WB2026-0152;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0152;KLAV-LCD;Klavier LCD;1;0
+WB2026-0152;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0152;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0152;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0152;ATTEST-INB;Attest;1;45
+WB2026-0156;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0156;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0156;HITTEM;Hittemelder;1;0
+WB2026-0156;HANDM;Handmelder rood;1;0
+WB2026-0156;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0159;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0159;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0159;HANDM;Handmelder rood;1;0
+WB2026-0159;SIR-BR;Brandsirene binnen;1;0
+WB2026-0159;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0160;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0160;KLAV-LCD;Klavier LCD;1;0
+WB2026-0160;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0160;SIR-BUI;Buitensirene met flits;1;0
+WB2026-0160;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0160;ATTEST-INB;Attest;1;45
+WB2026-0162;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0162;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0162;HITTEM;Hittemelder;1;0
+WB2026-0162;HANDM;Handmelder rood;1;0
+WB2026-0162;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0162;ATTEST-BR;Attest;1;45
+WB2026-0163;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0163;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0163;HANDM;Handmelder rood;1;0
+WB2026-0163;SIR-BR;Brandsirene binnen;1;0
+WB2026-0163;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0163;ATTEST-BR;Attest;1;45
+WB2026-0166;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0166;KLAV-LCD;Klavier LCD;1;0
+WB2026-0166;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0166;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0166;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0167;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0167;BADGE-LZ;Badgelezer;1;0
+WB2026-0167;ELSLOT;Elektrisch slot;1;0
+WB2026-0167;BADGE-10;Badges (10 st);1;0
+WB2026-0167;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0170;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0170;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0170;HANDM;Handmelder rood;1;0
+WB2026-0170;SIR-BR;Brandsirene binnen;1;0
+WB2026-0170;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0171;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0171;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0171;HITTEM;Hittemelder;1;0
+WB2026-0171;HANDM;Handmelder rood;1;0
+WB2026-0171;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0173;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0173;BADGE-LZ;Badgelezer;1;0
+WB2026-0173;ELSLOT;Elektrisch slot;1;0
+WB2026-0173;BADGE-10;Badges (10 st);1;0
+WB2026-0173;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0176;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0176;KLAV-LCD;Klavier LCD;1;0
+WB2026-0176;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0176;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0176;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0176;ATTEST-INB;Attest;1;45
+WB2026-0178;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0178;KLAV-LCD;Klavier LCD;1;0
+WB2026-0178;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0178;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0178;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0179;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0179;BADGE-LZ;Badgelezer;1;0
+WB2026-0179;ELSLOT;Elektrisch slot;1;0
+WB2026-0179;BADGE-10;Badges (10 st);1;0
+WB2026-0179;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0179;ATTEST-INB;Attest;1;45
+WB2026-0182;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0182;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0182;HANDM;Handmelder rood;1;0
+WB2026-0182;SIR-BR;Brandsirene binnen;1;0
+WB2026-0182;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0182;ATTEST-BR;Attest;1;45
+WB2026-0184;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0184;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0184;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2026-0184;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0184;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0189;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0189;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0189;HITTEM;Hittemelder;1;0
+WB2026-0189;HANDM;Handmelder rood;1;0
+WB2026-0189;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0190;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0190;KLAV-LCD;Klavier LCD;1;0
+WB2026-0190;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0190;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0190;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0191;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0191;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0191;HITTEM;Hittemelder;1;0
+WB2026-0191;HANDM;Handmelder rood;1;0
+WB2026-0191;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0191;ATTEST-BR;Attest;1;45
+WB2026-0194;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0194;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0194;HITTEM;Hittemelder;1;0
+WB2026-0194;HANDM;Handmelder rood;1;0
+WB2026-0194;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0198;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0198;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0198;HITTEM;Hittemelder;1;0
+WB2026-0198;HANDM;Handmelder rood;1;0
+WB2026-0198;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0198;ATTEST-BR;Attest;1;45
+WB2026-0199;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0199;KLAV-LCD;Klavier LCD;1;0
+WB2026-0199;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0199;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0199;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0200;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0200;KLAV-LCD;Klavier LCD;1;0
+WB2026-0200;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0200;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0200;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0201;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0201;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0201;HITTEM;Hittemelder;1;0
+WB2026-0201;HANDM;Handmelder rood;1;0
+WB2026-0201;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0201;ATTEST-BR;Attest;1;45
+WB2026-0202;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0202;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0202;HITTEM;Hittemelder;1;0
+WB2026-0202;HANDM;Handmelder rood;1;0
+WB2026-0202;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0202;ATTEST-BR;Attest;1;45
+WB2026-0203;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0203;KLAV-LCD;Klavier LCD;1;0
+WB2026-0203;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0203;SIR-BUI;Buitensirene met flits;1;0
+WB2026-0203;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0206;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0206;KLAV-LCD;Klavier LCD;1;0
+WB2026-0206;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0206;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0206;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0207;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0207;KLAV-LCD;Klavier LCD;1;0
+WB2026-0207;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0207;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0207;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0207;ATTEST-INB;Attest;1;45
+WB2026-0208;DEURCTRL-2;Deurcontroller 2 deuren;1;0
+WB2026-0208;BADGE-LZ;Badgelezer;1;0
+WB2026-0208;ELSLOT;Elektrisch slot;1;0
+WB2026-0208;BADGE-10;Badges (10 st);1;0
+WB2026-0208;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0208;ATTEST-INB;Attest;1;45
+WB2026-0210;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0210;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0210;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0210;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0210;ATTEST-INB;Attest;1;45
+WB2026-0215;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0215;KLAV-LCD;Klavier LCD;1;0
+WB2026-0215;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0215;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0215;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0217;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0217;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0217;HANDM;Handmelder rood;1;0
+WB2026-0217;SIR-BR;Brandsirene binnen;1;0
+WB2026-0217;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0218;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0218;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0218;CAM-4MP-BUL;Camera bullet 4MP;1;0
+WB2026-0218;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0218;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0221;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0221;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0221;HANDM;Handmelder rood;1;0
+WB2026-0221;SIR-BR;Brandsirene binnen;1;0
+WB2026-0221;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0223;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0223;KLAV-LCD;Klavier LCD;1;0
+WB2026-0223;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0223;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0223;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0228;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0228;KLAV-LCD;Klavier LCD;1;0
+WB2026-0228;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0228;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0228;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0231;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0231;KLAV-LCD;Klavier LCD;1;0
+WB2026-0231;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0231;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0231;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0234;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0234;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0234;HITTEM;Hittemelder;1;0
+WB2026-0234;HANDM;Handmelder rood;1;0
+WB2026-0234;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0237;BRCEN-4Z;Brandcentrale 4 zones;1;0
+WB2026-0237;ROOKM-OPT;Rookmelder optisch (adresseerbaar);1;0
+WB2026-0237;HITTEM;Hittemelder;1;0
+WB2026-0237;HANDM;Handmelder rood;1;0
+WB2026-0237;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0239;NVR-8CH;NVR 8 kanalen;1;0
+WB2026-0239;CAM-4MP-DOME;Camera dome 4MP;1;0
+WB2026-0239;HDD-2TB;Harde schijf 2TB surveillance;1;0
+WB2026-0239;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0239;ATTEST-INB;Attest;1;45
+WB2026-0242;ALC-CEN-32;Alarmcentrale 32 zones;1;0
+WB2026-0242;KLAV-LCD;Klavier LCD;1;0
+WB2026-0242;PIR-QD;Bewegingsdetector PIR dubbel;1;0
+WB2026-0242;MC-OPB;Magneetcontact opbouw;1;0
+WB2026-0242;ARB-ONDH;Arbeid onderhoud (uur);"1,5";62
+WB2026-0242;ATTEST-INB;Attest;1;45
+WB2026-0346;ALC-CEN-32;Alarmcentrale 32 zones;1;
+WB2026-0346;KLAV-LCD;Klavier LCD;2;
+WB2026-0346;PIR-QD;Bewegingsdetector PIR dubbel;2;
+WB2026-0346;MC-OPB;Magneetcontact opbouw;3;
+WB2026-0346;SIR-BUI;Buitensirene met flits;1;
+WB2026-0346;SIR-BIN;Binnensirene;1;
+WB2026-0346;BAT-12V7;Batterij 12V 7Ah;2;
+WB2026-0346;KIES-GSM;GSM-kiezer;1;
+WB2026-0347;BRCEN-4Z;Brandcentrale 4 zones;1;
+WB2026-0347;ROOKM-OPT;Rookmelder optisch (adresseerbaar);11;
+WB2026-0347;HITTEM;Hittemelder;3;
+WB2026-0347;HANDM;Handmelder rood;1;
+WB2026-0347;SIR-BR;Brandsirene binnen;4;
+WB2026-0347;FLITS-BR;Flitslicht brand;3;
+WB2026-0347;BAT-12V7;Batterij 12V 7Ah;2;

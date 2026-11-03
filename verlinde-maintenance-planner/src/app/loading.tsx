@@ -1,0 +1,1 @@
+export default function Loading() { return <div role="status" className="animate-pulse space-y-4 py-8"><p className="text-sm text-slate-500">Gegevens laden…</p><div className="h-24 rounded-xl bg-slate-200" /><div className="h-72 rounded-xl bg-slate-200" /></div>; }

@@ -1,0 +1,194 @@
+﻿nr;lijst;groep;type;omschrijving;klant;installatiedatum;verantw;pnr;uwref;frequentie;laatste;volgende;autoplan;actief;pand;notities
+1001;ONDERHOUD 2019;INBR;INBR;Inbraakalarm woning Inge;K00257;17/09/2011;DV;P2023-015;;1J;;;N;J;"Bellegemstraat 124, 8540 Deerlijk";
+1002;ONDERHOUD;INBR;INBR;Inbraakalarm Interieur Devos BVBA;K00823;21/03/2021;TDC;;;;;;N;J;"Industrielaan 145, 8551 Heestert";
+1003;ONDERHOUD;INBR;INBR;Inbraakalarm woning Wim;K00305;24/01/2023;TDC;;;1J;;;N;J;"Pontstraat 12, 8530 Harelbeke";
+1004;ONDERHOUD;BRAND;BRAND;Branddetectie Hoeve Sabbe;K00610;24/11/2010;DV;;;;12/08/2024;13/09/2025;N;J;"Lindenlaan 149, 8930 Menen";
+1005;ONDERHOUD;CAM;CAM;Camerabewaking woning Vanlerberghe;K00591;11/03/2022;DV;;;;;;N;J;"Lindenlaan 148, 8560 Wevelgem";
+1006;ONDERHOUD;INBR;INBR;Inbraakalarm pand Oudenaardsesteenweg 36;;01/11/2024;;;PO 4526958;1J;;;N;J;;Centrale vervangen in 2022 (zie factuur)
+1007;ONDERHOUD;Camera;CAM;Camerabewaking Hoeve Desmet;K00244;10/01/2019;TDC;P2015-025;;;;;N;J;"Heirweg 114, 8580 Avelgem";
+1008;ONDERHOUD;Inbraak;INBR;Inbraakalarm woning Benoit;K00393;13/12/2012;;;PO 4548117;jaarlijks;;;N;J;"Kerkstraat 24, 8530 Harelbeke";
+1009;ONDERHOUD 2019;BRAND;BRAND;Branddetectie woning Els;K00516;;JMS;;;12M;;;N;J;"Driesstraat 91, 8500 Kortrijk";
+1010;ONDERHOUD;INBR;INBR;Inbraakalarm woning Lieve;K00320;25/11/2019;TDC;P2023-147;;2J;;;N;J;"Stationsstraat 2 bus 2, 8790 Waregem";Contract opgezegd? navragen
+1012;ONDERHOUD;BRAND;BRAND;Branddetectie Interieur Vercruysse;K00296;21/01/2010;JMS;P2021-108;;12M;23/01/2026;;N;J;"Otegemstraat 1, 8500 Kortrijk";
+1013;ONDERHOUD;INBR;INBR;Inbraakalarm woning Callens;K00663;22/10/2012;;;PO 4537300;12M;;;N;J;"Kortrijkseweg 66, 8530 HARELBEKE";
+1014;ONDERHOUD;INBR;INBR;Inbraakalarm woning Kris;K00228;10/02/2021;TDC;P2012-126;;12M;;;N;J;"Zandstraat 92, 8580 Avelgem";
+1018;ONDERHOUD;CAM;CAM;Camerabewaking woning Lieve;K00320;10/10/2020;WVH;P2010-030;;;;;N;J;"Stationsstraat 2 bus 2, 8790 Waregem";
+1019;ONDERHOUD;INBR;INBR;Inbraakalarm VZW De Klaproos;K00803;01/11/2024;TDC;;;1J;;;N;J;"Bellegemstraat 121, 8580 Avelgem";
+1020;Contracten;Brand;BRAND;Branddetectie woning Jan;K00220;19/02/2011;WVH;P2016-049;;jaarlijks;;;N;J;"Kortrijkseweg 167, 9700 Oudenaarde";
+1021;ONDERHOUD;Inbraak;INBR;Inbraakalarm woning Jan;K00220;28/10/2021;;;;12M;;;N;J;"Kortrijkseweg 167, 9700 Oudenaarde";
+1022;ONDERHOUD;ALARM;INBR;Inbraakalarm woning Dirk;K00429;25/03/2022;DV;;;12M;;;N;J;"Vichtesteenweg 170, 8790 Waregem";
+1023;ONDERHOUD;CAM;CAM;Camerabewaking Hoeve Desmet;K00791;04/07/2023;;;PO 4595627;1J;;;N;J;"Hoogstraat 163, 8580 Avelgem";
+1025;ONDERHOUD ;TOEG;TOEG;Toegangscontrole pand Otegemstraat 42;;18/04/2009;DV;;;op vraag;;;N;J;;
+1026;ONDERHOUD;INBR;INBR;Inbraakalarm woning Dirk;K00429;16/05/2011;TDC;;;12M;;;N;J;"Vichtesteenweg 170, 8790 Waregem";
+1027;ONDERHOUD;CAM;CAM;Camerabewaking woning Ghekiere;K00182;18/05/2019;JMS;;PO 4508597;;;;N;J;"Kortrijkseweg 129, 8530 Harelbeke";
+1030;ONDERHOUD;INBR;INBR;Inbraakalarm woning Dewaele;K00177;08/08/2014;WVH;;;jaarlijks;;;N;J;"Hoogstraat 153, 8570 Anzegem";
+1031;;ALARM;INBR;Inbraakalarm woning Johan;K00352;23/04/2017;;P2009-020;;2J;;;N;J;"Stationsstraat 33, 8501 Heule";
+1033;ONDERHOUD;BRAND;BRAND;Branddetectie woning Johan;K00593;19/02/2012;;;;6M;;;N;J;"Hoogstraat 163B, 8530 Harelbeke";
+1034;ONDERHOUD;BRAND;BRAND;Branddetectie Fietsen Desmet (nieuw);K00809;16/03/2014;JMS;P2014-045;;6M;;;N;J;"Lindenlaan 2A, 8501 Heule";
+1035;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Ghekiere;K00189;17/01/2020;;;;1J;07/05/2026;;N;J;"Spinnerijstraat 106, 8870 Izegem";
+1036;ONDERHOUD;CAM;CAM;Camerabewaking KAPSALON MIEKE;K00799;21/02/2020;;P2010-131;;;;;N;J;"Industrielaan 91, 8560 Wevelgem";
+1037;ONDERHOUD;ALARM;INBR;Inbraakalarm woning Vanlerberghe;K00632;23/07/2025;WVH;P2020-195;;1J;14/02/2024;;N;J;"Ellestraat 97, 8790 Waregem";
+1038;;INBR;INBR;Inbraakalarm woning Vanneste;K00724;02/05/2020;TDC;P2013-019;;jaarlijks;;;N;J;"Ellestraat 169, 8870 Izegem";
+1039;ONDERHOUD;Brand;BRAND;Branddetectie woning Benoit;K00393;15/05/2013;TDC;;PO 4527414;jaarlijks;;;N;J;"Kerkstraat 24, 8530 Harelbeke";
+1041;;TOEG;TOEG;Toegangscontrole Verzekeringen Moerman;K00404;13/03/2009;TDC;P2019-084;PO 4578990;;;;N;J;"Vichtesteenweg 78, 8580 Avelgem";
+1042;ONDERHOUD;TOEG;TOEG;Toegangscontrole Dierenartsenpraktijk De Leie;K00451;24/06/2015;DV;;;;;;N;J;"Zandstraat 178, 8540 Deerlijk";
+1044;ONDERHOUD;CAM;CAM;Camerabewaking pand Industrielaan 5;;18/07/2016;TDC;;;op vraag;;;N;J;;
+1047;ONDERHOUD;CAM;CAM;Camerabewaking Verzekeringen Moerman;K00404;02/03/2021;TDC;;;1J;;;N;J;"Vichtesteenweg 78, 8580 Avelgem";
+1048;ONDERHOUD;BRAND;BRAND;Branddetectie woning Dejonghe;K00326;18/04/2018;WVH;;;1J;;;N;J;"Molenstraat 90, 8570 Anzegem";
+1049;Contracten;BRAND;BRAND;Branddetectie woning Jan;K00345;05/05/2017;DV;;;1 x per jaar;;;N;J;"Vichtesteenweg 173, 8550 ZWEVEGEM";
+1050;;BRAND;BRAND;Branddetectie woning Moerman;K00469;10/11/2014;;P2023-219;;1J;;;N;J;"Industrielaan 67, 8930 Menen";
+1051;ONDERHOUD;CAM;CAM;Camerabewaking Fietsen Benoit;K00566;;JMS;;;;;;N;J;"Blokellestraat 71, 8501 Heule";
+1052;ONDERHOUD ;INBR;INBR;Inbraakalarm woning Sabbe;K00599;10/06/2019;JMS;P2010-163;PO 4502508;jaarlijks;;;N;J;"Meersstraat 41, 8580 Avelgem";
+1053;ONDERHOUD;INBR;INBR;Inbraakalarm woning Pieter;K00329;07/06/2010;;P2010-035;PO 4552193;;;;N;J;"Vlaanderenstraat 128, 8570 Anzegem";
+1054;ONDERHOUD;INBR;INBR;Inbraakalarm Opticien Desmet;K00693;21/10/2011;;;;1J;;;N;J;"Vichtesteenweg 26, 8540 DEERLIJK";
+1055;ONDERHOUD;INBR;INBR;Inbraakalarm Hoeve Desmet;K00791;;DV;;;2J;08/09/2026;;N;J;"Hoogstraat 163, 8580 Avelgem";
+1056;ONDERHOUD;CAM;CAM;Camerabewaking woning Deprez;K00609;15/07/2018;DV;;;;;;N;J;"Ellestraat 27, 8580 Avelgem";
+1057;ONDERHOUD;BRAND;BRAND;Branddetectie woning Benoit;K00689;10/11/2022;JMS;;;6M;;;N;J;"Bosstraat 105, 8501 HEULE";
+1058;;INBR;INBR;Inbraakalarm VZW De Klaproos;K00155;22/03/2022;JMS;P2010-190;PO 4574593;1J;;;N;J;"Bellegemstraat 121, 8580 Avelgem";
+1059;ONDERHOUD;BRAND;BRAND;Branddetectie woning Devos;K00134;15/05/2025;DV;;;12;;;N;J;"Zandstraat 10A, 8530 Harelbeke";
+1060;ONDERHOUD;INBR;INBR;Inbraakalarm pand Hoogstraat 60;;08/05/2010;WVH;;PO 4589153;jaarlijks;;;N;J;;
+1061;ONDERHOUD 2019;INBR;INBR;Inbraakalarm woning Peter;K00317;02/04/2017;DV;P2019-188;;?;;;N;J;"Spinnerijstraat 41, 8930 Menen";Brandweer vraagt jaarlijks attest
+1062;ONDERHOUD;INBR;INBR;Inbraakalarm woning Verschuere;K00768;13/11/2016;JMS;P2019-180;;1J;28/07/2024;02/02/2025;N;J;"Kapelstraat 159, 8790 Waregem";Contract opgezegd? navragen
+1063;ONDERHOUD;INBR;INBR;Inbraakalarm woning Moerman;K00469;28/03/2012;;P2017-183;;jaarlijks;;;N;J;"Industrielaan 67, 8930 Menen";
+1067;ONDERHOUD 2019;CAM;CAM;Camerabewaking woning Devos;K00134;28/06/2014;JMS;;;2J;;;N;J;"Zandstraat 10A, 8530 Harelbeke";
+1068;ONDERHOUD ;CAM;CAM;Camerabewaking Interieur Devos BVBA;K00823;04/08/2012;TDC;;;2J;;;N;J;"Industrielaan 145, 8551 Heestert";
+1069;ONDERHOUD;CAM;CAM;Camerabewaking woning Benoit;K00689;02/11/2024;JMS;P2011-138;;2J;24/11/2023;;N;J;"Bosstraat 105, 8501 HEULE";
+1070;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Ghekiere;K00182;13/09/2019;DV;;;op vraag;;;N;J;"Kortrijkseweg 129, 8530 Harelbeke";Sleutel via conciërge
+1071;ONDERHOUD;CAM;CAM;Camerabewaking VZW De Klaproos;K00155;19/10/2022;JMS;P2018-128;;;;;N;J;"Bellegemstraat 121, 8580 Avelgem";
+1072;ONDERHOUD;CCTV;CAM;Camerabewaking Interieur Devos;K00208;28/07/2022;TDC;P2021-091;;op vraag;22/12/2025;;N;J;"Industrielaan 145, 8551 Heestert";
+1073;ONDERHOUD;BRAND;BRAND;Branddetectie woning Ghekiere;K00189;23/10/2017;TDC;;;1J;;;N;J;"Spinnerijstraat 106, 8870 Izegem";Brandweer vraagt jaarlijks attest
+1074;ONDERHOUD;CAM;CAM;Camerabewaking woning Dirk;K00429;09/07/2012;DV;;;1J;;;N;J;"Vichtesteenweg 170, 8790 Waregem";
+1075;ONDERHOUD;TOEG;TOEG;Toegangscontrole Brasserie 't Hoekske;K00530;03/04/2018;;;;2J;;;N;J;"Heirweg 176, 8930 Menen";
+1076;ONDERHOUD;BRAND;BRAND;Branddetectie woning Bart;K00538;18/04/2017;;;PO 4505110;;07/02/2026;;N;J;"Rijksweg 20, 8530 Harelbeke";
+1077;ONDERHOUD ;INBR;INBR;Inbraakalarm overgenomen van vorige installateur;;16/05/2019;WVH;P2015-088;;12M;10/05/2025;;N;J;;
+1078;Contracten;BRAND;BRAND;Branddetectie Feestzaal De Gouden Leeuw;K00750;26/07/2015;TDC;P2010-124;;jaarlijks;;;N;J;"Bergstraat 92, 9700 Oudenaarde";Contract opgezegd? navragen
+1079;ONDERHOUD;TOEG;TOEG;Toegangscontrole Garage Deprez;K00389;19/12/2021;;;;;;;N;J;"Stationsstraat 98, 8870 Izegem";
+1080;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Koen;K00484;27/04/2023;;;PO 4579913;1J;;;N;J;"Kortrijkseweg 49, 8790 Waregem";
+1081;ONDERHOUD;CAM;CAM;Camerabewaking woning Vandaele;K00694;12/10/2017;WVH;P2022-198;;;;;N;J;"Rijksweg 25, 8930 Menen";
+1082;ONDERHOUD;BRAND;BRAND;Branddetectie woning Johan;K00593;28/05/2021;DV;;;1J;;;N;J;"Hoogstraat 163B, 8530 Harelbeke";
+1083;ONDERHOUD;BRANDDET;BRAND;Branddetectie woning Callens;K00663;14/01/2022;DV;;;12;;;N;J;"Kortrijkseweg 66, 8530 HARELBEKE";
+1085;ONDERHOUD;INBR;INBR;Inbraakalarm woning Vandenberghe;K00542;18/12/2021;WVH;;;;;;N;J;"Otegemstraat 106, 8790 Waregem";
+1086;ONDERHOUD;CAM;CAM;Camerabewaking woning Ann;K00222;28/09/2025;TDC;;;1J;;;N;J;"Oudenaardsesteenweg 1B, 8930 MENEN";
+1087;ONDERHOUD ;INBR;INBR;Inbraakalarm Sporthal Gemeentelijk (Zwevegem);K00744;11/08/2020;TDC;P2010-114;;;;;N;J;"Driesstraat 70, 8550 Zwevegem";
+1088;ONDERHOUD 2019;BRAND;BRAND;Branddetectie woning Johan;K00507;04/05/2017;DV;;;6M;;;N;J;"Oudenaardsesteenweg 123, 8560 Wevelgem";
+1089;;Inbraak;INBR;Inbraakalarm woning Lieve;K00263;10/04/2024;TDC;P2023-096;;1J;15/01/2023;27/09/2022;N;J;"Bergstraat 15, 8580 Avelgem";
+1090;ONDERHOUD;INBR;INBR;Inbraakalarm woning Bart;K00705;15/08/2011;DV;;;;;;N;J;"Heirweg 137, 8530 Harelbeke";
+1091;ONDERHOUD;INBR;INBR;Inbraakalarm woning Callens;K00619;15/09/2018;;P2024-169;;jaarlijks;;;N;J;"Ellestraat 115, 8551 Heestert";
+1092;ONDERHOUD;TOEG;TOEG;Toegangscontrole Fam. Seynaeve (oude klant?);;15/09/2010;WVH;;;op vraag;;;N;J;;
+1093;ONDERHOUD;INBR;INBR;Inbraakalarm Sporthal Gemeentelijk (Zwevegem);K00744;26/10/2012;TDC;;;jaarlijks;;;N;J;"Driesstraat 70, 8550 Zwevegem";
+1094;ONDERHOUD;CAM;CAM;Camerabewaking woning Jan;K00735;19/06/2009;;;;;;;N;J;"Hoogstraat 115, 8570 Anzegem";
+1095;Contracten;CAM;CAM;Camerabewaking woning Sofie;K00492;;TDC;P2025-139;PO 4535707;2J;;;N;J;"Stationsstraat 69, 8570 Anzegem";
+1096;ONDERHOUD 2019;INBR;INBR;Inbraakalarm Brasserie 't Hoekske;K00530;19/11/2020;TDC;;PO 4506180;1J;;;N;J;"Heirweg 176, 8930 Menen";
+1097;ONDERHOUD ;BRAND;BRAND;Branddetectie woning Jan;K00249;21/09/2009;TDC;;;12;;;N;J;"Ommegangstraat 69, 8580 Avelgem";
+1098;ONDERHOUD;TOEG;TOEG;Toegangscontrole Transport Moerman nv;K00715;09/08/2014;DV;;;1J;;;N;J;"Bosstraat 168, 8580 Avelgem";
+1099;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Bart;K00776;19/09/2023;;P2023-005;;;;;N;J;"Kerkstraat 7, 8530 Harelbeke";
+1100;ONDERHOUD;CAM;CAM;Camerabewaking Dierenartsenpraktijk De Leie;K00451;06/11/2025;;;;op vraag;;;N;J;"Zandstraat 178, 8540 Deerlijk";
+1101;ONDERHOUD;BRAND;BRAND;Branddetectie woning Tack;K00524;14/02/2016;DV;;PO 4524439;12;;;N;J;"Ellestraat 156, 8540 Deerlijk";Brandweer vraagt jaarlijks attest
+1102;ONDERHOUD;BRAND;BRAND;Branddetectie Restaurant La Ferme;K00420;07/03/2015;DV;P2010-161;PO 4581660;;28/09/2025;;N;J;"Lindenlaan 85, 8560 Wevelgem";
+1103;ONDERHOUD ;BRAND;BRAND;Branddetectie KAPSALON MIEKE;K00799;02/04/2019;JMS;P2020-142;;1J;;;N;J;"Industrielaan 91, 8560 Wevelgem";
+1104;ONDERHOUD;BRAND;BRAND;Branddetectie Kapsalon Mieke;K00455;07/09/2010;;P2017-107;;1J;;;N;J;"Driesstraat 99, 8501 Heule";
+1105;ONDERHOUD 2019;CAM;CAM;Camerabewaking Fietsen Desmet;K00169;06/01/2012;WVH;P2023-125;PO 4562989;1J;;;N;J;"Lindenlaan 2A, 8501 Heule";
+1106;Contracten;Toegang;TOEG;Toegangscontrole overgenomen van vorige installateur;;04/09/2016;TDC;P2016-182;;;;;N;J;;
+1107;ONDERHOUD;TOEG;TOEG;Toegangscontrole Metaalbouw Vanlerberghe;K00509;05/07/2014;WVH;P2011-186;;2J;;;N;J;"Oudenaardsesteenweg 53, 8501 Heule";
+1108;Contracten;BRANDDET;BRAND;Branddetectie Wasserij Dewaele;K00364;08/07/2022;JMS;P2015-199;;6M;;;N;J;"Ommegangstraat 164, 8520 Kuurne";
+1109;ONDERHOUD;INBR;INBR;Inbraakalarm Fietsen Desmet;K00169;10/07/2014;JMS;;;1J;;;N;J;"Lindenlaan 2A, 8501 Heule";
+1110;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Callens;K00513;01/05/2021;TDC;;;1J;;;N;J;"Bergstraat 61, 8560 Wevelgem";
+1111;ONDERHOUD;BRAND;BRAND;Branddetectie Hoeve Desmet;K00791;20/04/2014;TDC;;;1J;;;N;J;"Hoogstraat 163, 8580 Avelgem";
+1112;Contracten;CAM;CAM;Camerabewaking woning Peter;K00317;;TDC;;PO 4535627;2J;09/09/2021;27/12/2025;N;J;"Spinnerijstraat 41, 8930 Menen";
+1113;ONDERHOUD;CAM;CAM;Camerabewaking woning Sabbe;K00599;14/02/2022;TDC;;;;;;N;J;"Meersstraat 41, 8580 Avelgem";
+1114;ONDERHOUD;INBR;INBR;Inbraakalarm woning Jan;K00220;10/02/2012;;;;1J;;;N;J;"Kortrijkseweg 167, 9700 Oudenaarde";
+1115;Contracten;CAM;CAM;Camerabewaking woning Jan;K00345;11/05/2010;DV;;;2J;;;N;J;"Vichtesteenweg 173, 8550 ZWEVEGEM";
+1116;ONDERHOUD;BRAND;BRAND;Branddetectie woning Johan;K00507;21/03/2023;WVH;P2023-133;;1 x per jaar;;;N;J;"Oudenaardsesteenweg 123, 8560 Wevelgem";
+1117;ONDERHOUD;CAM;CAM;Camerabewaking woning Debruyne;K00720;;TDC;P2009-217;;;;;N;J;"Driesstraat 4, 8550 Zwevegem";
+1121;Contracten;Inbraak;INBR;Inbraakalarm Hoeve Ghekiere;K00467;18/12/2015;TDC;P2018-202;;?;;;N;J;"Blokellestraat 116, 8550 Zwevegem";
+1122;ONDERHOUD;CAM;CAM;Camerabewaking Fietsen Desmet (nieuw);K00809;28/02/2019;TDC;P2025-148;;1J;;;N;J;"Lindenlaan 2A, 8501 Heule";
+1123;ONDERHOUD;BRAND;BRAND;Branddetectie Fam. Vandenberghe (oude klant?);;;JMS;P2011-071;;jaarlijks;;;N;J;;Centrale vervangen in 2022 (zie factuur)
+1124;ONDERHOUD;CAM;CAM;Camerabewaking woning Lieve;K00313;06/11/2016;WVH;P2014-077;;2J;;;N;J;"Zandstraat 164A, 8870 Izegem";
+1125;ONDERHOUD;INBR;INBR;Inbraakalarm woning Johan;K00593;05/10/2023;;;;?;;;N;J;"Hoogstraat 163B, 8530 Harelbeke";
+1127;ONDERHOUD;BRAND;BRAND;Branddetectie Feestzaal De Gouden Leeuw;K00667;20/07/2021;DV;P2020-041;PO 4539189;6M;;;N;J;"Stationsstraat 20, 8540 Deerlijk";
+1128;ONDERHOUD;INBR;INBR;Inbraakalarm Interieur Deprez;K00642;23/04/2024;TDC;;;jaarlijks;;;N;J;"Zandstraat 79, 8570 Anzegem";
+1129;ONDERHOUD;Inbraak;INBR;Inbraakalarm VZW De Klaproos;K00655;01/11/2019;DV;;;?;;;N;J;"Lindenlaan 73, 8520 Kuurne";
+1130;ONDERHOUD;INBR;INBR;Inbraakalarm woning Vandenberghe;K00542;21/08/2019;TDC;P2010-104;;1J;;;N;J;"Otegemstraat 106, 8790 Waregem";
+1131;ONDERHOUD;BRAND;BRAND;Branddetectie Schrijnwerkerij Vandaele;K00500;08/11/2009;TDC;;;12M;;;N;J;"Heirweg 55, 8551 Heestert";
+1132;ONDERHOUD;CAM;CAM;Camerabewaking VZW De Klaproos;K00655;12/02/2017;TDC;P2011-046;;op vraag;;;N;J;"Lindenlaan 73, 8520 Kuurne";
+1133;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Inge;K00379;08/09/2022;TDC;;;1J;;;N;J;"Otegemstraat 41, 8870 Izegem";
+1134;ONDERHOUD;CAM;CAM;Camerabewaking woning Vandenberghe;K00542;06/05/2021;DV;P2015-003;;2J;;;N;J;"Otegemstraat 106, 8790 Waregem";
+1135;ONDERHOUD;CAM;CAM;Camerabewaking woning Desmet;K00443;13/05/2023;DV;;;2J;;;N;J;"Meersstraat 174, 8580 Avelgem";
+1139;ONDERHOUD;Toegang;TOEG;Toegangscontrole woning Hilde;K00148;14/09/2015;TDC;;;;;;N;J;"Heirweg 90, 8550 Zwevegem";
+1140;ONDERHOUD;TOEG;TOEG;Toegangscontrole Feestzaal De Gouden Leeuw;K00750;;WVH;P2011-008;;op vraag;;;N;J;"Bergstraat 92, 9700 Oudenaarde";Centrale vervangen in 2022 (zie factuur)
+1143;ONDERHOUD ;INBR;INBR;Inbraakalarm Fam. Vanneste (oude klant?);;12/01/2016;DV;P2009-207;;2J;;;N;J;;
+1144;ONDERHOUD;INBR;INBR;Inbraakalarm woning Ghekiere;K00189;11/02/2009;TDC;;;1J;23/01/2024;16/03/2022;N;J;"Spinnerijstraat 106, 8870 Izegem";
+1145;ONDERHOUD;INBR;INBR;Inbraakalarm woning Veerle;K00626;25/09/2020;DV;P2018-082;;?;;;N;J;"Kapelstraat 43, 9700 Oudenaarde";
+1146;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Callens;K00663;05/04/2018;JMS;P2017-149;;;;;N;J;"Kortrijkseweg 66, 8530 HARELBEKE";
+1147;;INBR;INBR;Inbraakalarm Wasserij Dewaele;K00364;18/10/2023;TDC;;;;;;N;J;"Ommegangstraat 164, 8520 Kuurne";
+1148;ONDERHOUD 2019;Camera;CAM;Camerabewaking woning Vanlerberghe;K00591;14/01/2024;TDC;;;op vraag;;;N;J;"Lindenlaan 148, 8560 Wevelgem";
+1149;ONDERHOUD;INBR;INBR;Inbraakalarm Bandencentrale Deprez;K00397;06/08/2011;JMS;P2009-079;PO 4535743;;;;N;J;"Ellestraat 8, 8530 Harelbeke";
+1150;ONDERHOUD;CAM;CAM;Camerabewaking woning Pieter;K00329;18/07/2014;TDC;;PO 4501210;1J;;;N;J;"Vlaanderenstraat 128, 8570 Anzegem";
+1151;Contracten;BRAND;BRAND;Branddetectie Wasserij Benoit;K00650;;TDC;;;12;;;N;J;"Rijksweg 81, 8870 Izegem";
+1152;ONDERHOUD;INBR;INBR;Inbraakalarm woning Veerle;K00626;20/10/2022;TDC;P2023-157;PO 4526401;1J;;;N;J;"Kapelstraat 43, 9700 Oudenaarde";
+1153;ONDERHOUD;BRAND;BRAND;Branddetectie woning Veerle;K00560;03/02/2014;WVH;;;6M;;;N;J;"Blokellestraat 8, 9700 Oudenaarde";
+1154;ONDERHOUD;INBR;INBR;Inbraakalarm woning Sabbe;K00599;09/11/2019;DV;P2012-086;;?;;;N;J;"Meersstraat 41, 8580 Avelgem";
+1155;ONDERHOUD;BRAND;BRAND;Branddetectie woning Bart;K00776;18/07/2023;WVH;P2020-124;;12M;;;N;J;"Kerkstraat 7, 8530 Harelbeke";
+1156;ONDERHOUD;BADGE;TOEG;Toegangscontrole Metaalbouw Verschuere;K00192;16/01/2011;;P2014-188;;;;;N;J;"Oudenaardsesteenweg 60, 8520 Kuurne";
+1157;ONDERHOUD;BRAND;BRAND;Branddetectie pand Blokellestraat 15;;14/04/2012;TDC;;;1 x per jaar;;;N;J;;
+1160;ONDERHOUD;CAM;CAM;Camerabewaking woning Sofie;K00492;05/01/2021;WVH;;;2J;;;N;J;"Stationsstraat 69, 8570 Anzegem";Brandweer vraagt jaarlijks attest
+1161;ONDERHOUD;CCTV;CAM;Camerabewaking Kapsalon Mieke;K00455;;WVH;;;;;;N;J;"Driesstraat 99, 8501 Heule";
+1162;ONDERHOUD;INBR;INBR;Inbraakalarm woning Jan;K00345;23/11/2023;;P2020-072;;2J;18/08/2026;;N;J;"Vichtesteenweg 173, 8550 ZWEVEGEM";
+1163;ONDERHOUD;CAM;CAM;Camerabewaking woning Els;K00276;01/12/2019;TDC;P2022-058;PO 4572199;;;;N;J;"Zandstraat 163B, 8870 Izegem";
+1166;ONDERHOUD;BRAND;BRAND;Branddetectie Brasserie 't Hoekske;K00530;23/04/2024;TDC;;PO 4595600;;;;N;J;"Heirweg 176, 8930 Menen";
+1167;ONDERHOUD;INBR;INBR;Inbraakalarm Feestzaal De Gouden Leeuw;K00667;07/05/2016;WVH;P2012-180;;;;;N;J;"Stationsstraat 20, 8540 Deerlijk";
+1168;ONDERHOUD;INBR;INBR;Inbraakalarm Bandencentrale Verhaeghe;K00464;;DV;P2010-057;;;;;N;J;"Kerkstraat 75, 8500 KORTRIJK";
+1169;ONDERHOUD 2019;INBR;INBR;Inbraakalarm Fietsen Lambrecht;K00421;16/07/2023;TDC;;;2J;;;N;J;"Ommegangstraat 144A, 8500 Kortrijk";
+1170;ONDERHOUD;BRAND;BRAND;Branddetectie woning Veerle;K00626;01/08/2012;WVH;;;12;09/07/2024;;N;J;"Kapelstraat 43, 9700 Oudenaarde";
+1172;ONDERHOUD;BADGE;TOEG;Toegangscontrole Schrijnwerkerij Vandaele;K00500;09/09/2025;DV;P2025-124;PO 4581187;;15/03/2023;22/10/2022;N;J;"Heirweg 55, 8551 Heestert";
+1173;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Filip;K00726;10/08/2020;WVH;P2009-119;;;;;N;J;"Spinnerijstraat 48, 8800 Roeselare";Klant wil onderhoud in voorjaar
+1174;ONDERHOUD;BRAND;BRAND;Branddetectie woning Vanneste;K00215;28/08/2010;JMS;;;1 x per jaar;;;N;J;"Ellestraat 75, 8870 Izegem";
+1175;ONDERHOUD;CAM;CAM;Camerabewaking Fietsen Lambrecht;K00421;24/03/2017;TDC;P2023-176;;2J;;;N;J;"Ommegangstraat 144A, 8500 Kortrijk";
+1176;ONDERHOUD 2019;BRAND;BRAND;Branddetectie pand Kortrijkseweg 2;;22/06/2022;TDC;P2016-179;PO 4555866;12M;;;N;J;;
+1177;ONDERHOUD;BRAND;BRAND;Branddetectie Verzekeringen Dewaele;K00237;26/03/2017;;;;jaarlijks;;;N;J;"Ellestraat 124, 8790 Waregem";
+1178;ONDERHOUD;CAM;CAM;Camerabewaking woning Dewaele;K00475;18/01/2015;TDC;P2012-003;;op vraag;;;N;J;"Vlaanderenstraat 128, 8530 Harelbeke";Centrale vervangen in 2022 (zie factuur)
+1179;ONDERHOUD;INBR;INBR;Inbraakalarm woning Sofie;K00492;24/08/2017;WVH;;;jaarlijks;;;N;J;"Stationsstraat 69, 8570 Anzegem";
+1180;ONDERHOUD 2019;BRANDDET;BRAND;Branddetectie Tandartspraktijk Declercq;K00698;21/03/2023;DV;;;12M;;;N;J;"Molenstraat 157, 8550 Zwevegem";Klant wil onderhoud in voorjaar
+1181;ONDERHOUD;INBR;INBR;Inbraakalarm woning Lieve;K00263;21/03/2011;TDC;;;?;;;N;J;"Bergstraat 15, 8580 Avelgem";
+1182;ONDERHOUD;INBR;INBR;Inbraakalarm Juwelier Seynaeve;K00579;08/01/2018;;P2010-127;;12M;;;N;J;"Hoogstraat 28, 8570 Anzegem";
+1183;ONDERHOUD ;BRAND;BRAND;Branddetectie Hoeve Ghekiere;K00467;01/08/2025;TDC;;;6M;;;N;J;"Blokellestraat 116, 8550 Zwevegem";
+1184;ONDERHOUD;INBR;INBR;Inbraakalarm woning Johan;K00593;07/08/2015;TDC;P2011-168;;2J;;;N;J;"Hoogstraat 163B, 8530 Harelbeke";
+1185;ONDERHOUD;BRAND;BRAND;Branddetectie woning Jan;K00220;07/12/2017;DV;P2012-118;;1 x per jaar;;;N;J;"Kortrijkseweg 167, 9700 Oudenaarde";
+1186;Contracten;BRAND;BRAND;Branddetectie woning Filip;K00726;23/09/2013;TDC;P2016-142;PO 4522058;;21/12/2025;;N;J;"Spinnerijstraat 48, 8800 Roeselare";
+1187;ONDERHOUD;TOEG;TOEG;Toegangscontrole Hoeve Desmet;K00244;;TDC;P2022-088;;;;;N;J;"Heirweg 114, 8580 Avelgem";
+1188;ONDERHOUD;CAM;CAM;Camerabewaking woning Peter;K00300;27/02/2018;JMS;P2015-159;;;;;N;J;"Ellestraat 111, 8560 Wevelgem";
+1189;ONDERHOUD;INBR;INBR;Inbraakalarm woning Kris;K00228;15/11/2017;TDC;;;jaarlijks;;;N;J;"Zandstraat 92, 8580 Avelgem";
+1190;ONDERHOUD;BRAND;BRAND;Branddetectie pand Blokellestraat 20;;24/12/2017;TDC;P2022-150;;1 x per jaar;;;N;J;;
+1191;ONDERHOUD;INBR;INBR;Inbraakalarm Brasserie 't Hoekske;K00758;23/12/2013;TDC;P2023-034;;12M;;;N;J;"Bosstraat 115, 8570 Anzegem";
+1194;ONDERHOUD;CAM;CAM;Camerabewaking Fietsen Desmet;K00169;08/02/2021;TDC;P2020-105;;op vraag;;;N;J;"Lindenlaan 2A, 8501 Heule";
+1195;ONDERHOUD;BRAND;BRAND;Branddetectie woning Peter;K00300;22/01/2010;TDC;;;12M;;;N;J;"Ellestraat 111, 8560 Wevelgem";
+1196;ONDERHOUD;BRAND;BRAND;Branddetectie woning Benoit;K00393;21/07/2009;TDC;P2013-212;;12M;;;N;J;"Kerkstraat 24, 8530 Harelbeke";
+1197;ONDERHOUD;CAM;CAM;Camerabewaking Dierenartsenpraktijk De Leie;K00551;24/05/2016;DV;P2016-105;PO 4585424;op vraag;04/09/2024;26/07/2022;N;J;"Heirweg 11, 8800 ROESELARE";
+1198;ONDERHOUD;INBR;INBR;Inbraakalarm woning Els;K00516;21/12/2022;;P2018-213;PO 4537545;2J;;;N;J;"Driesstraat 91, 8500 Kortrijk";
+1199;ONDERHOUD ;INBR;INBR;Inbraakalarm Schrijnwerkerij Demeyere;K00489;08/12/2022;TDC;;;2J;;;N;J;"Otegemstraat 67, 8520 Kuurne";
+1200;ONDERHOUD;INBR;INBR;Inbraakalarm Verzekeringen Moerman;K00404;09/05/2021;TDC;;;1J;;;N;J;"Vichtesteenweg 78, 8580 Avelgem";Brandweer vraagt jaarlijks attest
+1201;ONDERHOUD;BRAND;BRAND;Branddetectie Schrijnwerkerij Vandaele;K00500;28/03/2013;TDC;P2017-080;;jaarlijks;;;N;J;"Heirweg 55, 8551 Heestert";
+1202;ONDERHOUD;BRAND;BRAND;Branddetectie woning Kris;K00228;03/10/2025;;P2020-071;;1J;;;N;J;"Zandstraat 92, 8580 Avelgem";
+1203;ONDERHOUD;INBR;INBR;Inbraakalarm woning Verschuere;K00768;11/11/2011;;P2019-031;;;;;N;J;"Kapelstraat 159, 8790 Waregem";
+1204;ONDERHOUD;BRAND;BRAND;Branddetectie woning Vanlerberghe;K00632;04/09/2019;DV;P2020-128;;12;;;N;J;"Ellestraat 97, 8790 Waregem";Centrale vervangen in 2022 (zie factuur)
+1205;ONDERHOUD;INBR;INBR;Inbraakalarm Fietsen Callens;K00236;25/02/2010;DV;P2019-084;;;;;N;J;"Bosstraat 34, 8501 Heule";
+1206;ONDERHOUD;TOEG;TOEG;Toegangscontrole pand Bosstraat 49;;02/11/2019;;;;1J;;;N;J;;
+1207;ONDERHOUD;BRAND;BRAND;Branddetectie woning Vandenberghe;K00542;25/07/2019;JMS;P2017-062;;6M;;;N;J;"Otegemstraat 106, 8790 Waregem";
+1208;ONDERHOUD;INBR;INBR;Inbraakalarm Opticien Desmet;K00693;07/06/2014;WVH;P2017-038;PO 4542960;;;;N;J;"Vichtesteenweg 26, 8540 DEERLIJK";
+1209;ONDERHOUD;BRAND;BRAND;Branddetectie Brasserie 't Hoekske;K00779;17/02/2013;DV;;;jaarlijks;;;N;J;"Spinnerijstraat 97, 9700 OUDENAARDE";
+1210;ONDERHOUD;CAM;CAM;Camerabewaking Hoeve Sabbe;K00610;13/02/2021;;P2017-176;;2J;;;N;J;"Lindenlaan 149, 8930 Menen";Contract opgezegd? navragen
+1211;ONDERHOUD;BRAND;BRAND;Branddetectie Kapsalon Mieke;K00455;26/01/2019;TDC;P2014-130;;12;;;N;J;"Driesstraat 99, 8501 Heule";
+1212;ONDERHOUD;BRAND;BRAND;Branddetectie woning Marc;K00336;27/10/2016;TDC;;PO 4513246;6M;;;N;J;"Rijksweg 130, 8500 Kortrijk";
+1213;ONDERHOUD;Inbraak;INBR;Inbraakalarm woning Moerman;K00469;15/12/2014;TDC;;;1J;;;N;J;"Industrielaan 67, 8930 Menen";
+1214;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Dirk;K00429;16/11/2020;TDC;P2017-003;;op vraag;;;N;J;"Vichtesteenweg 170, 8790 Waregem";Brandweer vraagt jaarlijks attest
+1215;ONDERHOUD ;INBR;INBR;Inbraakalarm woning Wim;K00305;21/08/2018;DV;P2010-155;;1J;10/07/2026;;N;J;"Pontstraat 12, 8530 Harelbeke";
+1216;ONDERHOUD;Camera;CAM;Camerabewaking Tandartspraktijk Vanlerberghe;K00415;08/02/2018;WVH;;;op vraag;;;N;J;"Bergstraat 145, 8501 Heule";Klant wil onderhoud in voorjaar
+1217;ONDERHOUD;CAM;CAM;Camerabewaking Interieur Devos BVBA;K00823;15/09/2021;WVH;P2015-029;;;;;N;J;"Industrielaan 145, 8551 Heestert";Contract opgezegd? navragen
+1221;;BRAND;BRAND;Branddetectie Brasserie 't Hoekske;K00758;12/04/2014;TDC;P2010-148;;12M;17/10/2024;;N;J;"Bosstraat 115, 8570 Anzegem";
+1222;ONDERHOUD 2019;BRAND;BRAND;Branddetectie Schrijnwerkerij Delbaere;K00407;08/07/2021;;;;12;;;N;J;"Driesstraat 90, 8520 Kuurne";
+1223;ONDERHOUD;BRANDDET;BRAND;Branddetectie Fam. Vercruysse (oude klant?);;08/09/2025;WVH;P2017-156;;1J;03/06/2023;08/09/2023;N;J;;
+1224;ONDERHOUD;TOEG;TOEG;Toegangscontrole woning Ann;K00222;08/10/2009;TDC;P2018-035;;op vraag;;;N;J;"Oudenaardsesteenweg 1B, 8930 MENEN";
+1225;ONDERHOUD;CAM;CAM;Camerabewaking Kapsalon Mieke;K00455;25/05/2009;TDC;P2010-152;;2J;;;N;J;"Driesstraat 99, 8501 Heule";Klant wil onderhoud in voorjaar
+1226;ONDERHOUD;CAM;CAM;Camerabewaking Verzekeringen Moerman;K00404;20/03/2021;DV;;;;;;N;J;"Vichtesteenweg 78, 8580 Avelgem";
+1228;ONDERHOUD ;INBR;INBR;Inbraakalarm Tandartspraktijk Declercq;K00698;10/12/2024;WVH;P2009-041;;1J;;;N;J;"Molenstraat 157, 8550 Zwevegem";
+1229;ONDERHOUD;BRANDDET;BRAND;Branddetectie Tandartspraktijk Vanlerberghe;K00415;18/04/2015;JMS;P2016-175;;1J;;;N;J;"Bergstraat 145, 8501 Heule";Contract opgezegd? navragen

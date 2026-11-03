@@ -1,0 +1,283 @@
+﻿Build a production-quality prototype called 'Verlinde Maintenance Planner' using:
+
+- Next.js 15+ with App Router
+- TypeScript
+- React
+- Tailwind CSS
+- dnd-kit for drag-and-drop
+- date-fns for date handling
+- Papa Parse or csv-parse for CSV parsing
+- Lucide React for icons
+
+Do NOT use Supabase, authentication, a database, or external APIs.
+All source data must be read from CSV files in a local /data folder.
+All user changes must live only in client/application state.
+Reloading the page must intentionally reset the app to the original CSV data.
+
+Goal:
+Solve only these two customer problems:
+1. Dirk cannot easily see which maintenance is due or overdue.
+2. Scheduling a work order takes too many manual steps.
+
+Data files:
+- BD_EXP_REL_20261103.csv
+- BD_EXP_MS_HDR_20261103.csv
+- BD_EXP_WO_HDR_20261103.csv
+- BD_EXP_WO_OBJ_20261103.csv
+- BD_EXP_WO_HRS_PL_20261103.csv
+- BD_EXP_WO_HRS_EX_20261103.csv
+- BD_EXP_RES_20261103.csv
+- BD_EXP_WO_ART_PL_20261103.csv
+
+Create a clean data layer that parses and normalizes these files before the UI uses them.
+Do not parse raw CSV directly inside React components.
+
+Suggested structure:
+
+/data
+/src/app
+/src/components
+/src/lib/data
+/src/lib/domain
+/src/types
+
+Create repository/helper functions such as:
+- loadRelations()
+- loadManagementSheets()
+- loadWorkOrders()
+- loadPlannedHours()
+- loadExecutedHours()
+- loadResources()
+
+Normalize raw BuildDesk values into typed domain models.
+
+Core domain models should include:
+- Customer
+- MaintenanceSheet
+- WorkOrder
+- Resource
+- PlanningSlot
+
+The application must contain only two main pages:
+
+1. Maintenance
+2. Planning
+
+MAINTENANCE PAGE
+
+Build a responsive maintenance overview.
+
+Show installations/management sheets with:
+- customer
+- installation description
+- installation category/type
+- last maintenance date
+- next maintenance date
+- interval/frequency
+- current maintenance status
+
+Derive clear statuses such as:
+- Overdue
+- Upcoming
+- OK
+- Missing data
+
+Do not silently invent missing maintenance dates.
+If required data is missing, explicitly show 'Missing data'.
+
+Provide useful filtering:
+- All
+- Overdue
+- Upcoming
+- Missing data
+
+Allow search by customer or installation.
+
+Each maintenance row/card should show whether an existing open maintenance work order is already linked to it.
+
+If no relevant work order exists, provide a 'Create work order' action.
+
+When 'Create work order' is clicked:
+- create an in-memory work order
+- link it to the management sheet
+- copy customer, site, installation and description
+- set status to 'Unplanned'
+- use a temporary id such as TEMP-001
+- do not write anything back to CSV
+
+The new work order must immediately appear in the Planning page backlog.
+
+PLANNING PAGE
+
+Create a responsive scheduling board.
+
+Desktop layout:
+- left sidebar: unplanned work orders
+- right area: visual week planner
+
+The planner must display resources using their full names from res.csv, not only internal codes.
+
+Each resource should have a row.
+Show existing planning from wo_hrs_pl.csv as blocks.
+
+The unplanned sidebar should show:
+- work order number
+- customer
+- installation
+- site/location
+- urgency/status
+
+Implement drag-and-drop using dnd-kit.
+
+A user must be able to drag an unplanned work order onto:
+- a resource
+- a day
+- a time slot
+
+Dropping a work order must automatically determine:
+- date
+- resource id
+- start time
+- end time
+
+Use a default duration of 2 hours for newly created work orders.
+
+Existing planned work orders must also be draggable so they can be rescheduled to:
+- another resource
+- another day
+- another time slot
+
+Add validation:
+- prevent overlapping planning for the same resource
+- prevent invalid start/end times
+- prevent dropping onto unavailable/invalid slots
+- show a clear user-facing error message when a conflict exists
+
+Do not build an automatic scheduling optimizer.
+
+WORK ORDER DETAIL
+
+Clicking a work order should open a lightweight side drawer or modal.
+
+Show:
+- work order id
+- customer
+- installation
+- site
+- resource
+- planned date
+- start time
+- end time
+- status
+
+Provide one action:
+'Mark as completed'
+
+When clicked:
+- mark the work order as completed in memory
+- register execution using the planned date/resource/time
+- remove it from the active backlog/planning state where appropriate
+
+Do not implement a separate complicated execution workflow.
+
+DATA QUALITY
+
+Treat the source data as unreliable legacy ERP data.
+
+Handle:
+- empty dates
+- invalid dates
+- empty intervals
+- invalid planned times
+- orphaned references
+- missing relations/resources
+
+Never crash because of bad CSV data.
+Show safe fallback values where needed.
+
+Add a small 'Data issues' indicator where useful.
+
+UX / UI
+
+The app should feel modern, compact and operational.
+Use Tailwind only; no heavy design system is required.
+
+Desktop is primary.
+Tablet should remain usable.
+Mobile should stack sections sensibly rather than squeezing the full planner into an unreadable grid.
+
+Use:
+- sticky filters where useful
+- clear badges
+- concise labels
+- accessible buttons
+- readable spacing
+- responsive layouts
+
+Add a persistent notice:
+'Prototype mode — changes reset on reload.'
+
+ARCHITECTURE
+
+Keep raw BuildDesk data separate from UI models.
+
+Use:
+- server-side file loading/parsing where practical
+- typed normalization functions
+- client-side state only for interactive mutations
+
+Keep components small and focused.
+
+Suggested components:
+- MaintenanceTable
+- MaintenanceFilters
+- MaintenanceStatusBadge
+- CreateWorkOrderButton
+- PlanningBacklog
+- WeekPlanner
+- PlannerResourceRow
+- WorkOrderCard
+- WorkOrderDrawer
+- PrototypeNotice
+
+QUALITY REQUIREMENTS
+
+- TypeScript strict mode
+- no any unless unavoidable and justified
+- clear naming
+- no duplicated business logic
+- responsive UI
+- loading/error-safe behavior
+- lint clean
+- build must pass
+
+Do not overengineer.
+
+Do NOT build:
+- authentication
+- users/roles
+- Supabase
+- database persistence
+- invoicing
+- quotations
+- stock
+- contract management
+- routing optimization
+- email
+- notifications
+- AI agents
+- mobile technician app
+- BuildDesk write-back
+
+README
+
+Don't update README.md
+
+Before finishing:
+1. inspect the CSV schemas
+2. adapt the parser to the actual column names
+3. make the app run with the provided files
+4. run lint
+5. run build
+6. fix all errors
+7. keep the scope exactly as described

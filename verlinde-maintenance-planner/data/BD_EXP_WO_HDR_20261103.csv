@@ -1,0 +1,562 @@
+﻿nr;datum;status;klant;werfadres;omschrijving;fiche;soort;uwref;klantAfwezig;getekend;verzonden;notaTech;notaKantoor;notaKlant;aangemaakt;aangemaaktDoor
+WB2023-0002;09/01/2023;Completed;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";Klavier reageert niet;;Herstelling;;N;J;N;;;;12/12/2022;DV
+WB2023-0003;11/01/2023;Implemented;K00236;"Bosstraat 34, 8501 Heule";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;N;N;;;;05/12/2022;ADMIN
+WB2023-0006;12/01/2023;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Onderhoud volgens contract;;Onderhoud;;N;N;J;Hond in tuin;;;31/12/2022;DV
+WB2023-0007;15/01/2023;Completed;K00263;"Bergstraat 15, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;J;N;;;;12/01/2023;ADMIN
+WB2023-0008;18/01/2023;Completed;K00720;"Driesstraat 4, 8550 Zwevegem";Detector defect magazijn;1117;Herstelling;;N;J;N;Hond in tuin;;;04/01/2023;KV
+WB2023-0011;18/01/2023;Implemented;K00467;"Blokellestraat 116, Zwevegem";Nieuwe brandcentrale;;Installatie;;N;N;N;Ladder nodig (hoog plafond);;;09/01/2023;KV
+WB2023-0014;22/01/2023;Completed;K00599;"Meersstraat 41, 8580 Avelgem";Jaarlijks onderhoud fiche 1154;;Onderhoud;;N;J;J;;;;04/01/2023;ADMIN
+WB2023-0016;22/01/2023;Completed;K00467;"Blokellestraat 116, 8550 Zwevegem";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;N;;;;23/12/2022;KV
+WB2023-0017;23/01/2023;Implemented;K00182;"Kortrijkseweg 129, 8530 Harelbeke";Onderhoud camera;;Algemeen;;N;N;N;;"Niet afgewerkt, terug te gaan";;16/01/2023;DV
+WB2023-0018;24/01/2023;Invoiced;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Jaarlijks onderhoud fiche 1114;;Onderhoud;;N;N;J;;;;14/01/2023;DV
+WB2023-0019;01/02/2023;Completed;K00492;"Stationsstraat 69, 8570 Anzegem";OH alarm (fiche 1179);;Algemeen;;N;J;N;;;;11/01/2023;DV
+WB2023-0022;04/02/2023;Invoiced;K00469;"Industrielaan 67, 8930 Menen";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;N;J;;;;17/01/2023;DV
+WB2023-0023;07/02/2023;Completed;K00237;"Ellestraat 124, 8790 Waregem";onderhoud branddetectie + batterijen vervangen;;Algemeen;;N;J;N;;;;09/01/2023;KV
+WB2023-0024;10/02/2023;Verified;K00336;"Rijksweg 130, 8500 Kortrijk";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;N;;;;06/02/2023;ADMIN
+WB2023-0027;13/02/2023;Completed;K00524;"Ellestraat 156, 8540 Deerlijk";Onderhoud branddetectie;;Algemeen;;N;N;N;;;;06/01/2023;KV
+WB2023-0028;15/02/2023;Invoiced;K00134;"Zandstraat 10A, 8530 Harelbeke";Onderhoud branddetectie;;Onderhoud;;N;J;J;;;;12/01/2023;DV
+WB2023-0031;23/02/2023;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Jaarl. nazicht alarm;1021;Algemeen;;N;N;N;;;;07/02/2023;DV
+WB2023-0033;23/02/2023;Completed;K00263;"Bergstraat 15, 8580 Avelgem";OH alarm (fiche 1181);;Onderhoud;;N;N;N;Batterijen meenemen!;;;19/02/2023;DV
+WB2023-0036;28/02/2023;Verified;K00492;"Stationsstraat 69, 8570 Anzegem";Jaarl. nazicht camera;1160;Onderhoud;;N;J;N;Ladder nodig (hoog plafond);Klant wil extra camera;;16/02/2023;KV
+WB2023-0038;28/02/2023;Completed;K00222;"Oudenaardsesteenweg 1B, 8930 MENEN";Onderhoud toegang;;Onderhoud;;N;N;J;;;;02/02/2023;KV
+WB2023-0040;01/03/2023;Invoiced;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Klavier reageert niet;;Algemeen;;N;N;N;;;;23/02/2023;DV
+WB2023-0043;01/03/2023;Completed;K00744;"Driesstraat 70, 8550 Zwevegem";Herstelling na blikseminslag;;Herstelling;;N;J;J;Sleutel bij buren;;;26/01/2023;DV
+WB2023-0044;11/03/2023;Implemented;K00726;"Spinnerijstraat 48, Roeselare";Plaatsing camerasysteem;;Installatie;;N;N;N;;;;02/03/2023;KV
+WB2023-0047;17/03/2023;Implemented;K00809;"Lindenlaan 2A, 8501 Heule";Onderhoud branddetectie;;Onderhoud;;N;N;N;;;;26/02/2023;ADMIN
+WB2023-0050;18/03/2023;Completed;K00296;;Sirene gaat af zonder reden;;Herstelling;;N;J;N;;;;11/02/2023;DV
+WB2023-0052;24/03/2023;Invoiced;K00599;"Meersstraat 41, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Algemeen;PO 4575979;N;N;J;;;;03/03/2023;DV
+WB2023-0053;28/03/2023;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";onderhoud branddetectie + batterijen vervangen;1116;Algemeen;PO 4577358;N;J;J;Sleutel bij buren;;;23/02/2023;KV
+WB2023-0055;01/04/2023;Completed;K00492;"Stationsstraat 69, 8570 Anzegem";Klant kan niet uitschakelen;;Algemeen;;N;J;N;;;;14/03/2023;DV
+WB2023-0057;02/04/2023;Completed;K00560;"Blokellestraat 8, 9700 Oudenaarde";ONDH 1153;;Onderhoud;;N;J;J;;;;08/03/2023;DV
+WB2023-0059;06/04/2023;Completed;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Jaarl. nazicht camera;;Algemeen;;N;J;N;;;;21/03/2023;KV
+WB2023-0062;13/04/2023;Verified;K00215;"Ellestraat 75, 8870 Izegem";Jaarlijks onderhoud fiche 1174;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;;;03/03/2023;ADMIN
+WB2023-0063;15/04/2023;Completed;K00244;"Heirweg 114, 8580 Avelgem";Onderhoud volgens contract;1007;Onderhoud;;N;J;N;;;;17/03/2023;DV
+WB2023-0066;16/04/2023;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Jaarlijks onderhoud fiche 1108;;Algemeen;;N;J;N;;;;08/03/2023;DV
+WB2023-0067;18/04/2023;Implemented;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Valse melding brand;;Herstelling;;N;N;N;Batterijen meenemen!;;;01/04/2023;ADMIN
+WB2023-0070;20/04/2023;Invoiced;K00593;"Hoogstraat 163B, 8530 Harelbeke";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;J;;"Detector garage defect, offerte maken";;01/04/2023;ADMIN
+WB2023-0073;22/04/2023;Implemented;K00200;;Onderhoud branddetectie;;Onderhoud;PO 4562094;N;N;N;;;;17/04/2023;DV
+WB2023-0074;24/04/2023;Completed;K00397;"Ellestraat 8, 8530 Harelbeke";Jaarl. nazicht alarm;1149;Onderhoud;;N;J;N;;;;16/04/2023;KV
+WB2023-0075;25/04/2023;Invoiced;K00698;;Storing centrale;;Algemeen;;N;N;N;;;;02/04/2023;DV
+WB2023-0076;06/05/2023;Completed;K00169;"Lindenlaan 2A, 8501 Heule";Klant kan niet uitschakelen;;Herstelling;;N;J;N;Sleutel bij buren;;;11/04/2023;KV
+WB2023-0078;07/05/2023;Completed;K00329;"Vlaanderenstraat 128, Anzegem";Plaatsing camerasysteem;;Installatie;;N;N;J;Sleutel bij buren;;;17/04/2023;DV
+WB2023-0081;08/05/2023;Implemented;K00758;"Bosstraat 115, 8570 Anzegem";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;;;;14/04/2023;KV
+WB2023-0082;10/05/2023;Invoiced;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Valse melding brand;;Algemeen;PO 4524508;N;N;J;;;;04/05/2023;DV
+WB2023-0085;15/05/2023;Completed;K00429;"Vichtesteenweg 170, 8790 Waregem";OH toegang (fiche 1214);;Algemeen;;N;N;J;;;;10/04/2023;KV
+WB2023-0086;17/05/2023;Verified;K00361;;ONDH 1006;;Onderhoud;;N;N;N;;;;09/05/2023;ADMIN
+WB2023-0089;18/05/2023;Completed;K00619;"Ellestraat 115, 8551 Heestert";Klant kan niet uitschakelen;;Algemeen;;N;N;J;;;;26/04/2023;ADMIN
+WB2023-0090;19/05/2023;Invoiced;K00610;"Lindenlaan 149, 8930 Menen";Onderhoud branddetectie;;Algemeen;;N;N;N;Ladder nodig (hoog plafond);;;17/04/2023;ADMIN
+WB2023-0091;19/05/2023;Completed;K00296;"Otegemstraat 1, 8500 Kortrijk";OH branddetectie (fiche 1012);;Algemeen;PO 4530620;N;N;J;Klant bellen 30 min op voorhand;;;02/05/2023;DV
+WB2023-0094;20/05/2023;Verified;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";Onderhoud alarm;;Algemeen;;N;N;N;;;;11/05/2023;KV
+WB2023-0096;20/05/2023;Completed;K00655;"Lindenlaan 73, 8520 Kuurne";Jaarl. nazicht alarm;;Algemeen;;N;J;J;Ladder nodig (hoog plafond);;;14/04/2023;DV
+WB2023-0097;23/05/2023;Completed;K00500;"Heirweg 55, 8551 Heestert";Onderhoud branddetectie;;Onderhoud;PO 4554645;N;N;J;;;;12/05/2023;DV
+WB2023-0100;27/05/2023;Implemented;K00317;"Spinnerijstraat 41, 8930 Menen";Detector defect magazijn;;Algemeen;;N;N;N;Klant bellen 30 min op voorhand;;;18/05/2023;KV
+WB2023-0102;28/05/2023;Completed;K00475;"Vlaanderenstraat 128, 8530 Harelbeke";onderhoud camera + batterijen vervangen;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;"Detector garage defect, offerte maken";;18/04/2023;DV
+WB2023-0104;01/06/2023;Implemented;K00698;"Molenstraat 157, 8550 Zwevegem";OH alarm (fiche 1228);;Onderhoud;;N;N;N;;;;26/04/2023;ADMIN
+WB2023-0105;02/06/2023;Completed;K00706;;Jaarlijks onderhoud fiche 1060;;Algemeen;;N;J;J;Batterijen meenemen!;;;19/05/2023;DV
+WB2023-0107;08/06/2023;Completed;K00776;"Kerkstraat 7, 8530 Harelbeke";onderhoud branddetectie + batterijen vervangen;;Algemeen;PO 4501558;N;J;J;;;;14/05/2023;KV
+WB2023-0110;08/06/2023;Implemented;K00542;"Otegemstraat 106, 8790 Waregem";Badgelezer defect;;Algemeen;;N;N;N;Batterijen meenemen!;"Batterij vervangen, factureren";;03/06/2023;ADMIN
+WB2023-0112;11/06/2023;Completed;K00296;"Otegemstraat 1, 8500 Kortrijk";Klavier reageert niet;;Algemeen;;N;N;J;;;;16/05/2023;KV
+WB2023-0115;06/07/2023;Invoiced;K00169;"Lindenlaan 2A, 8501 Heule";ONDH 1194;;Onderhoud;;N;N;J;;;;29/06/2023;ADMIN
+WB2023-0118;09/07/2023;Completed;K00421;"Ommegangstraat 144A, 8500 Kortrijk";OH alarm (fiche 1169);;Algemeen;;N;N;J;;Klant wil extra camera;;01/07/2023;ADMIN
+WB2023-0120;13/07/2023;Completed;K00189;"Spinnerijstraat 106, 8870 Izegem";Onderhoud volgens contract;;Onderhoud;PO 4503868;N;N;J;;;;18/06/2023;ADMIN
+WB2023-0122;13/07/2023;Completed;K00126;"Industrielaan 91, Wevelgem";Nieuwe brandcentrale;;Installatie;;N;N;N;;;;05/07/2023;KV
+WB2023-0123;15/07/2023;Invoiced;K00177;"Hoogstraat 153, 8570 Anzegem";ONDH 1030;;Onderhoud;;N;N;N;Hond in tuin;;;25/06/2023;DV
+WB2023-0125;19/07/2023;Completed;K00404;"Vichtesteenweg 78, 8580 Avelgem";Sirene gaat af zonder reden;;Herstelling;;N;J;J;Sleutel bij buren;;;14/07/2023;DV
+WB2023-0126;23/07/2023;Completed;K00326;"Molenstraat 90, 8570 Anzegem";onderhoud branddetectie + batterijen vervangen;;Algemeen;;N;J;J;;;;19/06/2023;KV
+WB2023-0128;01/08/2023;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";Onderhoud volgens contract;;Onderhoud;;N;J;N;;;;09/07/2023;DV
+WB2023-0131;01/08/2023;Implemented;K00220;;Valse melding brand;;Herstelling;;N;N;N;;;;07/07/2023;KV
+WB2023-0134;02/08/2023;Completed;K00776;"Kerkstraat 7, 8530 Harelbeke";onderhoud toegang + batterijen vervangen;;Onderhoud;;N;J;J;;;;27/06/2023;DV
+WB2023-0136;02/08/2023;Completed;K00823;"Industrielaan 145, 8551 Heestert";OH camera (fiche 1217);;Onderhoud;;N;N;J;;;;08/07/2023;KV
+WB2023-0139;04/08/2023;Completed;K00525;;Klant kan niet uitschakelen;;Herstelling;;N;J;J;Batterijen meenemen!;;;10/07/2023;DV
+WB2023-0142;04/08/2023;Invoiced;K00720;"Driesstraat 4, 8550 Zwevegem";Herstelling na blikseminslag;;Herstelling;;N;J;J;;;;28/07/2023;DV
+WB2023-0145;07/08/2023;Completed;K00407;;Onderhoud alarm;;Onderhoud;;N;N;J;Hond in tuin;;;01/07/2023;DV
+WB2023-0147;10/08/2023;Invoiced;K00705;"Heirweg 137, 8530 Harelbeke";Klavier reageert niet;1090;Algemeen;PO 4588442;N;J;J;;;;31/07/2023;DV
+WB2023-0149;12/08/2023;Completed;K00779;"Spinnerijstraat 97, 9700 OUDENAARDE";ONDH 1209;1209;Onderhoud;;N;N;J;;;;06/08/2023;KV
+WB2023-0150;15/08/2023;Invoiced;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;N;Klant bellen 30 min op voorhand;;;07/08/2023;DV
+WB2023-0153;21/08/2023;Invoiced;K00768;"Kapelstraat 159, 8790 Waregem";ONDH 1062;;Onderhoud;;N;N;J;;;;20/07/2023;DV
+WB2023-0155;21/08/2023;Completed;K00443;"Meersstraat 174, Avelgem";Nieuwe brandcentrale;;Installatie;;N;J;J;;;;12/07/2023;DV
+WB2023-0157;28/08/2023;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";ONDH 1039;;Algemeen;;N;N;N;;;;02/08/2023;ADMIN
+WB2023-0159;28/08/2023;Completed;K00379;"Otegemstraat 41, 8870 Izegem";onderhoud toegang + batterijen vervangen;;Algemeen;;N;J;J;;;;25/08/2023;DV
+WB2023-0160;01/09/2023;Completed;K00455;"Driesstraat 99, 8501 Heule";onderhoud branddetectie + batterijen vervangen;;Algemeen;;N;J;N;;;;25/08/2023;DV
+WB2023-0161;03/09/2023;Invoiced;K00484;;Onderhoud branddetectie;1157;Algemeen;PO 4500248;N;J;J;;;;31/08/2023;ADMIN
+WB2023-0162;05/09/2023;Invoiced;K00469;"Industrielaan 67, 8930 Menen";Jaarlijks onderhoud fiche 1063;;Onderhoud;;N;J;J;Hond in tuin;;;03/08/2023;KV
+WB2023-0163;05/09/2023;Implemented;K00467;"Blokellestraat 116, 8550 Zwevegem";ONDH 1121;;Onderhoud;;N;N;N;Ladder nodig (hoog plafond);;;01/09/2023;DV
+WB2023-0166;10/09/2023;Invoiced;K00655;"Lindenlaan 73, 8520 Kuurne";Klant kan niet uitschakelen;1132;Herstelling;;N;J;N;;;;11/08/2023;ADMIN
+WB2023-0167;11/09/2023;Implemented;K00148;"Heirweg 90, 8550 Zwevegem";Jaarlijks onderhoud fiche 1139;;Algemeen;PO 4515451;N;N;N;;;;02/09/2023;KV
+WB2023-0170;11/09/2023;Completed;K00663;"Kortrijkseweg 66, 8530 HARELBEKE";Jaarl. nazicht toegang;;Algemeen;PO 4585201;N;N;J;;;;05/08/2023;ADMIN
+WB2023-0173;11/09/2023;Completed;K00169;"Lindenlaan 2A, 8501 Heule";Sirene gaat af zonder reden;;Herstelling;;N;N;J;Batterijen meenemen!;;;12/08/2023;ADMIN
+WB2023-0174;12/09/2023;Invoiced;K00222;"Oudenaardsesteenweg 1B, 8930 MENEN";Onderhoud camera;;Onderhoud;PO 4538873;N;N;J;;;;23/08/2023;DV
+WB2023-0175;15/09/2023;Verified;K00593;"Hoogstraat 163B, 8530 Harelbeke";Onderhoud alarm;;Onderhoud;;N;J;N;;;;01/09/2023;DV
+WB2023-0178;17/09/2023;Completed;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";ONDH 1018;;Algemeen;;N;J;N;;Klant wil extra camera;;13/09/2023;KV
+WB2023-0179;18/09/2023;Completed;K00667;;Herstelling na blikseminslag;;Algemeen;;N;J;J;;;;07/09/2023;DV
+WB2023-0180;19/09/2023;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";Jaarlijks onderhoud fiche 1033;1033;Onderhoud;;N;J;J;;;;25/08/2023;DV
+WB2023-0181;26/09/2023;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";OH alarm (fiche 1167);;Algemeen;;N;N;J;;;;19/09/2023;DV
+WB2023-0182;06/10/2023;Completed;K00591;"Lindenlaan 148, 8560 Wevelgem";Sirene gaat af zonder reden;;Algemeen;;N;N;J;;;;04/09/2023;DV
+WB2023-0185;07/10/2023;Implemented;K00542;"Otegemstraat 106, 8790 Waregem";Jaarl. nazicht branddetectie;;Algemeen;;N;N;N;;;;20/09/2023;DV
+WB2023-0188;08/10/2023;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";Batterij leeg melding;;Herstelling;;N;J;N;;;;12/09/2023;KV
+WB2023-0190;09/10/2023;Completed;K00155;"Bellegemstraat 121, 8580 Avelgem";Jaarl. nazicht alarm;;Onderhoud;;N;J;J;Klant bellen 30 min op voorhand;;;02/10/2023;DV
+WB2023-0191;09/10/2023;Implemented;K00791;"Hoogstraat 163, 8580 Avelgem";ONDH 1111;;Onderhoud;;N;N;N;;;;11/09/2023;DV
+WB2023-0194;09/10/2023;Invoiced;K00404;"Vichtesteenweg 78, 8580 Avelgem";Onderhoud volgens contract;;Onderhoud;;N;J;N;Klant bellen 30 min op voorhand;"Detector garage defect, offerte maken";;16/09/2023;ADMIN
+WB2023-0195;21/10/2023;Implemented;K00500;"Heirweg 55, 8551 Heestert";Valse melding brand;;Herstelling;;N;N;N;;Klant wil extra camera;;19/09/2023;DV
+WB2023-0196;28/10/2023;Completed;K00726;"Spinnerijstraat 48, 8800 Roeselare";ONDH 1186;;Onderhoud;;N;N;J;Sleutel bij buren;;;11/10/2023;KV
+WB2023-0197;02/11/2023;Completed;K00791;"Hoogstraat 163, 8580 Avelgem";onderhoud alarm + batterijen vervangen;1055;Onderhoud;;N;J;J;;;;15/10/2023;DV
+WB2023-0198;03/11/2023;Completed;K00300;"Ellestraat 111, 8560 Wevelgem";Jaarlijks onderhoud fiche 1188;;Onderhoud;;N;J;J;;"Batterij vervangen, factureren";;26/09/2023;DV
+WB2023-0201;06/11/2023;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";Jaarlijks onderhoud fiche 1196;;Algemeen;;N;N;N;Hond in tuin;;;04/10/2023;KV
+WB2023-0203;08/11/2023;Completed;K00706;;Jaarlijks onderhoud fiche 1176;;Onderhoud;;N;J;N;Hond in tuin;;;26/10/2023;KV
+WB2023-0204;14/11/2023;Completed;K00404;"Vichtesteenweg 78, 8580 Avelgem";ONDH 1226;;Onderhoud;;N;N;N;;;;03/11/2023;ADMIN
+WB2023-0207;17/11/2023;Completed;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";OH alarm (fiche 1054);;Onderhoud;;N;N;J;;;;22/10/2023;ADMIN
+WB2023-0210;17/11/2023;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";ONDH 1088;;Onderhoud;;N;J;N;;;;11/10/2023;DV
+WB2023-0212;24/11/2023;Completed;K00689;"Bosstraat 105, 8501 HEULE";onderhoud camera + batterijen vervangen;;Onderhoud;;N;N;J;;;;02/11/2023;DV
+WB2023-0214;25/11/2023;Completed;K00530;"Heirweg 176, 8930 Menen";Onderhoud alarm;;Onderhoud;;N;N;J;Hond in tuin;;;21/10/2023;ADMIN
+WB2023-0217;07/12/2023;Implemented;K00667;"Stationsstraat 20, 8540 Deerlijk";Klant kan niet uitschakelen;;Herstelling;;N;N;N;;;;11/11/2023;ADMIN
+WB2023-0220;14/12/2023;Completed;K00182;"Kortrijkseweg 129, 8530 Harelbeke";Storing centrale;;Herstelling;;N;N;J;;;;05/11/2023;DV
+WB2023-0222;15/12/2023;Invoiced;K00407;"Driesstraat 90, 8520 Kuurne";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;N;Hond in tuin;;;16/11/2023;DV
+WB2023-0224;16/12/2023;Verified;K00724;"Ellestraat 169, 8870 Izegem";Jaarlijks onderhoud fiche 1038;;Algemeen;;N;N;N;;;;04/12/2023;KV
+WB2023-0225;22/12/2023;Invoiced;K00591;"Lindenlaan 148, 8560 Wevelgem";Klavier reageert niet;1005;Herstelling;;N;N;N;;;;21/11/2023;DV
+WB2023-0227;24/12/2023;Invoiced;K00750;"Bergstraat 92, 9700 Oudenaarde";Jaarlijks onderhoud fiche 1140;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;;;21/11/2023;ADMIN
+WB2023-0230;24/12/2023;Completed;K00744;"Driesstraat 70, 8550 Zwevegem";Storing centrale;;Algemeen;;N;J;J;;"Batterij vervangen, factureren";;20/11/2023;KV
+WB2024-0001;01/01/2024;Verified;K00237;"Ellestraat 124, Waregem";Installatie toegangscontrole;;Installatie;;N;J;N;;;;27/12/2023;DV
+WB2024-0002;06/01/2024;Completed;K00215;"Ellestraat 75, 8870 Izegem";Onderhoud branddetectie;;Algemeen;;N;J;J;Klant bellen 30 min op voorhand;;;05/12/2023;KV
+WB2024-0004;09/01/2024;Invoiced;K00415;"Bergstraat 145, 8501 Heule";Klant kan niet uitschakelen;;Algemeen;;N;J;J;Hond in tuin;;;26/12/2023;DV
+WB2024-0005;10/01/2024;Implemented;K00768;"Kapelstraat 159, 8790 Waregem";Jaarl. nazicht alarm;1062;Algemeen;;N;N;N;;Klant wil extra camera;;28/12/2023;ADMIN
+WB2024-0006;14/01/2024;Implemented;K00317;"Spinnerijstraat 41, 8930 Menen";OH alarm (fiche 1061);;Algemeen;;N;N;N;;"Detector garage defect, offerte maken";;03/01/2024;DV
+WB2024-0008;14/01/2024;Implemented;K00542;"Otegemstraat 106, 8790 Waregem";Jaarl. nazicht alarm;;Algemeen;;N;N;N;;;;20/12/2023;DV
+WB2024-0011;15/01/2024;Implemented;K00538;"Rijksweg 20, 8530 Harelbeke";Sirene gaat af zonder reden;;Herstelling;PO 4514237;N;N;N;Batterijen meenemen!;;;08/01/2024;DV
+WB2024-0013;21/01/2024;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";ONDH 1127;;Algemeen;;N;N;N;Hond in tuin;;;30/12/2023;DV
+WB2024-0015;23/01/2024;Completed;K00455;"Driesstraat 99, 8501 Heule";Badgelezer defect;1104;Herstelling;;N;N;J;Batterijen meenemen!;;;15/01/2024;ADMIN
+WB2024-0016;25/01/2024;Completed;K00257;"Bellegemstraat 124, 8540 Deerlijk";Klavier reageert niet;;Algemeen;;N;N;N;;;;16/12/2023;DV
+WB2024-0018;28/01/2024;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Onderhoud volgens contract;;Onderhoud;;N;J;N;;;;17/01/2024;DV
+WB2024-0021;28/01/2024;Completed;K00215;"Ellestraat 75, 8870 Izegem";Camera geen beeld;;Algemeen;;N;N;N;Hond in tuin;;;29/12/2023;KV
+WB2024-0024;05/02/2024;Invoiced;K00542;"Otegemstraat 106, Waregem";Uitbreiding detectoren;;Installatie;;N;J;J;;;;29/12/2023;KV
+WB2024-0025;09/02/2024;Completed;K00429;"Vichtesteenweg 170, 8790 Waregem";Jaarlijks onderhoud fiche 1022;;Onderhoud;;N;N;J;Klant bellen 30 min op voorhand;;;23/01/2024;KV
+WB2024-0027;12/02/2024;Implemented;K00237;"Ellestraat 124, 8790 Waregem";OH branddetectie (fiche 1177);;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;Klant wil extra camera;;14/01/2024;ADMIN
+WB2024-0028;14/02/2024;Invoiced;K00632;"Ellestraat 97, 8790 Waregem";Jaarl. nazicht alarm;1037;Onderhoud;;N;J;J;Sleutel bij buren;;;14/01/2024;KV
+WB2024-0029;23/02/2024;Completed;K00750;"Bergstraat 92, 9700 Oudenaarde";onderhoud toegang + batterijen vervangen;;Onderhoud;PO 4578961;N;J;J;Klant bellen 30 min op voorhand;;;21/01/2024;KV
+WB2024-0031;27/02/2024;Completed;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Jaarlijks onderhoud fiche 1208;;Algemeen;;N;J;J;Klant bellen 30 min op voorhand;;;24/01/2024;KV
+WB2024-0032;01/03/2024;Implemented;K00715;"Bosstraat 168, 8580 Avelgem";ONDH 1098;;Onderhoud;;N;N;N;Batterijen meenemen!;;;20/02/2024;KV
+WB2024-0035;08/03/2024;Completed;K00420;"Lindenlaan 85, 8560 Wevelgem";Valse melding brand;;Herstelling;;N;J;J;;;;28/01/2024;DV
+WB2024-0036;10/03/2024;Verified;K00823;"Industrielaan 145, 8551 Heestert";Onderhoud volgens contract;1002;Onderhoud;;N;N;N;;;;04/02/2024;DV
+WB2024-0037;10/03/2024;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";ONDH 1020;;Algemeen;;N;N;N;;;;13/02/2024;ADMIN
+WB2024-0038;11/03/2024;Completed;K00352;"Stationsstraat 33, 8501 Heule";Sirene gaat af zonder reden;;Algemeen;;N;J;J;;Klant wil extra camera;;11/02/2024;DV
+WB2024-0039;14/03/2024;Invoiced;K00799;"Industrielaan 91, 8560 Wevelgem";Valse melding brand;;Algemeen;;N;N;N;;;;07/03/2024;DV
+WB2024-0040;21/03/2024;Implemented;K00389;"Stationsstraat 98, Izegem";Uitbreiding detectoren;;Installatie;;N;N;N;;;;14/02/2024;DV
+WB2024-0042;23/03/2024;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Jaarl. nazicht branddetectie;;Onderhoud;;N;J;J;Sleutel bij buren;;;19/02/2024;DV
+WB2024-0045;27/03/2024;Completed;K00791;"Hoogstraat 163, 8580 Avelgem";Onderhoud branddetectie;;Onderhoud;PO 4548266;N;N;J;;"Detector garage defect, offerte maken";;22/02/2024;KV
+WB2024-0046;05/04/2024;Completed;K00538;"Rijksweg 20, 8530 Harelbeke";OH branddetectie (fiche 1076);1076;Onderhoud;PO 4503662;N;N;J;;;;10/03/2024;ADMIN
+WB2024-0048;05/04/2024;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Onderhoud branddetectie;;Onderhoud;PO 4523516;N;J;J;;;;26/02/2024;KV
+WB2024-0050;08/04/2024;Completed;K00300;"Ellestraat 111, 8560 Wevelgem";ONDH 1195;;Algemeen;PO 4511955;N;J;N;;;;06/03/2024;ADMIN
+WB2024-0052;08/04/2024;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Batterij leeg melding;;Algemeen;;N;J;N;;;;20/03/2024;KV
+WB2024-0053;09/04/2024;Completed;K00293;;Batterij leeg melding;;Herstelling;PO 4537966;N;N;N;Klant bellen 30 min op voorhand;;;03/03/2024;DV
+WB2024-0056;16/04/2024;Completed;K00222;"Oudenaardsesteenweg 1B, 8930 MENEN";Onderhoud volgens contract;;Onderhoud;;N;J;J;;;;07/03/2024;DV
+WB2024-0058;16/04/2024;Invoiced;K00642;;ONDH 1143;;Onderhoud;;N;J;J;;;;04/04/2024;KV
+WB2024-0059;16/04/2024;Completed;K00415;"Bergstraat 145, 8501 Heule";Onderhoud volgens contract;;Onderhoud;;N;N;J;;;;12/04/2024;KV
+WB2024-0060;18/04/2024;Invoiced;K00421;"Ommegangstraat 144A, 8500 Kortrijk";onderhoud alarm + batterijen vervangen;;Algemeen;;N;N;N;Klant bellen 30 min op voorhand;;;16/03/2024;DV
+WB2024-0063;19/04/2024;Completed;K00779;"Spinnerijstraat 97, OUDENAARDE";Installatie inbraakalarm;;Installatie;;N;N;N;;;;19/03/2024;ADMIN
+WB2024-0066;21/04/2024;Completed;K00642;"Zandstraat 79, 8570 Anzegem";Jaarlijks onderhoud fiche 1128;;Onderhoud;PO 4550340;N;J;J;Batterijen meenemen!;;;29/03/2024;DV
+WB2024-0067;21/04/2024;Implemented;K00492;"Stationsstraat 69, 8570 Anzegem";Jaarl. nazicht alarm;;Algemeen;;N;N;N;;;;27/03/2024;KV
+WB2024-0069;03/05/2024;Completed;K00208;"Industrielaan 145, 8551 Heestert";onderhoud camera + batterijen vervangen;;Onderhoud;;N;N;N;;"Batterij vervangen, factureren";;27/04/2024;KV
+WB2024-0072;03/05/2024;Implemented;K00336;"Rijksweg 130, 8500 Kortrijk";ONDH 1212;;Algemeen;;N;N;N;;;;14/04/2024;KV
+WB2024-0075;05/05/2024;Completed;K00744;"Driesstraat 70, 8550 Zwevegem";Jaarl. nazicht alarm;;Onderhoud;;N;N;J;;;;20/04/2024;DV
+WB2024-0077;13/05/2024;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";onderhoud branddetectie + batterijen vervangen;;Onderhoud;PO 4582526;N;J;N;Ladder nodig (hoog plafond);;;12/04/2024;DV
+WB2024-0080;17/05/2024;Completed;K00455;"Driesstraat 99, 8501 Heule";ONDH 1104;;Onderhoud;;N;J;J;Batterijen meenemen!;;;23/04/2024;ADMIN
+WB2024-0081;21/05/2024;Invoiced;K00397;"Ellestraat 8, 8530 Harelbeke";Camera geen beeld;;Herstelling;;N;N;J;Ladder nodig (hoog plafond);;;24/04/2024;DV
+WB2024-0084;23/05/2024;Completed;K00467;"Blokellestraat 116, 8550 Zwevegem";Onderhoud volgens contract;;Onderhoud;;N;N;J;Batterijen meenemen!;;;15/04/2024;KV
+WB2024-0087;23/05/2024;Completed;K00489;"Otegemstraat 67, 8520 Kuurne";Onderhoud alarm;;Onderhoud;;N;N;J;;;;19/04/2024;DV
+WB2024-0089;24/05/2024;Verified;K00799;"Industrielaan 91, 8560 Wevelgem";Detector defect achterdeur;;Algemeen;;N;N;N;Hond in tuin;;;14/05/2024;DV
+WB2024-0090;26/05/2024;Completed;K00632;"Ellestraat 97, 8790 Waregem";Jaarlijks onderhoud fiche 1204;;Algemeen;;N;N;J;;;;14/05/2024;DV
+WB2024-0091;27/05/2024;Implemented;K00407;"Driesstraat 90, 8520 Kuurne";Onderhoud branddetectie;;Algemeen;;N;N;N;;;;24/04/2024;KV
+WB2024-0092;28/05/2024;Completed;K00484;;Onderhoud volgens contract;;Algemeen;;N;N;J;;;;22/04/2024;KV
+WB2024-0095;28/05/2024;Invoiced;K00393;"Kerkstraat 24, 8530 Harelbeke";Storing centrale;;Algemeen;;N;N;J;;;;28/04/2024;ADMIN
+WB2024-0097;02/06/2024;Completed;K00599;"Meersstraat 41, 8580 Avelgem";Camera geen beeld;;Algemeen;;N;J;J;;;;30/05/2024;KV
+WB2024-0098;04/06/2024;Verified;K00317;"Spinnerijstraat 41, 8930 Menen";Storing centrale;;Herstelling;PO 4528788;N;N;N;Sleutel bij buren;Klant wil extra camera;;16/05/2024;ADMIN
+WB2024-0099;08/06/2024;Invoiced;K00469;;Onderhoud volgens contract;;Onderhoud;;N;N;N;;;;27/05/2024;KV
+WB2024-0100;15/06/2024;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";Onderhoud alarm;;Algemeen;;N;J;J;;"Niet afgewerkt, terug te gaan";;12/05/2024;DV
+WB2024-0101;21/06/2024;Completed;K00166;"Lindenlaan 83, Kortrijk";Uitbreiding detectoren;;Installatie;;N;J;N;;;;09/06/2024;KV
+WB2024-0102;24/06/2024;Invoiced;K00705;"Heirweg 137, 8530 Harelbeke";Onderhoud alarm;;Algemeen;PO 4540097;N;J;J;;;;02/06/2024;ADMIN
+WB2024-0103;26/06/2024;Completed;K00467;"Blokellestraat 116, 8550 Zwevegem";Batterij leeg melding;;Algemeen;;N;N;J;;"Batterij vervangen, factureren";;19/06/2024;DV
+WB2024-0105;05/07/2024;Implemented;K00705;;onderhoud branddetectie + batterijen vervangen;;Onderhoud;PO 4553294;N;N;N;;;;21/06/2024;DV
+WB2024-0108;07/07/2024;Invoiced;K00352;"Stationsstraat 33, 8501 Heule";Batterij leeg melding;;Herstelling;;N;N;N;;;;07/06/2024;ADMIN
+WB2024-0110;09/07/2024;Completed;K00626;"Kapelstraat 43, 9700 Oudenaarde";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;N;;;;09/06/2024;KV
+WB2024-0111;18/07/2024;Completed;K00500;"Heirweg 55, 8551 Heestert";Onderhoud toegang;;Onderhoud;;N;N;N;;;;18/06/2024;KV
+WB2024-0113;20/07/2024;Completed;K00329;"Vlaanderenstraat 128, 8570 Anzegem";Onderhoud alarm;;Algemeen;;N;N;N;;;;20/06/2024;KV
+WB2024-0114;21/07/2024;Implemented;K00189;"Spinnerijstraat 106, 8870 Izegem";Badgelezer defect;;Algemeen;;N;N;N;Klant bellen 30 min op voorhand;;;15/06/2024;ADMIN
+WB2024-0116;22/07/2024;Completed;K00352;"Stationsstraat 33, 8501 Heule";ONDH 1031;;Onderhoud;;N;N;J;Batterijen meenemen!;;;01/07/2024;ADMIN
+WB2024-0119;22/07/2024;Implemented;K00263;"Bergstraat 15, 8580 Avelgem";Jaarlijks onderhoud fiche 1181;;Algemeen;;N;N;N;;;;14/07/2024;KV
+WB2024-0121;26/07/2024;Invoiced;K00228;"Zandstraat 92, 8580 Avelgem";Storing centrale;;Algemeen;;N;J;N;Hond in tuin;;;19/07/2024;DV
+WB2024-0123;27/07/2024;Completed;K00467;"Blokellestraat 116, 8550 Zwevegem";Onderhoud alarm;;Algemeen;;N;J;J;;;;26/06/2024;DV
+WB2024-0125;01/08/2024;Verified;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Onderhoud volgens contract;;Algemeen;PO 4594692;N;J;N;Klant bellen 30 min op voorhand;"Batterij vervangen, factureren";;23/06/2024;DV
+WB2024-0128;01/08/2024;Implemented;K00667;"Stationsstraat 20, 8540 Deerlijk";Onderhoud volgens contract;;Algemeen;;N;N;N;Hond in tuin;;;07/07/2024;DV
+WB2024-0129;02/08/2024;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Herstelling na blikseminslag;;Algemeen;;N;J;J;;;;30/06/2024;KV
+WB2024-0130;03/08/2024;Implemented;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Sirene gaat af zonder reden;;Algemeen;;N;N;N;;;;31/07/2024;DV
+WB2024-0133;04/08/2024;Completed;K00296;"Otegemstraat 1, 8500 Kortrijk";ONDH 1012;;Algemeen;;N;J;N;Sleutel bij buren;;;23/07/2024;ADMIN
+WB2024-0134;08/08/2024;Completed;K00352;"Stationsstraat 33, 8501 Heule";Detector defect bureel;;Herstelling;;N;N;N;;"Detector garage defect, offerte maken";;12/07/2024;DV
+WB2024-0136;09/08/2024;Completed;K00776;"Kerkstraat 7, 8530 Harelbeke";OH branddetectie (fiche 1155);;Onderhoud;;N;N;J;Hond in tuin;;;04/08/2024;DV
+WB2024-0138;09/08/2024;Implemented;K00228;"Zandstraat 92, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Algemeen;;N;N;N;;;;21/07/2024;ADMIN
+WB2024-0140;12/08/2024;Completed;K00610;"Lindenlaan 149, 8930 Menen";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;J;Ladder nodig (hoog plafond);;;26/07/2024;ADMIN
+WB2024-0142;14/08/2024;Implemented;K00694;"Rijksweg 25, Menen";Uitbreiding detectoren;;Installatie;;N;N;N;Klant bellen 30 min op voorhand;"Detector garage defect, offerte maken";;01/08/2024;KV
+WB2024-0144;15/08/2024;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Jaarl. nazicht alarm;;Algemeen;;N;N;N;Batterijen meenemen!;;;02/08/2024;ADMIN
+WB2024-0146;17/08/2024;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";Jaarlijks onderhoud fiche 1039;;Onderhoud;;N;J;N;;"Detector garage defect, offerte maken";;05/08/2024;KV
+WB2024-0148;17/08/2024;Completed;K00724;"Ellestraat 169, 8870 Izegem";Valse melding brand;;Herstelling;;N;J;N;Ladder nodig (hoog plafond);;;09/08/2024;DV
+WB2024-0150;21/08/2024;Implemented;K00244;"Heirweg 114, 8580 Avelgem";Klant kan niet uitschakelen;;Algemeen;;N;N;N;Hond in tuin;;;02/08/2024;DV
+WB2024-0152;21/08/2024;Completed;K00744;"Driesstraat 70, 8550 Zwevegem";Klant kan niet uitschakelen;1087;Herstelling;;N;N;N;Ladder nodig (hoog plafond);;;15/07/2024;ADMIN
+WB2024-0153;22/08/2024;Implemented;K00655;"Lindenlaan 73, 8520 Kuurne";Detector defect zolder;;Herstelling;;N;N;N;;;;23/07/2024;DV
+WB2024-0154;24/08/2024;Implemented;K00689;"Bosstraat 105, 8501 HEULE";Herstelling na blikseminslag;;Herstelling;;N;N;N;Batterijen meenemen!;;;27/07/2024;DV
+WB2024-0156;25/08/2024;Invoiced;K00650;"Rijksweg 81, 8870 Izegem";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;J;Hond in tuin;;;16/08/2024;ADMIN
+WB2024-0157;28/08/2024;Completed;K00228;"Zandstraat 92, 8580 Avelgem";Jaarl. nazicht branddetectie;;Algemeen;;N;N;J;;;;21/08/2024;DV
+WB2024-0159;07/09/2024;Invoiced;K00500;"Heirweg 55, 8551 Heestert";ONDH 1201;;Onderhoud;;N;N;N;;;;17/08/2024;KV
+WB2024-0162;12/09/2024;Completed;K00513;"Bergstraat 61, 8560 Wevelgem";Onderhoud toegang;;Onderhoud;;N;J;N;;;;18/08/2024;KV
+WB2024-0164;19/09/2024;Completed;K00689;"Bosstraat 105, 8501 HEULE";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;J;Ladder nodig (hoog plafond);;;06/09/2024;KV
+WB2024-0166;21/09/2024;Completed;K00189;"Spinnerijstraat 106, 8870 Izegem";OH alarm (fiche 1144);;Algemeen;;N;N;N;;;;30/08/2024;KV
+WB2024-0168;28/09/2024;Completed;K00228;;onderhoud toegang + batterijen vervangen;;Algemeen;;N;J;J;Ladder nodig (hoog plafond);;;19/09/2024;DV
+WB2024-0170;02/10/2024;Completed;K00182;"Kortrijkseweg 129, 8530 Harelbeke";ONDH 1070;;Onderhoud;;N;N;J;;;;08/09/2024;DV
+WB2024-0172;04/10/2024;Invoiced;K00469;"Industrielaan 67, 8930 Menen";Camera geen beeld;;Herstelling;;N;J;N;Sleutel bij buren;;;27/08/2024;DV
+WB2024-0175;05/10/2024;Implemented;K00134;;Jaarlijks onderhoud fiche 1077;;Algemeen;;N;N;N;;;;18/09/2024;DV
+WB2024-0177;05/10/2024;Completed;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Onderhoud volgens contract;;Onderhoud;;N;J;J;;;;28/09/2024;ADMIN
+WB2024-0178;05/10/2024;Completed;K00579;"Hoogstraat 28, 8570 Anzegem";ONDH 1182;;Onderhoud;;N;J;J;;"Batterij vervangen, factureren";;19/09/2024;DV
+WB2024-0181;05/10/2024;Invoiced;K00823;"Industrielaan 145, 8551 Heestert";onderhoud camera + batterijen vervangen;1217;Onderhoud;;N;J;N;Ladder nodig (hoog plafond);;;24/09/2024;DV
+WB2024-0184;06/10/2024;Completed;K00768;"Kapelstraat 159, 8790 Waregem";Detector defect zolder;;Herstelling;;N;J;J;;;;27/09/2024;KV
+WB2024-0187;09/10/2024;Completed;K00404;"Vichtesteenweg 78, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;N;J;;;;01/10/2024;DV
+WB2024-0189;09/10/2024;Completed;K00779;"Spinnerijstraat 97, 9700 OUDENAARDE";onderhoud branddetectie + batterijen vervangen;;Algemeen;;N;J;N;Klant bellen 30 min op voorhand;;;20/09/2024;DV
+WB2024-0190;14/10/2024;Completed;K00726;"Spinnerijstraat 48, 8800 Roeselare";ONDH 1186;;Algemeen;;N;J;N;;Klant wil extra camera;;05/09/2024;ADMIN
+WB2024-0191;17/10/2024;Invoiced;K00758;"Bosstraat 115, 8570 Anzegem";Jaarlijks onderhoud fiche 1221;;Onderhoud;;N;J;N;;;;17/09/2024;DV
+WB2024-0194;19/10/2024;Verified;K00655;"Lindenlaan 73, 8520 Kuurne";Jaarlijks onderhoud fiche 1132;;Onderhoud;PO 4559295;N;J;N;;;;04/10/2024;KV
+WB2024-0195;20/10/2024;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";OH branddetectie (fiche 1196);;Onderhoud;PO 4586768;N;J;N;;;;16/10/2024;DV
+WB2024-0196;25/10/2024;Implemented;K00192;"Oudenaardsesteenweg 60, 8520 Kuurne";Jaarl. nazicht toegang;;Onderhoud;;N;N;N;Sleutel bij buren;"Detector garage defect, offerte maken";;12/10/2024;KV
+WB2024-0197;26/10/2024;Invoiced;K00464;"Kerkstraat 75, 8500 KORTRIJK";Detector defect traphal;1168;Herstelling;PO 4593006;N;N;J;Sleutel bij buren;;;20/10/2024;KV
+WB2024-0198;27/10/2024;Implemented;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Storing centrale;1116;Algemeen;;N;N;N;;;;25/09/2024;ADMIN
+WB2024-0201;01/11/2024;Completed;K00560;"Blokellestraat 8, 9700 Oudenaarde";OH branddetectie (fiche 1153);;Algemeen;;N;J;N;;;;21/10/2024;ADMIN
+WB2024-0204;12/11/2024;Invoiced;K00530;"Heirweg 176, 8930 Menen";Onderhoud volgens contract;;Algemeen;;N;J;J;;"Detector garage defect, offerte maken";;25/10/2024;KV
+WB2024-0207;12/11/2024;Completed;K00469;"Industrielaan 67, 8930 Menen";ONDH 1213;;Onderhoud;;N;J;J;;;;20/10/2024;DV
+WB2024-0208;16/11/2024;Invoiced;K00663;"Kortrijkseweg 66, 8530 HARELBEKE";Onderhoud alarm;;Onderhoud;;N;N;N;Ladder nodig (hoog plafond);;;11/11/2024;KV
+WB2024-0210;16/11/2024;Implemented;K00415;"Bergstraat 145, 8501 Heule";Detector defect garage;;Herstelling;;N;N;N;;;;15/10/2024;KV
+WB2024-0211;17/11/2024;Completed;K00305;"Pontstraat 12, 8530 Harelbeke";Herstelling na blikseminslag;;Algemeen;;N;N;J;;;;26/10/2024;DV
+WB2024-0213;22/11/2024;Completed;K00177;"Hoogstraat 153, 8570 Anzegem";Onderhoud volgens contract;;Onderhoud;;N;N;N;;"Niet afgewerkt, terug te gaan";;23/10/2024;ADMIN
+WB2024-0215;25/11/2024;Completed;K00249;"Ommegangstraat 69, 8580 Avelgem";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;J;;Klant wil extra camera;;15/11/2024;DV
+WB2024-0217;26/11/2024;Completed;K00516;"Driesstraat 91, 8500 Kortrijk";Onderhoud volgens contract;;Onderhoud;;N;J;N;Batterijen meenemen!;Klant wil extra camera;;18/10/2024;ADMIN
+WB2024-0219;26/11/2024;Invoiced;K00750;"Bergstraat 92, 9700 Oudenaarde";ONDH 1078;;Onderhoud;;N;J;J;Klant bellen 30 min op voorhand;;;23/10/2024;ADMIN
+WB2024-0220;28/11/2024;Implemented;K00744;"Driesstraat 70, 8550 Zwevegem";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;;;;20/10/2024;KV
+WB2024-0223;02/12/2024;Invoiced;K00799;"Industrielaan 91, 8560 Wevelgem";Jaarlijks onderhoud fiche 1103;;Onderhoud;;N;N;J;;"Niet afgewerkt, terug te gaan";;26/11/2024;ADMIN
+WB2024-0226;04/12/2024;Invoiced;K00469;"Industrielaan 67, 8930 Menen";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;J;;;;20/11/2024;DV
+WB2024-0227;04/12/2024;Invoiced;K00524;;Badgelezer defect;1025;Herstelling;;N;J;J;;;;26/11/2024;DV
+WB2024-0229;11/12/2024;Completed;K00134;"Zandstraat 10A, 8530 Harelbeke";OH branddetectie (fiche 1059);;Onderhoud;;N;J;J;;;;08/11/2024;KV
+WB2024-0231;12/12/2024;Implemented;K00698;"Molenstraat 157, 8550 Zwevegem";Jaarlijks onderhoud fiche 1228;;Onderhoud;;N;N;N;;;;28/11/2024;DV
+WB2024-0234;16/12/2024;Completed;K00500;"Heirweg 55, 8551 Heestert";Onderhoud branddetectie;1131;Algemeen;;N;J;J;Hond in tuin;;;29/11/2024;DV
+WB2024-0235;21/12/2024;Invoiced;K00189;"Spinnerijstraat 106, 8870 Izegem";Storing centrale;1144;Herstelling;;N;N;J;;Klant wil extra camera;;03/12/2024;KV
+WB2024-0238;24/12/2024;Completed;K00530;"Heirweg 176, 8930 Menen";Jaarlijks onderhoud fiche 1096;;Algemeen;;N;J;J;Klant bellen 30 min op voorhand;;;07/12/2024;DV
+WB2024-0241;24/12/2024;Completed;K00220;"Kortrijkseweg 167, Oudenaarde";Nieuwe brandcentrale;;Installatie;;N;N;J;;"Niet afgewerkt, terug te gaan";;06/12/2024;ADMIN
+WB2025-0002;01/01/2025;Completed;K00467;"Blokellestraat 116, 8550 Zwevegem";Onderhoud volgens contract;1121;Algemeen;;N;N;N;;;;29/11/2024;DV
+WB2025-0005;03/01/2025;Completed;K00609;"Ellestraat 27, 8580 Avelgem";ONDH 1056;;Onderhoud;;N;J;J;Klant bellen 30 min op voorhand;;;29/11/2024;KV
+WB2025-0008;04/01/2025;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";Onderhoud volgens contract;;Onderhoud;;N;N;J;Batterijen meenemen!;;;12/12/2024;DV
+WB2025-0010;06/01/2025;Implemented;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Onderhoud volgens contract;;Onderhoud;;N;N;N;Batterijen meenemen!;;;30/11/2024;DV
+WB2025-0012;06/01/2025;Completed;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Jaarl. nazicht alarm;;Onderhoud;;N;N;J;Sleutel bij buren;;;06/12/2024;DV
+WB2025-0013;07/01/2025;Completed;K00579;"Hoogstraat 28, 8570 Anzegem";Jaarlijks onderhoud fiche 1182;;Onderhoud;;N;N;N;;;;02/01/2025;DV
+WB2025-0015;10/01/2025;Implemented;K00222;"Oudenaardsesteenweg 1B, 8930 MENEN";Klant kan niet uitschakelen;;Algemeen;;N;N;N;;;;13/12/2024;ADMIN
+WB2025-0018;14/01/2025;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";Jaarl. nazicht alarm;;Algemeen;;N;N;J;;;;26/12/2024;ADMIN
+WB2025-0019;14/01/2025;Verified;K00758;"Bosstraat 115, 8570 Anzegem";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;Hond in tuin;;;05/12/2024;ADMIN
+WB2025-0020;18/01/2025;Implemented;K00560;"Blokellestraat 8, 9700 Oudenaarde";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;N;Hond in tuin;;;26/12/2024;KV
+WB2025-0021;18/01/2025;Invoiced;K00599;"Meersstraat 41, 8580 Avelgem";Onderhoud alarm;;Onderhoud;;N;J;N;;;;24/12/2024;DV
+WB2025-0024;21/01/2025;Completed;K00791;"Hoogstraat 163, 8580 Avelgem";Jaarlijks onderhoud fiche 1055;;Onderhoud;;N;J;J;;;;17/12/2024;ADMIN
+WB2025-0025;02/02/2025;Completed;K00768;"Kapelstraat 159, 8790 Waregem";Batterij leeg melding;;Algemeen;PO 4517366;N;J;N;Ladder nodig (hoog plafond);;;06/01/2025;DV
+WB2025-0028;08/02/2025;Invoiced;K00803;"Bellegemstraat 121, 8580 Avelgem";Jaarl. nazicht alarm;;Algemeen;;N;J;N;Ladder nodig (hoog plafond);;;19/01/2025;DV
+WB2025-0029;16/02/2025;Completed;K00500;"Heirweg 55, 8551 Heestert";ONDH 1131;;Onderhoud;;N;N;J;Ladder nodig (hoog plafond);;;08/01/2025;ADMIN
+WB2025-0032;20/02/2025;Completed;K00724;"Ellestraat 169, 8870 Izegem";Jaarlijks onderhoud fiche 1038;;Onderhoud;;N;N;J;;;;22/01/2025;KV
+WB2025-0033;22/02/2025;Completed;K00313;"Zandstraat 164A, 8870 Izegem";Detector defect ;;Herstelling;PO 4517703;N;N;N;;Klant wil extra camera;;18/02/2025;DV
+WB2025-0034;02/03/2025;Completed;K00189;"Spinnerijstraat 106, 8870 Izegem";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;N;;;;04/02/2025;DV
+WB2025-0036;03/03/2025;Invoiced;K00317;"Spinnerijstraat 41, 8930 Menen";Badgelezer defect;;Algemeen;;N;N;N;;;;05/02/2025;DV
+WB2025-0038;03/03/2025;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Sirene gaat af zonder reden;;Herstelling;PO 4592308;N;N;J;Ladder nodig (hoog plafond);;;08/02/2025;ADMIN
+WB2025-0039;08/03/2025;Completed;K00500;"Heirweg 55, 8551 Heestert";Jaarlijks onderhoud fiche 1201;1201;Onderhoud;;N;N;N;;;;04/03/2025;DV
+WB2025-0041;09/03/2025;Invoiced;K00305;"Pontstraat 12, 8530 Harelbeke";ONDH 1215;;Onderhoud;;N;N;J;;;;09/02/2025;DV
+WB2025-0043;12/03/2025;Invoiced;K00228;"Zandstraat 92, 8580 Avelgem";Camera geen beeld;;Herstelling;;N;J;J;Klant bellen 30 min op voorhand;"Niet afgewerkt, terug te gaan";;03/03/2025;DV
+WB2025-0045;14/03/2025;Invoiced;K00758;"Bosstraat 115, 8570 Anzegem";Jaarl. nazicht branddetectie;;Algemeen;;N;N;N;;Klant wil extra camera;;10/03/2025;DV
+WB2025-0047;19/03/2025;Completed;K00404;"Vichtesteenweg 78, 8580 Avelgem";Onderhoud alarm;1200;Onderhoud;;N;J;J;;;;16/03/2025;KV
+WB2025-0048;22/03/2025;Completed;K00642;"Zandstraat 79, 8570 Anzegem";Onderhoud volgens contract;1128;Onderhoud;PO 4536121;N;N;J;Hond in tuin;;;11/03/2025;DV
+WB2025-0049;24/03/2025;Completed;K00182;"Kortrijkseweg 129, 8530 Harelbeke";onderhoud camera + batterijen vervangen;;Onderhoud;;N;J;J;;;;17/02/2025;DV
+WB2025-0051;25/03/2025;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Onderhoud alarm;;Onderhoud;;N;J;N;Sleutel bij buren;"Detector garage defect, offerte maken";;24/02/2025;DV
+WB2025-0052;28/03/2025;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";OH alarm (fiche 1021);;Algemeen;;N;J;N;;;;12/03/2025;ADMIN
+WB2025-0055;28/03/2025;Completed;K00489;"Otegemstraat 67, 8520 Kuurne";Valse melding brand;;Algemeen;PO 4513680;N;J;N;;;;09/03/2025;DV
+WB2025-0056;02/04/2025;Completed;K00584;;Jaarlijks onderhoud fiche 1123;;Onderhoud;;N;N;J;;"Niet afgewerkt, terug te gaan";;18/03/2025;KV
+WB2025-0058;04/04/2025;Completed;K00329;"Vlaanderenstraat 128, 8570 Anzegem";Batterij leeg melding;;Algemeen;;N;N;N;;;;19/03/2025;DV
+WB2025-0059;06/04/2025;Implemented;K00364;"Ommegangstraat 164, 8520 Kuurne";Onderhoud volgens contract;;Algemeen;;N;N;N;Ladder nodig (hoog plafond);;;06/03/2025;DV
+WB2025-0060;08/04/2025;Implemented;K00215;"Ellestraat 75, 8870 Izegem";Onderhoud volgens contract;;Onderhoud;;N;N;N;;;;14/03/2025;DV
+WB2025-0061;08/04/2025;Invoiced;K00776;"Kerkstraat 7, Harelbeke";Plaatsing camerasysteem;;Installatie;;N;J;J;;"Batterij vervangen, factureren";;02/03/2025;ADMIN
+WB2025-0062;16/04/2025;Invoiced;K00579;"Hoogstraat 28, Anzegem";Installatie inbraakalarm;;Installatie;;N;N;J;;"Batterij vervangen, factureren";;29/03/2025;KV
+WB2025-0064;21/04/2025;Invoiced;K00352;"Stationsstraat 33, 8501 Heule";Jaarl. nazicht alarm;;Onderhoud;;N;J;J;Ladder nodig (hoog plafond);;;03/04/2025;ADMIN
+WB2025-0065;27/04/2025;Completed;K00698;"Molenstraat 157, 8550 Zwevegem";Onderhoud volgens contract;;Onderhoud;;N;J;N;Sleutel bij buren;;;24/03/2025;DV
+WB2025-0068;28/04/2025;Invoiced;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Onderhoud volgens contract;;Algemeen;;N;N;N;Batterijen meenemen!;"Batterij vervangen, factureren";;21/04/2025;DV
+WB2025-0070;01/05/2025;Completed;K00364;"Ommegangstraat 164, 8520 Kuurne";Valse melding brand;;Algemeen;;N;N;J;Klant bellen 30 min op voorhand;"Detector garage defect, offerte maken";;05/04/2025;DV
+WB2025-0073;05/05/2025;Implemented;K00296;"Otegemstraat 1, 8500 Kortrijk";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;N;;;;28/04/2025;ADMIN
+WB2025-0075;06/05/2025;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Onderhoud branddetectie;;Algemeen;;N;J;J;Sleutel bij buren;;;29/03/2025;KV
+WB2025-0078;08/05/2025;Completed;K00750;"Bergstraat 92, 9700 Oudenaarde";Onderhoud branddetectie;;Onderhoud;;N;N;J;;;;14/04/2025;DV
+WB2025-0080;08/05/2025;Implemented;K00655;"Lindenlaan 73, 8520 Kuurne";Onderhoud camera;;Onderhoud;;N;N;N;;;;09/04/2025;KV
+WB2025-0082;09/05/2025;Completed;K00469;"Industrielaan 67, 8930 Menen";OH alarm (fiche 1063);;Algemeen;;N;J;N;;;;10/04/2025;ADMIN
+WB2025-0085;09/05/2025;Completed;K00192;"Oudenaardsesteenweg 60, Kuurne";Installatie inbraakalarm;;Installatie;;N;J;J;Hond in tuin;;;24/04/2025;DV
+WB2025-0088;10/05/2025;Completed;K00744;;ONDH 1077;;Onderhoud;;N;N;N;;;;21/04/2025;DV
+WB2025-0091;10/05/2025;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";Onderhoud alarm;;Algemeen;;N;J;J;Batterijen meenemen!;;;29/04/2025;KV
+WB2025-0094;10/05/2025;Implemented;K00632;"Ellestraat 97, 8790 Waregem";Onderhoud branddetectie;;Onderhoud;;N;N;N;;;;27/04/2025;DV
+WB2025-0095;25/05/2025;Completed;K00492;"Stationsstraat 69, 8570 Anzegem";ONDH 1179;1179;Algemeen;PO 4520968;N;J;J;;;;18/05/2025;DV
+WB2025-0098;26/05/2025;Completed;K00155;"Bellegemstraat 121, 8580 Avelgem";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;Batterijen meenemen!;"Batterij vervangen, factureren";;12/05/2025;KV
+WB2025-0100;26/05/2025;Implemented;K00593;"Hoogstraat 163B, 8530 Harelbeke";OH branddetectie (fiche 1082);;Onderhoud;;N;N;N;;;;20/05/2025;KV
+WB2025-0102;01/06/2025;Completed;K00237;"Ellestraat 124, 8790 Waregem";Onderhoud volgens contract;;Algemeen;;N;J;J;;;;02/05/2025;DV
+WB2025-0103;01/06/2025;Completed;K00415;"Bergstraat 145, 8501 Heule";Onderhoud branddetectie;;Onderhoud;;N;J;J;Batterijen meenemen!;;;16/05/2025;KV
+WB2025-0106;02/06/2025;Completed;K00626;"Kapelstraat 43, 9700 Oudenaarde";OH branddetectie (fiche 1170);;Algemeen;;N;N;J;Ladder nodig (hoog plafond);Klant wil extra camera;;27/05/2025;KV
+WB2025-0109;09/06/2025;Completed;K00610;"Lindenlaan 149, 8930 Menen";OH branddetectie (fiche 1004);;Onderhoud;;N;J;N;;;;04/05/2025;DV
+WB2025-0110;09/06/2025;Completed;K00329;"Vlaanderenstraat 128, Anzegem";Installatie toegangscontrole;;Installatie;;N;J;N;;;;20/05/2025;DV
+WB2025-0112;12/06/2025;Completed;K00263;"Bergstraat 15, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;N;J;;;;07/06/2025;DV
+WB2025-0113;14/06/2025;Completed;K00177;"Hoogstraat 153, 8570 Anzegem";Onderhoud alarm;;Algemeen;;N;J;N;;;;08/05/2025;DV
+WB2025-0114;21/06/2025;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";ONDH 1039;;Onderhoud;;N;N;N;;;;22/05/2025;DV
+WB2025-0116;23/06/2025;Completed;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Jaarlijks onderhoud fiche 1162;;Onderhoud;;N;N;J;;;;08/06/2025;DV
+WB2025-0117;23/06/2025;Completed;K00489;"Otegemstraat 67, 8520 Kuurne";Detector defect magazijn;;Herstelling;;N;J;J;;;;23/05/2025;DV
+WB2025-0120;25/06/2025;Completed;K00698;;Jaarl. nazicht alarm;;Algemeen;PO 4563456;N;N;J;;;;22/06/2025;ADMIN
+WB2025-0121;25/06/2025;Completed;K00451;;Sirene gaat af zonder reden;;Herstelling;;N;N;J;;;;14/06/2025;DV
+WB2025-0124;03/07/2025;Completed;K00509;"Oudenaardsesteenweg 53, 8501 Heule";Klavier reageert niet;;Algemeen;;N;N;N;;;;13/06/2025;DV
+WB2025-0127;03/07/2025;Completed;K00432;"Hoogstraat 52, Zwevegem";Uitbreiding detectoren;;Installatie;PO 4593457;N;J;J;;;;04/06/2025;DV
+WB2025-0129;05/07/2025;Completed;K00663;"Kortrijkseweg 66, 8530 HARELBEKE";Jaarl. nazicht branddetectie;;Algemeen;PO 4567004;N;J;N;;"Niet afgewerkt, terug te gaan";;24/06/2025;KV
+WB2025-0132;11/07/2025;Implemented;K00650;"Rijksweg 81, 8870 Izegem";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;N;;;;02/06/2025;KV
+WB2025-0134;15/07/2025;Completed;K00317;"Spinnerijstraat 41, 8930 Menen";Onderhoud alarm;;Onderhoud;;N;J;N;Hond in tuin;;;23/06/2025;ADMIN
+WB2025-0137;15/07/2025;Verified;K00455;;Badgelezer defect;;Herstelling;;N;N;N;;;;27/06/2025;DV
+WB2025-0138;17/07/2025;Implemented;K00455;"Driesstraat 99, 8501 Heule";Onderhoud volgens contract;;Onderhoud;;N;N;N;;;;26/06/2025;DV
+WB2025-0141;17/07/2025;Implemented;K00300;"Ellestraat 111, 8560 Wevelgem";Onderhoud branddetectie;;Onderhoud;PO 4517683;N;N;N;Hond in tuin;;;08/07/2025;DV
+WB2025-0144;19/07/2025;Completed;K00698;"Molenstraat 157, 8550 Zwevegem";ONDH 1180;;Onderhoud;;N;N;N;Hond in tuin;;;15/06/2025;ADMIN
+WB2025-0145;20/07/2025;Invoiced;K00492;"Stationsstraat 69, 8570 Anzegem";Onderhoud volgens contract;;Algemeen;;N;J;N;;;;19/06/2025;KV
+WB2025-0147;21/07/2025;Implemented;K00744;"Driesstraat 70, 8550 Zwevegem";Onderhoud volgens contract;;Onderhoud;;N;N;N;;"Batterij vervangen, factureren";;16/07/2025;KV
+WB2025-0150;24/07/2025;Completed;K00326;"Molenstraat 90, 8570 Anzegem";Onderhoud branddetectie;1048;Onderhoud;;N;J;J;;;;10/07/2025;ADMIN
+WB2025-0153;24/07/2025;Completed;K00134;"Zandstraat 10A, 8530 Harelbeke";OH branddetectie (fiche 1059);1059;Onderhoud;;N;N;J;Batterijen meenemen!;;;15/07/2025;KV
+WB2025-0156;04/08/2025;Invoiced;K00451;"Zandstraat 178, 8540 Deerlijk";Jaarl. nazicht camera;;Algemeen;;N;N;J;;;;12/07/2025;DV
+WB2025-0157;10/08/2025;Invoiced;K00336;"Rijksweg 130, 8500 Kortrijk";Jaarl. nazicht branddetectie;;Onderhoud;;N;J;N;;;;02/08/2025;DV
+WB2025-0160;15/08/2025;Implemented;K00791;"Hoogstraat 163, 8580 Avelgem";Onderhoud branddetectie;;Algemeen;;N;N;N;;;;06/07/2025;DV
+WB2025-0163;18/08/2025;Implemented;K00263;"Bergstraat 15, 8580 Avelgem";Onderhoud volgens contract;1089;Onderhoud;;N;N;N;;;;05/08/2025;DV
+WB2025-0165;20/08/2025;Implemented;K00429;"Vichtesteenweg 170, 8790 Waregem";OH alarm (fiche 1022);;Onderhoud;;N;N;N;Hond in tuin;"Niet afgewerkt, terug te gaan";;22/07/2025;DV
+WB2025-0167;23/08/2025;Completed;K00779;"Spinnerijstraat 97, 9700 OUDENAARDE";OH branddetectie (fiche 1209);;Onderhoud;;N;J;N;;"Batterij vervangen, factureren";;11/08/2025;DV
+WB2025-0168;24/08/2025;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;J;J;;;;17/07/2025;KV
+WB2025-0171;24/08/2025;Completed;K00300;"Ellestraat 111, 8560 Wevelgem";Onderhoud camera;;Onderhoud;;N;N;N;;;;20/08/2025;ADMIN
+WB2025-0174;24/08/2025;Completed;K00516;"Driesstraat 91, 8500 Kortrijk";Jaarl. nazicht alarm;1198;Onderhoud;;N;N;N;;;;16/07/2025;DV
+WB2025-0175;25/08/2025;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";ONDH 1116;;Algemeen;;N;J;N;;;;27/07/2025;KV
+WB2025-0176;26/08/2025;Implemented;K00524;"Ellestraat 156, 8540 Deerlijk";OH branddetectie (fiche 1101);;Onderhoud;;N;N;N;Batterijen meenemen!;;;30/07/2025;KV
+WB2025-0178;26/08/2025;Completed;K00542;"Otegemstraat 106, 8790 Waregem";Storing centrale;;Herstelling;;N;N;N;;;;04/08/2025;DV
+WB2025-0181;06/09/2025;Completed;K00317;"Spinnerijstraat 41, 8930 Menen";Camera geen beeld;;Algemeen;;N;N;J;Batterijen meenemen!;;;26/08/2025;KV
+WB2025-0182;07/09/2025;Completed;K00407;"Driesstraat 90, 8520 Kuurne";OH branddetectie (fiche 1222);;Algemeen;;N;J;N;;"Batterij vervangen, factureren";;23/08/2025;DV
+WB2025-0183;08/09/2025;Completed;K00663;"Kortrijkseweg 66, 8530 HARELBEKE";Camera geen beeld;;Herstelling;;N;J;J;;;;01/08/2025;DV
+WB2025-0184;10/09/2025;Invoiced;K00249;"Ommegangstraat 69, 8580 Avelgem";ONDH 1097;;Onderhoud;;N;N;J;;;;31/08/2025;KV
+WB2025-0185;10/09/2025;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";Jaarlijks onderhoud fiche 1127;;Onderhoud;;N;J;J;;;;24/08/2025;KV
+WB2025-0187;13/09/2025;Invoiced;K00404;"Vichtesteenweg 78, 8580 Avelgem";Camera geen beeld;;Algemeen;;N;J;J;;;;13/08/2025;DV
+WB2025-0190;19/09/2025;Completed;K00530;;Jaarlijks onderhoud fiche 1206;;Algemeen;;N;J;N;;;;14/09/2025;DV
+WB2025-0193;20/09/2025;Completed;K00689;"Bosstraat 105, 8501 HEULE";ONDH 1057;;Onderhoud;PO 4513739;N;J;N;Hond in tuin;;;05/09/2025;DV
+WB2025-0194;22/09/2025;Completed;K00169;"Lindenlaan 2A, 8501 Heule";Klant kan niet uitschakelen;;Algemeen;;N;J;N;Sleutel bij buren;"Detector garage defect, offerte maken";;19/09/2025;ADMIN
+WB2025-0197;24/09/2025;Completed;K00379;;OH alarm (fiche 1060);;Algemeen;;N;J;N;Batterijen meenemen!;"Niet afgewerkt, terug te gaan";;11/09/2025;DV
+WB2025-0199;28/09/2025;Implemented;K00420;"Lindenlaan 85, 8560 Wevelgem";Jaarlijks onderhoud fiche 1102;;Onderhoud;;N;N;N;;"Batterij vervangen, factureren";;19/09/2025;DV
+WB2025-0202;01/10/2025;Completed;K00551;;OH branddetectie (fiche 1190);;Algemeen;;N;J;J;;;;28/09/2025;KV
+WB2025-0203;01/10/2025;Completed;K00228;"Zandstraat 92, 8580 Avelgem";Jaarl. nazicht branddetectie;1202;Algemeen;;N;N;J;;Klant wil extra camera;;15/09/2025;ADMIN
+WB2025-0204;01/10/2025;Completed;K00542;"Otegemstraat 106, 8790 Waregem";ONDH 1207;;Onderhoud;;N;J;N;;;;09/09/2025;KV
+WB2025-0205;01/10/2025;Completed;K00469;"Industrielaan 67, 8930 Menen";Onderhoud volgens contract;;Onderhoud;;N;N;J;;;;11/09/2025;DV
+WB2025-0208;06/10/2025;Completed;K00776;"Kerkstraat 7, 8530 Harelbeke";Batterij leeg melding;;Herstelling;;N;J;J;;;;20/09/2025;KV
+WB2025-0211;10/10/2025;Completed;K00166;;ONDH 1092;;Algemeen;;N;N;J;;"Batterij vervangen, factureren";;20/09/2025;KV
+WB2025-0214;11/10/2025;Completed;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";Jaarlijks onderhoud fiche 1020;1020;Onderhoud;;N;J;J;;;;03/09/2025;ADMIN
+WB2025-0216;12/10/2025;Verified;K00305;"Pontstraat 12, 8530 Harelbeke";ONDH 1003;;Onderhoud;;N;N;N;;;;06/10/2025;DV
+WB2025-0218;15/10/2025;Invoiced;K00507;;Onderhoud volgens contract;;Onderhoud;PO 4547597;N;N;N;;;;20/09/2025;DV
+WB2025-0221;19/10/2025;Invoiced;K00750;"Bergstraat 92, 9700 Oudenaarde";ONDH 1140;;Algemeen;;N;J;N;;;;21/09/2025;ADMIN
+WB2025-0224;19/10/2025;Implemented;K00500;"Heirweg 55, 8551 Heestert";Jaarlijks onderhoud fiche 1172;;Onderhoud;;N;N;N;;;;21/09/2025;KV
+WB2025-0225;24/10/2025;Completed;K00591;"Lindenlaan 148, 8560 Wevelgem";Badgelezer defect;;Algemeen;PO 4591334;N;N;N;;;;03/10/2025;DV
+WB2025-0228;10/11/2025;Completed;K00758;"Bosstraat 115, Anzegem";Installatie toegangscontrole;;Installatie;;N;N;J;;;;13/10/2025;KV
+WB2025-0230;13/11/2025;Completed;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Onderhoud volgens contract;;Algemeen;;N;N;J;;Klant wil extra camera;;15/10/2025;DV
+WB2025-0233;01/12/2025;Invoiced;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Jaarlijks onderhoud fiche 1088;;Algemeen;;N;J;J;;;;21/11/2025;DV
+WB2025-0235;05/12/2025;Completed;K00329;"Vlaanderenstraat 128, 8570 Anzegem";OH camera (fiche 1150);;Algemeen;;N;J;J;;;;28/10/2025;KV
+WB2025-0238;06/12/2025;Implemented;K00735;"Hoogstraat 115, 8570 Anzegem";Valse melding brand;;Algemeen;;N;N;N;Ladder nodig (hoog plafond);;;01/11/2025;DV
+WB2025-0239;08/12/2025;Implemented;K00593;"Hoogstraat 163B, 8530 Harelbeke";Camera geen beeld;;Herstelling;;N;N;N;Sleutel bij buren;;;15/11/2025;ADMIN
+WB2025-0242;08/12/2025;Invoiced;K00619;"Ellestraat 115, Heestert";Installatie toegangscontrole;;Installatie;PO 4552010;N;N;N;Sleutel bij buren;;;12/11/2025;DV
+WB2025-0244;16/12/2025;Completed;K00451;"Zandstraat 178, 8540 Deerlijk";Jaarlijks onderhoud fiche 1042;;Onderhoud;;N;N;J;;;;10/12/2025;DV
+WB2025-0247;16/12/2025;Completed;K00538;"Rijksweg 20, 8530 Harelbeke";OH branddetectie (fiche 1076);;Onderhoud;;N;N;J;;;;06/11/2025;KV
+WB2025-0250;18/12/2025;Completed;K00464;"Kerkstraat 75, 8500 KORTRIJK";onderhoud alarm + batterijen vervangen;;Algemeen;;N;J;J;Hond in tuin;"Batterij vervangen, factureren";;30/11/2025;DV
+WB2025-0251;18/12/2025;Completed;K00169;;Jaarlijks onderhoud fiche 1223;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;;;30/11/2025;KV
+WB2025-0253;21/12/2025;Completed;K00726;"Spinnerijstraat 48, 8800 Roeselare";ONDH 1186;1186;Algemeen;;N;N;N;;;;22/11/2025;KV
+WB2025-0254;21/12/2025;Completed;K00609;"Ellestraat 27, Avelgem";Installatie inbraakalarm;;Installatie;;N;J;N;Ladder nodig (hoog plafond);Klant wil extra camera;;22/11/2025;DV
+WB2025-0255;22/12/2025;Completed;K00208;"Industrielaan 145, 8551 Heestert";Onderhoud volgens contract;;Algemeen;;N;N;N;Klant bellen 30 min op voorhand;;;04/12/2025;DV
+WB2025-0258;24/12/2025;Invoiced;K00530;"Heirweg 176, 8930 Menen";Detector defect magazijn;;Algemeen;PO 4589901;N;N;J;;;;04/12/2025;ADMIN
+WB2025-0259;26/12/2025;Verified;K00720;"Driesstraat 4, Zwevegem";Uitbreiding detectoren;;Installatie;;N;N;N;;;;10/12/2025;DV
+WB2025-0260;28/12/2025;Completed;K00626;"Kapelstraat 43, 9700 Oudenaarde";Jaarl. nazicht alarm;;Onderhoud;;N;N;J;;;;24/11/2025;DV
+WB2025-0263;28/04/2025;Planned;K00208;"Industrielaan 145, 8551 Heestert";Nakijken camera;;Algemeen;;N;N;N;;Klant op reis tot eind maand;;28/04/2025;DV
+WB2025-0264;25/12/2025;Planned;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";onderhoud (klant belde);;Onderhoud;;N;N;N;;;;25/12/2025;KV
+WB2025-0267;17/12/2025;Planned;K00823;"Industrielaan 145, 8551 Heestert";Sirene vervangen;;Algemeen;;N;N;N;;;;17/12/2025;KV
+WB2025-0268;17/04/2025;Planned;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Sirene vervangen;;Algemeen;;N;N;N;;;;17/04/2025;DV
+WB2025-0269;04/06/2025;Planned;K00632;"Ellestraat 97, 8790 Waregem";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;Klant terugbellen;;04/06/2025;KV
+WB2025-0272;12/08/2025;Planned;K00791;"Hoogstraat 163, 8580 Avelgem";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;;;12/08/2025;KV
+WB2025-0275;14/03/2025;Planned;K00642;"Zandstraat 79, 8570 Anzegem";ONDH;;Onderhoud;;N;N;N;;Wacht op onderdeel;;14/03/2025;KV
+WB2025-0276;05/06/2025;Planned;K00228;"Zandstraat 92, 8580 Avelgem";Detector piept;;Algemeen;;N;N;N;;Klant terugbellen;;05/06/2025;KV
+WB2025-0277;20/10/2025;Planned;K00642;"Zandstraat 79, 8570 Anzegem";ONDH;;Onderhoud;;N;N;N;;;;20/10/2025;KV
+WB2026-0002;03/01/2026;Completed;K00228;"Zandstraat 92, 8580 Avelgem";Sirene gaat af zonder reden;;Algemeen;;N;N;J;;;;28/12/2025;DV
+WB2026-0004;05/01/2026;Verified;K00329;"Vlaanderenstraat 128, 8570 Anzegem";Onderhoud alarm;;Algemeen;;N;N;N;;;;16/12/2025;KV
+WB2026-0007;06/01/2026;Completed;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Jaarlijks onderhoud fiche 1175;;Algemeen;;N;N;N;;;;09/12/2025;ADMIN
+WB2026-0010;07/01/2026;Completed;K00429;"Vichtesteenweg 170, 8790 Waregem";Jaarl. nazicht alarm;;Algemeen;;N;N;N;Batterijen meenemen!;;;15/12/2025;KV
+WB2026-0012;11/01/2026;Completed;K00228;"Zandstraat 92, 8580 Avelgem";ONDH 1202;;Algemeen;;N;N;N;Ladder nodig (hoog plafond);;;11/12/2025;KV
+WB2026-0014;14/01/2026;Completed;K00336;"Rijksweg 130, 8500 Kortrijk";OH branddetectie (fiche 1212);;Onderhoud;;N;J;N;;;;29/12/2025;DV
+WB2026-0017;23/01/2026;Completed;K00296;"Otegemstraat 1, 8500 Kortrijk";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;J;;;;16/01/2026;ADMIN
+WB2026-0018;24/01/2026;Completed;K00694;"Rijksweg 25, 8930 Menen";Sirene gaat af zonder reden;;Algemeen;;N;J;J;;;;29/12/2025;KV
+WB2026-0021;28/01/2026;Invoiced;K00599;"Meersstraat 41, 8580 Avelgem";Sirene gaat af zonder reden;;Herstelling;PO 4567053;N;N;N;;;;18/01/2026;DV
+WB2026-0022;02/02/2026;Completed;K00464;"Kerkstraat 75, 8500 KORTRIJK";Jaarl. nazicht alarm;;Onderhoud;;N;N;J;;;;01/01/2026;DV
+WB2026-0024;03/02/2026;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Badgelezer defect;;Algemeen;;N;N;J;;;;30/01/2026;ADMIN
+WB2026-0027;05/02/2026;Completed;K00542;"Otegemstraat 106, 8790 Waregem";Onderhoud volgens contract;;Onderhoud;;N;N;J;;;;30/01/2026;ADMIN
+WB2026-0028;05/02/2026;Completed;K00698;"Molenstraat 157, 8550 Zwevegem";Jaarlijks onderhoud fiche 1180;;Onderhoud;;N;N;N;;;;22/01/2026;ADMIN
+WB2026-0030;05/02/2026;Invoiced;K00429;"Vichtesteenweg 170, 8790 Waregem";Batterij leeg melding;;Herstelling;;N;J;J;;;;13/01/2026;ADMIN
+WB2026-0031;07/02/2026;Invoiced;K00538;"Rijksweg 20, 8530 Harelbeke";ONDH 1076;;Onderhoud;;N;N;J;;;;18/01/2026;ADMIN
+WB2026-0034;09/02/2026;Implemented;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;N;;;;28/01/2026;KV
+WB2026-0037;15/02/2026;Completed;K00263;"Bergstraat 15, 8580 Avelgem";Onderhoud volgens contract;;Algemeen;;N;N;N;;;;08/02/2026;DV
+WB2026-0038;17/02/2026;Implemented;K00530;"Heirweg 176, 8930 Menen";Batterij leeg melding;;Algemeen;;N;N;N;Sleutel bij buren;;;09/01/2026;ADMIN
+WB2026-0039;23/02/2026;Implemented;K00228;"Zandstraat 92, 8580 Avelgem";Onderhoud alarm;;Onderhoud;;N;N;N;;;;27/01/2026;DV
+WB2026-0041;28/02/2026;Completed;K00809;"Lindenlaan 2A, 8501 Heule";OH branddetectie (fiche 1034);1034;Onderhoud;;N;J;J;;;;16/02/2026;DV
+WB2026-0044;05/03/2026;Completed;K00567;;OH alarm (fiche 1077);;Onderhoud;;N;N;J;;;;19/02/2026;ADMIN
+WB2026-0047;06/03/2026;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";ONDH 1196;;Onderhoud;;N;N;J;Klant bellen 30 min op voorhand;;;08/02/2026;KV
+WB2026-0049;08/03/2026;Invoiced;K00467;"Blokellestraat 116, 8550 Zwevegem";Onderhoud branddetectie;;Onderhoud;;N;J;J;;;;09/02/2026;DV
+WB2026-0052;10/03/2026;Invoiced;K00296;;Jaarlijks onderhoud fiche 1176;;Algemeen;;N;J;N;;Klant wil extra camera;;12/02/2026;KV
+WB2026-0053;11/03/2026;Verified;K00524;"Ellestraat 156, 8540 Deerlijk";ONDH 1101;;Algemeen;;N;J;N;;;;01/03/2026;DV
+WB2026-0056;11/03/2026;Completed;K00599;"Meersstraat 41, 8580 Avelgem";Klavier reageert niet;;Herstelling;;N;N;J;Ladder nodig (hoog plafond);;;06/02/2026;ADMIN
+WB2026-0057;12/03/2026;Implemented;K00593;"Hoogstraat 163B, 8530 Harelbeke";OH branddetectie (fiche 1082);;Onderhoud;;N;N;N;Hond in tuin;;;04/03/2026;KV
+WB2026-0060;15/03/2026;Completed;K00500;"Heirweg 55, 8551 Heestert";Onderhoud volgens contract;;Onderhoud;PO 4569417;N;J;J;Sleutel bij buren;"Detector garage defect, offerte maken";;24/02/2026;ADMIN
+WB2026-0063;15/03/2026;Completed;K00397;"Ellestraat 8, 8530 Harelbeke";Klant kan niet uitschakelen;;Algemeen;;N;N;J;;;;13/02/2026;ADMIN
+WB2026-0064;19/03/2026;Completed;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;N;Hond in tuin;;;10/03/2026;DV
+WB2026-0065;21/03/2026;Completed;K00469;"Industrielaan 67, 8930 Menen";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;;;;24/02/2026;ADMIN
+WB2026-0066;24/03/2026;Invoiced;K00823;"Industrielaan 145, 8551 Heestert";Storing centrale;;Herstelling;;N;J;N;Batterijen meenemen!;;;21/02/2026;DV
+WB2026-0068;24/03/2026;Invoiced;K00579;"Hoogstraat 28, 8570 Anzegem";Klavier reageert niet;;Herstelling;;N;J;N;;"Niet afgewerkt, terug te gaan";;21/02/2026;DV
+WB2026-0070;27/03/2026;Invoiced;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";Storing centrale;;Herstelling;;N;J;J;;;;04/03/2026;KV
+WB2026-0071;28/03/2026;Completed;K00326;"Molenstraat 90, 8570 Anzegem";Onderhoud branddetectie;;Onderhoud;;N;J;J;Sleutel bij buren;;;22/02/2026;KV
+WB2026-0073;02/04/2026;Invoiced;K00455;"Driesstraat 99, 8501 Heule";Storing centrale;1211;Herstelling;;N;J;J;;;;30/03/2026;DV
+WB2026-0076;03/04/2026;Invoiced;K00393;"Kerkstraat 24, 8530 Harelbeke";Storing centrale;;Herstelling;;N;J;N;;;;18/03/2026;DV
+WB2026-0079;07/04/2026;Completed;K00542;"Otegemstraat 106, 8790 Waregem";Jaarlijks onderhoud fiche 1207;;Algemeen;;N;N;N;;;;25/02/2026;DV
+WB2026-0082;07/04/2026;Completed;K00758;"Bosstraat 115, 8570 Anzegem";onderhoud branddetectie + batterijen vervangen;1221;Onderhoud;;N;N;J;Sleutel bij buren;;;20/03/2026;KV
+WB2026-0084;09/04/2026;Completed;K00516;"Driesstraat 91, 8500 Kortrijk";Jaarlijks onderhoud fiche 1198;;Algemeen;;N;N;N;;;;27/02/2026;KV
+WB2026-0087;10/04/2026;Completed;K00134;"Zandstraat 10A, 8530 Harelbeke";Onderhoud volgens contract;;Algemeen;;N;J;N;;"Niet afgewerkt, terug te gaan";;04/03/2026;DV
+WB2026-0088;11/04/2026;Completed;K00393;"Kerkstraat 24, 8530 Harelbeke";ONDH 1039;;Onderhoud;PO 4525989;N;N;J;;;;26/03/2026;DV
+WB2026-0089;12/04/2026;Invoiced;K00364;"Ommegangstraat 164, 8520 Kuurne";Onderhoud branddetectie;;Algemeen;;N;J;J;Sleutel bij buren;;;13/03/2026;DV
+WB2026-0092;17/04/2026;Invoiced;K00317;"Spinnerijstraat 41, 8930 Menen";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;J;J;;;;11/04/2026;DV
+WB2026-0094;19/04/2026;Completed;K00610;"Lindenlaan 149, 8930 Menen";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;N;Batterijen meenemen!;;;20/03/2026;KV
+WB2026-0096;03/05/2026;Completed;K00791;"Hoogstraat 163, 8580 Avelgem";Jaarlijks onderhoud fiche 1111;;Onderhoud;;N;N;N;;;;25/04/2026;DV
+WB2026-0097;04/05/2026;Completed;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";Onderhoud volgens contract;;Onderhoud;;N;J;J;;;;20/04/2026;DV
+WB2026-0099;04/05/2026;Completed;K00530;"Heirweg 176, 8930 Menen";Onderhoud volgens contract;;Onderhoud;;N;N;N;;;;25/04/2026;DV
+WB2026-0100;04/05/2026;Verified;K00455;"Driesstraat 99, 8501 Heule";Jaarl. nazicht branddetectie;;Onderhoud;;N;J;N;;;;06/04/2026;DV
+WB2026-0101;04/05/2026;Completed;K00609;"Ellestraat 27, 8580 Avelgem";Klavier reageert niet;;Algemeen;;N;N;N;;"Niet afgewerkt, terug te gaan";;30/04/2026;DV
+WB2026-0104;06/05/2026;Implemented;K00182;"Kortrijkseweg 129, 8530 Harelbeke";Jaarl. nazicht toegang;;Onderhoud;;N;N;N;Batterijen meenemen!;Klant wil extra camera;;27/04/2026;ADMIN
+WB2026-0107;07/05/2026;Completed;K00189;"Spinnerijstraat 106, 8870 Izegem";OH toegang (fiche 1035);;Onderhoud;;N;J;J;Sleutel bij buren;;;01/05/2026;DV
+WB2026-0108;14/05/2026;Completed;K00750;"Bergstraat 92, 9700 Oudenaarde";Onderhoud volgens contract;;Onderhoud;;N;J;J;Hond in tuin;;;28/04/2026;DV
+WB2026-0110;17/05/2026;Completed;K00632;"Ellestraat 97, 8790 Waregem";Sirene gaat af zonder reden;1037;Herstelling;;N;N;J;Sleutel bij buren;;;12/05/2026;ADMIN
+WB2026-0113;19/05/2026;Completed;K00758;"Bosstraat 115, 8570 Anzegem";Sirene gaat af zonder reden;;Algemeen;;N;J;N;Sleutel bij buren;"Batterij vervangen, factureren";;12/04/2026;DV
+WB2026-0114;20/05/2026;Invoiced;K00208;"Industrielaan 145, 8551 Heestert";Klavier reageert niet;;Herstelling;;N;J;J;;;;24/04/2026;DV
+WB2026-0117;21/05/2026;Invoiced;K00220;"Kortrijkseweg 167, 9700 Oudenaarde";ONDH 1185;;Onderhoud;;N;N;J;;;;14/04/2026;ADMIN
+WB2026-0118;27/05/2026;Verified;K00317;"Spinnerijstraat 41, 8930 Menen";Detector defect zolder;;Algemeen;;N;J;N;Hond in tuin;;;13/05/2026;KV
+WB2026-0121;01/06/2026;Completed;K00469;"Industrielaan 67, 8930 Menen";Onderhoud volgens contract;;Algemeen;PO 4565321;N;N;N;Batterijen meenemen!;;;07/05/2026;ADMIN
+WB2026-0122;04/06/2026;Completed;K00500;"Heirweg 55, 8551 Heestert";Onderhoud branddetectie;;Onderhoud;;N;J;J;Sleutel bij buren;Klant wil extra camera;;25/04/2026;DV
+WB2026-0124;05/06/2026;Implemented;K00189;"Spinnerijstraat 106, 8870 Izegem";Jaarlijks onderhoud fiche 1073;1073;Algemeen;;N;N;N;;;;28/05/2026;DV
+WB2026-0125;09/06/2026;Implemented;K00244;"Heirweg 114, 8580 Avelgem";Sirene gaat af zonder reden;;Algemeen;;N;N;N;;;;04/06/2026;ADMIN
+WB2026-0127;10/06/2026;Completed;K00492;"Stationsstraat 69, 8570 Anzegem";Jaarlijks onderhoud fiche 1179;;Onderhoud;;N;J;J;;;;03/06/2026;ADMIN
+WB2026-0128;15/06/2026;Completed;K00192;"Oudenaardsesteenweg 60, 8520 Kuurne";Sirene gaat af zonder reden;;Herstelling;;N;J;N;;;;08/06/2026;KV
+WB2026-0130;16/06/2026;Implemented;K00791;"Hoogstraat 163, 8580 Avelgem";Onderhoud volgens contract;;Algemeen;;N;N;N;;;;11/05/2026;KV
+WB2026-0133;24/06/2026;Implemented;K00535;;ONDH 1123;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;;;10/06/2026;DV
+WB2026-0134;24/06/2026;Completed;K00667;"Stationsstraat 20, 8540 Deerlijk";Jaarlijks onderhoud fiche 1127;;Onderhoud;;N;J;J;;;;13/06/2026;ADMIN
+WB2026-0135;25/06/2026;Implemented;K00632;"Ellestraat 97, 8790 Waregem";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;N;N;Batterijen meenemen!;;;01/06/2026;DV
+WB2026-0138;02/07/2026;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";Onderhoud alarm;;Onderhoud;;N;J;N;;;;21/06/2026;KV
+WB2026-0140;02/07/2026;Implemented;K00509;"Oudenaardsesteenweg 53, 8501 Heule";Klavier reageert niet;;Algemeen;;N;N;N;;;;28/05/2026;DV
+WB2026-0142;04/07/2026;Completed;K00655;"Lindenlaan 73, 8520 Kuurne";Onderhoud volgens contract;;Onderhoud;;N;J;J;;"Batterij vervangen, factureren";;02/06/2026;DV
+WB2026-0145;04/07/2026;Invoiced;K00364;"Ommegangstraat 164, 8520 Kuurne";OH alarm (fiche 1147);;Onderhoud;;N;J;J;;;;25/05/2026;ADMIN
+WB2026-0147;04/07/2026;Implemented;K00655;"Lindenlaan 73, 8520 Kuurne";Camera geen beeld;;Algemeen;;N;N;N;;;;26/05/2026;DV
+WB2026-0149;06/07/2026;Implemented;K00383;;Jaarl. nazicht toegang;;Onderhoud;;N;N;N;;;;01/06/2026;KV
+WB2026-0151;08/07/2026;Completed;K00305;"Pontstraat 12, 8530 Harelbeke";Onderhoud alarm;;Algemeen;;N;N;J;;;;04/06/2026;ADMIN
+WB2026-0152;10/07/2026;Completed;K00305;"Pontstraat 12, 8530 Harelbeke";onderhoud alarm + batterijen vervangen;1215;Algemeen;;N;N;N;;;;02/07/2026;DV
+WB2026-0153;12/07/2026;Implemented;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Badgelezer defect;;Algemeen;;N;N;N;Batterijen meenemen!;;;19/06/2026;DV
+WB2026-0156;13/07/2026;Completed;K00575;;Jaarlijks onderhoud fiche 1223;;Algemeen;;N;J;J;;;;10/06/2026;DV
+WB2026-0159;15/07/2026;Invoiced;K00530;"Heirweg 176, 8930 Menen";onderhoud branddetectie + batterijen vervangen;1166;Algemeen;PO 4543465;N;N;N;Klant bellen 30 min op voorhand;;;22/06/2026;DV
+WB2026-0160;17/07/2026;Invoiced;K00626;"Kapelstraat 43, 9700 Oudenaarde";ONDH 1152;;Onderhoud;;N;J;J;Klant bellen 30 min op voorhand;;;26/06/2026;KV
+WB2026-0162;18/07/2026;Completed;K00507;"Oudenaardsesteenweg 123, 8560 Wevelgem";Jaarl. nazicht branddetectie;;Onderhoud;;N;J;J;;"Detector garage defect, offerte maken";;24/06/2026;ADMIN
+WB2026-0163;19/07/2026;Completed;K00407;"Driesstraat 90, 8520 Kuurne";OH branddetectie (fiche 1222);;Algemeen;;N;J;J;;;;18/06/2026;KV
+WB2026-0166;27/07/2026;Implemented;K00257;"Bellegemstraat 124, 8540 Deerlijk";Onderhoud alarm;;Onderhoud;;N;N;N;Klant bellen 30 min op voorhand;;;30/06/2026;KV
+WB2026-0167;27/07/2026;Completed;K00148;"Heirweg 90, 8550 Zwevegem";Onderhoud toegang;;Onderhoud;;N;N;N;Sleutel bij buren;;;12/07/2026;ADMIN
+WB2026-0170;01/08/2026;Invoiced;K00650;"Rijksweg 81, 8870 Izegem";Onderhoud branddetectie;;Algemeen;;N;J;J;Hond in tuin;;;26/07/2026;KV
+WB2026-0171;08/08/2026;Completed;K00776;"Kerkstraat 7, 8530 Harelbeke";Onderhoud branddetectie;;Onderhoud;;N;J;N;;;;02/08/2026;DV
+WB2026-0173;10/08/2026;Implemented;K00484;"Kortrijkseweg 49, 8790 Waregem";Onderhoud toegang;;Onderhoud;;N;N;N;;;;25/07/2026;KV
+WB2026-0176;10/08/2026;Completed;K00593;"Hoogstraat 163B, 8530 Harelbeke";Onderhoud alarm;;Onderhoud;;N;N;N;;Klant wil extra camera;;24/07/2026;DV
+WB2026-0178;10/08/2026;Completed;K00626;"Kapelstraat 43, 9700 Oudenaarde";ONDH 1145;;Onderhoud;;N;J;J;;;;10/07/2026;DV
+WB2026-0179;11/08/2026;Invoiced;K00509;"Oudenaardsesteenweg 53, 8501 Heule";onderhoud toegang + batterijen vervangen;;Onderhoud;;N;N;J;Hond in tuin;;;30/07/2026;ADMIN
+WB2026-0182;11/08/2026;Verified;K00601;;Jaarl. nazicht branddetectie;;Onderhoud;;N;J;N;;;;03/07/2026;DV
+WB2026-0184;12/08/2026;Completed;K00655;"Lindenlaan 73, 8520 Kuurne";OH camera (fiche 1132);;Onderhoud;;N;J;N;Sleutel bij buren;;;17/07/2026;KV
+WB2026-0186;12/08/2026;Completed;K00758;"Bosstraat 115, 8570 Anzegem";Klavier reageert niet;;Algemeen;;N;J;N;Sleutel bij buren;;;04/07/2026;DV
+WB2026-0189;13/08/2026;Completed;K00689;"Bosstraat 105, 8501 HEULE";Jaarl. nazicht branddetectie;1057;Onderhoud;;N;N;J;;"Batterij vervangen, factureren";;10/08/2026;DV
+WB2026-0190;14/08/2026;Invoiced;K00228;"Zandstraat 92, 8580 Avelgem";onderhoud alarm + batterijen vervangen;;Algemeen;;N;J;N;;;;10/07/2026;KV
+WB2026-0191;15/08/2026;Invoiced;K00799;"Industrielaan 91, 8560 Wevelgem";OH branddetectie (fiche 1103);;Algemeen;;N;N;J;;;;11/07/2026;ADMIN
+WB2026-0194;16/08/2026;Completed;K00313;;ONDH 1157;;Onderhoud;;N;N;J;Sleutel bij buren;;;11/07/2026;ADMIN
+WB2026-0195;16/08/2026;Completed;K00694;"Rijksweg 25, 8930 Menen";Badgelezer defect;;Algemeen;;N;J;J;;;;31/07/2026;DV
+WB2026-0198;17/08/2026;Implemented;K00663;"Kortrijkseweg 66, 8530 HARELBEKE";Onderhoud volgens contract;;Onderhoud;;N;N;N;Sleutel bij buren;;;11/07/2026;DV
+WB2026-0199;18/08/2026;Invoiced;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";ONDH 1162;;Onderhoud;;N;N;N;Sleutel bij buren;;;17/07/2026;DV
+WB2026-0200;19/08/2026;Invoiced;K00404;"Vichtesteenweg 78, 8580 Avelgem";ONDH 1200;;Algemeen;PO 4558814;N;N;J;;;;12/08/2026;DV
+WB2026-0201;22/08/2026;Completed;K00779;"Spinnerijstraat 97, 9700 OUDENAARDE";Jaarl. nazicht branddetectie;;Onderhoud;;N;N;J;Batterijen meenemen!;;;15/07/2026;KV
+WB2026-0202;25/08/2026;Completed;K00726;"Spinnerijstraat 48, 8800 Roeselare";ONDH 1186;;Algemeen;;N;J;N;Sleutel bij buren;;;05/08/2026;KV
+WB2026-0203;27/08/2026;Implemented;K00177;"Hoogstraat 153, 8570 Anzegem";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;;;;22/08/2026;ADMIN
+WB2026-0206;27/08/2026;Implemented;K00155;"Bellegemstraat 121, 8580 Avelgem";Jaarlijks onderhoud fiche 1058;;Onderhoud;PO 4598831;N;N;N;Sleutel bij buren;;;04/08/2026;DV
+WB2026-0207;08/09/2026;Completed;K00791;"Hoogstraat 163, 8580 Avelgem";Onderhoud alarm;;Onderhoud;;N;N;N;;;;26/08/2026;DV
+WB2026-0208;10/09/2026;Verified;K00192;"Oudenaardsesteenweg 60, 8520 Kuurne";OH toegang (fiche 1156);;Algemeen;;N;J;N;Klant bellen 30 min op voorhand;;;04/09/2026;KV
+WB2026-0210;11/09/2026;Invoiced;K00169;"Lindenlaan 2A, 8501 Heule";onderhoud camera + batterijen vervangen;;Algemeen;;N;J;J;;;;17/08/2026;ADMIN
+WB2026-0212;13/09/2026;Verified;K00345;"Vichtesteenweg 173, ZWEVEGEM";Installatie inbraakalarm;;Installatie;;N;N;N;;;;05/08/2026;KV
+WB2026-0215;14/09/2026;Completed;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Jaarl. nazicht alarm;;Onderhoud;;N;N;N;;;;05/09/2026;KV
+WB2026-0217;16/09/2026;Implemented;K00420;"Lindenlaan 85, 8560 Wevelgem";Jaarlijks onderhoud fiche 1102;;Onderhoud;;N;N;N;;;;07/08/2026;DV
+WB2026-0218;16/09/2026;Verified;K00345;"Vichtesteenweg 173, 8550 ZWEVEGEM";Onderhoud volgens contract;1115;Algemeen;;N;J;N;;;;09/08/2026;DV
+WB2026-0221;28/09/2026;Completed;K00469;"Industrielaan 67, 8930 Menen";Jaarl. nazicht branddetectie;1050;Algemeen;;N;J;J;;;;21/08/2026;KV
+WB2026-0223;02/10/2026;Invoiced;K00236;"Bosstraat 34, 8501 Heule";ONDH 1205;;Onderhoud;;N;J;N;;;;18/09/2026;DV
+WB2026-0226;02/10/2026;Implemented;K00326;"Molenstraat 90, 8570 Anzegem";Batterij leeg melding;;Herstelling;;N;N;N;Sleutel bij buren;;;23/09/2026;DV
+WB2026-0228;04/10/2026;Implemented;K00429;"Vichtesteenweg 170, 8790 Waregem";onderhoud alarm + batterijen vervangen;;Onderhoud;;N;N;N;;"Niet afgewerkt, terug te gaan";;15/09/2026;KV
+WB2026-0230;04/10/2026;Invoiced;K00560;"Blokellestraat 8, 9700 Oudenaarde";Storing centrale;;Herstelling;;N;J;N;;;;27/09/2026;DV
+WB2026-0231;09/10/2026;Verified;K00803;"Bellegemstraat 121, 8580 Avelgem";Onderhoud volgens contract;;Onderhoud;PO 4588020;N;N;N;;;;23/09/2026;KV
+WB2026-0234;15/10/2026;Invoiced;K00560;"Blokellestraat 8, 9700 Oudenaarde";onderhoud branddetectie + batterijen vervangen;;Onderhoud;;N;J;N;Sleutel bij buren;;;21/09/2026;KV
+WB2026-0236;15/10/2026;Implemented;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Klant kan niet uitschakelen;;Herstelling;;N;N;N;;;;26/09/2026;ADMIN
+WB2026-0237;16/10/2026;Invoiced;K00237;"Ellestraat 124, 8790 Waregem";OH branddetectie (fiche 1177);;Algemeen;;N;N;J;Hond in tuin;;;12/09/2026;ADMIN
+WB2026-0239;22/10/2026;Completed;K00443;"Meersstraat 174, 8580 Avelgem";Onderhoud camera;;Onderhoud;;N;J;J;;;;17/09/2026;DV
+WB2026-0242;28/10/2026;Implemented;K00599;"Meersstraat 41, 8580 Avelgem";Jaarlijks onderhoud fiche 1154;;Algemeen;;N;N;N;Ladder nodig (hoog plafond);;;23/10/2026;ADMIN
+WB2026-0244;24/11/2026;Planned;K00397;"Ellestraat 8, 8530 Harelbeke";ONDH 1149;;Onderhoud;;N;N;N;;;;13/10/2026;DV
+WB2026-0246;17/11/2026;Planned;K00758;"Bosstraat 115, 8570 Anzegem";ONDH 1221;;Onderhoud;;N;N;N;;;;19/10/2026;DV
+WB2026-0247;10/11/2026;Planned;K00451;"Zandstraat 178, 8540 Deerlijk";Storing centrale;;Herstelling;;N;N;N;;;;20/10/2026;DV
+WB2026-0248;16/11/2026;Planned;K00551;"Heirweg 11, 8800 ROESELARE";Jaarlijks onderhoud fiche 1197;;Onderhoud;;N;N;N;;;;17/10/2026;DV
+WB2026-0250;17/11/2026;Planned;K00404;"Vichtesteenweg 78, 8580 Avelgem";Uitbreiding detectoren;;Herstelling;;N;N;N;;;;21/10/2026;DV
+WB2026-0251;05/11/2026;Planned;K00317;"Spinnerijstraat 41, 8930 Menen";Storing centrale;;Herstelling;;N;N;N;;;;16/10/2026;DV
+WB2026-0253;17/11/2026;Planned;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Storing centrale;;Herstelling;;N;N;N;;;;16/10/2026;DV
+WB2026-0255;19/11/2026;Planned;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Jaarlijks onderhoud fiche 1169;;Onderhoud;;N;N;N;;;;12/10/2026;DV
+WB2026-0257;25/11/2026;Planned;K00177;"Hoogstraat 153, 8570 Anzegem";Jaarlijks onderhoud fiche 1030;;Onderhoud;;N;N;N;;;;11/10/2026;DV
+WB2026-0259;19/11/2026;Planned;K00823;"Industrielaan 145, 8551 Heestert";Onderhoud alarm;;Onderhoud;;N;N;N;;;;20/10/2026;DV
+WB2026-0261;05/11/2026;Planned;K00750;"Bergstraat 92, 9700 Oudenaarde";Jaarlijks onderhoud fiche 1078;;Onderhoud;;N;N;N;;;;29/10/2026;DV
+WB2026-0264;25/11/2026;Planned;K00467;"Blokellestraat 116, 8550 Zwevegem";Jaarlijks onderhoud fiche 1183;;Onderhoud;;N;N;N;;;;18/10/2026;DV
+WB2026-0265;23/11/2026;Planned;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";Onderhoud alarm;;Onderhoud;;N;N;N;;;;24/10/2026;DV
+WB2026-0266;18/11/2026;Planned;K00524;"Ellestraat 156, 8540 Deerlijk";Jaarlijks onderhoud fiche 1101;;Onderhoud;;N;N;N;;;;10/10/2026;DV
+WB2026-0268;23/11/2026;Planned;K00393;"Kerkstraat 24, 8530 Harelbeke";Storing centrale;;Herstelling;;N;N;N;;;;03/10/2026;DV
+WB2026-0270;24/11/2026;Planned;K00134;"Zandstraat 10A, 8530 Harelbeke";ONDH 1067;;Onderhoud;;N;N;N;;;;11/10/2026;DV
+WB2026-0272;16/11/2026;Planned;K00735;"Hoogstraat 115, 8570 Anzegem";ONDH 1094;;Onderhoud;;N;N;N;;;;30/10/2026;DV
+WB2026-0273;25/11/2026;Planned;K00667;"Stationsstraat 20, 8540 Deerlijk";Camera geen beeld;;Herstelling;;N;N;N;;;;16/10/2026;DV
+WB2026-0275;16/11/2026;Planned;K00750;"Bergstraat 92, 9700 Oudenaarde";Storing centrale;;Herstelling;;N;N;N;;;;11/10/2026;DV
+WB2026-0278;13/11/2026;Planned;K00475;"Vlaanderenstraat 128, 8530 Harelbeke";ONDH 1178;;Onderhoud;;N;N;N;;;;03/10/2026;DV
+WB2026-0280;24/11/2026;Planned;K00208;"Industrielaan 145, 8551 Heestert";Jaarlijks onderhoud fiche 1072;;Onderhoud;;N;N;N;;;;18/10/2026;DV
+WB2026-0281;23/11/2026;Planned;K00182;"Kortrijkseweg 129, 8530 Harelbeke";Camera geen beeld;;Herstelling;;N;N;N;;;;17/10/2026;DV
+WB2026-0282;09/11/2026;Planned;K00693;"Vichtesteenweg 26, 8540 DEERLIJK";ONDH 1208;;Onderhoud;;N;N;N;;;;27/10/2026;DV
+WB2026-0285;04/11/2026;Planned;K00415;"Bergstraat 145, 8501 Heule";Jaarlijks onderhoud fiche 1216;;Onderhoud;;N;N;N;;;;27/10/2026;DV
+WB2026-0287;16/09/2026;Planned;K00451;"Zandstraat 178, 8540 Deerlijk";Detector piept;;Algemeen;;N;N;N;;;;16/09/2026;DV
+WB2026-0288;06/09/2026;Planned;K00599;"Meersstraat 41, 8580 Avelgem";Sirene vervangen;;Algemeen;;N;N;N;;Wacht op onderdeel;;06/09/2026;KV
+WB2026-0291;06/10/2026;Planned;K00189;"Spinnerijstraat 106, 8870 Izegem";onderhoud (klant belde);;Onderhoud;;N;N;N;;Klant op reis tot eind maand;;06/10/2026;KV
+WB2026-0293;17/09/2026;Planned;K00455;"Driesstraat 99, 8501 Heule";Klant meldt storing;;Algemeen;;N;N;N;;;;17/09/2026;DV
+WB2026-0296;22/10/2026;Planned;K00393;"Kerkstraat 24, 8530 Harelbeke";ONDH;;Onderhoud;;N;N;N;;Klant op reis tot eind maand;;22/10/2026;KV
+WB2026-0298;09/10/2026;Planned;K00364;"Ommegangstraat 164, 8520 Kuurne";Detector piept;;Algemeen;;N;N;N;;Klant terugbellen;;09/10/2026;KV
+WB2026-0300;03/09/2026;Planned;K00500;"Heirweg 55, 8551 Heestert";ONDH;;Onderhoud;;N;N;N;;;;03/09/2026;DV
+WB2026-0302;31/10/2026;Planned;K00726;"Spinnerijstraat 48, 8800 Roeselare";onderhoud (klant belde);;Onderhoud;;N;N;N;;;;31/10/2026;DV
+WB2026-0305;03/09/2026;Planned;K00393;"Kerkstraat 24, 8530 Harelbeke";Klant meldt storing;;Algemeen;;N;N;N;;;;03/09/2026;DV
+WB2026-0307;05/10/2026;Planned;K00421;"Ommegangstraat 144A, 8500 Kortrijk";Klant meldt storing;;Algemeen;;N;N;N;;;;05/10/2026;DV
+WB2026-0308;19/10/2026;Planned;K00492;"Stationsstraat 69, 8570 Anzegem";Detector piept;;Algemeen;;N;N;N;;Wacht op onderdeel;;19/10/2026;DV
+WB2026-0311;09/10/2026;Planned;K00320;"Stationsstraat 2 bus 2, 8790 Waregem";Klant meldt storing;;Algemeen;;N;N;N;;Klant op reis tot eind maand;;09/10/2026;DV
+WB2026-0312;17/09/2026;Planned;K00724;"Ellestraat 169, 8870 Izegem";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;Klant op reis tot eind maand;;17/09/2026;DV
+WB2026-0315;14/10/2026;Planned;K00475;"Vlaanderenstraat 128, 8530 Harelbeke";Nakijken camera;;Algemeen;;N;N;N;;;;14/10/2026;KV
+WB2026-0316;08/09/2026;Planned;K00236;"Bosstraat 34, 8501 Heule";Nakijken camera;;Algemeen;;N;N;N;;;;08/09/2026;DV
+WB2026-0318;07/10/2026;Planned;K00509;"Oudenaardsesteenweg 53, 8501 Heule";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;Klant terugbellen;;07/10/2026;DV
+WB2026-0321;06/09/2026;Planned;K00538;"Rijksweg 20, 8530 Harelbeke";onderhoud (klant belde);;Onderhoud;;N;N;N;;;;06/09/2026;DV
+WB2026-0323;11/09/2026;Planned;K00475;"Vlaanderenstraat 128, 8530 Harelbeke";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;Wacht op onderdeel;;11/09/2026;DV
+WB2026-0324;23/09/2026;Planned;K00593;"Hoogstraat 163B, 8530 Harelbeke";Detector piept;;Algemeen;;N;N;N;;Klant op reis tot eind maand;;23/09/2026;DV
+WB2026-0327;04/09/2026;Planned;K00591;"Lindenlaan 148, 8560 Wevelgem";Nakijken camera;;Algemeen;;N;N;N;;;;04/09/2026;KV
+WB2026-0330;04/10/2026;Planned;K00155;"Bellegemstraat 121, 8580 Avelgem";onderhoud (klant belde);;Onderhoud;;N;N;N;;;;04/10/2026;DV
+WB2026-0332;11/10/2026;Planned;K00228;"Zandstraat 92, 8580 Avelgem";Detector piept;;Algemeen;;N;N;N;;;;11/10/2026;DV
+WB2026-0334;13/09/2026;Planned;K00799;"Industrielaan 91, 8560 Wevelgem";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;;;13/09/2026;KV
+WB2026-0336;23/10/2026;Planned;K00758;"Bosstraat 115, 8570 Anzegem";Sirene vervangen;;Algemeen;;N;N;N;;;;23/10/2026;KV
+WB2026-0337;24/08/2026;Planned;K00244;"Heirweg 114, 8580 Avelgem";Onderhoud 1187;;Onderhoud;;N;N;N;;;;24/08/2026;KV
+WB2026-0340;14/09/2026;Planned;K00610;"Lindenlaan 149, 8930 Menen";Klant meldt storing;;Algemeen;;N;N;N;;;;14/09/2026;DV
+WB2026-0341;16/09/2026;Planned;K00566;"Blokellestraat 71, 8501 Heule";Klant meldt storing;;Algemeen;;N;N;N;;;;16/09/2026;KV
+WB2026-0342;27/08/2026;Planned;K00429;"Vichtesteenweg 170, 8790 Waregem";Jaarlijks onderhoud;;Onderhoud;;N;N;N;;;;27/08/2026;KV
+WB2026-0345;05/09/2026;Planned;K00336;"Rijksweg 130, 8500 Kortrijk";ONDH;;Onderhoud;;N;N;N;;;;05/09/2026;KV
+WB2026-0346;03/11/2026;Planned;K00823;"Industrielaan 145, 8551 Heestert";Onderhoud;;Onderhoud;;N;N;N;;;;03/11/2026;IVAN
+WB2026-0347;02/11/2026;Planned;K00610;"Lindenlaan 149, 8930 Menen";Onderhoud;;Onderhoud;;N;J;N;Hond;;;03/11/2026;IVAN

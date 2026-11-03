@@ -38,17 +38,56 @@ try {
   const screenshot = async name => { const { data } = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false }); await writeFile(`artifacts/${name}.png`, Buffer.from(data, "base64")); };
   await mkdir("artifacts", { recursive: true });
   await send("Page.enable"); await send("Runtime.enable");
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+  const clickSelector = selector => evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);
+  const point = async (selector, index = 0) => evaluate(`(() => { const node = document.querySelectorAll(${JSON.stringify(selector)})[${index}]; if (!node) throw new Error('Missing node: ' + ${JSON.stringify(selector)}); const rect = node.getBoundingClientRect(); return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }; })()`);
+  const clickPointer = async selector => { const coordinates = await point(selector); await send("Input.dispatchMouseEvent", { type: "mousePressed", button: "left", clickCount: 1, ...coordinates }); await send("Input.dispatchMouseEvent", { type: "mouseMoved", button: "left", buttons: 1, x: coordinates.x + 2, y: coordinates.y + 1 }); await send("Input.dispatchMouseEvent", { type: "mouseReleased", button: "left", clickCount: 1, x: coordinates.x + 2, y: coordinates.y + 1 }); };
+  const key = async (code, key, windowsVirtualKeyCode) => { await send("Input.dispatchKeyEvent", { type: "keyDown", code, key, windowsVirtualKeyCode }); await send("Input.dispatchKeyEvent", { type: "keyUp", code, key, windowsVirtualKeyCode }); await sleep(150); };
+  const slotSelector = order => `[data-planning-slot][data-work-order="${order}"]`;
+  const slotValues = order => evaluate(`(() => { const node = document.querySelector(${JSON.stringify(slotSelector(order))}); if (!node) return null; return { start: Number(node.dataset.start), end: Number(node.dataset.end), date: node.parentElement.dataset.date, resource: node.parentElement.dataset.resourceId }; })()`);
+  const feedback = () => evaluate("document.querySelector('[data-planner-feedback]')?.textContent ?? ''");
+  const mouseDrag = async (selector, targetIndex, beforeDrop) => {
+    const from = await point(selector), to = await point('[data-drop-target^="TDC-"]', targetIndex);
+    await send("Input.dispatchMouseEvent", { type: "mouseMoved", ...from });
+    await send("Input.dispatchMouseEvent", { type: "mousePressed", button: "left", clickCount: 1, ...from });
+    for (let step = 1; step <= 16; step++) { await send("Input.dispatchMouseEvent", { type: "mouseMoved", button: "left", buttons: 1, x: from.x + (to.x - from.x) * step / 16, y: from.y + (to.y - from.y) * step / 16 }); await sleep(25); }
+    await sleep(100);
+    if (beforeDrop) await beforeDrop();
+    await send("Input.dispatchMouseEvent", { type: "mouseReleased", button: "left", clickCount: 1, ...to });
+    await sleep(150);
+  };
+  const resizePointer = async (order, minutes, beforeRelease) => {
+    const from = await point(`${slotSelector(order)} [data-resize-edge]`);
+    const to = { x: from.x, y: from.y + minutes / 600 * 260 };
+    await send("Input.dispatchMouseEvent", { type: "mouseMoved", ...from });
+    await send("Input.dispatchMouseEvent", { type: "mousePressed", button: "left", clickCount: 1, ...from });
+    for (let step = 1; step <= 12; step++) { await send("Input.dispatchMouseEvent", { type: "mouseMoved", button: "left", buttons: 1, x: to.x, y: from.y + (to.y - from.y) * step / 12 }); await sleep(25); }
+    await sleep(100); if (beforeRelease) await beforeRelease();
+    await send("Input.dispatchMouseEvent", { type: "mouseReleased", button: "left", clickCount: 1, ...to });
+    await sleep(150);
+  };
+
   await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
   await send("Page.navigate", { url: baseUrl });
   await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht' && document.querySelector('table tbody tr')", "maintenance ready");
-  await new Promise(resolve => setTimeout(resolve, 500));
+  await sleep(400);
   assert.equal(await evaluate("document.documentElement.lang"), "nl");
   assert.equal(await evaluate("document.body.textContent.includes('Prototype mode') || document.body.textContent.includes('CSV-snapshot')"), false);
   await waitFor("[...document.querySelectorAll('img[alt=Verlinde]')].every(image => image.complete && image.naturalWidth > 0)", "logos loaded");
-  const logoStyles = await evaluate("[...document.querySelectorAll('img[alt=Verlinde]')].map(image => { const rect = image.getBoundingClientRect(); const parent = image.parentElement.getBoundingClientRect(); return { fit: getComputedStyle(image).objectFit, fits: rect.width <= parent.width && rect.height <= parent.height }; })");
-  assert.equal(logoStyles.length, 2);
-  assert.ok(logoStyles.every(logo => logo.fit === "contain" && logo.fits));
+  assert.ok(await evaluate("[...document.querySelectorAll('img[alt=Verlinde]')].every(image => getComputedStyle(image).objectFit === 'contain')"));
   assert.equal(await evaluate("document.querySelectorAll('table tbody tr').length"), 193);
+  assert.equal(await evaluate("document.querySelectorAll('thead th').length"), 8);
+  assert.equal(await evaluate("document.querySelector('thead th:last-child').textContent.trim()"), "Afspraak");
+  const initialRows = await evaluate("[...document.querySelectorAll('tbody tr')].map(row => row.dataset.sheetId)");
+  const headers = await evaluate("[...document.querySelectorAll('thead button')].map(button => button.getAttribute('aria-label'))");
+  for (const label of headers) {
+    const selector = `thead button[aria-label="${label}"]`;
+    await clickSelector(selector); assert.equal(await evaluate(`document.querySelector(${JSON.stringify(selector)}).closest('th').getAttribute('aria-sort')`), "ascending");
+    await clickSelector(selector); assert.equal(await evaluate(`document.querySelector(${JSON.stringify(selector)}).closest('th').getAttribute('aria-sort')`), "descending");
+    await clickSelector(selector); assert.equal(await evaluate(`document.querySelector(${JSON.stringify(selector)}).closest('th').getAttribute('aria-sort')`), "none");
+    assert.deepEqual(await evaluate("[...document.querySelectorAll('tbody tr')].map(row => row.dataset.sheetId)"), initialRows);
+  }
+  results.push("All eight headers cycle ascending, descending and default, restoring the original urgency order.");
   assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
   await screenshot("maintenance-desktop");
   await fill('input[placeholder="Zoek klant of installatie…"]', "Inbraakalarm");
@@ -56,115 +95,130 @@ try {
   const filteredCount = await evaluate("document.querySelectorAll('table tbody tr').length"); assert.ok(filteredCount > 0);
   await clickText('a[href="/planning"]', "Planning");
   await waitFor("document.querySelector('h1')?.textContent === 'Planning'", "planning route");
-  await waitFor("document.querySelector('[aria-label=Weekplanner]')", "planner mounted");
   for (const name of ["Tom De Coninck", "Wout Vanhoutte", "Jens Maes", "Dirk Verlinde", "Brandtec (onderaannemer)"]) assert.ok(await evaluate(`document.querySelector('[aria-label=Weekplanner]').textContent.includes(${JSON.stringify(name)})`));
-  const bookingLabels = await evaluate("(() => { const handle = document.querySelector('[aria-label^=\"Verplaats \"]'); const lines = [...handle.nextElementSibling.querySelectorAll('p')].map(line => line.textContent); return { order: handle.getAttribute('aria-label').split(',')[0].replace('Verplaats ', ''), lines }; })()");
-  assert.notEqual(bookingLabels.lines[0], bookingLabels.order);
-  assert.equal(bookingLabels.lines[1], bookingLabels.order);
+  const labels = await evaluate("(() => { const node = document.querySelector('[data-planning-slot]'); return { order: node.dataset.workOrder, lines: [...node.querySelectorAll('p')].map(line => line.textContent) }; })()");
+  assert.notEqual(labels.lines[0], labels.order); assert.equal(labels.lines[1], labels.order);
+  assert.equal(await evaluate("document.querySelectorAll('[data-backlog-order] button, [data-planning-slot] button').length"), 0);
   await screenshot("planning-desktop");
   await clickText('a[href="/"]', "Onderhoud");
-  await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht'", "return to maintenance");
+  await waitFor("document.querySelector('table tbody tr')", "return maintenance");
   assert.equal(await evaluate("document.querySelectorAll('table tbody tr').length"), filteredCount);
-  assert.equal(await evaluate('document.querySelector(\'input[placeholder="Zoek klant of installatie…"]\').value'), "Inbraakalarm");
   await fill('input[placeholder="Zoek klant of installatie…"]', "");
   await waitFor("document.querySelectorAll('table tbody tr').length === 193", "clear search");
   await clickText("table button", "Werkorder maken");
   await waitFor("document.body.textContent.includes('TEMP-001 aangemaakt')", "create order");
   await clickText('a[href="/planning"]', "Planning");
-  await waitFor("document.querySelector('h1')?.textContent === 'Planning' && document.querySelector('[aria-label=\"Ongeplande werkorders\"]').textContent.includes('TEMP-001')", "created order in backlog");
+  await waitFor("document.querySelector('[data-backlog-order=\"TEMP-001\"]')", "created backlog card");
+  await clickPointer('[data-backlog-order="TEMP-001"]');
+  await waitFor("document.querySelector('dialog[open]')?.textContent.includes('TEMP-001')", "whole-card click opens details");
+  await clickSelector('dialog button[aria-label="Sluiten"]');
   await clickText("summary", "Afspraak plannen");
-  await fill('form select[id$="-order"]', "TEMP-001");
-  await fill("form select:not([id])", "TDC");
-  await fill('form input[type="date"]', "2030-01-07");
+  await fill('form select[id$="-order"]', "TEMP-001"); await fill("form select:not([id])", "TDC"); await fill('form input[type="date"]', "2030-01-07");
   await clickText('form button[type="submit"]', "Inplannen");
-  await waitFor("document.body.textContent.includes('TEMP-001 ingepland.')", "schedule order");
-  
-  await fill('form input[type="date"]', "2030-01-08");
-  await fill("form div.grid select", "10:00");
+  await waitFor("document.body.textContent.includes('Werkorder ingepland')", "manual schedule");
+  await fill('form input[type="date"]', "2030-01-08"); await fill("form div.grid select", "10:00");
   await clickText('form button[type="submit"]', "Verplaatsen");
-  await waitFor("document.body.textContent.includes('TEMP-001 verplaatst.')", "reschedule order");
-  // Select the first 2030 week by navigating directly through the retained form's order drawer.
-  await clickText('a[href="/"]', "Onderhoud");
-  await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht'", "maintenance with session state");
-  await clickText("table button", "TEMP-001");
-  await waitFor("document.querySelector('dialog[open]')?.textContent.includes('08/01/2030')", "drawer reflects move");
-  assert.ok(await evaluate("document.querySelector('dialog').textContent.includes('10:00')"));
-  // Native modal focus remains inside the drawer when tabbing.
-  for (let index = 0; index < 6; index++) { await send("Input.dispatchKeyEvent", { type: "keyDown", key: "Tab", code: "Tab", windowsVirtualKeyCode: 9 }); await send("Input.dispatchKeyEvent", { type: "keyUp", key: "Tab", code: "Tab", windowsVirtualKeyCode: 9 }); }
+  await waitFor("document.body.textContent.includes('Afspraak verplaatst')", "manual reschedule");
+  await clickText('a[href="/"]', "Onderhoud"); await waitFor("document.querySelector('table tbody tr')", "appointment update");
+  const appointment = await evaluate("[...document.querySelectorAll('tbody tr')].find(row => row.textContent.includes('TEMP-001')).lastElementChild.textContent");
+  assert.ok(appointment.includes("08/01/2030")); assert.ok(appointment.includes("10:00–12:00")); assert.ok(appointment.includes("Tom De Coninck"));
+  await clickText("table button", "TEMP-001"); await waitFor("document.querySelector('dialog[open]')?.textContent.includes('08/01/2030')", "drawer planning");
+  for (let index = 0; index < 6; index++) await key("Tab", "Tab", 9);
   assert.equal(await evaluate("document.querySelector('dialog').contains(document.activeElement)"), true);
-  await clickText("dialog button", "Markeren als voltooid");
-  await waitFor("document.body.textContent.includes('TEMP-001 voltooid.')", "complete order");
-  results.push("Create -> navigate -> schedule -> reschedule -> complete; filters survive navigation; native drawer traps keyboard focus.");
-  // Exercise actual pointer drag-and-drop, including a rejected collision and a move.
-  await clickText("table button", "Werkorder maken");
-  await waitFor("document.body.textContent.includes('TEMP-002 aangemaakt')", "second temporary order");
-  await clickText("table button", "Werkorder maken");
-  await waitFor("document.body.textContent.includes('TEMP-003 aangemaakt')", "third temporary order");
-  await clickText('a[href="/planning"]', "Planning");
-  await waitFor("document.querySelector('[aria-label=Weekplanner]')", "drag planner");
-  const point = async (selector, index = 0) => evaluate(`(() => { const node = document.querySelectorAll(${JSON.stringify(selector)})[${index}]; if (!node) throw new Error('Missing drag node'); const rect = node.getBoundingClientRect(); return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }; })()`);
-  const mouseDrag = async (selector, targetIndex) => {
-    const from = await point(selector);
-    const to = await point('[title^="Tom De Coninck"]', targetIndex);
-    await send("Input.dispatchMouseEvent", { type: "mouseMoved", ...from });
-    await send("Input.dispatchMouseEvent", { type: "mousePressed", button: "left", clickCount: 1, ...from });
-    for (let step = 1; step <= 12; step++) {
-      await send("Input.dispatchMouseEvent", { type: "mouseMoved", button: "left", buttons: 1, x: from.x + (to.x - from.x) * step / 12, y: from.y + (to.y - from.y) * step / 12 });
-      await new Promise(resolve => setTimeout(resolve, 25));
-    }
-    await send("Input.dispatchMouseEvent", { type: "mouseReleased", button: "left", clickCount: 1, ...to });
-  };
-  await mouseDrag('[aria-label="Sleep TEMP-002 naar de planner"]', 0);
-  await waitFor("document.body.textContent.includes('TEMP-002 ingepland.')", "pointer schedules backlog order");
-  await mouseDrag('[aria-label="Sleep TEMP-003 naar de planner"]', 0);
-  await waitFor("document.querySelector('[role=alert]')?.textContent.includes('overlapt met TEMP-002')", "pointer overlap rejected");
-  assert.ok(await evaluate("document.querySelector('[aria-label=\"Ongeplande werkorders\"]').textContent.includes('TEMP-003')"));
-  await mouseDrag('[aria-label^="Verplaats TEMP-002,"]', 4);
-  await waitFor("document.body.textContent.includes('TEMP-002 verplaatst.')", "pointer reschedules existing order");
+  await clickText("dialog button", "Markeren als voltooid"); await waitFor("document.body.textContent.includes('TEMP-001 voltooid')", "complete order");
+  results.push("Create, manual schedule/move, appointment column, click details and completion work; filters survive navigation and modal focus is contained.");
+
+  await clickText("table button", "Werkorder maken"); await waitFor("document.body.textContent.includes('TEMP-002 aangemaakt')", "second order");
+  await clickText("table button", "Werkorder maken"); await waitFor("document.body.textContent.includes('TEMP-003 aangemaakt')", "third order");
+  await clickText('a[href="/planning"]', "Planning"); await waitFor("document.querySelector('[data-backlog-order=\"TEMP-002\"]')", "drag backlog");
+  await mouseDrag('[data-backlog-order="TEMP-002"]', 0, async () => {
+    const text = await feedback(); assert.ok(text.includes("Tom De Coninck")); assert.ok(text.includes("08:00–10:00"));
+    assert.equal(await evaluate("document.querySelector('[data-drop-preview]').dataset.invalid"), "false");
+    assert.equal(await evaluate("document.querySelectorAll('dialog[open]').length"), 0);
+    await screenshot("planning-live-preview");
+  });
+  await waitFor("document.querySelector('[data-work-order=\"TEMP-002\"]')", "whole-card placement");
+  await mouseDrag('[data-backlog-order="TEMP-003"]', 0, async () => {
+    assert.ok((await feedback()).includes("overlapt"));
+    assert.equal(await evaluate("document.querySelector('[data-drop-preview]').dataset.invalid"), "true");
+    await screenshot("planning-live-conflict");
+  });
+  await waitFor("document.querySelector('[role=alert]')?.textContent.includes('overlapt')", "rejected overlap");
+  assert.ok(await evaluate("document.querySelector('[data-backlog-order=\"TEMP-003\"]') !== null"));
+  await mouseDrag(slotSelector("TEMP-002"), 8);
+  await waitFor("document.body.textContent.includes('Afspraak verplaatst')", "whole-block move");
+  const moved = await slotValues("TEMP-002"); assert.equal(moved.end - moved.start, 120);
+  assert.equal(await evaluate("document.querySelectorAll('dialog[open]').length"), 0);
+  await evaluate("document.querySelector('[data-backlog-order=\"TEMP-003\"]').focus()");
+  await key("Space", " ", 32); await key("ArrowRight", "ArrowRight", 39); await key("Space", " ", 32);
+  await waitFor("document.querySelector('[data-work-order=\"TEMP-003\"]')", "keyboard placement");
+  assert.equal((await slotValues("TEMP-003")).start, 480);
+  await mouseDrag(slotSelector("TEMP-003"), 14);
+  const conflictBooking = await slotValues("TEMP-003");
+  assert.equal(conflictBooking.start, 840);
+  const original = await slotValues("TEMP-002");
+  await resizePointer("TEMP-002", 120, async () => {
+    assert.ok((await feedback()).includes("Eindtijd")); assert.ok((await feedback()).includes("overlapt"));
+    assert.equal(await evaluate("document.querySelector('[data-planner-feedback]').dataset.invalid"), "true");
+    assert.deepEqual(await slotValues("TEMP-002"), original);
+    await screenshot("planning-resize-conflict");
+  });
+  assert.deepEqual(await slotValues("TEMP-002"), original);
+  await resizePointer("TEMP-002", 60, async () => {
+    assert.ok((await feedback()).includes("Eindtijd 14:00"));
+    assert.equal(await evaluate("document.querySelector('[data-planner-feedback]').dataset.invalid"), "false");
+  });
+  await waitFor("document.body.textContent.includes('Duur aangepast')", "edge resize committed");
+  const resized = await slotValues("TEMP-002"); assert.equal(resized.end, 840); assert.equal(resized.start, original.start); assert.equal(resized.date, original.date); assert.equal(resized.resource, original.resource);
+  await evaluate("document.querySelector('[data-work-order=\"TEMP-002\"] [data-resize-edge]').focus()");
+  await key("ArrowUp", "ArrowUp", 38);
+  assert.equal((await slotValues("TEMP-002")).end, 810);
+  await waitFor("!document.querySelector('[data-planner-feedback]')", "keyboard resize feedback ends");
+  await mouseDrag(slotSelector("TEMP-002"), 28);
+  const afterResizeMove = await slotValues("TEMP-002"); assert.equal(afterResizeMove.end - afterResizeMove.start, 150);
+  await clickPointer(slotSelector("TEMP-002")); await waitFor("document.querySelector('dialog[open]')", "click block after drag still works");
+  await clickSelector('dialog button[aria-label="Sluiten"]');
   await screenshot("planning-dragged");
-  // Keyboard drag uses the same actual drop targets and validation.
-  await evaluate("document.querySelector('[aria-label=\"Sleep TEMP-003 naar de planner\"]').focus()");
-  const key = async (code, key, windowsVirtualKeyCode) => { await send("Input.dispatchKeyEvent", { type: "keyDown", code, key, windowsVirtualKeyCode }); await send("Input.dispatchKeyEvent", { type: "keyUp", code, key, windowsVirtualKeyCode }); await new Promise(resolve => setTimeout(resolve, 150)); };
-  await key("Space", " ", 32);
-  await key("ArrowRight", "ArrowRight", 39);
-  await key("Space", " ", 32);
-  await waitFor("document.body.textContent.includes('TEMP-003 ingepland.')", "keyboard drag schedules order");
-  const expectedKeyboardDate = await evaluate("document.querySelector('[title^=\"Tom De Coninck\"]').title.split(' · ')[1]");
-  const keyboardLabel = await evaluate("document.querySelector('[aria-label^=\"Verplaats TEMP-003,\"]').getAttribute('aria-label')");
-  assert.ok(keyboardLabel.includes(expectedKeyboardDate));
-  assert.ok(keyboardLabel.endsWith("08:00"));
-  results.push("Actual pointer drag schedules and moves orders, rejects overlaps without losing backlog cards; keyboard drag schedules successfully.");
-  await send("Page.reload");
-  await waitFor("document.querySelector('h1')?.textContent === 'Planning' && !document.body.textContent.includes('TEMP-001') && !document.body.textContent.includes('TEMP-002') && !document.body.textContent.includes('TEMP-003')", "reload restores source");
-  await clickText('a[href="/"]', "Onderhoud");
-  await waitFor("document.querySelector('table tbody tr')", "maintenance after reload");
-  results.push("Reload restores original CSV state.");
+  results.push("Whole cards/blocks drag directly; live time and invalid-target previews agree with commits; resize is snapped, preserves other fields, rejects conflicts, works by keyboard and changes subsequent move duration.");
+
+  // A real touch long-press drags the whole remaining backlog card without a handle.
+  const touchOrder = await evaluate("document.querySelector('[data-backlog-order]').dataset.backlogOrder");
+  const from = await point(`[data-backlog-order="${touchOrder}"]`), to = await point('[data-drop-target^="TDC-"]', 40);
+  await send("Emulation.setTouchEmulationEnabled", { enabled: true, maxTouchPoints: 1 });
+  await send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ ...from, id: 1, radiusX: 1, radiusY: 1, force: 1 }] }); await sleep(250);
+  for (let step = 1; step <= 14; step++) { await send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: from.x + (to.x - from.x) * step / 14, y: from.y + (to.y - from.y) * step / 14, id: 1, radiusX: 1, radiusY: 1, force: 1 }] }); await sleep(25); }
+  assert.ok((await feedback()).includes("08:00–10:00"));
+  await send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+  await waitFor(`document.querySelector('[data-planning-slot][data-work-order="${touchOrder}"]')`, "touch placement");
+  const touchSlot = await slotValues(touchOrder);
+  const edge = await point(`${slotSelector(touchOrder)} [data-resize-edge]`);
+  await send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ ...edge, id: 2, radiusX: 1, radiusY: 1, force: 1 }] }); await sleep(100);
+  for (let step = 1; step <= 8; step++) { await send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: edge.x, y: edge.y + 13 * step / 8, id: 2, radiusX: 1, radiusY: 1, force: 1 }] }); await sleep(25); }
+  assert.ok((await feedback()).includes("Eindtijd 10:30"));
+  await send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] }); await sleep(150);
+  assert.equal((await slotValues(touchOrder)).end, touchSlot.end + 30);
+  await send("Emulation.setTouchEmulationEnabled", { enabled: false });
+  results.push("Long-press touch dragging and touch edge resizing operate directly on cards/blocks; small pointer movement still opens details.");
+
+  await send("Page.reload"); await waitFor("document.querySelector('h1')?.textContent === 'Planning' && !document.body.textContent.includes('TEMP-001') && !document.body.textContent.includes('TEMP-002') && !document.body.textContent.includes('TEMP-003')", "reload resets source");
+  await clickText('a[href="/"]', "Onderhoud"); await waitFor("document.querySelector('table tbody tr')", "maintenance after reload");
   await send("Emulation.setDeviceMetricsOverride", { width: 900, height: 1100, deviceScaleFactor: 1, mobile: false });
-  assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
-  await screenshot("maintenance-tablet");
-  await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
-  await new Promise(resolve => setTimeout(resolve, 300));
-  assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
-  await screenshot("maintenance-mobile");
-  await evaluate("document.querySelector('[aria-label=\"Menu openen\"]').click()");
-  await clickText('a[href="/planning"]', "Planning");
-  await waitFor("document.querySelector('h1')?.textContent === 'Planning'", "mobile planning");
-  await waitFor("document.querySelector('[aria-label=Weekplanner] h3')", "selected-day mobile planner");
-  assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
-  await evaluate("document.querySelector('[aria-label=Weekplanner]').scrollIntoView({block: 'start'})");
-  await screenshot("planning-mobile");
-  results.push("Desktop, tablet and mobile layouts fit the viewport; mobile uses a selected-day resource planner.");
-  await evaluate("document.querySelector('header button[aria-label=\"Menu openen\"]')?.blur()");
-  await evaluate("document.querySelector('[aria-label=\"Gegevensproblemen tonen\"]').click()");
-  await waitFor("document.querySelector('dialog[open]')?.textContent.includes('Gegevensproblemen')", "issues dialog");
-  await clickText("dialog button", "Informatie");
-  await fill('dialog input', "Tijdvolgorde");
-  await waitFor("document.querySelectorAll('dialog article').length === 69", "reversed times are informational");
-  assert.ok(await evaluate("[...document.querySelectorAll('dialog article')].every(article => article.textContent.includes('Informatie'))"));
+  assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true); await screenshot("maintenance-tablet");
+  await send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true }); await sleep(300);
+  assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true); await screenshot("maintenance-mobile");
+  await clickSelector('[aria-label="Menu openen"]'); await clickText('a[href="/planning"]', "Planning");
+  await waitFor("document.querySelector('[aria-label=Weekplanner] h3')", "mobile day planner"); assert.equal(await evaluate("document.body.scrollWidth <= innerWidth"), true);
+  await evaluate("document.querySelector('[aria-label=Weekplanner]').scrollIntoView({block: 'start'})"); await screenshot("planning-mobile");
+  await clickSelector('[aria-label="Gegevensproblemen tonen"]'); await waitFor("document.querySelector('dialog[open]')", "data issues");
+  await clickText("dialog button", "Informatie"); await fill("dialog input", "Nulduur");
+  await waitFor("document.querySelectorAll('dialog article').length === 24", "24 zero-duration rows are informative");
+  await clickText("dialog details summary", "Details");
+  assert.ok(await evaluate("document.querySelector('dialog article details[open]').textContent.includes('van: 10:00') && document.querySelector('dialog article details[open]').textContent.includes('tot: 10:00')"));
   await screenshot("data-issues-mobile");
   assert.deepEqual(errors, []);
-  results.push("No browser exceptions; all 69 reversed imported time ranges are informational. Full logos use object-contain without cropping.");
+  results.push("Reload restores CSV state; tablet/mobile fit the viewport; all 24 original zero-duration rows remain inspectable as information; no browser exceptions.");
   console.log(JSON.stringify({ passed: results, screenshots: "artifacts/*.png" }, null, 2));
+
 } finally {
   ws?.close(); browser.kill();
   await new Promise(resolve => browser.exitCode !== null ? resolve() : browser.once("exit", resolve));

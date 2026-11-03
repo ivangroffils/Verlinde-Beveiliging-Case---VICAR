@@ -18,11 +18,12 @@ export interface DataIssue {
   id: string; file: string; row: number; field: string; message: string; severity: "info" | "warning" | "error";
   workOrderId?: string; sheetId?: string;
 }
-export interface InvalidPlanningRow {
+export interface ImportedPlanningRow {
   file: string; row: number; workOrderId: string; raw: Record<string, string>;
 }
+export type InvalidPlanningRow = ImportedPlanningRow;
 export interface AppData {
-  today: string; customers: Customer[]; sheets: MaintenanceSheet[]; workOrders: WorkOrder[];
+  today: string; nowMinute?: number; rawPlanning: ImportedPlanningRow[]; customers: Customer[]; sheets: MaintenanceSheet[]; workOrders: WorkOrder[];
   resources: Resource[]; slots: PlanningSlot[]; executions: Execution[];
   issues: DataIssue[]; invalidPlanning: InvalidPlanningRow[];
 }

@@ -24,7 +24,7 @@ export function DataIssues({ onClose }: { onClose: () => void }) {
     <label className="relative mb-4 block"><span className="sr-only">Zoeken in gegevensproblemen</span><Search size={16} className="absolute left-3 top-3 text-slate-400" /><input className={`${inputClass} w-full pl-10`} value={query} onChange={event => setQuery(event.target.value)} placeholder="Zoek melding of werkorder" /></label>
     <p className="mb-3 text-xs text-slate-400">{issues.length} meldingen</p>
     <div className="max-h-[48dvh] space-y-2 overflow-y-auto">{issues.map(issue => {
-      const original = state.invalidPlanning.find(item => item.file === issue.file && item.row === issue.row);
+      const original = state.rawPlanning.find(item => item.file === issue.file && item.row === issue.row);
       return <article key={issue.id} className="rounded-lg border border-slate-200 p-3"><div className="flex flex-wrap items-center gap-2 text-xs"><span className={`rounded px-2 py-0.5 font-medium ${severityTone[issue.severity]}`}>{severityLabel[issue.severity]}</span>{issue.workOrderId && <span className="font-medium text-slate-600">{issue.workOrderId}</span>}{issue.sheetId && <span className="text-slate-400">Fiche {issue.sheetId}</span>}</div><p className="mt-2 text-sm text-slate-700">{issue.message}</p><details className="mt-2 text-xs text-slate-400"><summary className="cursor-pointer">Details</summary><p className="mt-2 break-all">{issue.file} · rij {issue.row} · {issue.field}</p>{original && <p className="mt-2 break-words font-mono">{Object.entries(original.raw).map(([key, value]) => `${key}: ${value || "—"}`).join(" · ")}</p>}</details></article>;
     })}{!issues.length && <p className="py-10 text-center text-sm text-slate-500">Geen meldingen.</p>}</div>
   </Dialog>;

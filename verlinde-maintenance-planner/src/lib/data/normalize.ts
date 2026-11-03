@@ -1,10 +1,10 @@
 import type { AppData, DataIssue, Execution, PlanningSlot } from "../../types/domain.ts";
 import type { CsvTable, TableName } from "./repository.ts";
-import { brusselsToday, normalizeInterval, overlaps, parseDate, parseTime, sourceOrderStatus } from "../domain/rules.ts";
+import { brusselsToday, brusselsMinute, DEFAULT_DURATION, normalizeInterval, overlaps, parseDate, parseTime, sourceOrderStatus } from "../domain/rules.ts";
 import { loadTable } from "./repository.ts";
 
 export type Tables = Record<TableName, CsvTable>;
-export function normalizeData(tables: Tables, today = brusselsToday()): AppData {
+export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute = 0): AppData {
   const issues: DataIssue[] = Object.values(tables).flatMap(table => table.issues);
   const issue = (table: CsvTable, row: number, field: string, message: string, refs: { workOrderId?: string; sheetId?: string } = {}, severity: DataIssue["severity"] = "warning") => issues.push({ id: `issue-${issues.length}`, file: table.file, row, field, message, severity, ...refs });
   const get = (raw: Record<string, string>, key: string) => (raw[key] ?? "").trim();
@@ -71,7 +71,7 @@ export function normalizeData(tables: Tables, today = brusselsToday()): AppData 
       if (!orderIds.has(id)) reasons.push(["werkbon", `Werkorder ${id || "zonder nummer"} ontbreekt.`]);
       if (!resourceIds.has(resourceId)) reasons.push(["tech", `Resource ${resourceId || "zonder code"} ontbreekt.`]);
       if (!date) reasons.push(["datum", "Datum ontbreekt of is ongeldig."]);
-      if (start === null || end === null || end === start) reasons.push(["van/tot", "Ongeldig tijdsbereik; bronwaarden zijn ongewijzigd behouden."]);
+      if (start === null || end === null || (end === start && !planned)) reasons.push(["van/tot", "Ongeldig tijdsbereik; bronwaarden zijn ongewijzigd behouden."]);
       reasons.forEach(([field, message]) => issue(table, row, field, message, { workOrderId: id }));
       if (reasons.length) {
         if (planned) { invalidOrderIds.add(id); invalidPlanning.push({ file: table.file, row, workOrderId: id, raw: { ...raw } }); }
@@ -81,7 +81,10 @@ export function normalizeData(tables: Tables, today = brusselsToday()): AppData 
         issue(table, row, "van/tot", `Tijdvolgorde genormaliseerd: ${get(raw, "van")}-${get(raw, "tot")} naar ${get(raw, "tot")}-${get(raw, "van")}.`, { workOrderId: id }, "info");
       }
       const normalizedStart = Math.min(start!, end!);
-      const normalizedEnd = Math.max(start!, end!);
+      const normalizedEnd = planned && start === end ? normalizedStart + DEFAULT_DURATION : Math.max(start!, end!);
+      if (planned && start === end) {
+        issue(table, row, "van/tot", `Nulduur genormaliseerd: ${get(raw, "van")}-${get(raw, "tot")} naar een afspraak van 2 uur.`, { workOrderId: id }, "info");
+      }
       if (planned && (normalizedStart < 480 || normalizedEnd > 1080)) {
         issue(table, row, "van/tot", "Afspraak valt buiten 08:00-18:00.", { workOrderId: id });
       }
@@ -106,10 +109,10 @@ export function normalizeData(tables: Tables, today = brusselsToday()): AppData 
       if (!value || !Number.isFinite(Number(value))) issue(tables.WO_ART_PL, row, field, "Artikelwaarde ontbreekt of is ongeldig.", { workOrderId: id });
     }
   });
-  return { today, customers, sheets, resources, workOrders, slots, executions, issues, invalidPlanning };
+  return { today, nowMinute, rawPlanning: tables.WO_HRS_PL.rows.map(({ row, raw }) => ({ file: tables.WO_HRS_PL.file, row, workOrderId: get(raw, "werkbon"), raw: { ...raw } })), customers, sheets, resources, workOrders, slots, executions, issues, invalidPlanning };
 }
-export async function loadAppData(directory?: string, today = brusselsToday()): Promise<AppData> {
+export async function loadAppData(directory?: string, today?: string): Promise<AppData> {
   const names: TableName[] = ["REL", "MS_HDR", "WO_HDR", "WO_OBJ", "WO_HRS_PL", "WO_HRS_EX", "RES", "WO_ART_PL"];
   const values = await Promise.all(names.map(name => loadTable(name, directory)));
-  return normalizeData(Object.fromEntries(names.map((name, index) => [name, values[index]])) as Tables, today);
+  return normalizeData(Object.fromEntries(names.map((name, index) => [name, values[index]])) as Tables, today ?? brusselsToday(), today ? 0 : brusselsMinute());
 }

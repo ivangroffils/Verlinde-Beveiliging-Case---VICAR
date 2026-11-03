@@ -22,7 +22,8 @@ Aanmaken, plannen, verplaatsen en afronden bestaan alleen in React-applicatiesta
 
 - Datums: strikt `dd/MM/yyyy`; tijden: strikt `HH:mm`.
 - Omgekeerde begin- en eindtijden zijn een legacy-exporteigenschap. `10:00 -> 08:00` wordt `08:00-10:00`, met een informatieve melding. Dit geldt voor geimporteerde planning en uitvoeringsuren. Bronbestanden blijven ongewijzigd.
-- Ontbrekende of ongeldige datums/tijden, nulduur, onbekende resources en ontbrekende werkorders maken een urenrij onbruikbaar. Oorspronkelijke onbruikbare planningsrijen blijven beschikbaar bij Gegevensproblemen. Gekoppelde actieve werkorders zonder andere bruikbare planning worden ongepland; handmatig inplannen maakt nieuwe sessieplanning.
+- Ontbrekende of ongeldige datums/tijden, onbekende resources en ontbrekende werkorders maken een urenrij onbruikbaar. Oorspronkelijke onbruikbare planningsrijen blijven beschikbaar bij Gegevensproblemen. Gekoppelde actieve werkorders zonder andere bruikbare planning worden ongepland; handmatig inplannen maakt nieuwe sessieplanning.
+- Gelijke geldige tijden in planning krijgen twee uur duur, bijvoorbeeld `10:00-10:00` naar `10:00-12:00`. De oorspronkelijke tijden blijven in `rawPlanning` beschikbaar, ook na verplaatsen of resizen. Dit is een informatieve normalisatie en maakt geen uitvoeringsuren aan.
 - Bestaande overlappende afspraken blijven zichtbaar en gemarkeerd. Geldige importafspraken buiten het werkvenster blijven behouden en krijgen een waarschuwing. Nieuwe afspraken mogen niet overlappen en moeten volledig binnen 08:00-18:00 vallen.
 - Gegevensproblemen hebben een ernst: informatie voor genormaliseerde tijdvolgorde, waarschuwingen voor ontbrekende/tegenstrijdige domeingegevens, fouten voor onleesbare bestanden of ongeldige CSV-schema's.
 - Expliciete installatiekoppelingen worden behouden, ook bij afwijkende klanten. Er worden geen koppelingen of onderhoudsdatums geraden.
@@ -33,9 +34,15 @@ Onderhoudsurgentie gebruikt uitsluitend `volgende`, vergeleken met de actuele da
 
 ## Planning en afronding
 
-Maandag t/m zondag, 08:00-18:00, stappen van 30 minuten, met volledige resourcenamen. Nieuwe afspraken duren twee uur; verplaatsen behoudt de duur, ook als een importduur geen veelvoud van 30 minuten is. De nieuwe starttijd volgt het 30-minutenraster. Slepen en het invoerformulier gebruiken dezelfde validatie. Functietitels bepalen geen beschikbaarheid.
+Maandag t/m zondag, 08:00-18:00, stappen van 30 minuten, met volledige resourcenamen. Nieuwe afspraken duren twee uur; verplaatsen behoudt de duur, ook als een importduur geen veelvoud van 30 minuten is. De nieuwe starttijd volgt het 30-minutenraster. Volledige kaarten en blokken zijn sleepbaar; Enter opent details en spatie/pijltjestoetsen bedienen de verplaatsing. Aanpakken in een kalenderblok behoudt de positie van het aangrijppunt en de duur. De onderste rand wijzigt alleen de eindtijd; die rand is ook met pijl omhoog/omlaag te bedienen. Live tijdlabels en doelmarkeringen tonen conflicten voordat een wijziging wordt toegepast. Slepen, het invoerformulier en resize gebruiken dezelfde validatie. Functietitels bepalen geen beschikbaarheid.
 
 Afronden vereist geldige planning, registreert de geplande uren als uitvoering en verwijdert de werkorder uit actieve planning. Onderhoudsdatums worden hierdoor niet automatisch gewijzigd.
+
+## Onderhoudsoverzicht
+
+De kolom Afspraak toont precies één bruikbare afspraak uit expliciet gekoppelde werkorders: eerst de dichtstbijzijnde toekomstige start, anders de meest recente start uit het verleden. De referentie is de Brusselse datum/tijd bij laden. Afgeronde sessieafspraken blijven via hun exacte geplande uitvoeringskopie beschikbaar.
+
+Alle acht kolommen ondersteunen oplopend, aflopend en terug naar de standaardsortering. Ontbrekende datums en afspraken blijven achteraan. Status volgt urgentie; documentnummers gebruiken natuurlijke sortering. Sortering en filters blijven bij navigatie behouden.
 
 ## Controles
 

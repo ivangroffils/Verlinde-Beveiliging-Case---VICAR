@@ -9,7 +9,7 @@ import type { AppData, MaintenanceSheet, PlanningSlot } from "../src/types/domai
 const real = await loadAppData(undefined, "2026-11-03");
 const sheet: MaintenanceSheet = { id: "s", customerId: "c", description: "Alarm", category: "Inbraak", site: "Teststraat", lastDate: null, nextDate: null, intervalLabel: "Jaarlijks", intervalMonths: 12 };
 function fixture(): AppData {
-  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", sheetIds: ["s"], description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], slots: [], executions: [], issues: [], invalidPlanning: [] };
+  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", sheetIds: ["s"], description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], slots: [], executions: [], issues: [], invalidPlanning: [], rawPlanning: [] };
 }
 const candidate: PlanningSlot = { id: "new", workOrderId: "w", resourceId: "r", date: "2026-11-03", start: 600, end: 720 };
 function tablesWithPlanning(row: Record<string, string>): Tables {
@@ -61,33 +61,36 @@ test("missing CSV files produce inspectable issues without throwing", async () =
 });
 test("real CSV normalization preserves expected source counts and issues", () => {
   assert.equal(real.customers.length, 138); assert.equal(real.sheets.length, 193); assert.equal(real.workOrders.length, 561); assert.equal(real.resources.length, 5);
-  assert.equal(real.invalidPlanning.length, 24);
-  assert.equal(real.issues.filter(issue => issue.severity === "info" && issue.file.includes("WO_HRS_PL")).length, 65);
+  assert.equal(real.invalidPlanning.length, 0);
+  assert.equal(real.issues.filter(issue => issue.severity === "info" && issue.file.includes("WO_HRS_PL")).length, 89);
   assert.equal(real.issues.filter(issue => issue.severity === "info" && issue.file.includes("WO_HRS_EX")).length, 4);
   assert.equal(real.issues.filter(issue => issue.message.startsWith("Klant van werkorder verschilt")).length, 37);
   assert.equal(real.sheets.filter(item => !item.nextDate).length, 185);
   assert.ok(real.issues.some(issue => issue.message.includes("overlapt")));
   assert.equal(real.resources.find(resource => resource.id === "BRT")?.name, "Brandtec (onderaannemer)");
 });
-test("every invalid imported planning row remains unchanged and its active order is unplanned", () => {
-  for (const row of real.invalidPlanning) {
-    assert.ok(row.raw.van); assert.ok(row.raw.tot);
-    assert.equal(real.slots.some(slot => slot.workOrderId === row.workOrderId), false);
-    const order = real.workOrders.find(item => item.id === row.workOrderId)!;
-    if (order.status !== "completed") assert.equal(order.status, "unplanned");
-    assert.equal(order.hasInvalidPlanning, true);
-    assert.ok(real.issues.some(issue => issue.file === row.file && issue.row === row.row));
+test("all zero-length source planning rows become two-hour slots with raw values retained", () => {
+  const zero = real.rawPlanning.filter(row => row.raw.van === row.raw.tot);
+  assert.equal(zero.length, 24);
+  assert.equal(real.rawPlanning.length, 521);
+  for (const row of zero) {
+    const slot = real.slots.find(item => item.id === `pl-${row.row}`)!;
+    assert.equal(slot.start, parseTime(row.raw.van));
+    assert.equal(slot.end - slot.start, 120);
+    assert.equal(row.raw.van, row.raw.tot);
+    assert.ok(real.issues.some(issue => issue.file === row.file && issue.row === row.row && issue.severity === "info"));
   }
 });
+
 test("unknown resources, orphan orders and bad dates invalidate planning without correction", () => {
-  for (const changes of [{ tech: "unknown" }, { werkbon: "orphan" }, { datum: "31/02/2026" }, { van: "", tot: "10:00" }, { van: "10:00", tot: "10:00" }]) {
+  for (const changes of [{ tech: "unknown" }, { werkbon: "orphan" }, { datum: "31/02/2026" }, { van: "", tot: "10:00" }, { van: "10:00", tot: "bad" }]) {
     const raw = { werkbon: "w", datum: "03/11/2026", tech: "r", van: "08:00", tot: "10:00", taak: "", ...changes };
     const result = normalizeData(tablesWithPlanning(raw), "2026-11-03");
     assert.equal(result.slots.length, 0); assert.deepEqual(result.invalidPlanning[0].raw, raw); assert.ok(result.issues.length);
   }
 });
 test("a usable second planning row survives alongside an invalid row for the same active order", () => {
-  const tables = tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" });
+  const tables = tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "bad", tot: "10:00" });
   tables.WO_HRS_PL.rows.push({ row: 3, raw: { werkbon: "w", datum: "03/11/2026", tech: "r", van: "08:00", tot: "10:00" } });
   const data = normalizeData(tables, "2026-11-03");
   assert.equal(data.workOrders[0].status, "planned"); assert.equal(data.slots.length, 1);
@@ -133,7 +136,7 @@ test("failed moves leave schedules unchanged and successful moves preserve durat
   assert.equal(moved.slots[0].end, 810); assert.equal(moved.slots[0].date, "2026-11-04"); assert.equal(moved.slots.length, 1);
 });
 test("manual scheduling of an invalid import preserves all original rows and issues", () => {
-  const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" }), "2026-11-03");
+  const data = normalizeData(tablesWithPlanning({ werkbon: "w", datum: "03/11/2026", tech: "r", van: "bad", tot: "10:00" }), "2026-11-03");
   const snapshot = structuredClone(data.invalidPlanning);
   const scheduled = reducer(initialState(data), { type: "schedule", workOrderId: "w", resourceId: "r", date: "2026-11-04", start: 480 });
   assert.equal(scheduled.workOrders[0].status, "planned"); assert.equal(scheduled.slots[0].end, 600); assert.deepEqual(scheduled.invalidPlanning, snapshot); assert.deepEqual(scheduled.issues, data.issues);
@@ -189,9 +192,9 @@ test("real reversed planning stays scheduled and original CSV values are not mut
   }
 });
 
-test("zero duration remains unusable; reversed times with another invalid reference remain rejected", () => {
+test("invalid times and references remain unusable without normalization", () => {
   for (const raw of [
-    { werkbon: "w", datum: "03/11/2026", tech: "r", van: "10:00", tot: "10:00" },
+    { werkbon: "w", datum: "03/11/2026", tech: "r", van: "bad", tot: "10:00" },
     { werkbon: "w", datum: "03/11/2026", tech: "missing", van: "10:00", tot: "08:00" },
   ]) {
     const data = normalizeData(tablesWithPlanning(raw), "2026-11-03");

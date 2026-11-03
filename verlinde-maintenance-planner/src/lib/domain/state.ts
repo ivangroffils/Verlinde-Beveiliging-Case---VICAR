@@ -1,14 +1,17 @@
-import type { AppData, AppState, PlanningSlot, WorkOrder } from "../../types/domain.ts";
-import { DEFAULT_DURATION, openMaintenanceOrders, validatePlanning } from "./rules.ts";
+import type { AppData, AppState, WorkOrder } from "../../types/domain.ts";
+import { openMaintenanceOrders, proposePlanning, proposeResize } from "./rules.ts";
 
 export type Action =
   | { type: "create"; sheetId: string }
   | { type: "schedule"; workOrderId: string; resourceId: string; date: string; start: number; slotId?: string }
+  | { type: "resize"; slotId: string; end: number }
   | { type: "complete"; workOrderId: string }
-  | { type: "dismiss" };
+  | { type: "dismiss" }
+  | { type: "error"; message: string };
 export function initialState(data: AppData): AppState { return { ...data, nextTempId: 1, message: null, error: null }; }
 export function reducer(state: AppState, action: Action): AppState {
   const fail = (error: string): AppState => ({ ...state, message: null, error });
+  if (action.type === "error") return fail(action.message);
   if (action.type === "dismiss") return { ...state, message: null, error: null };
   if (action.type === "create") {
     const sheet = state.sheets.find(item => item.id === action.sheetId);
@@ -21,14 +24,16 @@ export function reducer(state: AppState, action: Action): AppState {
     return { ...state, nextTempId: sequence + 1, workOrders: [order, ...state.workOrders], message: `${id} aangemaakt.`, error: null };
   }
   if (action.type === "schedule") {
-    const existing = action.slotId ? state.slots.find(slot => slot.id === action.slotId && slot.workOrderId === action.workOrderId) : undefined;
-    if (action.slotId && !existing) return fail("Deze planning bestaat niet meer.");
-    if (!action.slotId && state.slots.some(slot => slot.workOrderId === action.workOrderId)) return fail("Deze werkorder is al ingepland. Verplaats het bestaande blok.");
-    const duration = existing ? existing.end - existing.start : DEFAULT_DURATION;
-    const candidate: PlanningSlot = { id: existing?.id ?? `session-${action.workOrderId}`, workOrderId: action.workOrderId, resourceId: action.resourceId, date: action.date, start: action.start, end: action.start + duration };
-    const error = validatePlanning(state, candidate);
-    if (error) return fail(error);
-    return { ...state, slots: [...state.slots.filter(slot => slot.id !== candidate.id), candidate], workOrders: state.workOrders.map(order => order.id === action.workOrderId ? { ...order, status: "planned" } : order), message: `${action.workOrderId} ${existing ? "verplaatst" : "ingepland"}.`, error: null };
+    const proposal = proposePlanning(state, action);
+    if (proposal.error || !proposal.slot) return fail(proposal.error ?? "Ongeldig tijdvak.");
+    const candidate = proposal.slot;
+    return { ...state, slots: [...state.slots.filter(slot => slot.id !== candidate.id), candidate], workOrders: state.workOrders.map(order => order.id === action.workOrderId ? { ...order, status: "planned" } : order), message: action.slotId ? "Afspraak verplaatst" : "Werkorder ingepland", error: null };
+  }
+  if (action.type === "resize") {
+    const proposal = proposeResize(state, action.slotId, action.end);
+    if (proposal.error || !proposal.slot) return fail(proposal.error ?? "Ongeldige eindtijd.");
+    const candidate = proposal.slot;
+    return { ...state, slots: state.slots.map(slot => slot.id === candidate.id ? candidate : slot), message: "Duur aangepast", error: null };
   }
   const order = state.workOrders.find(item => item.id === action.workOrderId);
   if (!order || order.status === "completed") return fail("Deze werkorder is al voltooid of bestaat niet meer.");

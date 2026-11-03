@@ -53,14 +53,14 @@ export function activeSlots(data: Pick<AppData, "slots" | "workOrders">): Planni
 export function overlaps(a: PlanningSlot, b: PlanningSlot): boolean {
   return a.id !== b.id && a.resourceId === b.resourceId && a.date === b.date && a.start < b.end && a.end > b.start;
 }
-export function validatePlanning(data: Pick<AppData, "resources" | "slots" | "workOrders">, candidate: PlanningSlot): string | null {
+export function validatePlanning(data: Pick<AppData, "resources" | "slots" | "workOrders">, candidate: PlanningSlot, operation: "move" | "resize" = "move"): string | null {
   const order = data.workOrders.find(item => item.id === candidate.workOrderId);
   if (!order || order.status === "completed") return "Deze werkorder is niet beschikbaar voor planning.";
   if (!data.resources.some(resource => resource.id === candidate.resourceId)) return "De gekozen resource bestaat niet.";
   if (!validIsoDate(candidate.date)) return "Kies een geldige planningsdatum.";
   const original = data.slots.find(slot => slot.id === candidate.id);
   const preservesDuration = original && original.end - original.start === candidate.end - candidate.start;
-  if (!Number.isInteger(candidate.start) || !Number.isInteger(candidate.end) || candidate.end <= candidate.start || candidate.start % SLOT_STEP !== 0 || (candidate.end % SLOT_STEP !== 0 && !preservesDuration)) return "Kies geldige tijden in stappen van 30 minuten; de eindtijd moet na de starttijd liggen.";
+  if (!Number.isInteger(candidate.start) || !Number.isInteger(candidate.end) || candidate.end <= candidate.start || (operation === "move" && candidate.start % SLOT_STEP !== 0) || (candidate.end % SLOT_STEP !== 0 && (operation === "resize" || !preservesDuration))) return "Kies geldige tijden in stappen van 30 minuten; de eindtijd moet na de starttijd liggen.";
   if (candidate.start < WINDOW_START || candidate.end > WINDOW_END) return "Plan de volledige afspraak tussen 08:00 en 18:00.";
   const conflict = activeSlots(data).find(slot => overlaps(candidate, slot));
   return conflict ? `Dit tijdstip overlapt met ${conflict.workOrderId} (${formatTime(conflict.start)}–${formatTime(conflict.end)}).` : null;
@@ -69,4 +69,27 @@ export function brusselsToday(now = new Date()): string {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Brussels", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const part = (name: string) => parts.find(item => item.type === name)?.value ?? "";
   return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+
+export function brusselsMinute(now = new Date()): number {
+  const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Brussels", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(now);
+  return Number(parts.find(part => part.type === "hour")?.value ?? 0) * 60 + Number(parts.find(part => part.type === "minute")?.value ?? 0);
+}
+export function snapTime(value: number): number { return Math.round(value / SLOT_STEP) * SLOT_STEP; }
+export interface ScheduleInput { workOrderId: string; slotId?: string; resourceId: string; date: string; start: number }
+export interface PlanningProposal { slot: PlanningSlot | null; error: string | null }
+export function proposePlanning(data: Pick<AppData, "workOrders" | "resources" | "slots">, input: ScheduleInput): PlanningProposal {
+  const existing = input.slotId ? data.slots.find(slot => slot.id === input.slotId && slot.workOrderId === input.workOrderId) : undefined;
+  if (input.slotId && !existing) return { slot: null, error: "Deze afspraak bestaat niet meer." };
+  if (!input.slotId && data.slots.some(slot => slot.workOrderId === input.workOrderId)) return { slot: null, error: "Deze werkorder is al ingepland." };
+  const duration = existing ? existing.end - existing.start : DEFAULT_DURATION;
+  const slot: PlanningSlot = { id: existing?.id ?? `session-${input.workOrderId}`, workOrderId: input.workOrderId, resourceId: input.resourceId, date: input.date, start: input.start, end: input.start + duration };
+  return { slot, error: validatePlanning(data, slot) };
+}
+export function proposeResize(data: Pick<AppData, "workOrders" | "resources" | "slots">, slotId: string, end: number): PlanningProposal {
+  const original = data.slots.find(slot => slot.id === slotId);
+  if (!original) return { slot: null, error: "Deze afspraak bestaat niet meer." };
+  const slot = { ...original, end };
+  return { slot, error: validatePlanning(data, slot, "resize") };
 }

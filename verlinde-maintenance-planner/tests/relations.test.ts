@@ -141,7 +141,7 @@ test("linked historical orders remain discoverable without blocking a new mainte
   const data = normalized(); data.workOrders[0].status = "completed";
   const selectors = createRelationSelectors(data);
   assert.equal(selectors.getWorkOrdersForMaintenanceSheet("1004").length, 1);
-  assert.equal(selectors.getPrimaryWorkOrderForMaintenanceSheet("1004")?.id, "WB2026-0347");
+  assert.equal(selectors.getPrimaryWorkOrderForMaintenanceSheet("1004"), null);
   assert.equal(openMaintenanceOrders(data, "1004").length, 0);
 });
 test("real exports preserve every WO_OBJ link and leave all 42 standalone orders unlinked", async () => {

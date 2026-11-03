@@ -22,7 +22,7 @@ export function reducer(state: AppState, action: Action): AppState {
     let sequence = state.nextTempId;
     while (state.workOrders.some(order => order.id === `TEMP-${String(sequence).padStart(3, "0")}`)) sequence++;
     const id = `TEMP-${String(sequence).padStart(3, "0")}`;
-    const order: WorkOrder = { id, customerId: sheet.customerId, installation: sheet.description, description: `Onderhoud — ${sheet.description}`, site: sheet.site, kind: "Onderhoud", sourceStatus: "Nieuw", status: "unplanned", hasInvalidPlanning: false };
+    const order: WorkOrder = { id, customerId: sheet.customerId, installation: sheet.description, description: `Onderhoud — ${sheet.description}`, site: sheet.site, kind: "Onderhoud", date: state.today, createdDate: state.today, sessionSequence: sequence, sourceStatus: "Nieuw", status: "unplanned", hasInvalidPlanning: false };
     return { ...state, nextTempId: sequence + 1, workOrders: [order, ...state.workOrders], workOrderObjects: [...state.workOrderObjects, createSessionWorkOrderObject(id, sheet.id)], message: `${id} aangemaakt.`, error: null };
   }
   if (action.type === "schedule") {
@@ -39,7 +39,9 @@ export function reducer(state: AppState, action: Action): AppState {
   }
   const order = state.workOrders.find(item => item.id === action.workOrderId);
   if (!order || order.status === "completed") return fail("Deze werkorder is al voltooid of bestaat niet meer.");
-  const slots = createRelationSelectors(state).getAppointmentsForWorkOrder(order.id);
-  if (!slots.length) return fail("Plan de werkorder eerst in voordat je hem voltooit.");
-  return { ...state, workOrders: state.workOrders.map(item => item.id === order.id ? { ...item, status: "completed" } : item), executions: [...state.executions, ...slots.map(slot => ({ id: `execution-${slot.id}`, workOrderId: slot.workOrderId, resourceId: slot.resourceId, date: slot.date, start: slot.start, end: slot.end, source: "session" as const }))], message: `${order.id} voltooid.`, error: null };
+  const relations = createRelationSelectors(state);
+  const slots = relations.getAppointmentsForWorkOrder(order.id);
+  const executed = relations.getExecutedHoursForWorkOrder(order.id);
+  if (!slots.length && !executed.length) return fail("Plan de werkorder eerst in voordat je hem voltooit.");
+  return { ...state, workOrders: state.workOrders.map(item => item.id === order.id ? { ...item, status: "completed" } : item), executions: [...state.executions, ...(executed.length ? [] : slots.map(slot => ({ id: `execution-${slot.id}`, workOrderId: slot.workOrderId, resourceId: slot.resourceId, date: slot.date, start: slot.start, end: slot.end, source: "session" as const })))], message: `${order.id} voltooid.`, error: null };
 }

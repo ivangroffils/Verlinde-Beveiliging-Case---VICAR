@@ -36,15 +36,30 @@ Onderhoudsurgentie gebruikt uitsluitend `volgende`, vergeleken met de actuele da
 
 Maandag t/m zondag, 08:00-18:00, stappen van 30 minuten, met volledige resourcenamen. Nieuwe afspraken duren twee uur; verplaatsen behoudt de duur, ook als een importduur geen veelvoud van 30 minuten is. De nieuwe starttijd volgt het 30-minutenraster. Volledige kaarten en blokken zijn sleepbaar; Enter opent details en spatie/pijltjestoetsen bedienen de verplaatsing. Aanpakken in een kalenderblok behoudt de positie van het aangrijppunt en de duur. De onderste rand wijzigt alleen de eindtijd; die rand is ook met pijl omhoog/omlaag te bedienen. Live tijdlabels en doelmarkeringen tonen conflicten voordat een wijziging wordt toegepast. Slepen, het invoerformulier en resize gebruiken dezelfde validatie. Functietitels bepalen geen beschikbaarheid.
 
-Afronden vereist geldige planning, registreert de geplande uren als uitvoering en verwijdert de werkorder uit actieve planning. Onderhoudsdatums worden hierdoor niet automatisch gewijzigd.
+Afronden gebruikt bestaande uitvoering of registreert geldige geplande uren als sessie-uitvoering en verwijdert de werkorder uit actieve planning. Onderhoudsdatums worden hierdoor niet automatisch gewijzigd.
 
 ## Onderhoudsoverzicht
 
-De kolom Afspraak toont precies één bruikbare afspraak uit expliciet gekoppelde werkorders: eerst de dichtstbijzijnde toekomstige start, anders de meest recente start uit het verleden. De referentie is de Brusselse datum/tijd bij laden. Geplande afspraken blijven na afronden bewaard; de gesloten status verwijdert ze uit de actieve planner. Uitgevoerde uren zijn een aparte stroom en worden nooit gebruikt om een afspraak te verzinnen.
+Het dashboard heeft precies twee onafhankelijke statusdimensies. Urgentie gebruikt uitsluitend MS_HDR.volgende en de Brusselse kalenderdatum: Achterstallig, Binnenkort (vandaag t/m 30 dagen), Op schema of Onbekend. MS_HDR.laatste en frequentie blijven context; datums worden nooit gereconstrueerd of automatisch gewijzigd.
 
-De gedeelde selectorlaag gebruikt indexes op werkordernummer, WO_OBJ-fiche, resourcecode en uren per werkorder. React-componenten gebruiken deze selectors voor de relatieketen. Tijdelijke werkorders krijgen een expliciet WO_OBJ-record met bron `session` in het geheugen; de CSV blijft ongewijzigd.
+Werkorderopvolging gebruikt uitsluitend de WO_OBJ-keten en WO_OBJ.soort = Onderhoud. Alleen administratief actieve importwerkorders (Planned, Implemented, Verified) en nieuw aangemaakte sessiewerkorders tellen mee. Bij meerdere actieve werkorders wint de nieuwste geldige aanmaakdatum, met natuurlijke werkordernummervolgorde als vaste terugval. Documentdatums, gesloten werkorders en historische planning beïnvloeden deze selectie niet.
 
-Alle acht kolommen ondersteunen oplopend, aflopend en terug naar de standaardsortering. Ontbrekende datums en afspraken blijven achteraan. Status volgt urgentie; documentnummers gebruiken natuurlijke sortering. Sortering en filters blijven bij navigatie behouden.
+De gedeelde selector `createMaintenanceSelectors(data).getMaintenanceAction(sheetId)` bepaalt de opvolging in vaste volgorde:
+
+1. Geregistreerde uitvoering: Afsluiting controleren.
+2. Bruikbare toekomstige afspraak: Gepland.
+3. Actieve WO zonder uitvoering of toekomstige afspraak: Te plannen.
+4. Geen actieve onderhoudswerkorder: Te starten.
+
+Er worden geen onderhoudscycli gereconstrueerd. Afronden sluit de werkorder en verwijdert deze uit de actieve selectie; zonder andere actieve WO wordt de opvolging weer Te starten. De onderhoudsurgentie blijft gebaseerd op de bron. Gesloten historie blokkeert geen nieuwe onderhoudswerkorder. Bestaande uitvoering wordt bij afronden niet gedupliceerd; zonder uitvoering vereist afronden bruikbare planning om sessie-uitvoering vast te leggen.
+
+Het overzicht toont een compacte tabel met beide statusbadges, horizontaal scrollen op kleinere schermen en één actie: Werkorder maken, Plannen, Afspraak bekijken of Afsluiting controleren. Vier klikbare tellers filteren op Achterstallig, Binnenkort, Te plannen en Gepland. Een selectiefilter houdt onder andere Op schema, Onbekend en Afsluiting controleren bereikbaar. Alle acht kolommen ondersteunen oplopend en aflopend sorteren. Prioriteit is de standaard: achterstallig (te starten, te plannen, afsluiting, gepland), binnenkort (te starten, te plannen), onbekend (te starten, te plannen), binnenkort afsluiting, onbekend afsluiting, binnenkort gepland, onbekend gepland en op schema (afsluiting, te plannen, gepland, te starten). Binnen elke groep komen de oudste volgende datums eerst, ontbrekende datums achteraan en klantnaam als vaste terugval. Filters en sortering blijven bij navigatie behouden.
+
+De detaildrawer behoudt alle canoniek gekoppelde werkorders, inclusief herstellingen en garantie. Deze historie staat chronologisch (nieuwste eerst), met interventietype, bronstatus, planning en uitvoering afzonderlijk. Tegenstrijdige gegevens staan als secundaire gegevensmeldingen in de drawer en in Gegevensproblemen; ze vervangen de twee hoofdstatussen niet.
+
+Plannen en Afspraak bekijken gebruiken `/planning?wo=WERKORDERNUMMER`. Een toekomstige afspraak opent in de juiste week/resource; een WO met alleen oude afspraken opent de huidige week met de juiste WO geselecteerd en behoudt het bestaande slot om bewust te verplaatsen. Klikken op een beschikbaar tijdvak en drag-and-drop blijven dezelfde validatie gebruiken. Historische afspraken van gesloten werkorders blijven alleen-lezen en blokkeren actieve afspraken niet.
+
+Regressies op de echte export: Hoeve Sabbe (1004) en Verschuere Katrien (1062) zijn Achterstallig + Afsluiting controleren. De Leie (1197) is Achterstallig + Gepland, met WB2026-0248 op 16/11/2026 van 08:00–16:00 bij Wout Vanhoutte. Lieve Deprez (1089) is Te plannen via de actieve WB2025-0163; nieuwer afgerond onderhoud blijft historie. Deze uitkomsten volgen uit algemene regels zonder fiche-specifieke uitzonderingen.
 
 ## Controles
 

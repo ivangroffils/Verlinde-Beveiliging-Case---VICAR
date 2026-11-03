@@ -1,0 +1,24 @@
+"use client";
+
+import { AlertTriangle } from "lucide-react";
+import { useApp } from "./app-provider";
+import { Dialog } from "./dialog";
+import { Button } from "./ui";
+import { MaintenanceActionBadge, MaintenanceUrgencyBadge } from "./maintenance-action-badge";
+import { MaintenancePrimaryAction } from "./maintenance";
+import { formatDate, formatTime } from "@/lib/domain/rules";
+
+export function MaintenanceDrawer() {
+  const { maintenance, selectedMaintenanceId, closeMaintenance, openOrder } = useApp();
+  const row = selectedMaintenanceId ? maintenance.getMaintenanceAction(selectedMaintenanceId) : null;
+  if (!row) return null;
+  const history = maintenance.getHistory(row.sheet.id);
+  return <Dialog title="Onderhoud" onClose={closeMaintenance} drawer>
+    <div className="mb-4 flex flex-wrap items-center gap-2"><MaintenanceUrgencyBadge status={row.urgency} /><MaintenanceActionBadge state={row.state} /></div>
+    <h3 className="text-xl font-semibold tracking-tight">{row.customer}</h3><p className="mt-2 text-sm text-slate-600">{row.sheet.description}</p><p className="mt-1 text-xs text-slate-400">{row.sheet.site}</p>
+    <dl className="my-5 grid grid-cols-2 gap-4 rounded-xl bg-slate-50 p-4 text-sm"><div><dt className="text-xs text-slate-400">Volgend onderhoud</dt><dd className="mt-1 font-medium">{formatDate(row.sheet.nextDate)}</dd></div><div><dt className="text-xs text-slate-400">Laatste onderhoud</dt><dd className="mt-1">{formatDate(row.sheet.lastDate)}</dd></div><div><dt className="text-xs text-slate-400">Type</dt><dd className="mt-1">{row.sheet.category}</dd></div><div><dt className="text-xs text-slate-400">Interval</dt><dd className="mt-1">{row.sheet.intervalLabel}</dd></div></dl>
+    <section data-current-work-order={row.selectedWorkOrder?.id ?? ""} data-work-order-state={row.state} className="mb-5 rounded-xl border border-slate-200 p-4"><h3 className="mb-2 text-xs font-medium text-slate-400">Actieve werkorder</h3><p className="text-sm font-semibold">{row.selectedWorkOrder?.id ?? "—"}</p>{row.appointment && <p className="mt-2 text-xs leading-5 text-slate-600">{formatDate(row.appointment.date)} · {formatTime(row.appointment.start)}–{formatTime(row.appointment.end)}<br />{row.appointment.resource.name}</p>}{row.execution && <p className="mt-2 text-xs leading-5 text-sky-800">Uitgevoerd: {formatDate(row.execution.date)} · {formatTime(row.execution.start)}–{formatTime(row.execution.end)}<br />{row.execution.resource.name}</p>}<div className="mt-3"><MaintenancePrimaryAction row={row} onNavigate={closeMaintenance} /></div></section>
+    {row.reasons.length > 0 && <details data-maintenance-warnings className="mb-5 rounded-xl border border-slate-200 p-3"><summary className="cursor-pointer text-xs font-medium text-slate-500"><AlertTriangle size={13} className="mr-1.5 inline text-amber-500" />Gegevensmeldingen</summary><ul className="mt-3 space-y-2 text-xs leading-5 text-slate-600">{row.reasons.map(reason => <li key={reason.code} data-reason-code={reason.code}>{reason.message}</li>)}</ul></details>}
+    <details className="rounded-xl border border-slate-200 p-4"><summary className="cursor-pointer text-sm font-medium text-slate-600">Onderhoudshistorie</summary><div className="mt-4 space-y-2">{history.map(entry => <details key={entry.order.id} data-history-work-order={entry.order.id} className="rounded-lg border border-slate-100 p-3"><summary className="cursor-pointer text-xs font-medium text-slate-600">{entry.order.id}<span className="ml-2 font-normal text-slate-400">{formatDate(entry.date)}</span></summary><div className="mt-3 space-y-1 text-xs text-slate-500"><p>{entry.kind} · {entry.statusLabel}</p><p>{entry.order.description}</p></div><h4 className="mb-2 mt-3 text-xs font-semibold text-slate-500">Planning</h4>{entry.appointments.length ? <ul data-history-planning className="space-y-2 text-xs text-slate-500">{entry.appointments.map(slot => <li key={slot.id}>{formatDate(slot.date)} · {formatTime(slot.start)}–{formatTime(slot.end)}<span className="block text-[11px] text-slate-400">{slot.resource.name}</span></li>)}</ul> : <p className="text-xs text-slate-400">—</p>}<h4 className="mb-2 mt-3 text-xs font-semibold text-slate-500">Uitvoering</h4>{entry.executions.length ? <ul data-history-execution className="space-y-2 text-xs text-slate-500">{entry.executions.map(execution => <li key={execution.id}>{formatDate(execution.date)} · {formatTime(execution.start)}–{formatTime(execution.end)}<span className="block text-[11px] text-slate-400">{execution.resource.name}</span></li>)}</ul> : <p className="text-xs text-slate-400">—</p>}<Button variant="quiet" className="mt-3 min-h-8 px-0 text-xs text-teal-700" onClick={() => openOrder(entry.order.id)}>Werkorder bekijken</Button></details>)}{!history.length && <p className="text-xs text-slate-400">Geen werkorderhistorie</p>}</div></details>
+  </Dialog>;
+}

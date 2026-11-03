@@ -43,7 +43,9 @@ export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute
     const id = get(raw, "werkbon"), sheetId = get(raw, "fiche");
     if (!orderIds.has(id)) { issue(tables.WO_OBJ, row, "werkbon", `Werkorder ${id || "zonder nummer"} ontbreekt.`, { workOrderId: id }); return; }
     if (!sheetMap.has(sheetId)) { issue(tables.WO_OBJ, row, "fiche", `Installatie ${sheetId || "zonder nummer"} ontbreekt.`, { workOrderId: id }); return; }
-    workOrderObjects.push({ workOrderId: id, sheetId, source: "csv" });
+    const kind = get(raw, "soort");
+    workOrderObjects.push({ workOrderId: id, sheetId, kind, source: "csv" });
+    if (!kind) issue(tables.WO_OBJ, row, "soort", "Interventietype ontbreekt; onderhoud kan niet worden bepaald.", { workOrderId: id, sheetId });
     const values = links.get(id) ?? new Set<string>();
     values.add(sheetId); links.set(id, values);
     objectDescriptions.set(id, get(raw, "omschrijving"));
@@ -59,7 +61,7 @@ export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute
     });
     const rawStatus = get(raw, "status");
     if (!["Completed", "Invoiced", "Planned", "Implemented", "Verified"].includes(rawStatus)) issue(tables.WO_HDR, row, "status", `Onbekende status '${rawStatus}'; werkorder blijft actief.`, { workOrderId: id });
-    return { id, customerId, installation: sheetIds.map(sheetId => sheetMap.get(sheetId)?.description).filter(Boolean).join(" · ") || objectDescriptions.get(id) || "Installatie ontbreekt", description: get(raw, "omschrijving") || "Omschrijving ontbreekt", site: get(raw, "werfadres") || "Locatie ontbreekt", kind: get(raw, "soort") || objectKinds.get(id) || "Onbekend", sourceStatus: rawStatus, status: sourceOrderStatus(rawStatus), hasInvalidPlanning: false };
+    return { id, customerId, installation: sheetIds.map(sheetId => sheetMap.get(sheetId)?.description).filter(Boolean).join(" · ") || objectDescriptions.get(id) || "Installatie ontbreekt", description: get(raw, "omschrijving") || "Omschrijving ontbreekt", site: get(raw, "werfadres") || "Locatie ontbreekt", kind: get(raw, "soort") || objectKinds.get(id) || "Onbekend", date: parseDate(get(raw, "datum")), createdDate: parseDate(get(raw, "aangemaakt")), sourceStatus: rawStatus, status: sourceOrderStatus(rawStatus), hasInvalidPlanning: false };
   });
   const invalidPlanning: AppData["invalidPlanning"] = [];
   const invalidOrderIds = new Set<string>();

@@ -10,7 +10,7 @@ import type { AppData, MaintenanceSheet, PlanningSlot } from "../src/types/domai
 const real = await loadAppData(undefined, "2026-11-03");
 const sheet: MaintenanceSheet = { id: "s", customerId: "c", description: "Alarm", category: "Inbraak", site: "Teststraat", lastDate: null, nextDate: null, intervalLabel: "Jaarlijks", intervalMonths: 12 };
 function fixture(): AppData {
-  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "w", sheetId: "s", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [], rawPlanning: [] };
+  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "w", sheetId: "s", kind: "Onderhoud", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [], rawPlanning: [] };
 }
 const candidate: PlanningSlot = { id: "new", workOrderId: "w", resourceId: "r", date: "2026-11-03", start: 600, end: 720 };
 function tablesWithPlanning(row: Record<string, string>): Tables {
@@ -114,8 +114,8 @@ test("create copies sheet context, links immediately, uses temporary ids and pre
 test("maintenance linkage excludes closed orders and repair work", () => {
   const data = fixture();
   assert.equal(openMaintenanceOrders(data, "s").length, 1);
-  data.workOrders[0].kind = "Herstelling"; assert.equal(openMaintenanceOrders(data, "s").length, 0);
-  data.workOrders[0].kind = "Onderhoud"; data.workOrders[0].status = "completed"; assert.equal(openMaintenanceOrders(data, "s").length, 0);
+  data.workOrderObjects[0].kind = "Herstelling"; assert.equal(openMaintenanceOrders(data, "s").length, 0);
+  data.workOrderObjects[0].kind = "Onderhoud"; data.workOrders[0].status = "completed"; assert.equal(openMaintenanceOrders(data, "s").length, 0);
 });
 test("planning allows adjacency, rejects overlap and excludes the moved slot", () => {
   const data = fixture(); data.slots = [{ ...candidate, id: "old", start: 480, end: 600 }];

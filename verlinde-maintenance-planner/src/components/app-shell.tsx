@@ -8,17 +8,18 @@ import { useApp } from "./app-provider";
 import { BrandLogo } from "./brand-logo";
 import { Button } from "./ui";
 import { DataIssues } from "./data-issues";
+import { MaintenanceDrawer } from "./maintenance-drawer";
 import { WorkOrderDrawer } from "./work-order-drawer";
 import { AppToast } from "./app-toast";
 import { formatDate } from "@/lib/domain/rules";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const { state } = useApp();
+  const { state, planning } = useApp();
   const [showIssues, setShowIssues] = useState(false);
   const closeIssues = useCallback(() => setShowIssues(false), []);
   const [menuOpen, setMenuOpen] = useState(false);
-  const backlog = state.workOrders.filter(order => order.status === "unplanned").length;
+  const backlog = planning.backlog.length;
   const warnings = state.issues.filter(issue => issue.severity !== "info").length;
   const page = pathname === "/planning" ? "Planning" : "Onderhoud";
 
@@ -42,6 +43,6 @@ export function AppShell({ children }: { children: ReactNode }) {
       </header>
       <main id="main-content" className="mx-auto max-w-[2400px] px-4 py-5 sm:px-6 sm:py-6">{children}</main>
     </div>
-    <AppToast key={state.error ?? state.message ?? "idle"} /><WorkOrderDrawer />{showIssues && <DataIssues onClose={closeIssues} />}
+    <AppToast key={state.error ?? state.message ?? "idle"} /><WorkOrderDrawer /><MaintenanceDrawer />{showIssues && <DataIssues onClose={closeIssues} />}
   </div>;
 }

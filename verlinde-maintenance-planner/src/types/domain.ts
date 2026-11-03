@@ -7,10 +7,10 @@ export interface MaintenanceSheet {
 }
 export interface WorkOrder {
   id: string; customerId: string; installation: string; description: string;
-  site: string; kind: string; sourceStatus: string; status: OrderStatus; hasInvalidPlanning: boolean;
+  site: string; kind: string; date?: string | null; createdDate?: string | null; sessionSequence?: number; sourceStatus: string; status: OrderStatus; hasInvalidPlanning: boolean;
 }
 export interface WorkOrderObject {
-  workOrderId: string; sheetId: string; source: "csv" | "session";
+  workOrderId: string; sheetId: string; kind: string; source: "csv" | "session";
 }
 export interface Resource { id: string; name: string; role: string }
 export interface PlanningSlot {

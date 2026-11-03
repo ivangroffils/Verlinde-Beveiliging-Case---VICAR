@@ -6,9 +6,9 @@ import { brusselsMinute, proposePlanning, proposeResize, snapTime } from "../src
 import { nextMaintenanceSort, relevantAppointment, sortMaintenance, type MaintenanceSortKey } from "../src/lib/domain/maintenance.ts";
 import { initialState, reducer } from "../src/lib/domain/state.ts";
 
-const sheet: MaintenanceSheet = { id: "1", customerId: "c1", description: "Zulu", category: "Camera", site: "Locatie", lastDate: "2026-11-02", nextDate: "2026-11-02", intervalLabel: "Jaarlijks", intervalMonths: 12 };
+const sheet: MaintenanceSheet = { id: "1", customerId: "c1", description: "Zulu", category: "Camera", site: "Locatie", lastDate: "2025-11-02", nextDate: "2026-11-02", intervalLabel: "Jaarlijks", intervalMonths: 12 };
 function data(): AppData {
-  return { today: "2026-11-03", nowMinute: 600, rawPlanning: [], customers: [{ id: "c1", name: "Zebra" }, { id: "c2", name: "Alpha" }], sheets: [sheet, { ...sheet, id: "2", customerId: "c2", description: "Alpha", category: "Branddetectie", lastDate: "2025-01-01", nextDate: "2026-11-05", intervalLabel: "Halfjaarlijks", intervalMonths: 6 }], resources: [{ id: "r", name: "Volledige Naam", role: "T1" }], workOrders: [{ id: "WB-10", customerId: "c1", installation: "Zulu", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }, { id: "WB-2", customerId: "c2", installation: "Alpha", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "WB-10", sheetId: "1", source: "csv" }, { workOrderId: "WB-2", sheetId: "2", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [] };
+  return { today: "2026-11-03", nowMinute: 600, rawPlanning: [], customers: [{ id: "c1", name: "Zebra" }, { id: "c2", name: "Alpha" }], sheets: [sheet, { ...sheet, id: "2", customerId: "c2", description: "Alpha", category: "Branddetectie", lastDate: "2025-01-01", nextDate: "2026-11-05", intervalLabel: "Halfjaarlijks", intervalMonths: 6 }], resources: [{ id: "r", name: "Volledige Naam", role: "T1" }], workOrders: [{ id: "WB-10", customerId: "c1", installation: "Zulu", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }, { id: "WB-2", customerId: "c2", installation: "Alpha", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "WB-10", sheetId: "1", kind: "Onderhoud", source: "csv" }, { workOrderId: "WB-2", sheetId: "2", kind: "Onderhoud", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [] };
 }
 function slot(changes: Partial<PlanningSlot> = {}): PlanningSlot { return { id: "slot", workOrderId: "WB-10", resourceId: "r", date: "2026-11-03", start: 600, end: 720, ...changes }; }
 function csv(raw: Record<string, string>): Tables {
@@ -80,16 +80,16 @@ test("completed imported planning and completed session appointments remain avai
   assert.equal(relevantAppointment(completed, "1")?.date, "2026-11-02");
 });
 test("each sort header cycles ascending, descending and default", () => {
-  for (const key of ["customer", "category", "lastDate", "nextDate", "interval", "status", "workOrder", "appointment"] as MaintenanceSortKey[]) {
+  for (const key of ["customer", "nextDate", "urgency", "status"] as MaintenanceSortKey[]) {
     const asc = nextMaintenanceSort(null, key); assert.deepEqual(asc, { key, direction: "asc" });
     const desc = nextMaintenanceSort(asc, key); assert.deepEqual(desc, { key, direction: "desc" });
     assert.equal(nextMaintenanceSort(desc, key), null);
   }
   assert.deepEqual(nextMaintenanceSort({ key: "status", direction: "desc" }, "customer"), { key: "customer", direction: "asc" });
 });
-test("text, date, interval and document sorting use their actual values in both directions", () => {
+test("customer and next-date sorting use actual values in both directions", () => {
   const state = data();
-  for (const key of ["customer", "category", "lastDate", "nextDate", "interval", "workOrder"] as MaintenanceSortKey[]) {
+  for (const key of ["customer", "nextDate"] as MaintenanceSortKey[]) {
     const expected = key === "nextDate" ? ["1", "2"] : ["2", "1"];
     assert.deepEqual(sortMaintenance(state, state.sheets, { key, direction: "asc" }).map(row => row.id), expected, key);
     assert.deepEqual(sortMaintenance(state, state.sheets, { key, direction: "desc" }).map(row => row.id), [...expected].reverse(), key);
@@ -100,18 +100,15 @@ test("customer sorting also orders installations alphabetically for the same cus
   assert.equal(sortMaintenance(state, state.sheets, { key: "customer", direction: "asc" })[0].id, "2");
   assert.equal(sortMaintenance(state, state.sheets, { key: "customer", direction: "desc" })[0].id, "1");
 });
-test("missing maintenance dates and missing appointments stay last in both directions", () => {
-  const state = data(); state.sheets.push({ ...sheet, id: "missing", lastDate: null, nextDate: null });
-  state.slots = [slot({ id: "later", date: "2026-11-05", start: 600 }), slot({ id: "earlier", workOrderId: "WB-2", date: "2026-11-05", start: 480 })];
-  for (const key of ["lastDate", "nextDate", "appointment"] as const) for (const direction of ["asc", "desc"] as const) assert.equal(sortMaintenance(state, state.sheets, { key, direction }).at(-1)?.id, "missing");
-  assert.equal(sortMaintenance(state, state.sheets, { key: "appointment", direction: "asc" })[0].id, "2");
-  assert.equal(sortMaintenance(state, state.sheets, { key: "appointment", direction: "desc" })[0].id, "1");
+test("missing maintenance dates stay last in both sort directions", () => {
+  const state = data(); state.sheets.push({ ...sheet, id: "missing", nextDate: null });
+  for (const direction of ["asc", "desc"] as const) assert.equal(sortMaintenance(state, state.sheets, { key: "nextDate", direction }).at(-1)?.id, "missing");
 });
-test("status sorting follows urgency priority and sorting never mutates source rows", () => {
-  const state = data(); state.sheets = [sheet, { ...sheet, id: "soon", nextDate: "2026-11-05" }, { ...sheet, id: "ok", nextDate: "2027-01-01" }, { ...sheet, id: "missing", nextDate: null }];
-  const before = structuredClone(state.sheets);
-  assert.deepEqual(sortMaintenance(state, state.sheets, { key: "status", direction: "asc" }).map(row => row.id), ["1", "soon", "ok", "missing"]);
-  assert.deepEqual(sortMaintenance(state, state.sheets, { key: "status", direction: "desc" }).map(row => row.id), ["missing", "ok", "soon", "1"]);
+test("follow-up sorting ignores maintenance urgency and does not mutate source rows", () => {
+  const state = data(); state.sheets.push({ ...sheet, id: "new", nextDate: "2027-01-01" });
+  state.slots = [slot({ date: "2026-11-05" })]; const before = structuredClone(state.sheets);
+  assert.deepEqual(sortMaintenance(state, state.sheets, { key: "status", direction: "asc" }).map(row => row.id), ["new", "2", "1"]);
+  assert.deepEqual(sortMaintenance(state, state.sheets, { key: "status", direction: "desc" }).map(row => row.id), ["1", "2", "new"]);
   assert.deepEqual(state.sheets, before);
 });
 test("drag proposals and commits agree exactly and preserve duration", () => {

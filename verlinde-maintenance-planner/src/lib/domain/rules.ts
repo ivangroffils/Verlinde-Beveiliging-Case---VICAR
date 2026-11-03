@@ -20,7 +20,7 @@ export function validIsoDate(value: string): boolean {
   return isValid(date) && format(date, "yyyy-MM-dd") === value;
 }
 export function calendarDate(value: string): Date { return parse(value, "yyyy-MM-dd", new Date(2000, 0, 1)); }
-export function formatDate(value: string | null): string { return value ? format(calendarDate(value), "dd/MM/yyyy") : "\u2014"; }
+export function formatDate(value: string | null): string { return value && validIsoDate(value) ? format(calendarDate(value), "dd/MM/yyyy") : "\u2014"; }
 export function parseTime(value: string): number | null {
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value.trim())) return null;
   const [hours, minutes] = value.trim().split(":").map(Number);
@@ -50,9 +50,11 @@ export function activeSlots(data: Pick<AppData, "slots" | "workOrders">): Planni
 export function overlaps(a: PlanningSlot, b: PlanningSlot): boolean {
   return a.id !== b.id && a.resourceId === b.resourceId && a.date === b.date && a.start < b.end && a.end > b.start;
 }
-export function validatePlanning(data: Pick<AppData, "resources" | "slots" | "workOrders">, candidate: PlanningSlot, operation: "move" | "resize" = "move"): string | null {
+type PlanningData = Pick<AppData, "resources" | "slots" | "workOrders"> & Partial<Pick<AppData, "executions">>;
+export function validatePlanning(data: PlanningData, candidate: PlanningSlot, operation: "move" | "resize" = "move"): string | null {
   const order = data.workOrders.find(item => item.id === candidate.workOrderId);
   if (!order || order.status === "completed") return "Deze werkorder is niet beschikbaar voor planning.";
+  if (data.executions?.some(execution => execution.workOrderId === order.id)) return "Uitvoering geregistreerd; controleer eerst de afsluiting.";
   if (!data.resources.some(resource => resource.id === candidate.resourceId)) return "De gekozen resource bestaat niet.";
   if (!validIsoDate(candidate.date)) return "Kies een geldige planningsdatum.";
   const original = data.slots.find(slot => slot.id === candidate.id);
@@ -76,7 +78,7 @@ export function brusselsMinute(now = new Date()): number {
 export function snapTime(value: number): number { return Math.round(value / SLOT_STEP) * SLOT_STEP; }
 export interface ScheduleInput { workOrderId: string; slotId?: string; resourceId: string; date: string; start: number }
 export interface PlanningProposal { slot: PlanningSlot | null; error: string | null }
-export function proposePlanning(data: Pick<AppData, "workOrders" | "resources" | "slots">, input: ScheduleInput): PlanningProposal {
+export function proposePlanning(data: PlanningData, input: ScheduleInput): PlanningProposal {
   const existing = input.slotId ? data.slots.find(slot => slot.id === input.slotId && slot.workOrderId === input.workOrderId) : undefined;
   if (input.slotId && !existing) return { slot: null, error: "Deze afspraak bestaat niet meer." };
   if (!input.slotId && data.slots.some(slot => slot.workOrderId === input.workOrderId)) return { slot: null, error: "Deze werkorder is al ingepland." };
@@ -84,7 +86,7 @@ export function proposePlanning(data: Pick<AppData, "workOrders" | "resources" |
   const slot: PlanningSlot = { id: existing?.id ?? `session-${input.workOrderId}`, workOrderId: input.workOrderId, resourceId: input.resourceId, date: input.date, start: input.start, end: input.start + duration };
   return { slot, error: validatePlanning(data, slot) };
 }
-export function proposeResize(data: Pick<AppData, "workOrders" | "resources" | "slots">, slotId: string, end: number): PlanningProposal {
+export function proposeResize(data: PlanningData, slotId: string, end: number): PlanningProposal {
   const original = data.slots.find(slot => slot.id === slotId);
   if (!original) return { slot: null, error: "Deze afspraak bestaat niet meer." };
   const slot = { ...original, end };

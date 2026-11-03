@@ -13,6 +13,10 @@ export interface DropTarget { resourceId: string; date: string; start: number }
 export interface Point { x: number; y: number }
 export interface ResizeDraft { slotId: string; end: number; kind: "pointer" | "keyboard" }
 interface Interaction {
+  selectedSlotId?: string;
+  focusedSlotId?: string;
+  selectedOrderId?: string | null;
+  selectTarget?: (target: DropTarget) => void;
   mode: "drag" | "resize" | null;
   target: DropTarget | null;
   preview: PlanningProposal | null;

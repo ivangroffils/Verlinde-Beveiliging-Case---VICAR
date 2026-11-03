@@ -8,7 +8,7 @@ import { initialState, reducer } from "../src/lib/domain/state.ts";
 
 const sheet: MaintenanceSheet = { id: "1", customerId: "c1", description: "Zulu", category: "Camera", site: "Locatie", lastDate: "2026-11-02", nextDate: "2026-11-02", intervalLabel: "Jaarlijks", intervalMonths: 12 };
 function data(): AppData {
-  return { today: "2026-11-03", nowMinute: 600, rawPlanning: [], customers: [{ id: "c1", name: "Zebra" }, { id: "c2", name: "Alpha" }], sheets: [sheet, { ...sheet, id: "2", customerId: "c2", description: "Alpha", category: "Branddetectie", lastDate: "2025-01-01", nextDate: "2026-11-05", intervalLabel: "Halfjaarlijks", intervalMonths: 6 }], resources: [{ id: "r", name: "Volledige Naam", role: "T1" }], workOrders: [{ id: "WB-10", customerId: "c1", sheetIds: ["1"], installation: "Zulu", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }, { id: "WB-2", customerId: "c2", sheetIds: ["2"], installation: "Alpha", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], slots: [], executions: [], issues: [], invalidPlanning: [] };
+  return { today: "2026-11-03", nowMinute: 600, rawPlanning: [], customers: [{ id: "c1", name: "Zebra" }, { id: "c2", name: "Alpha" }], sheets: [sheet, { ...sheet, id: "2", customerId: "c2", description: "Alpha", category: "Branddetectie", lastDate: "2025-01-01", nextDate: "2026-11-05", intervalLabel: "Halfjaarlijks", intervalMonths: 6 }], resources: [{ id: "r", name: "Volledige Naam", role: "T1" }], workOrders: [{ id: "WB-10", customerId: "c1", installation: "Zulu", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }, { id: "WB-2", customerId: "c2", installation: "Alpha", description: "Onderhoud", site: "Locatie", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "WB-10", sheetId: "1", source: "csv" }, { workOrderId: "WB-2", sheetId: "2", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [] };
 }
 function slot(changes: Partial<PlanningSlot> = {}): PlanningSlot { return { id: "slot", workOrderId: "WB-10", resourceId: "r", date: "2026-11-03", start: 600, end: 720, ...changes }; }
 function csv(raw: Record<string, string>): Tables {
@@ -17,7 +17,7 @@ function csv(raw: Record<string, string>): Tables {
     REL: { ...empty("REL"), rows: [{ row: 2, raw: { code: "c1", naam: "Zebra" } }] }, RES: { ...empty("RES"), rows: [{ row: 2, raw: { code: "r", naam: "Volledige Naam", rol: "T1" } }] },
     MS_HDR: { ...empty("MS_HDR"), rows: [{ row: 2, raw: { nr: "1", klant: "c1", omschrijving: "Zulu" } }] },
     WO_HDR: { ...empty("WO_HDR"), rows: [{ row: 2, raw: { nr: "WB-10", klant: "c1", fiche: "1", status: "Planned", soort: "Onderhoud" } }] },
-    WO_OBJ: empty("WO_OBJ"), WO_HRS_PL: { ...empty("WO_HRS_PL"), rows: [{ row: 2, raw }] }, WO_HRS_EX: empty("WO_HRS_EX"), WO_ART_PL: empty("WO_ART_PL"),
+    WO_OBJ: { ...empty("WO_OBJ"), rows: [{ row: 2, raw: { werkbon: "WB-10", fiche: "1", omschrijving: "Zulu", soort: "Onderhoud" } }] }, WO_HRS_PL: { ...empty("WO_HRS_PL"), rows: [{ row: 2, raw }] }, WO_HRS_EX: empty("WO_HRS_EX"), WO_ART_PL: empty("WO_ART_PL"),
   };
 }
 
@@ -53,7 +53,7 @@ test("zero-length execution is not fabricated from the planned-duration rule", (
   assert.equal(normalized.slots.length, 1); assert.equal(normalized.executions.length, 0);
 });
 test("appointment selection prefers the nearest future booking across explicitly linked orders", () => {
-  const state = data(); state.workOrders[1].sheetIds = ["1"];
+  const state = data(); state.workOrderObjects[1].sheetId = "1";
   state.slots = [slot({ id: "old", date: "2026-11-02" }), slot({ id: "far", date: "2026-11-08" }), slot({ id: "near", workOrderId: "WB-2", date: "2026-11-05" })];
   assert.equal(relevantAppointment(state, "1")?.id, "near");
   assert.equal(relevantAppointment(state, "2"), null);

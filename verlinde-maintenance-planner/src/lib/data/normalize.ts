@@ -1,4 +1,4 @@
-import type { AppData, DataIssue, Execution, PlanningSlot } from "../../types/domain.ts";
+import type { AppData, DataIssue, Execution, PlanningSlot, WorkOrderObject } from "../../types/domain.ts";
 import type { CsvTable, TableName } from "./repository.ts";
 import { brusselsToday, brusselsMinute, DEFAULT_DURATION, normalizeInterval, overlaps, parseDate, parseTime, sourceOrderStatus } from "../domain/rules.ts";
 import { loadTable } from "./repository.ts";
@@ -34,23 +34,23 @@ export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute
   const sheetMap = new Map(sheets.map(item => [item.id, item]));
   const orderRows = unique(tables.WO_HDR, "nr");
   const orderIds = new Set(orderRows.map(({ raw }) => get(raw, "nr")));
+  const workOrderObjects: WorkOrderObject[] = [];
   const links = new Map<string, Set<string>>();
   const objectDescriptions = new Map<string, string>();
   const objectKinds = new Map<string, string>();
-  const addLink = (id: string, sheetId: string, table: CsvTable, row: number) => {
-    if (!sheetId) return;
-    if (!sheetMap.has(sheetId)) issue(table, row, "fiche", `Installatie ${sheetId} ontbreekt.`, { workOrderId: id });
-    const values = links.get(id) ?? new Set<string>(); values.add(sheetId); links.set(id, values);
-  };
+  // WO_OBJ is the only imported fiche/work-order relation. WO_HDR.fiche is ignored.
   tables.WO_OBJ.rows.forEach(({ raw, row }) => {
-    const id = get(raw, "werkbon");
-    if (!orderIds.has(id)) { issue(tables.WO_OBJ, row, "werkbon", `Werkorder ${id} ontbreekt.`, { workOrderId: id }); return; }
-    addLink(id, get(raw, "fiche"), tables.WO_OBJ, row);
-    objectDescriptions.set(id, get(raw, "omschrijving")); objectKinds.set(id, get(raw, "soort"));
+    const id = get(raw, "werkbon"), sheetId = get(raw, "fiche");
+    if (!orderIds.has(id)) { issue(tables.WO_OBJ, row, "werkbon", `Werkorder ${id || "zonder nummer"} ontbreekt.`, { workOrderId: id }); return; }
+    if (!sheetMap.has(sheetId)) { issue(tables.WO_OBJ, row, "fiche", `Installatie ${sheetId || "zonder nummer"} ontbreekt.`, { workOrderId: id }); return; }
+    workOrderObjects.push({ workOrderId: id, sheetId, source: "csv" });
+    const values = links.get(id) ?? new Set<string>();
+    values.add(sheetId); links.set(id, values);
+    objectDescriptions.set(id, get(raw, "omschrijving"));
+    objectKinds.set(id, get(raw, "soort"));
   });
   const workOrders = orderRows.map(({ raw, row }) => {
     const id = get(raw, "nr"), customerId = get(raw, "klant");
-    addLink(id, get(raw, "fiche"), tables.WO_HDR, row);
     const sheetIds = [...(links.get(id) ?? [])];
     if (!customerIds.has(customerId)) issue(tables.WO_HDR, row, "klant", `Klant ${customerId || "zonder code"} ontbreekt.`, { workOrderId: id });
     sheetIds.forEach(sheetId => {
@@ -59,7 +59,7 @@ export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute
     });
     const rawStatus = get(raw, "status");
     if (!["Completed", "Invoiced", "Planned", "Implemented", "Verified"].includes(rawStatus)) issue(tables.WO_HDR, row, "status", `Onbekende status '${rawStatus}'; werkorder blijft actief.`, { workOrderId: id });
-    return { id, customerId, sheetIds, installation: sheetIds.map(sheetId => sheetMap.get(sheetId)?.description).filter(Boolean).join(" · ") || objectDescriptions.get(id) || "Installatie ontbreekt", description: get(raw, "omschrijving") || "Omschrijving ontbreekt", site: get(raw, "werfadres") || "Locatie ontbreekt", kind: get(raw, "soort") || objectKinds.get(id) || "Onbekend", sourceStatus: rawStatus, status: sourceOrderStatus(rawStatus), hasInvalidPlanning: false };
+    return { id, customerId, installation: sheetIds.map(sheetId => sheetMap.get(sheetId)?.description).filter(Boolean).join(" · ") || objectDescriptions.get(id) || "Installatie ontbreekt", description: get(raw, "omschrijving") || "Omschrijving ontbreekt", site: get(raw, "werfadres") || "Locatie ontbreekt", kind: get(raw, "soort") || objectKinds.get(id) || "Onbekend", sourceStatus: rawStatus, status: sourceOrderStatus(rawStatus), hasInvalidPlanning: false };
   });
   const invalidPlanning: AppData["invalidPlanning"] = [];
   const invalidOrderIds = new Set<string>();
@@ -109,7 +109,7 @@ export function normalizeData(tables: Tables, today = brusselsToday(), nowMinute
       if (!value || !Number.isFinite(Number(value))) issue(tables.WO_ART_PL, row, field, "Artikelwaarde ontbreekt of is ongeldig.", { workOrderId: id });
     }
   });
-  return { today, nowMinute, rawPlanning: tables.WO_HRS_PL.rows.map(({ row, raw }) => ({ file: tables.WO_HRS_PL.file, row, workOrderId: get(raw, "werkbon"), raw: { ...raw } })), customers, sheets, resources, workOrders, slots, executions, issues, invalidPlanning };
+  return { today, nowMinute, rawPlanning: tables.WO_HRS_PL.rows.map(({ row, raw }) => ({ file: tables.WO_HRS_PL.file, row, workOrderId: get(raw, "werkbon"), raw: { ...raw } })), customers, sheets, resources, workOrders, workOrderObjects, slots, executions, issues, invalidPlanning };
 }
 export async function loadAppData(directory?: string, today?: string): Promise<AppData> {
   const names: TableName[] = ["REL", "MS_HDR", "WO_HDR", "WO_OBJ", "WO_HRS_PL", "WO_HRS_EX", "RES", "WO_ART_PL"];

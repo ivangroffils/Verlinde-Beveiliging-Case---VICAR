@@ -7,7 +7,7 @@ export type RawRow = Record<string, string>;
 export interface CsvTable { file: string; rows: { row: number; raw: RawRow }[]; issues: DataIssue[] }
 const headers = {
   REL: ["code", "naam"], MS_HDR: ["nr", "klant", "omschrijving", "type", "pand", "laatste", "volgende", "frequentie"],
-  WO_HDR: ["nr", "klant", "omschrijving", "werfadres", "fiche", "status", "soort"],
+  WO_HDR: ["nr", "klant", "omschrijving", "werfadres", "status", "soort"],
   WO_OBJ: ["werkbon", "fiche", "omschrijving", "soort"], WO_HRS_PL: ["werkbon", "datum", "tech", "van", "tot", "taak"],
   WO_HRS_EX: ["werkbon", "datum", "tech", "van", "tot", "taak"], RES: ["code", "naam", "rol"],
   WO_ART_PL: ["werkbon", "artikel", "omschrijving", "aantal", "prijs"],

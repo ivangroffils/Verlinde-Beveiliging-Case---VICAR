@@ -47,10 +47,10 @@ const keyboardCoordinates: KeyboardCoordinateGetter = (event, { currentCoordinat
   return target ? { x: target.x - width / 2, y: target.y - height / 2 } : currentCoordinates;
 };
 function WorkOrderCard({ order }: { order: WorkOrder }) {
-  const { state, openOrder } = useApp();
+  const { state, relations, openOrder } = useApp();
   const interaction = usePlannerInteraction();
   const { cardProps, setNodeRef, isDragging } = useWholeCardDrag(`backlog-${order.id}`, { workOrderId: order.id }, () => openOrder(order.id), interaction.resizing);
-  const sheet = state.sheets.find(item => order.sheetIds.includes(item.id));
+  const sheet = relations.getManagementSheetForWorkOrder(order.id);
   const urgency = sheet ? maintenanceStatus(sheet, state.today) : null;
   return <article ref={setNodeRef} {...cardProps} data-backlog-order={order.id} aria-label={`Werkorder ${order.id}, ${customerName(state, order.customerId)}`} className={`group touch-manipulation select-none cursor-grab rounded-lg border border-slate-200 bg-white p-3 transition-[border-color,box-shadow,opacity] hover:border-teal-300 hover:shadow-sm active:cursor-grabbing ${isDragging ? "opacity-30 ring-1 ring-teal-400" : ""}`}>
     <p className="text-[13px] font-semibold leading-5 text-slate-800">{customerName(state, order.customerId)}</p><p className="mt-0.5 text-[10px] tabular-nums text-slate-400">{order.id}</p>
@@ -60,7 +60,7 @@ function WorkOrderCard({ order }: { order: WorkOrder }) {
   </article>;
 }
 function ManualPlanning() {
-  const { state, dispatch } = useApp();
+  const { state, relations, dispatch } = useApp();
   const active = state.workOrders.filter(order => order.status !== "completed");
   const [orderId, setOrderId] = useState(active[0]?.id ?? "");
   const [resourceId, setResourceId] = useState(state.resources[0]?.id ?? "");
@@ -69,7 +69,7 @@ function ManualPlanning() {
   const [slotId, setSlotId] = useState("");
   const prefix = useId();
   const effectiveOrderId = active.some(order => order.id === orderId) ? orderId : active[0]?.id ?? "";
-  const orderSlots = state.slots.filter(slot => slot.workOrderId === effectiveOrderId);
+  const orderSlots = relations.getAppointmentsForWorkOrder(effectiveOrderId);
   function selectSlot(id: string) {
     const slot = state.slots.find(item => item.id === id);
     setSlotId(id);
@@ -77,7 +77,7 @@ function ManualPlanning() {
   }
   function selectOrder(id: string) {
     setOrderId(id);
-    const slot = state.slots.find(item => item.workOrderId === id);
+    const slot = relations.getAppointmentsForWorkOrder(id)[0];
     selectSlot(slot?.id ?? "");
   }
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -109,9 +109,9 @@ function TimeTarget({ resource, date, time }: { resource: Resource; date: string
   return <div ref={setNodeRef} data-drop-target={`${resource.id}-${date}-${time}`} data-over={selected || (isOver && interaction.mode === "drag")} data-invalid={invalid} title={interaction.mode ? undefined : `${resource.name} · ${formatDate(date)} · ${formatTime(time)}`} className={`border-t ${time % 60 === 0 ? "border-slate-200/65" : "border-dashed border-slate-100"} ${selected ? invalid ? "bg-rose-100 ring-1 ring-inset ring-rose-400" : "bg-teal-200/70 ring-1 ring-inset ring-teal-500" : ""}`} />;
 }
 function PlannedBlock({ slot, column, columns, conflict }: { slot: PlanningSlot; column: number; columns: number; conflict: boolean }) {
-  const { state, openOrder } = useApp();
+  const { state, relations, openOrder } = useApp();
   const interaction = usePlannerInteraction();
-  const order = state.workOrders.find(item => item.id === slot.workOrderId)!;
+  const order = relations.workOrdersById.get(slot.workOrderId)!;
   const { cardProps, setNodeRef, isDragging } = useWholeCardDrag(slot.id, { workOrderId: slot.workOrderId, slotId: slot.id }, () => openOrder(order.id), interaction.resizing);
   const resizing = interaction.mode === "resize" && interaction.preview?.slot?.id === slot.id;
   const end = resizing ? interaction.preview!.slot!.end : slot.end;
@@ -175,7 +175,7 @@ function WeekPlanner() {
   </section>;
 }
 export function PlanningOverview() {
-  const { state, dispatch } = useApp();
+  const { state, relations, dispatch } = useApp();
   const [dragging, setDragging] = useState<DragData | null>(null);
   const [target, setTarget] = useState<DropData | null>(null);
   const anchor = useRef<Point>({ x: 0, y: 0 });
@@ -185,7 +185,7 @@ export function PlanningOverview() {
   const mode = resize.draft ? "resize" as const : dragging ? "drag" as const : null;
   const preview = resize.draft ? proposeResize(state, resize.draft.slotId, resize.draft.end) : dragging && target ? proposePlanning(state, { ...dragging, ...target }) : null;
   const slot = preview?.slot;
-  const resource = state.resources.find(item => item.id === slot?.resourceId)?.name ?? "";
+  const resource = relations.resourcesByCode.get(slot?.resourceId ?? "")?.name ?? "";
   const label = mode === "resize" ? `Eindtijd ${formatTime(resize.draft!.end)}` : slot ? `${format(calendarDate(slot.date), "EEE d MMM", { locale: nl })} · ${resource} · ${formatTime(slot.start)}–${formatTime(slot.end)}` : "Kies een tijdvak";
 
   useEffect(() => {
@@ -231,7 +231,7 @@ export function PlanningOverview() {
   return <>
     <h1 className="mb-5 text-2xl font-semibold tracking-tight">Planning</h1>
     <PlannerInteractionContext.Provider value={{ mode, target, preview, resizing: resize.draft?.kind === "pointer", beginResize: resize.beginResize, resizeKey: resize.resizeKey }}>
-      <DndContext id="maintenance-planning" sensors={sensors} collisionDetection={args => args.pointerCoordinates ? pointerWithin(args) : closestCenter(args)} onDragStart={dragStart} onDragMove={dragMove} onDragOver={dragMove} onDragEnd={dragEnd} onDragCancel={() => { setDragging(null); setTarget(null); }} accessibility={{ screenReaderInstructions: { draggable: "Enter opent details. Spatie pakt de werkorder op. Pijltjestoetsen kiezen resource, dag en tijd. Spatie plaatst de werkorder; Escape annuleert. Op de onderrand wijzigen pijl omhoog en omlaag de eindtijd." }, announcements: { onDragStart: () => "Werkorder opgepakt.", onDragOver: ({ active, over }) => { const destination = destinationAt(over?.data.current as DropData | undefined); if (!destination) return "Buiten de planner."; const proposal = proposePlanning(state, { ...(active.data.current as DragData), ...destination }); return `${state.resources.find(item => item.id === destination.resourceId)?.name}, ${formatDate(destination.date)}, ${formatTime(destination.start)} tot ${proposal.slot ? formatTime(proposal.slot.end) : "onbekend"}. ${proposal.error ?? "Beschikbaar."}`; }, onDragEnd: () => "Sleepactie beëindigd.", onDragCancel: () => "Slepen geannuleerd." } }}>
+      <DndContext id="maintenance-planning" sensors={sensors} collisionDetection={args => args.pointerCoordinates ? pointerWithin(args) : closestCenter(args)} onDragStart={dragStart} onDragMove={dragMove} onDragOver={dragMove} onDragEnd={dragEnd} onDragCancel={() => { setDragging(null); setTarget(null); }} accessibility={{ screenReaderInstructions: { draggable: "Enter opent details. Spatie pakt de werkorder op. Pijltjestoetsen kiezen resource, dag en tijd. Spatie plaatst de werkorder; Escape annuleert. Op de onderrand wijzigen pijl omhoog en omlaag de eindtijd." }, announcements: { onDragStart: () => "Werkorder opgepakt.", onDragOver: ({ active, over }) => { const destination = destinationAt(over?.data.current as DropData | undefined); if (!destination) return "Buiten de planner."; const proposal = proposePlanning(state, { ...(active.data.current as DragData), ...destination }); return `${relations.resourcesByCode.get(destination.resourceId)?.name}, ${formatDate(destination.date)}, ${formatTime(destination.start)} tot ${proposal.slot ? formatTime(proposal.slot.end) : "onbekend"}. ${proposal.error ?? "Beschikbaar."}`; }, onDragEnd: () => "Sleepactie beëindigd.", onDragCancel: () => "Slepen geannuleerd." } }}>
         <div className="flex flex-col items-start gap-4 md:flex-row"><PlanningBacklog /><WeekPlanner /></div>
       </DndContext>
       {mode && <FloatingFeedback anchorRef={anchor} label={label} error={preview?.error ?? null} announce={mode === "resize"} />}

@@ -1,5 +1,7 @@
-import type { AppData, MaintenanceSheet, PlanningSlot } from "../../types/domain.ts";
-import { customerName, maintenanceStatus, openMaintenanceOrders, validIsoDate } from "./rules.ts";
+import type { AppData, MaintenanceSheet, Appointment, PlanningSlot } from "../../types/domain.ts";
+import { customerName, maintenanceStatus, validIsoDate } from "./rules.ts";
+
+import { createRelationSelectors } from "./relations.ts";
 
 export type MaintenanceSortKey = "customer" | "category" | "lastDate" | "nextDate" | "interval" | "status" | "workOrder" | "appointment";
 export type MaintenanceSort = { key: MaintenanceSortKey; direction: "asc" | "desc" } | null;
@@ -7,22 +9,17 @@ const collator = new Intl.Collator("nl", { numeric: true, sensitivity: "base" })
 const priority = { overdue: 0, upcoming: 1, ok: 2, missing: 3 };
 const appointmentKey = (slot: PlanningSlot) => `${slot.date}T${String(slot.start).padStart(4, "0")}`;
 
-export function relevantAppointment(data: AppData, sheetId: string): PlanningSlot | null {
-  const orders = new Set(data.workOrders.filter(order => order.sheetIds.includes(sheetId)).map(order => order.id));
-  // Session execution preserves the exact planned appointment after completion.
-  const candidates = [...data.slots, ...data.executions.filter(execution => execution.source === "session")]
-    .filter(slot => orders.has(slot.workOrderId) && validIsoDate(slot.date) && Number.isInteger(slot.start) && Number.isInteger(slot.end) && slot.start >= 0 && slot.start < 1440 && slot.end > slot.start && data.resources.some(resource => resource.id === slot.resourceId))
-    .sort((a, b) => appointmentKey(a).localeCompare(appointmentKey(b)) || collator.compare(a.workOrderId, b.workOrderId) || collator.compare(a.id, b.id));
-  const reference = `${data.today}T${String(data.nowMinute ?? 0).padStart(4, "0")}`;
-  return candidates.find(slot => appointmentKey(slot) >= reference) ?? candidates.at(-1) ?? null;
+export function relevantAppointment(data: AppData, sheetId: string): Appointment | null {
+  return createRelationSelectors(data).getRelevantAppointmentForMaintenanceSheet(sheetId);
 }
 export function nextMaintenanceSort(current: MaintenanceSort, key: MaintenanceSortKey): MaintenanceSort {
   if (current?.key !== key) return { key, direction: "asc" };
   return current.direction === "asc" ? { key, direction: "desc" } : null;
 }
 export function sortMaintenance(data: AppData, sheets: MaintenanceSheet[], sort: MaintenanceSort): MaintenanceSheet[] {
-  const appointments = new Map(sheets.map(sheet => [sheet.id, relevantAppointment(data, sheet.id)]));
-  const orders = new Map(sheets.map(sheet => [sheet.id, openMaintenanceOrders(data, sheet.id).map(order => order.id).sort(collator.compare)[0] ?? null]));
+  const relations = createRelationSelectors(data);
+  const appointments = new Map(sheets.map(sheet => [sheet.id, relations.getRelevantAppointmentForMaintenanceSheet(sheet.id)]));
+  const orders = new Map(sheets.map(sheet => [sheet.id, relations.getPrimaryWorkOrderForMaintenanceSheet(sheet.id)?.id ?? null]));
   function defaultCompare(a: MaintenanceSheet, b: MaintenanceSheet) {
     return priority[maintenanceStatus(a, data.today)] - priority[maintenanceStatus(b, data.today)]
       || (a.nextDate ?? "9999").localeCompare(b.nextDate ?? "9999") || collator.compare(a.description, b.description) || collator.compare(a.id, b.id);

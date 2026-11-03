@@ -1,5 +1,7 @@
 import type { AppData, AppState, WorkOrder } from "../../types/domain.ts";
-import { openMaintenanceOrders, proposePlanning, proposeResize } from "./rules.ts";
+import { proposePlanning, proposeResize } from "./rules.ts";
+
+import { createRelationSelectors, createSessionWorkOrderObject, openMaintenanceOrders } from "./relations.ts";
 
 export type Action =
   | { type: "create"; sheetId: string }
@@ -20,8 +22,8 @@ export function reducer(state: AppState, action: Action): AppState {
     let sequence = state.nextTempId;
     while (state.workOrders.some(order => order.id === `TEMP-${String(sequence).padStart(3, "0")}`)) sequence++;
     const id = `TEMP-${String(sequence).padStart(3, "0")}`;
-    const order: WorkOrder = { id, customerId: sheet.customerId, sheetIds: [sheet.id], installation: sheet.description, description: `Onderhoud — ${sheet.description}`, site: sheet.site, kind: "Onderhoud", sourceStatus: "Nieuw", status: "unplanned", hasInvalidPlanning: false };
-    return { ...state, nextTempId: sequence + 1, workOrders: [order, ...state.workOrders], message: `${id} aangemaakt.`, error: null };
+    const order: WorkOrder = { id, customerId: sheet.customerId, installation: sheet.description, description: `Onderhoud — ${sheet.description}`, site: sheet.site, kind: "Onderhoud", sourceStatus: "Nieuw", status: "unplanned", hasInvalidPlanning: false };
+    return { ...state, nextTempId: sequence + 1, workOrders: [order, ...state.workOrders], workOrderObjects: [...state.workOrderObjects, createSessionWorkOrderObject(id, sheet.id)], message: `${id} aangemaakt.`, error: null };
   }
   if (action.type === "schedule") {
     const proposal = proposePlanning(state, action);
@@ -37,7 +39,7 @@ export function reducer(state: AppState, action: Action): AppState {
   }
   const order = state.workOrders.find(item => item.id === action.workOrderId);
   if (!order || order.status === "completed") return fail("Deze werkorder is al voltooid of bestaat niet meer.");
-  const slots = state.slots.filter(slot => slot.workOrderId === order.id);
+  const slots = createRelationSelectors(state).getAppointmentsForWorkOrder(order.id);
   if (!slots.length) return fail("Plan de werkorder eerst in voordat je hem voltooit.");
-  return { ...state, workOrders: state.workOrders.map(item => item.id === order.id ? { ...item, status: "completed" } : item), executions: [...state.executions, ...slots.map(slot => ({ ...slot, id: `execution-${slot.id}`, source: "session" as const }))], slots: state.slots.filter(slot => slot.workOrderId !== order.id), message: `${order.id} voltooid.`, error: null };
+  return { ...state, workOrders: state.workOrders.map(item => item.id === order.id ? { ...item, status: "completed" } : item), executions: [...state.executions, ...slots.map(slot => ({ id: `execution-${slot.id}`, workOrderId: slot.workOrderId, resourceId: slot.resourceId, date: slot.date, start: slot.start, end: slot.end, source: "session" as const }))], message: `${order.id} voltooid.`, error: null };
 }

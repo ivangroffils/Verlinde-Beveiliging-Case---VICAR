@@ -40,9 +40,6 @@ export function maintenanceStatus(sheet: MaintenanceSheet, today: string): Maint
 export function sourceOrderStatus(value: string): WorkOrder["status"] {
   return ["completed", "invoiced"].includes(value.trim().toLowerCase()) ? "completed" : "unplanned";
 }
-export function openMaintenanceOrders(data: Pick<AppData, "workOrders">, sheetId: string): WorkOrder[] {
-  return data.workOrders.filter(order => order.status !== "completed" && order.kind.toLowerCase() === "onderhoud" && order.sheetIds.includes(sheetId));
-}
 export function customerName(data: Pick<AppData, "customers">, id: string): string {
   return data.customers.find(customer => customer.id === id)?.name ?? "Onbekende klant";
 }

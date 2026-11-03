@@ -6,13 +6,18 @@ export interface MaintenanceSheet {
   lastDate: string | null; nextDate: string | null; intervalLabel: string; intervalMonths: number | null;
 }
 export interface WorkOrder {
-  id: string; customerId: string; sheetIds: string[]; installation: string; description: string;
+  id: string; customerId: string; installation: string; description: string;
   site: string; kind: string; sourceStatus: string; status: OrderStatus; hasInvalidPlanning: boolean;
+}
+export interface WorkOrderObject {
+  workOrderId: string; sheetId: string; source: "csv" | "session";
 }
 export interface Resource { id: string; name: string; role: string }
 export interface PlanningSlot {
   id: string; workOrderId: string; resourceId: string; date: string; start: number; end: number;
 }
+export interface Appointment extends PlanningSlot { resource: Resource }
+export interface ResolvedExecution extends Execution { resource: Resource }
 export interface Execution extends PlanningSlot { source: "csv" | "session" }
 export interface DataIssue {
   id: string; file: string; row: number; field: string; message: string; severity: "info" | "warning" | "error";
@@ -23,7 +28,7 @@ export interface ImportedPlanningRow {
 }
 export type InvalidPlanningRow = ImportedPlanningRow;
 export interface AppData {
-  today: string; nowMinute?: number; rawPlanning: ImportedPlanningRow[]; customers: Customer[]; sheets: MaintenanceSheet[]; workOrders: WorkOrder[];
+  today: string; nowMinute?: number; rawPlanning: ImportedPlanningRow[]; customers: Customer[]; sheets: MaintenanceSheet[]; workOrders: WorkOrder[]; workOrderObjects: WorkOrderObject[];
   resources: Resource[]; slots: PlanningSlot[]; executions: Execution[];
   issues: DataIssue[]; invalidPlanning: InvalidPlanningRow[];
 }

@@ -26,7 +26,7 @@ Aanmaken, plannen, verplaatsen en afronden bestaan alleen in React-applicatiesta
 - Gelijke geldige tijden in planning krijgen twee uur duur, bijvoorbeeld `10:00-10:00` naar `10:00-12:00`. De oorspronkelijke tijden blijven in `rawPlanning` beschikbaar, ook na verplaatsen of resizen. Dit is een informatieve normalisatie en maakt geen uitvoeringsuren aan.
 - Bestaande overlappende afspraken blijven zichtbaar en gemarkeerd. Geldige importafspraken buiten het werkvenster blijven behouden en krijgen een waarschuwing. Nieuwe afspraken mogen niet overlappen en moeten volledig binnen 08:00-18:00 vallen.
 - Gegevensproblemen hebben een ernst: informatie voor genormaliseerde tijdvolgorde, waarschuwingen voor ontbrekende/tegenstrijdige domeingegevens, fouten voor onleesbare bestanden of ongeldige CSV-schema's.
-- Expliciete installatiekoppelingen worden behouden, ook bij afwijkende klanten. Er worden geen koppelingen of onderhoudsdatums geraden.
+- Alleen `MS_HDR.nr -> WO_OBJ.fiche -> WO_OBJ.werkbon -> WO_HDR.nr` bepaalt fiche/werkorderkoppelingen. `WO_HDR.fiche` wordt volledig genegeerd en is geen vereiste importkolom. Werkorders zonder WO_OBJ blijven in Planning beschikbaar zonder gekoppelde installatie. Onbekende fiches/werkorders in WO_OBJ krijgen een gegevensmelding en worden niet gekoppeld. Expliciete geldige installatiekoppelingen blijven behouden, ook bij afwijkende klanten. Er worden geen koppelingen of onderhoudsdatums geraden.
 
 Onderhoudsurgentie gebruikt uitsluitend `volgende`, vergeleken met de actuele datum in Europe/Brussels: verstreken, vandaag t/m 30 dagen vooruit, later, of ontbrekend. Bekende intervallen worden genormaliseerd; ambigue waarden blijven zichtbaar.
 
@@ -40,7 +40,9 @@ Afronden vereist geldige planning, registreert de geplande uren als uitvoering e
 
 ## Onderhoudsoverzicht
 
-De kolom Afspraak toont precies één bruikbare afspraak uit expliciet gekoppelde werkorders: eerst de dichtstbijzijnde toekomstige start, anders de meest recente start uit het verleden. De referentie is de Brusselse datum/tijd bij laden. Afgeronde sessieafspraken blijven via hun exacte geplande uitvoeringskopie beschikbaar.
+De kolom Afspraak toont precies één bruikbare afspraak uit expliciet gekoppelde werkorders: eerst de dichtstbijzijnde toekomstige start, anders de meest recente start uit het verleden. De referentie is de Brusselse datum/tijd bij laden. Geplande afspraken blijven na afronden bewaard; de gesloten status verwijdert ze uit de actieve planner. Uitgevoerde uren zijn een aparte stroom en worden nooit gebruikt om een afspraak te verzinnen.
+
+De gedeelde selectorlaag gebruikt indexes op werkordernummer, WO_OBJ-fiche, resourcecode en uren per werkorder. React-componenten gebruiken deze selectors voor de relatieketen. Tijdelijke werkorders krijgen een expliciet WO_OBJ-record met bron `session` in het geheugen; de CSV blijft ongewijzigd.
 
 Alle acht kolommen ondersteunen oplopend, aflopend en terug naar de standaardsortering. Ontbrekende datums en afspraken blijven achteraan. Status volgt urgentie; documentnummers gebruiken natuurlijke sortering. Sortering en filters blijven bij navigatie behouden.
 

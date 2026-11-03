@@ -1,6 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { parseDate, parseTime, normalizeInterval, maintenanceStatus, sourceOrderStatus, openMaintenanceOrders, validatePlanning, brusselsToday } from "../src/lib/domain/rules.ts";
+import { parseDate, parseTime, normalizeInterval, maintenanceStatus, sourceOrderStatus, activeSlots, validatePlanning, brusselsToday } from "../src/lib/domain/rules.ts";
+import { createRelationSelectors, openMaintenanceOrders } from "../src/lib/domain/relations.ts";
 import { initialState, reducer } from "../src/lib/domain/state.ts";
 import { parseCsv, loadTable } from "../src/lib/data/repository.ts";
 import { loadAppData, normalizeData, type Tables } from "../src/lib/data/normalize.ts";
@@ -9,7 +10,7 @@ import type { AppData, MaintenanceSheet, PlanningSlot } from "../src/types/domai
 const real = await loadAppData(undefined, "2026-11-03");
 const sheet: MaintenanceSheet = { id: "s", customerId: "c", description: "Alarm", category: "Inbraak", site: "Teststraat", lastDate: null, nextDate: null, intervalLabel: "Jaarlijks", intervalMonths: 12 };
 function fixture(): AppData {
-  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", sheetIds: ["s"], description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], slots: [], executions: [], issues: [], invalidPlanning: [], rawPlanning: [] };
+  return { today: "2026-11-03", customers: [{ id: "c", name: "Klant" }], sheets: [sheet], resources: [{ id: "r", name: "Volledige Naam", role: "PT" }], workOrders: [{ id: "w", customerId: "c", description: "Onderhoud", installation: "Alarm", site: "Teststraat", kind: "Onderhoud", sourceStatus: "Planned", status: "unplanned", hasInvalidPlanning: false }], workOrderObjects: [{ workOrderId: "w", sheetId: "s", source: "csv" }], slots: [], executions: [], issues: [], invalidPlanning: [], rawPlanning: [] };
 }
 const candidate: PlanningSlot = { id: "new", workOrderId: "w", resourceId: "r", date: "2026-11-03", start: 600, end: 720 };
 function tablesWithPlanning(row: Record<string, string>): Tables {
@@ -19,7 +20,7 @@ function tablesWithPlanning(row: Record<string, string>): Tables {
     RES: { ...empty("RES"), rows: [{ row: 2, raw: { code: "r", naam: "Resource", rol: "PT" } }] },
     MS_HDR: { ...empty("MS_HDR"), rows: [{ row: 2, raw: { nr: "s", klant: "different", omschrijving: "Alarm", actief: "J", volgende: "", laatste: "", frequentie: "1J" } }] },
     WO_HDR: { ...empty("WO_HDR"), rows: [{ row: 2, raw: { nr: "w", klant: "c", fiche: "s", soort: "Onderhoud", status: "Planned" } }] },
-    WO_OBJ: empty("WO_OBJ"), WO_HRS_PL: { ...empty("WO_HRS_PL"), rows: [{ row: 2, raw: row }] }, WO_HRS_EX: empty("WO_HRS_EX"), WO_ART_PL: empty("WO_ART_PL"),
+    WO_OBJ: { ...empty("WO_OBJ"), rows: [{ row: 2, raw: { werkbon: "w", fiche: "s", omschrijving: "Alarm", soort: "Onderhoud" } }] }, WO_HRS_PL: { ...empty("WO_HRS_PL"), rows: [{ row: 2, raw: row }] }, WO_HRS_EX: empty("WO_HRS_EX"), WO_ART_PL: empty("WO_ART_PL"),
   };
 }
 test("strict dates reject empty, impossible, partial and ambiguous formats", () => {
@@ -105,7 +106,7 @@ test("customer mismatches remain explicit rather than overwriting either custome
 test("create copies sheet context, links immediately, uses temporary ids and prevents duplicate creation", () => {
   const data = fixture(); data.workOrders = [];
   const created = reducer(initialState(data), { type: "create", sheetId: "s" });
-  assert.equal(created.workOrders[0].id, "TEMP-001"); assert.equal(created.workOrders[0].status, "unplanned"); assert.deepEqual(created.workOrders[0].sheetIds, ["s"]);
+  assert.equal(created.workOrders[0].id, "TEMP-001"); assert.equal(created.workOrders[0].status, "unplanned"); assert.equal(createRelationSelectors(created).getManagementSheetForWorkOrder(created.workOrders[0].id)?.id, "s");
   assert.equal(created.workOrders[0].customerId, "c"); assert.equal(created.workOrders[0].site, sheet.site); assert.equal(created.workOrders[0].installation, sheet.description);
   const duplicate = reducer(created, { type: "create", sheetId: "s" }); assert.equal(duplicate.workOrders.length, 1); assert.ok(duplicate.error);
   assert.equal(data.workOrders.length, 0);
@@ -147,7 +148,7 @@ test("completion needs a plan, records exact execution once and does not change 
   assert.ok(reducer(state, { type: "complete", workOrderId: "w" }).error);
   const planned = reducer(state, { type: "schedule", workOrderId: "w", resourceId: "r", date: "2026-11-03", start: 480 });
   const completed = reducer(planned, { type: "complete", workOrderId: "w" });
-  assert.equal(completed.workOrders[0].status, "completed"); assert.equal(completed.slots.length, 0); assert.equal(completed.executions.length, 1);
+  assert.equal(completed.workOrders[0].status, "completed"); assert.equal(activeSlots(completed).length, 0); assert.equal(completed.slots.length, 1); assert.equal(completed.executions.length, 1);
   assert.equal(completed.executions[0].start, 480); assert.equal(completed.executions[0].end, 600); assert.equal(completed.executions[0].resourceId, "r"); assert.equal(completed.executions[0].date, "2026-11-03");
   assert.deepEqual(completed.sheets, state.sheets);
   const repeated = reducer(completed, { type: "complete", workOrderId: "w" }); assert.equal(repeated.executions.length, 1); assert.ok(repeated.error);

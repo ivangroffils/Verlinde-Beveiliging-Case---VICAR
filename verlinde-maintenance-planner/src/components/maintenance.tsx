@@ -3,10 +3,10 @@
 import { AlertTriangle, ArrowDown, ArrowUp, ArrowUpDown, ArrowUpRight, CalendarClock, CheckCircle2, HelpCircle, Plus, Search } from "lucide-react";
 import { useApp } from "./app-provider";
 import { Button, inputClass, StatusBadge } from "./ui";
-import { customerName, formatDate, formatTime, maintenanceStatus, openMaintenanceOrders } from "@/lib/domain/rules";
-import type { MaintenanceSheet, PlanningSlot } from "@/types/domain";
+import { customerName, formatDate, formatTime, maintenanceStatus } from "@/lib/domain/rules";
+import type { MaintenanceSheet, Appointment as ResolvedAppointment } from "@/types/domain";
 
-import { nextMaintenanceSort, relevantAppointment, sortMaintenance, type MaintenanceSortKey } from "@/lib/domain/maintenance";
+import { nextMaintenanceSort, sortMaintenance, type MaintenanceSortKey } from "@/lib/domain/maintenance";
 
 const columns: { key: MaintenanceSortKey; label: string }[] = [
   { key: "customer", label: "Klant / installatie" }, { key: "category", label: "Type" },
@@ -14,31 +14,35 @@ const columns: { key: MaintenanceSortKey; label: string }[] = [
   { key: "interval", label: "Interval" }, { key: "status", label: "Status" },
   { key: "workOrder", label: "Werkorder" }, { key: "appointment", label: "Afspraak" },
 ];
-function Appointment({ slot }: { slot: PlanningSlot | null }) {
-  const { state } = useApp();
+function Appointment({ slot }: { slot: ResolvedAppointment | null }) {
   if (!slot) return <span className="text-slate-300">—</span>;
-  const resource = state.resources.find(item => item.id === slot.resourceId)?.name ?? "—";
+  const resource = slot.resource.name;
   const label = `${formatDate(slot.date)} · ${formatTime(slot.start)}–${formatTime(slot.end)} · ${resource}`;
   return <div className="max-w-56 text-[11px]" title={label}><p className="whitespace-nowrap tabular-nums text-slate-600">{formatDate(slot.date)} · {formatTime(slot.start)}–{formatTime(slot.end)}</p><p className="mt-0.5 truncate text-[10px] text-slate-400">{resource}</p></div>;
 }
 
 export function MaintenanceOverview() {
-  const { state, dispatch, openOrder, search, setSearch, filter, setFilter, maintenanceSort, setMaintenanceSort } = useApp();
+  const { state, relations, dispatch, openOrder, search, setSearch, filter, setFilter, maintenanceSort, setMaintenanceSort } = useApp();
   const counts = { all: state.sheets.length, overdue: 0, upcoming: 0, missing: 0, ok: 0 };
   state.sheets.forEach(sheet => counts[maintenanceStatus(sheet, state.today)]++);
   const matching = sortMaintenance(state, state.sheets.filter(sheet =>
     (filter === "all" || maintenanceStatus(sheet, state.today) === filter)
     && `${customerName(state, sheet.customerId)} ${sheet.description}`.toLocaleLowerCase("nl").includes(search.toLocaleLowerCase("nl"))), maintenanceSort);
-  const appointments = new Map(matching.map(sheet => [sheet.id, relevantAppointment(state, sheet.id)]));
+  const appointments = new Map(matching.map(sheet => [sheet.id, relations.getRelevantAppointmentForMaintenanceSheet(sheet.id)]));
   const interval = (sheet: MaintenanceSheet) => sheet.intervalLabel === "?" ? "—" : sheet.intervalLabel;
 
   function orderAction(sheet: MaintenanceSheet) {
-    const existing = openMaintenanceOrders(state, sheet.id);
-    return existing.length ? <div className="flex flex-col items-start">{existing.map(order => (
-      <button key={order.id} onClick={() => openOrder(order.id)} className="inline-flex min-h-8 items-center gap-1 text-xs font-medium text-teal-700 hover:text-teal-900 hover:underline">
-        {order.id}<ArrowUpRight size={12} />
-      </button>
-    ))}</div> : <Button variant="secondary" className="min-h-8 gap-1 whitespace-nowrap px-2 text-[11px]" onClick={() => dispatch({ type: "create", sheetId: sheet.id })}><Plus size={13} />Werkorder maken</Button>;
+    const linked = relations.getWorkOrdersForMaintenanceSheet(sheet.id);
+    const primary = relations.getPrimaryWorkOrderForMaintenanceSheet(sheet.id);
+    const canCreate = !relations.getOpenMaintenanceWorkOrders(sheet.id).length;
+    const others = linked.filter(order => order.id !== primary?.id);
+    const create = () => dispatch({ type: "create", sheetId: sheet.id });
+    if (!primary) return <Button variant="secondary" className="min-h-8 gap-1 whitespace-nowrap px-2 text-[11px]" onClick={create}><Plus size={13} />Werkorder maken</Button>;
+    return <div className="flex items-center gap-1">
+      <button onClick={() => openOrder(primary.id)} className="inline-flex min-h-8 items-center gap-1 whitespace-nowrap text-xs font-medium text-teal-700 hover:text-teal-900 hover:underline">{primary.id}<ArrowUpRight size={12} /></button>
+      {others.length > 0 && <details className="relative"><summary className="flex min-h-8 cursor-pointer list-none items-center rounded px-1 text-[10px] text-slate-400 hover:bg-slate-100" aria-label={`Alle ${linked.length} gekoppelde werkorders`}>+{others.length}</summary><div className="absolute right-0 top-full z-20 min-w-40 rounded-lg border border-slate-200 bg-white p-1 shadow-lg">{others.map(order => <button key={order.id} onClick={() => openOrder(order.id)} className="flex min-h-9 w-full items-center justify-between gap-3 rounded px-2 text-left text-xs text-slate-600 hover:bg-slate-50"><span>{order.id}</span><span className="text-[10px] text-slate-400">{order.status === "completed" ? "Voltooid" : order.status === "planned" ? "Ingepland" : "Ongepland"}</span></button>)}</div></details>}
+      {canCreate && <Button variant="quiet" className="min-h-8 px-1.5" onClick={create} title="Werkorder maken"><Plus size={13} /><span className="sr-only">Werkorder maken</span></Button>}
+    </div>;
   }
 
   return <>

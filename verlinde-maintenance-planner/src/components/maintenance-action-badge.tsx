@@ -11,7 +11,7 @@ const tones: Record<MaintenanceActionState, string> = {
 };
 export function MaintenanceActionBadge({ state }: { state: MaintenanceActionState }) {
   const Icon = { "to-start": PlusCircle, "to-plan": CalendarClock, planned: CalendarCheck2, "check-closure": CheckCircle2 }[state];
-  return <span data-follow-up={state} className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium ${tones[state]}`}><Icon size={12} aria-hidden="true" />{maintenanceActionLabels[state]}</span>;
+  return <span data-follow-up={state} title={maintenanceActionLabels[state]} className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium ${tones[state]}`}><Icon size={12} aria-hidden="true" /><span>{maintenanceActionLabels[state]}</span></span>;
 }
 export function MaintenanceUrgencyBadge({ status }: { status: MaintenanceStatus }) {
   return <span data-urgency={status}><StatusBadge status={status} label={maintenanceUrgencyLabels[status]} /></span>;

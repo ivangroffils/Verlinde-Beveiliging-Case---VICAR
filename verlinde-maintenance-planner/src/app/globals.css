@@ -12,3 +12,94 @@ button:not(:disabled), summary { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* The selected grid follows viewport width; table contents always fit their card. */
+.maintenance-category-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1.25rem;
+}
+@media (min-width: 1600px) {
+  .maintenance-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.maintenance-grid-table { table-layout: fixed; }
+.maintenance-grid-table col[data-column="customer"] { width: 19%; }
+.maintenance-grid-table col[data-column="nextDate"] { width: 11%; }
+.maintenance-grid-table col[data-column="urgency"] { width: 13%; }
+.maintenance-grid-table col[data-column="status"] { width: 14%; }
+.maintenance-grid-table col[data-column="workOrder"] { width: 14%; }
+.maintenance-grid-table col[data-column="appointment"] { width: 15%; }
+.maintenance-grid-table col[data-column="action"] { width: 14%; }
+.maintenance-grid-table :is(th, td) {
+  min-width: 0;
+  max-width: none;
+  padding-inline: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.maintenance-grid-table td { font-size: 10px; }
+.maintenance-grid-table th > button {
+  width: 100%;
+  min-width: 0;
+  gap: 2px;
+  letter-spacing: 0;
+  font-size: 9px;
+}
+.maintenance-grid-table th > button > span {
+  min-width: 0;
+  max-width: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.maintenance-grid-table svg { flex-shrink: 0; }
+.maintenance-grid-table td :is(p, [data-appointment-date], [data-appointment-time]),
+.maintenance-grid-table td[data-column="customer"] > button {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.maintenance-grid-table td[data-column="customer"] > button { font-size: 11px; }
+.maintenance-grid-table [data-appointment-separator] { display: none; }
+.maintenance-grid-table :is([data-follow-up], [data-urgency] > span) {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
+  padding-inline: 4px;
+  gap: 0;
+  font-size: 10px;
+}
+.maintenance-grid-table :is([data-follow-up], [data-urgency] > span) > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.maintenance-grid-table :is([data-follow-up], [data-urgency]) svg,
+.maintenance-grid-table td[data-column="action"] svg { display: none; }
+.maintenance-grid-table td[data-column="action"] > :is(button, a) {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 4px;
+  gap: 0;
+  font-size: 10px;
+}
+.maintenance-grid-table td[data-column="action"] > :is(button, a) > span {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.maintenance-grid-table th[aria-sort="none"] svg { display: none; }
+.maintenance-grid-table th:not([aria-sort="none"]) svg { width: 8px; }
+
+[data-summary-category="urgency"] { border-top: 2px solid #94a3b8; }
+[data-summary-category="follow-up"] { border-top: 2px solid #0d9488; }

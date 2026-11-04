@@ -86,7 +86,7 @@ export function matchesMaintenanceFilter(row: MaintenanceOverviewRow, filter: Ma
 }
 export function maintenanceSummary(rows: MaintenanceOverviewRow[]) {
   const count = (filter: MaintenanceFilter) => rows.filter(row => matchesMaintenanceFilter(row, filter)).length;
-  return { overdue: count("overdue"), upcoming: count("upcoming"), toPlan: count("to-plan"), planned: count("planned") };
+  return { overdue: count("overdue"), upcoming: count("upcoming"), toPlan: count("to-plan"), checkClosure: count("check-closure") };
 }
 export function nextMaintenanceSort(current: MaintenanceSort, key: MaintenanceSortKey): MaintenanceSort {
   if (current?.key !== key) return { key, direction: "asc" };

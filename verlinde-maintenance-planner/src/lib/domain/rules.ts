@@ -20,7 +20,14 @@ export function validIsoDate(value: string): boolean {
   return isValid(date) && format(date, "yyyy-MM-dd") === value;
 }
 export function calendarDate(value: string): Date { return parse(value, "yyyy-MM-dd", new Date(2000, 0, 1)); }
-export function formatDate(value: string | null): string { return value && validIsoDate(value) ? format(calendarDate(value), "dd/MM/yyyy") : "\u2014"; }
+const dateFormatters = {
+  full: new Intl.DateTimeFormat("nl-BE", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }),
+  calendar: new Intl.DateTimeFormat("nl-BE", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" }),
+};
+export function formatDate(value: string | null | undefined, style: keyof typeof dateFormatters = "full"): string {
+  // Calendar dates have no timezone: pin presentation to UTC to preserve the source day.
+  return value && validIsoDate(value) ? dateFormatters[style].format(new Date(`${value}T12:00:00Z`)) : "\u2014";
+}
 export function parseTime(value: string): number | null {
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(value.trim())) return null;
   const [hours, minutes] = value.trim().split(":").map(Number);

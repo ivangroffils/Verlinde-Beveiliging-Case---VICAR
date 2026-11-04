@@ -77,7 +77,7 @@ test("existing execution still blocks new planning, moves and resizing", () => {
 });
 test("query selection resolves a standalone WO and its nearest future appointment, without a management link", () => {
   const d = data(); order(d, "W B/1"); d.workOrderObjects = [];
-  assert.equal(planningHref("W B/1"), "/planning?wo=W%20B%2F1"); assert.equal(getPlanningSelectors(d).getSelection("W B/1").order?.id, "W B/1");
+  assert.equal(planningHref("W B/1"), "/planning?wo=W%20B%2F1&mode=view"); assert.equal(getPlanningSelectors(d).getSelection("W B/1").order?.id, "W B/1");
   d.slots.push({ id: "past", workOrderId: "W B/1", resourceId: "r", date: "2026-11-01", start: 600, end: 720 }, { id: "far", workOrderId: "W B/1", resourceId: "r", date: "2026-11-20", start: 600, end: 720 }, { id: "future", workOrderId: "W B/1", resourceId: "r", date: "2026-11-05", start: 600, end: 720 });
   const selection = getPlanningSelectors(d).getSelection("W B/1"); assert.equal(selection.appointment?.id, "future"); assert.equal(selection.focusAppointment?.id, "future"); assert.equal(selection.appointment?.resource.name, "Volledige technicusnaam"); assert.equal(getPlanningSelectors(d).getSelection("unknown").canSchedule, false);
 });
@@ -95,7 +95,7 @@ test("overview, filters and detail action share one cached selector result", () 
   const d = data(); order(d); const selectors = createMaintenanceSelectors(d);
   assert.strictEqual(selectors.getOverview()[0], selectors.getMaintenanceAction("s")); assert.equal(selectors.getMaintenanceAction("unknown"), null);
   const planned = reducer(initialState(d), { type: "schedule", workOrderId: "w", resourceId: "r", date: "2026-11-05", start: 600 });
-  const row = view(planned); assert.equal(row.state, "planned"); assert.equal(matchesMaintenanceFilter(row, "planned"), true); assert.equal(maintenanceSummary(createMaintenanceSelectors(planned).getOverview()).planned, 1);
+  const row = view(planned); assert.equal(row.state, "planned"); assert.equal(matchesMaintenanceFilter(row, "planned"), true); assert.equal(maintenanceSummary(createMaintenanceSelectors(planned).getOverview()).toPlan, 0);
   const done = reducer(planned, { type: "complete", workOrderId: "w" }); assert.equal(view(done).state, "to-start"); assert.equal(maintenanceSummary(createMaintenanceSelectors(done).getOverview()).overdue, 1);
 });
 test("real Lieve Deprez keeps its active WO operational; newer closed work remains only in history", async () => {
@@ -129,4 +129,38 @@ test("actual unknown dates stay reachable while the entire source remains unchan
   const d = await loadAppData(undefined, "2026-11-03"), before = structuredClone(d), rows = createMaintenanceSelectors(d).getOverview();
   assert.equal(rows.length, 193); assert.equal(rows.filter(row => matchesMaintenanceFilter(row, "missing")).length, 185);
   assert.ok(rows.every(row => ["to-start", "to-plan", "planned", "check-closure"].includes(row.state))); assert.deepEqual(d, before);
+});
+
+
+test("KPIs count installations across independent dimensions and exclude closed, repair and duplicate hours", () => {
+  const d = data(); order(d, "older", { createdDate: "2025-01-01" }); order(d); execute(d);
+  d.executions.push({ ...d.executions[0], id: "ex-second", start: 780, end: 840 });
+  d.slots.push({ id: "pl", workOrderId: "w", resourceId: "r", date: "2026-11-16", start: 480, end: 600 }, { id: "pl-second", workOrderId: "w", resourceId: "r", date: "2026-11-17", start: 480, end: 600 });
+  for (const [id, kind, sourceStatus] of [["closed", "Onderhoud", "Completed"], ["invoiced", "Onderhoud", "Invoiced"], ["repair", "Herstelling", "Verified"]]) {
+    d.sheets.push({ ...d.sheets[0], id, nextDate: "2027-01-01" });
+    order(d, id, { sourceStatus, status: sourceStatus === "Verified" ? "unplanned" : "completed" }, kind);
+    d.workOrderObjects[d.workOrderObjects.length - 1].sheetId = id;
+    execute(d, id);
+  }
+  const before = structuredClone(d), rows = createMaintenanceSelectors(d).getOverview();
+  assert.equal(rows[0].state, "check-closure");
+  assert.deepEqual(maintenanceSummary(rows), { overdue: 1, upcoming: 0, toPlan: 0, checkClosure: 1 });
+  assert.deepEqual(d, before);
+});
+
+test("KPIs recalculate after creation, scheduling and completion without changing urgency", () => {
+  const d = data(); d.sheets[0].nextDate = "2026-11-20";
+  const summary = (value: AppData) => maintenanceSummary(createMaintenanceSelectors(value).getOverview());
+  const expected = { overdue: 0, upcoming: 1, toPlan: 0, checkClosure: 0 };
+  let state = initialState(d); assert.deepEqual(summary(state), expected);
+  state = reducer(state, { type: "create", sheetId: "s" });
+  assert.deepEqual(summary(state), { ...expected, toPlan: 1 });
+  state = reducer(state, { type: "schedule", workOrderId: "TEMP-001", resourceId: "r", date: "2026-11-16", start: 480 });
+  assert.deepEqual(summary(state), expected);
+  state = reducer(state, { type: "complete", workOrderId: "TEMP-001" });
+  assert.equal(state.executions.length, 1); assert.deepEqual(summary(state), expected);
+  const executed = data(); order(executed); execute(executed);
+  assert.deepEqual(summary(executed), { overdue: 1, upcoming: 0, toPlan: 0, checkClosure: 1 });
+  const closed = reducer(initialState(executed), { type: "complete", workOrderId: "w" });
+  assert.deepEqual(summary(closed), { overdue: 1, upcoming: 0, toPlan: 0, checkClosure: 0 });
 });

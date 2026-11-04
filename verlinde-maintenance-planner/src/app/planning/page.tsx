@@ -1,6 +1,8 @@
 import { PlanningOverview } from "@/components/planning";
-export default async function PlanningPage({ searchParams }: { searchParams: Promise<{ wo?: string | string[] }> }) {
-  const { wo } = await searchParams;
+import { plannerModeFromQuery } from "@/lib/domain/planning";
+export default async function PlanningPage({ searchParams }: { searchParams: Promise<{ wo?: string | string[]; mode?: string | string[] }> }) {
+  const { wo, mode } = await searchParams;
   const workOrderId = typeof wo === "string" && wo ? wo : null;
-  return <PlanningOverview key={workOrderId ?? "default"} workOrderId={workOrderId} />;
+  const plannerMode = plannerModeFromQuery(mode);
+  return <PlanningOverview key={`${workOrderId ?? "default"}:${plannerMode}`} workOrderId={workOrderId} plannerMode={plannerMode} />;
 }

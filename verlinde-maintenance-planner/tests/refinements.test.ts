@@ -4,6 +4,7 @@ import type { AppData, MaintenanceSheet, PlanningSlot } from "../src/types/domai
 import { normalizeData, type Tables } from "../src/lib/data/normalize.ts";
 import { brusselsMinute, proposePlanning, proposeResize, snapTime } from "../src/lib/domain/rules.ts";
 import { nextMaintenanceSort, relevantAppointment, sortMaintenance, type MaintenanceSortKey } from "../src/lib/domain/maintenance.ts";
+import { planningHref, plannerModeFromQuery } from "../src/lib/domain/planning.ts";
 import { initialState, reducer } from "../src/lib/domain/state.ts";
 
 const sheet: MaintenanceSheet = { id: "1", customerId: "c1", description: "Zulu", category: "Camera", site: "Locatie", lastDate: "2025-11-02", nextDate: "2026-11-02", intervalLabel: "Jaarlijks", intervalMonths: 12 };
@@ -151,4 +152,12 @@ test("completed orders cannot be resized and rejected drag previews leave planni
   const before = structuredClone(state.slots);
   const failed = reducer(initialState(state), { type: "error", message: "Geen geldig tijdvak gekozen." });
   assert.deepEqual(failed.slots, before);
+});
+
+test("planner navigation explicitly separates view and place and never infers placement from a WO", () => {
+  assert.equal(planningHref("WB2026-0248", "view"), "/planning?wo=WB2026-0248&mode=view");
+  assert.equal(planningHref("TEMP-001", "place"), "/planning?wo=TEMP-001&mode=place");
+  assert.equal(planningHref("W B/1"), "/planning?wo=W%20B%2F1&mode=view");
+  assert.equal(plannerModeFromQuery("place"), "place");
+  for (const value of ["view", undefined, null, "", "PLACE", "move", ["place"]]) assert.equal(plannerModeFromQuery(value), "view");
 });

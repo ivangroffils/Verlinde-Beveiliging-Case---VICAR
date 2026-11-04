@@ -1,9 +1,10 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type RefObject } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type RefObject, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useDraggable } from "@dnd-kit/core";
 import type { PlanningSlot } from "@/types/domain";
+import type { PlannerMode } from "@/lib/domain/planning";
 import type { PlanningProposal } from "@/lib/domain/rules";
 import { SLOT_STEP, snapTime, WINDOW_END, WINDOW_START } from "@/lib/domain/rules";
 import { useApp } from "./app-provider";
@@ -13,6 +14,8 @@ export interface DropTarget { resourceId: string; date: string; start: number }
 export interface Point { x: number; y: number }
 export interface ResizeDraft { slotId: string; end: number; kind: "pointer" | "keyboard" }
 interface Interaction {
+  plannerMode: PlannerMode;
+  previewTarget: (target: DropTarget | null, point?: Point) => void;
   selectedSlotId?: string;
   focusedSlotId?: string;
   selectedOrderId?: string | null;
@@ -139,15 +142,18 @@ export function useBookingResize(timelineHeight: number, anchorRef: RefObject<Po
   return { draft, beginResize, resizeKey, reset };
 }
 
-export function FloatingFeedback({ anchorRef, label, error, announce = false }: { anchorRef: RefObject<Point>; label: string; error: string | null; announce?: boolean }) {
+export function FloatingFeedback({ anchorRef, label, error, announce = false, children }: { anchorRef: RefObject<Point>; label: string; error: string | null; announce?: boolean; children?: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let frame = 0;
     function position() {
       const node = ref.current;
       if (node) {
-        const x = Math.max(8, Math.min(innerWidth - node.offsetWidth - 8, anchorRef.current.x + 14));
-        const y = Math.max(8, Math.min(innerHeight - node.offsetHeight - 8, anchorRef.current.y + 18));
+        const viewportWidth = document.documentElement.clientWidth;
+        const viewportHeight = document.documentElement.clientHeight;
+        node.style.maxWidth = `${Math.max(0, Math.min(360, viewportWidth - 16))}px`;
+        const x = Math.max(8, Math.min(viewportWidth - node.offsetWidth - 8, anchorRef.current.x + 14));
+        const y = Math.max(8, Math.min(viewportHeight - node.offsetHeight - 8, anchorRef.current.y + 18));
         node.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       }
       frame = requestAnimationFrame(position);
@@ -155,5 +161,5 @@ export function FloatingFeedback({ anchorRef, label, error, announce = false }: 
     position();
     return () => cancelAnimationFrame(frame);
   }, [anchorRef]);
-  return createPortal(<div ref={ref} data-planner-feedback data-invalid={Boolean(error)} role={announce ? "status" : undefined} aria-hidden={!announce} className={`pointer-events-none fixed left-0 top-0 z-50 max-w-[min(360px,calc(100vw-16px))] rounded-lg border bg-white px-3 py-2 shadow-lg ${error ? "border-rose-300" : "border-teal-300"}`}><p className="text-[11px] font-medium leading-5 text-slate-700">{label}</p>{error && <p className="text-[10px] leading-4 text-rose-600">{error}</p>}</div>, document.body);
+  return createPortal(<div ref={ref} data-planner-feedback data-placement-preview={children ? true : undefined} data-invalid={Boolean(error)} role={announce ? "status" : undefined} aria-hidden={!announce} className={`pointer-events-none fixed left-0 top-0 z-50 max-w-[min(360px,calc(100vw-16px))] rounded-lg border bg-white px-3 py-2 shadow-lg ${error ? "border-rose-300" : "border-teal-300"}`}>{children ?? <p className="text-[11px] font-medium leading-5 text-slate-700">{label}</p>}{error && <p className="text-[10px] leading-4 text-rose-600">{error}</p>}</div>, document.body);
 }

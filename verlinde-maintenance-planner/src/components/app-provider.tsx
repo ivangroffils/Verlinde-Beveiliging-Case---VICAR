@@ -9,6 +9,8 @@ interface ContextValue {
   planning: PlanningSelectors;
   relations: RelationSelectors; maintenance: MaintenanceSelectors;
   selectedMaintenanceId: string | null; openMaintenance: (id: string) => void; closeMaintenance: () => void;
+  maintenanceGrid: boolean; setMaintenanceGrid: (value: boolean) => void;
+  groupMaintenanceByCategory: boolean; setGroupMaintenanceByCategory: (value: boolean) => void;
   maintenanceSort: MaintenanceSort; setMaintenanceSort: (value: MaintenanceSort) => void;
   state: AppState; dispatch: Dispatch<Action>; selectedOrderId: string | null;
   openOrder: (id: string) => void; closeOrder: () => void;
@@ -23,6 +25,8 @@ export function AppProvider({ data, children }: { data: AppData; children: React
   const maintenance = useMemo(() => createMaintenanceSelectors(state, relations), [state, relations]);
   const [selectedMaintenanceId, setSelectedMaintenanceId] = useState<string | null>(null);
   const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
+  const [maintenanceGrid, setMaintenanceGrid] = useState(false);
+  const [groupMaintenanceByCategory, setGroupMaintenanceByCategory] = useState(false);
   const [maintenanceSort, setMaintenanceSort] = useState<MaintenanceSort>(null);
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<MaintenanceFilter>("all");
@@ -30,7 +34,7 @@ export function AppProvider({ data, children }: { data: AppData; children: React
   const openMaintenance = useCallback((id: string) => { setSelectedOrderId(null); setSelectedMaintenanceId(id); }, []);
   const closeMaintenance = useCallback(() => setSelectedMaintenanceId(null), []);
   const closeOrder = useCallback(() => setSelectedOrderId(null), []);
-  return <AppContext.Provider value={{ planning, selectedMaintenanceId, openMaintenance, closeMaintenance, maintenance, relations, maintenanceSort, setMaintenanceSort, state, dispatch, selectedOrderId, openOrder, closeOrder, search, setSearch, filter, setFilter }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ maintenanceGrid, setMaintenanceGrid, groupMaintenanceByCategory, setGroupMaintenanceByCategory, planning, selectedMaintenanceId, openMaintenance, closeMaintenance, maintenance, relations, maintenanceSort, setMaintenanceSort, state, dispatch, selectedOrderId, openOrder, closeOrder, search, setSearch, filter, setFilter }}>{children}</AppContext.Provider>;
 }
 export function useApp() {
   const context = useContext(AppContext);

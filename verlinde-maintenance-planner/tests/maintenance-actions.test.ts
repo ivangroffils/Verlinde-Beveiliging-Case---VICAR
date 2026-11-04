@@ -132,7 +132,7 @@ test("default priority follows the specified urgency and follow-up combinations"
   order(state, "p", {}, "planned"); appointment(state, "p"); order(state, "u", {}, "to-plan");
   const rows = getMaintenanceOverview(state);
   assert.deepEqual(sortMaintenanceRows(rows, null).map(row => row.sheet.id), ["to-start", "to-plan", "planned", "upcoming", "unknown", "later"]);
-  assert.deepEqual(maintenanceSummary(rows), { overdue: 3, upcoming: 1, toPlan: 1, planned: 1 });
+  assert.deepEqual(maintenanceSummary(rows), { overdue: 3, upcoming: 1, toPlan: 1, checkClosure: 0 });
   for (const filter of ["overdue", "upcoming", "ok", "missing", "to-start", "to-plan", "planned", "check-closure"] as const) assert.ok(rows.filter(row => matchesMaintenanceFilter(row, filter)).every(row => row.state === filter || row.urgency === filter));
 });
 test("actual export gives the expected simple operational actions without changing source values", async () => {

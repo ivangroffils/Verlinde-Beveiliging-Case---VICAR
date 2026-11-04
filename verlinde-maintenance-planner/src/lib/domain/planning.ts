@@ -1,7 +1,9 @@
 import type { AppData, Appointment, WorkOrder } from "../../types/domain.ts";
 import { createRelationSelectors } from "./relations.ts";
 
-export const planningHref = (workOrderId: string) => `/planning?wo=${encodeURIComponent(workOrderId)}`;
+export type PlannerMode = "view" | "place";
+export const plannerModeFromQuery = (value: unknown): PlannerMode => value === "place" ? "place" : "view";
+export const planningHref = (workOrderId: string, mode: PlannerMode = "view") => `/planning?wo=${encodeURIComponent(workOrderId)}&mode=${mode}`;
 export function getPlanningSelectors(data: AppData) {
   const relations = createRelationSelectors(data);
   const executedIds = new Set(data.executions.map(execution => execution.workOrderId));

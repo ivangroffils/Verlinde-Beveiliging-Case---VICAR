@@ -10,7 +10,7 @@ export function Button({ children, variant = "primary", className = "", ...props
 const tones = { overdue: "border-rose-100 bg-rose-50/70 text-rose-700", upcoming: "border-amber-100 bg-amber-50/70 text-amber-800", ok: "border-teal-100 bg-teal-50/70 text-teal-700", missing: "border-slate-100 bg-slate-50 text-slate-600" };
 export function StatusBadge({ status, label }: { status: MaintenanceStatus; label?: string }) {
   const Icon = { overdue: AlertTriangle, upcoming: Clock3, ok: CheckCircle2, missing: HelpCircle }[status];
-  return <span className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium ${tones[status]}`}><Icon size={13} aria-hidden="true" />{label ?? statusLabels[status]}</span>;
+  return <span title={label ?? statusLabels[status]} className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium ${tones[status]}`}><Icon size={13} aria-hidden="true" /><span>{label ?? statusLabels[status]}</span></span>;
 }
 export function OrderBadge({ order }: { order: WorkOrder }) {
   return <span className={`inline-flex rounded-md px-2 py-0.5 text-[11px] font-medium ${order.status === "completed" ? "bg-teal-50 text-teal-800" : order.status === "planned" ? "bg-sky-50 text-sky-800" : "bg-amber-50 text-amber-800"}`}>{order.status === "completed" ? "Voltooid" : order.status === "planned" ? "Ingepland" : "Ongepland"}</span>;

@@ -85,6 +85,11 @@ Op **4 november 2026** zijn vijf scenario's functioneel getest.
 
 De tests bevestigen de belangrijkste statusberekeningen, historische gegevensweergave en planningsworkflows. Dit is een gerichte functionele validatie, geen volledige regressietest.
 
+
+### AI-gebruik
+
+Tijdens de ontwikkeling heb ik AI (Codex/ChatGPT) gebruikt als ondersteuning bij het programmeren, refactoren en testen. Ik heb zelf het bestaande ERP onderzocht, de functionele keuzes en businessregels bepaald en de belangrijkste workflows gecontroleerd aan de hand van de CSV-exports. Vijf concrete testscenario's zijn succesvol gevalideerd.
+
 ---
 
 **Doel:** de bestaande ERP-gegevens omzetten naar een overzichtelijke en actiegerichte workflow, zonder het volledige systeem te vervangen.

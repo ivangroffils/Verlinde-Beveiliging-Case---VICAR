@@ -103,3 +103,12 @@ button:not(:disabled), summary { cursor: pointer; }
 
 [data-summary-category="urgency"] { border-top: 2px solid #94a3b8; }
 [data-summary-category="follow-up"] { border-top: 2px solid #0d9488; }
+
+/* Keep table navigation and keyboard focus quiet, clear and inside clipped cards. */
+[data-maintenance-scroll] {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  scroll-padding-block-start: 3rem;
+}
+:is([data-summary], [data-maintenance-scroll]):focus-visible,
+.maintenance-grid-table :is(button, a):focus-visible { outline-offset: -3px; }

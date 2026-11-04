@@ -77,7 +77,7 @@ try {
   await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
   const rowSelector = id => `[data-maintenance-row="${id}"]`;
   await send("Page.navigate", { url: baseUrl });
-  await waitFor("document.querySelector('h1')?.textContent === 'Onderhoudsoverzicht' && document.querySelectorAll('[data-maintenance-row]').length === 193", "maintenance table ready");
+  await waitFor("document.querySelector('h1')?.textContent === 'Welkom, Dirk' && document.querySelectorAll('[data-maintenance-row]').length === 193", "maintenance table ready");
   await sleep(400);
   assert.equal(await evaluate("document.documentElement.lang"), "nl");
   assert.equal(await evaluate("document.querySelectorAll('table').length"), 1);
